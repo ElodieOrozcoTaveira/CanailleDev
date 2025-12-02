@@ -1,0 +1,69 @@
+@use "../../styles/variables/variables.scss";
+
+.container-skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__h2{
+        margin-top: 3rem;
+        margin-bottom: 2.5rem;
+        font-size: 30px;
+        color: variables.$white-color;
+        font-family: 'Outfit';
+        font-weight: 500;
+        text-align: center;
+    }
+    &__underline{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10rem;
+        border: variables.$orange-color solid 1px;  
+        margin-top: -2rem; 
+        margin-bottom: 1rem;
+}
+    &__grid{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    &__article{
+        height: 250px;
+        width: 250px;
+        margin-top: 1.5rem;
+        box-shadow: 6px 5px 5px variables.$orange-color;
+        background-color: variables.$white-color;
+        border-radius: 20px;
+    }
+    &__category{
+        margin: 1.5rem;
+        color: variables.$orange-color;
+        font-size: 30px;
+        font-family: 'Outfit';
+        text-align: center;
+        font-weight: 400;
+        text-shadow: 2px 2px 3px variables.$violet-color;
+        margin-bottom: 2rem;
+    }
+    &__item{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        margin-left: -1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    &__logo{
+       margin-left: 1rem;
+       
+    }
+    &__outil{
+        color: variables.$pink1-color;
+        font-size: 20px;
+        font-family: 'Outfit';
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+
+    }
+}

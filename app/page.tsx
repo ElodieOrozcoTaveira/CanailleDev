@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Apropos from "./components/aPropos/Apropos";
 import Hero from "./components/layout/Hero/Hero";
 import Loader from "./components/layout/Loader/Loader";
+import Skills from "./components/Skills/Skills";
+import MesProjets from "./components/MesProjets/MesProjets";
 
 export default function Home() {
 
@@ -23,6 +25,9 @@ export default function Home() {
 
         <section className="hero"><Hero/></section>
         <section className="a-propos"><Apropos/></section>
+        <section className="skills"><Skills/></section>
+        <section className="skills"><MesProjets/></section>
+
         </>
     )
 }

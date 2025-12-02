@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Hamburger from "../Hamburger/Hamburger";
 import "./Hero.scss";
 import Image from "next/image";
@@ -9,6 +10,7 @@ export default function Hero() {
     <>
       <header className="header-container">
         <div className="container-logo">
+          <Link href='/'>
           <Image
             className="container-logo__img"
             src="/Logo/logo.png"
@@ -16,6 +18,7 @@ export default function Hero() {
             width={40}
             height={40}
           />
+          </Link>
           <h1 className="container-logo__canailledev">CanailleDev</h1>
         </div>
 

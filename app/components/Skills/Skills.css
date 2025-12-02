@@ -1,0 +1,67 @@
+/* Variables couleurs */
+/*Breakpoint*/
+.container-skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-skills__h2 {
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  font-size: 30px;
+  color: #f1f2ec;
+  font-family: "Outfit";
+  font-weight: 500;
+  text-align: center;
+}
+.container-skills__underline {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10rem;
+  border: #ff9671 solid 1px;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+.container-skills__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.container-skills__article {
+  height: 250px;
+  width: 250px;
+  margin-top: 1.5rem;
+  box-shadow: 6px 5px 5px #ff9671;
+  background-color: #f1f2ec;
+  border-radius: 20px;
+}
+.container-skills__category {
+  margin: 1.5rem;
+  color: #ff9671;
+  font-size: 30px;
+  font-family: "Outfit";
+  text-align: center;
+  font-weight: 400;
+  text-shadow: 2px 2px 3px #0b0024;
+  margin-bottom: 2rem;
+}
+.container-skills__item {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-left: -1rem;
+  justify-content: center;
+  align-items: center;
+}
+.container-skills__logo {
+  margin-left: 1rem;
+}
+.container-skills__outil {
+  color: #ff6d92;
+  font-size: 20px;
+  font-family: "Outfit";
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}/*# sourceMappingURL=Skills.css.map */

@@ -4,6 +4,7 @@ export default function Apropos() {
   return(
     <div className="container-apropos">
       <h2 className="container-apropos__h2">À propos de moi</h2>
+      <div className="container-apropos__underline"></div>
 
       <p className="container-apropos__p">
         Après une reconversion professionnelle, j’ai transformé ma curiosité pour le numérique en métier : conceptrice développeuse d’applications et développeuse web.
@@ -18,7 +19,7 @@ export default function Apropos() {
       </p>
 
       <p className="container-apropos__p">
-        👉 Si vous cherchez une développeuse investie et motivée, vous êtes au bon endroit !
+        Si vous cherchez une développeuse investie et motivée, vous êtes au bon endroit !
       </p>
     </div>
   )

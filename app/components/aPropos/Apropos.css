@@ -9,17 +9,26 @@
 }
 .container-apropos__h2 {
   margin-top: 3.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 35px;
+  margin-bottom: 2.5rem;
+  font-size: 30px;
   color: #f1f2ec;
   font-family: "Outfit";
   font-weight: 500;
-  text-align: left;
+  text-align: center;
+}
+.container-apropos__underline {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10rem;
+  border: #ff9671 solid 1px;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
 }
 .container-apropos__p {
   color: #f1f2ec;
   font-family: "Outfit";
-  font-size: 24px;
+  font-size: 18px;
   text-align: left;
   margin-bottom: 1.8rem;
   line-height: 1.4;
