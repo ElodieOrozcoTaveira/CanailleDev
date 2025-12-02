@@ -1,0 +1,16 @@
+/* Variables couleurs */
+/*Breakpoint*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #1B0E68;
+  min-height: 100vh;
+  overflow-x: hidden;
+}/*# sourceMappingURL=globals.css.map */

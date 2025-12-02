@@ -1,0 +1,228 @@
+@use "../../../styles/variables/variables.scss";
+@use "../../../styles/mixins/mixins.scss";
+
+.container-logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  &__canailledev {
+    color: variables.$white-color;
+    font-family: "Outfit";
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 1.2rem;
+  }
+}
+
+.container-menu {
+  display: flex;
+  justify-content: right;
+  margin-top: -2.7rem;
+  margin-right: 0.5rem;
+
+  &__logo {
+    color: variables.$violet4-color;
+    display: flex;
+    justify-content: right;
+    margin-top: -2.8rem;
+    margin-right: 0.5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* pour que le pseudo-élément soit positionné par rapport au conteneur */
+  overflow: visible;
+  &__bienvenue {
+    margin-top: 5rem;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    color: variables.$white-color;
+    font-family: "Outfit";
+    letter-spacing: 0.5px;
+  }
+ &__EOT{
+    font-style: italic;
+    font-size: 15px;
+    font-family: 'Sora';
+    color: variables.$violet4-color;
+    text-align: right;
+    margin-right: 3.5rem;
+    margin-top: -0.5rem;
+    margin-bottom: 3rem;
+ }
+ 
+
+  &__p {
+    color: variables.$violet4-color;
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem;
+  }
+  &__avatar {
+    display: flex;
+    justify-content: right;
+    margin-right: 1rem;
+  }
+  &__button {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    justify-content: left;
+    margin-left: 1rem;
+    cursor: pointer;
+    
+  }
+  &__github,
+  &__linkedin {
+    display: flex;
+    flex-direction: row;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    color: variables.$white-color;
+    font-family: "Outfit";
+    background: linear-gradient(
+      197deg,
+      rgba(25, 1, 107, 1) 0%,
+      rgba(25, 1, 107, 1) 51%,
+      rgba(64, 19, 114, 1) 62%,
+      rgba(255, 109, 146, 1) 96%
+    );
+    opacity: 0.8;
+    box-shadow: 3px 3px 3px variables.$violet4-color;
+  }
+  &__githubLogo,
+  &__linkedinLogo {
+    margin-right: 0.5em;
+    color: variables.$white-color;
+    margin-top: 0.2rem;
+  }
+}
+
+/* Halo pseudo-element derrière le conteneur */
+.hero-container::before {
+  content: "";
+  position: absolute;
+  /* ajustez ces valeurs pour déplacer le halo */
+  left:2%;
+  top: 30%;
+  width: 60%;
+  height: 60%;
+  z-index: -1;
+  pointer-events: none;
+  /* couleur et dégradé radial en utilisant la variable halo */
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(variables.$halo-blue, 0.85) 0%,
+    rgba(variables.$halo-blue, 0.45) 20%,
+    rgba(variables.$halo-blue, 0.15) 40%,
+    rgba(variables.$halo-blue, 0) 70%
+  );
+  /* utilisez blur pour adoucir le halo */
+  filter: blur(3px);
+  transform: translateZ(0);
+}
+
+.header-container::before {
+  content: "";
+  position: absolute;
+  /* ajustez ces valeurs pour déplacer le halo */
+  left:50%;
+  top: -5%;
+  width: 30%;
+  height: 30%;
+  z-index: -1;
+  pointer-events: none;
+  /* couleur et dégradé radial en utilisant la variable halo */
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(variables.$halo-blue, 0.85) 0%,
+    rgba(variables.$halo-blue, 0.45) 20%,
+    rgba(variables.$halo-blue, 0.15) 40%,
+    rgba(variables.$halo-blue, 0) 70%
+  );
+  /* utilisez blur pour adoucir le halo */
+  filter: blur(20px);
+  transform: translateZ(0);
+}
+
+.hero-container p::before {
+  content: "";
+  position: absolute;
+  /* ajustez ces valeurs pour déplacer le halo */
+  left:65%;
+  top: 25%;
+  width: 40%;
+  height: 40%;
+  z-index: -1;
+  pointer-events: none;
+  /* couleur et dégradé radial en utilisant la variable halo */
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(variables.$halo-pink, 0.85) 0%,
+    rgba(variables.$halo-pink, 0.45) 20%,
+    rgba(variables.$halo-pink, 0.15) 40%,
+    rgba(variables.$halo-pink, 0) 20%
+  );
+  /* utilisez blur pour adoucir le halo */
+  filter: blur(20px);
+  transform: translateZ(0);
+}
+
+.hero-container h2::before {
+  content: "";
+  position: absolute;
+  /* ajustez ces valeurs pour déplacer le halo */
+  left:30%;
+  top: 70%;
+  width: 50%;
+  height: 50%;
+  z-index: -1;
+  pointer-events: none;
+  /* couleur et dégradé radial en utilisant la variable halo */
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(variables.$halo-violet, 0.85) 0%,
+    rgba(variables.$halo-violet, 0.45) 20%,
+    rgba(variables.$halo-violet, 0.15) 40%,
+    rgba(variables.$halo-violet, 0) 20%
+  );
+  /* utilisez blur pour adoucir le halo */
+  filter: blur(3px);
+  transform: translateZ(0);
+}
+
+span {
+  font-size: 3.8rem;
+  font-weight: bold;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero > * {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+.hero > *:nth-child(1) { animation-delay: 0.1s; }
+.hero > *:nth-child(2) { animation-delay: 0.2s; }
+.hero > *:nth-child(3) { animation-delay: 0.3s; }
+.hero > *:nth-child(4) { animation-delay: 0.4s; }
+
+
+
+

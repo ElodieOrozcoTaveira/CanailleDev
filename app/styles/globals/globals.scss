@@ -1,0 +1,40 @@
+@use "../variables/variables.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+    
+}
+
+body {
+    background: #1B0E68;
+   
+    min-height: 100vh;
+    overflow-x: hidden; // S'assurer qu'il n'y a pas de scroll horizontal non désiré
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

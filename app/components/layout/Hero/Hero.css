@@ -1,0 +1,198 @@
+@charset "UTF-8";
+/* Variables couleurs */
+/*Breakpoint*/
+.container-logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.container-logo__canailledev {
+  color: #f1f2ec;
+  font-family: "Outfit";
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 1.2rem;
+}
+
+.container-menu {
+  display: flex;
+  justify-content: right;
+  margin-top: -2.7rem;
+  margin-right: 0.5rem;
+}
+.container-menu__logo {
+  color: #cabdff;
+  display: flex;
+  justify-content: right;
+  margin-top: -2.8rem;
+  margin-right: 0.5rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* pour que le pseudo-élément soit positionné par rapport au conteneur */
+  overflow: visible;
+}
+.hero-container__bienvenue {
+  margin-top: 5rem;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  color: #f1f2ec;
+  font-family: "Outfit";
+  letter-spacing: 0.5px;
+}
+.hero-container__EOT {
+  font-style: italic;
+  font-size: 15px;
+  font-family: "Sora";
+  color: #cabdff;
+  text-align: right;
+  margin-right: 3.5rem;
+  margin-top: -0.5rem;
+  margin-bottom: 3rem;
+}
+.hero-container__p {
+  color: #cabdff;
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+}
+.hero-container__avatar {
+  display: flex;
+  justify-content: right;
+  margin-right: 1rem;
+}
+.hero-container__button {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  justify-content: left;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.hero-container__github, .hero-container__linkedin {
+  display: flex;
+  flex-direction: row;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  color: #f1f2ec;
+  font-family: "Outfit";
+  background: linear-gradient(197deg, rgb(25, 1, 107) 0%, rgb(25, 1, 107) 51%, rgb(64, 19, 114) 62%, rgb(255, 109, 146) 96%);
+  opacity: 0.8;
+  box-shadow: 3px 3px 3px #cabdff;
+}
+.hero-container__githubLogo, .hero-container__linkedinLogo {
+  margin-right: 0.5em;
+  color: #f1f2ec;
+  margin-top: 0.2rem;
+}
+
+/* Halo pseudo-element derrière le conteneur */
+.hero-container::before {
+  content: "";
+  position: absolute;
+  /* ajustez ces valeurs pour déplacer le halo */
+  left: 2%;
+  top: 30%;
+  width: 60%;
+  height: 60%;
+  z-index: -1;
+  pointer-events: none;
+  /* couleur et dégradé radial en utilisant la variable halo */
+  background: radial-gradient(circle at 30% 30%, rgba(22, 34, 187, 0.85) 0%, rgba(22, 34, 187, 0.45) 20%, rgba(22, 34, 187, 0.15) 40%, rgba(22, 34, 187, 0) 70%);
+  /* utilisez blur pour adoucir le halo */
+  filter: blur(3px);
+  transform: translateZ(0);
+}
+
+.header-container::before {
+  content: "";
+  position: absolute;
+  /* ajustez ces valeurs pour déplacer le halo */
+  left: 50%;
+  top: -5%;
+  width: 30%;
+  height: 30%;
+  z-index: -1;
+  pointer-events: none;
+  /* couleur et dégradé radial en utilisant la variable halo */
+  background: radial-gradient(circle at 30% 30%, rgba(22, 34, 187, 0.85) 0%, rgba(22, 34, 187, 0.45) 20%, rgba(22, 34, 187, 0.15) 40%, rgba(22, 34, 187, 0) 70%);
+  /* utilisez blur pour adoucir le halo */
+  filter: blur(20px);
+  transform: translateZ(0);
+}
+
+.hero-container p::before {
+  content: "";
+  position: absolute;
+  /* ajustez ces valeurs pour déplacer le halo */
+  left: 65%;
+  top: 25%;
+  width: 40%;
+  height: 40%;
+  z-index: -1;
+  pointer-events: none;
+  /* couleur et dégradé radial en utilisant la variable halo */
+  background: radial-gradient(circle at 30% 30%, rgba(255, 109, 146, 0.85) 0%, rgba(255, 109, 146, 0.45) 20%, rgba(255, 109, 146, 0.15) 40%, rgba(255, 109, 146, 0) 20%);
+  /* utilisez blur pour adoucir le halo */
+  filter: blur(20px);
+  transform: translateZ(0);
+}
+
+.hero-container h2::before {
+  content: "";
+  position: absolute;
+  /* ajustez ces valeurs pour déplacer le halo */
+  left: 30%;
+  top: 70%;
+  width: 50%;
+  height: 50%;
+  z-index: -1;
+  pointer-events: none;
+  /* couleur et dégradé radial en utilisant la variable halo */
+  background: radial-gradient(circle at 30% 30%, rgba(104, 25, 154, 0.85) 0%, rgba(104, 25, 154, 0.45) 20%, rgba(104, 25, 154, 0.15) 40%, rgba(104, 25, 154, 0) 20%);
+  /* utilisez blur pour adoucir le halo */
+  filter: blur(3px);
+  transform: translateZ(0);
+}
+
+span {
+  font-size: 3.8rem;
+  font-weight: bold;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero > * {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+.hero > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.hero > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hero > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.hero > *:nth-child(4) {
+  animation-delay: 0.4s;
+}/*# sourceMappingURL=Hero.css.map */
