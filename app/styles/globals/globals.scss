@@ -6,8 +6,11 @@
 }
 html {
     scroll-behavior: smooth;
+    animation-timeline: scroll();
+  
     
 }
+
 
 body {
     background: #1B0E68;

@@ -1,0 +1,45 @@
+@use "../../../styles/variables/variables.scss";
+
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 0.2rem;
+    color: variables.$white-color;
+    height: 12rem;
+    &__h2{
+        font-size: 18px;
+        font-family: 'Outfit';
+        font-weight: 400;
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+    }
+  
+    &__underline{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        border: variables.$pink1-color solid 1px;
+        box-shadow: variables.$halo-violet 3px 3px 4px;  
+        margin-top: -2rem; 
+        margin-bottom: 1rem;
+    }
+    &__docs{
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        
+    }
+    &__links{
+        text-decoration: none;
+        font-size: 15px;
+        font-family: 'Outfit';
+        color: variables.$white-color;
+    }
+}
+

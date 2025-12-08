@@ -5,10 +5,10 @@ export default function MesProjets() {
 
     const projets = [
         {
-            id:1, projet: 'Les Chips de Nos Montagnes', image: '/Projets/lcdnm.png',
+            id:1, projet: 'Les Chips de Nos Montagnes', image: '/Projets/lcdnm.png', url: "https://www.leschipsdenosmontagnes.com/"
         },
         {
-            id:2, projet: 'Braap! - en cours..', image:'/Projets/braaap.png'
+            id:2, projet: 'Braap! - en cours..', image:'/Projets/braaap.png', url: ''
         },
 
     ]
@@ -24,6 +24,12 @@ export default function MesProjets() {
             {projets.map((projects) => (
                 <article key={projects.id} className="container-projets__article">
 
+                    <a href={projects.url}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="container-projets__link">
+
+                       
                     <Image
                         className="container-projets__img"
                         src={projects.image}
@@ -35,6 +41,7 @@ export default function MesProjets() {
                     />
 
                     <h4 className="container-projets__h4">{projects.projet}</h4>
+                    </a>
                 </article>
             ))}
         </div>

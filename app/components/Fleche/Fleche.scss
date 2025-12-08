@@ -1,0 +1,43 @@
+@use "../../styles/variables/variables.scss";
+
+
+.btn_arrow {
+  display: block;
+  position: static;
+}
+
+.btn_arrow:hover .icone {
+  background-color: transparent;
+}
+
+.icone {
+  width: 40px;
+  height: 40px;
+  position: fixed; /* stays put during scroll */
+  right: 1rem; /* distance from right edge */
+  bottom: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.12s ease;
+  color: variables.$pink-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: variables.$white-color; /* ensure contrast */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  z-index: 2000; /* sits above main content */
+}
+
+.icone:active {
+  transform: scale(0.96);
+}
+
+/* small responsive tweak: make it slightly smaller on very small screens */
+@media (max-width: 420px) {
+  .icone {
+    width: 40px;
+    height: 40px;
+    right: 25px;
+    bottom: calc(45px + env(safe-area-inset-bottom));
+  }
+}

@@ -4,20 +4,22 @@ import Link from "next/link";
 import Hamburger from "../Hamburger/Hamburger";
 import "./Hero.scss";
 import Image from "next/image";
+import Fleche from "../../Fleche/Fleche";
 
 export default function Hero() {
   return (
     <>
       <header className="header-container">
         <div className="container-logo">
-          <Link href='/'>
-          <Image
-            className="container-logo__img"
-            src="/Logo/logo.png"
-            alt="logo canailledev"
-            width={40}
-            height={40}
-          />
+          <Link href="/">
+            <Image
+              className="container-logo__img"
+              src="/Logo/logo.png"
+              alt="logo canailledev"
+              width={40}
+              height={40}
+              loading="eager"
+            />
           </Link>
           <h1 className="container-logo__canailledev">CanailleDev</h1>
         </div>
@@ -41,33 +43,47 @@ export default function Hero() {
             src="/Logo/avatar.png"
             alt="avatar canailledev"
             priority
-            height={180}
-            width={180}
+            height={200}
+            width={2000}
             style={{ width: "auto", height: "auto" }}
           />
         </section>
         <section className="hero-container__button">
           <div className="hero-container__github">
-            <Image
-              className="hero-container__githubLogo"
-              src="/Icones/github.png"
-              alt="logo github"
-              priority
-              height={15}
-              width={15}
-            />
-            <h3 className="hero-container__h3">Github</h3>
+            <a
+              href="https://github.com/ElodieOrozcoTaveira"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-container__link"
+            >
+              <Image
+                className="hero-container__githubLogo"
+                src="/Icones/github.png"
+                alt="logo github"
+                priority
+                height={15}
+                width={15}
+              />
+              <h3 className="hero-container__h3">Github</h3>
+            </a>
           </div>
           <div className="hero-container__linkedin">
-            <Image
-              className="hero-container__linkedinLogo"
-              src="/Icones/linkedin.png"
-              alt="logo github"
-              priority
-              height={23}
-              width={23}
-            />
-            <h3 className="hero-container__h3">Lindekin</h3>
+            <a
+              href="https://www.linkedin.com/in/elodieorozcotaveira"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-container__link"
+            >
+              <Image
+                className="hero-container__linkedinLogo"
+                src="/Icones/linkedin.png"
+                alt="logo linkedin"
+                priority
+                height={23}
+                width={23}
+              />
+              <h3 className="hero-container__h3">LinkedIn</h3>
+            </a>
           </div>
         </section>
       </div>

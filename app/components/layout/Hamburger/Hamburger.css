@@ -4,6 +4,9 @@
 .hamburger-wrapper {
   display: flex;
   align-items: center;
+  /* create a new stacking context so the button stays above animated siblings */
+  position: relative;
+  z-index: 1001;
 }
 
 .hamburger-button {
@@ -15,55 +18,69 @@
   padding: 0.25rem;
   color: #f1f2ec;
   cursor: pointer;
+  position: relative;
+  z-index: 10002; /* above hero animated elements and menu */
 }
 
 .hamburger-menu {
-  position: absolute;
-  top: 64px;
-  right: 16px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  width: 200px;
-  max-width: calc(100% - 32px);
+  /* use fixed to escape ancestor stacking contexts created by transforms/animations */
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   transform-origin: top right;
   transition: opacity 180ms ease, transform 180ms ease;
-  z-index: 100;
+  z-index: 10000; /* ensure above animated content */
+  opacity: 1;
+}
+
+/* When the menu is open, ensure the button/icon contrasts with the menu background */
+.hamburger-wrapper.is-open .hamburger-button {
+  color: #2a1478;
+  border-radius: 6px;
+  padding: 0.25rem 0.4rem;
 }
 
 .hamburger-menu.is-closed {
   opacity: 0;
-  transform: scale(0.95);
+  transform: translateY(-100%);
   pointer-events: none;
 }
 
 .hamburger-menu.is-open {
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0);
   pointer-events: auto;
 }
 
 .hamburger-menu__list {
   background-color: #cabdff;
-  border-radius: 10px;
   list-style: none;
   margin: 0;
   padding: 8px 0;
   box-shadow: 3px 3px 4px #f1f2ec;
+  height: 630px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .hamburger-menu__list li {
   padding: 8px 16px;
   text-align: justify;
   margin-bottom: 1rem;
+  margin-top: 2rem;
   color: #1e0a3c;
+  text-align: center;
 }
 
 .hamburger-menu__list a {
-  color: inherit;
+  color: #2a1478;
   text-decoration: none;
   display: block;
-  text-shadow: 1px 1px 1px #f1f2ec;
+  text-shadow: 1px 1px 0.5px #d93b7d;
+  font-size: 25px;
+  font-family: "Outfit";
 }
 
 @media (min-width: 768px) {

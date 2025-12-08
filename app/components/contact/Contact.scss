@@ -1,0 +1,122 @@
+@use '../../styles/variables/variables.scss';
+@use '../../styles/mixins/mixins.scss';
+
+.container-contact{
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    border-radius: 30px;
+    animation: fadeUp both;
+        animation-timeline: view();
+    &__h2{
+        @include mixins.h2;
+    }
+    &__underline{
+        @include mixins.underline;
+    }  
+    &__form{
+        height: 25rem;
+        width: 380px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__label,
+    &__email{
+        color: variables.$violet4-color;
+        font-family: 'Outfit';
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 0.3rem;
+    }
+    &__input{
+        margin-bottom: 1rem;
+        font-size: 20px;
+        height: 40px;
+        font-family: 'Outfit';
+        border-radius: 15px;
+        box-shadow: 3px 3px 4px variables.$orange-color;
+    }
+
+    &__section{
+        display:flex;
+        flex-direction: column;
+    }
+    &__messageview{
+        margin-top: 0.1rem;
+        border: solid 2px pink;
+        width: 376px;
+        font-family: 'Outfit';
+        border-radius: 15px;
+        box-shadow: 3px 3px 4px variables.$orange-color;
+        font-size: 20px;
+        height: 150px;
+    }
+    &__envoyer{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.8rem;
+        margin-top: 1rem;
+        border-radius: 1rem;
+        color: variables.$white-color;
+        font-family: "Outfit";
+        font-weight: bold;
+        background: linear-gradient(
+        197deg,
+        rgba(25, 1, 107, 1) 0%,
+        rgba(25, 1, 107, 1) 51%,
+        rgba(64, 19, 114, 1) 62%,
+        rgba(255, 109, 146, 1) 96%
+        );
+        opacity: 0.8;
+        box-shadow: 3px 3px 3px variables.$violet4-color;
+    }
+    &__status{
+        color: variables.$violet4-color;
+        font-size: 18px;
+        text-align: center;
+        font-weight: 400;
+        font-family: 'Outfit';
+    }
+}
+
+.container-contact::before{
+    content: "";
+      position: absolute;
+      /* ajustez ces valeurs pour déplacer le halo */
+      left:14rem;
+      right: 60rem;
+      width: 60%;
+      height: 60%;
+      z-index: -1;
+      pointer-events: none;
+      /* couleur et dégradé radial en utilisant la variable halo */
+      background: radial-gradient(
+        circle at 30% 30%,
+        rgba(variables.$orange-color, 0.85) 0%,
+        rgba(variables.$orange-color, 0.45) 20%,
+        rgba(variables.$orange-color, 0.15) 40%,
+        rgba(variables.$orange-color, 0) 70%
+      );
+      /* utilisez blur pour adoucir le halo */
+      filter: blur(50px);
+      transform: translateZ(0);
+
+
+}
+@keyframes fadeUp {
+        from{
+            opacity: 0;
+            transform: translateY(10px) scale(0.5);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        
+    }

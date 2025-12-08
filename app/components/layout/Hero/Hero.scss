@@ -14,7 +14,7 @@
     letter-spacing: -1px;
     font-size: 1.2rem;
   }
-  &__img{
+  &__img {
     cursor: pointer;
   }
 }
@@ -49,17 +49,16 @@
     font-family: "Outfit";
     letter-spacing: 0.5px;
   }
- &__EOT{
+  &__EOT {
     font-style: italic;
     font-size: 15px;
-    font-family: 'Sora';
+    font-family: "Sora";
     color: variables.$violet4-color;
     text-align: right;
     margin-right: 3.5rem;
     margin-top: -0.5rem;
     margin-bottom: 3rem;
- }
- 
+  }
 
   &__p {
     color: variables.$violet4-color;
@@ -71,6 +70,7 @@
     justify-content: right;
     margin-right: 1rem;
   }
+
   &__button {
     margin-top: 1rem;
     display: flex;
@@ -79,10 +79,12 @@
     justify-content: left;
     margin-left: 1rem;
     cursor: pointer;
-    
   }
-  &__github,
-  &__linkedin {
+
+  
+  
+  &__link {
+    text-decoration: none;
     display: flex;
     flex-direction: row;
     padding: 0.8rem;
@@ -100,6 +102,8 @@
     opacity: 0.8;
     box-shadow: 3px 3px 3px variables.$violet4-color;
   }
+
+
   &__githubLogo,
   &__linkedinLogo {
     margin-right: 0.5em;
@@ -113,7 +117,7 @@
   content: "";
   position: absolute;
   /* ajustez ces valeurs pour déplacer le halo */
-  left:2%;
+  left: 2%;
   top: 30%;
   width: 60%;
   height: 60%;
@@ -136,7 +140,7 @@
   content: "";
   position: absolute;
   /* ajustez ces valeurs pour déplacer le halo */
-  left:50%;
+  left: 50%;
   top: -5%;
   width: 30%;
   height: 30%;
@@ -159,7 +163,7 @@
   content: "";
   position: absolute;
   /* ajustez ces valeurs pour déplacer le halo */
-  left:65%;
+  left: 65%;
   top: 25%;
   width: 40%;
   height: 40%;
@@ -182,7 +186,7 @@
   content: "";
   position: absolute;
   /* ajustez ces valeurs pour déplacer le halo */
-  left:30%;
+  left: 30%;
   top: 70%;
   width: 50%;
   height: 50%;
@@ -217,15 +221,21 @@ span {
   }
 }
 
-.hero > * {
+.hero > :not(.header-container) {
+  /* Exclude the header from the fadeUp animation so its opacity
+     animation doesn't make the hamburger/menu translucent. */
   animation: fadeUp 0.8s ease-out both;
 }
 
-.hero > *:nth-child(1) { animation-delay: 0.1s; }
-.hero > *:nth-child(2) { animation-delay: 0.2s; }
-.hero > *:nth-child(3) { animation-delay: 0.3s; }
-.hero > *:nth-child(4) { animation-delay: 0.4s; }
-
-
-
-
+.hero > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.hero > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.hero > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.hero > *:nth-child(4) {
+  animation-delay: 0.4s;
+}

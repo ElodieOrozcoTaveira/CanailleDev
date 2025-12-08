@@ -1,32 +1,28 @@
 'use client';
 
-import { useEffect, useState } from "react";
 import Apropos from "./components/aPropos/Apropos";
 import Hero from "./components/layout/Hero/Hero";
-import Loader from "./components/layout/Loader/Loader";
 import Skills from "./components/Skills/Skills";
 import MesProjets from "./components/MesProjets/MesProjets";
+import Footer from "./components/layout/Footer/Footer";
+import Contact from "./components/contact/Contact";
+import Prestations from "./Prestations/Prestations";
+import Fleche from "./components/Fleche/Fleche";
 
 export default function Home() {
 
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => setIsLoading(false), 2000);
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (isLoading) {
-        return <Loader/>;
-    }
     return(
         
         <>
 
         <section className="hero"><Hero/></section>
-        <section className="a-propos"><Apropos/></section>
-        <section className="skills"><Skills/></section>
-        <section className="skills"><MesProjets/></section>
+        <section id="apropos" className="a-propos"><Apropos/></section>
+        <section id="skills" className="skills"><Skills/></section>
+        <section id="projets" className="projects"><MesProjets/></section>
+        <section className="services"><Prestations/></section>
+        <section id="contact" className="contact"><Contact/></section>
+        <section className="footer"><Footer/></section>
+        <Fleche/>
 
         </>
     )

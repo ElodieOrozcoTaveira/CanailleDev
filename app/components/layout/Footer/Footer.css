@@ -1,0 +1,42 @@
+/* Variables couleurs */
+/*Breakpoint*/
+.container-footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.2rem;
+  color: #f1f2ec;
+  height: 12rem;
+}
+.container-footer__h2 {
+  font-size: 18px;
+  font-family: "Outfit";
+  font-weight: 400;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+.container-footer__underline {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border: #ff6d92 solid 1px;
+  box-shadow: #68199A 3px 3px 4px;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+.container-footer__docs {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+.container-footer__links {
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Outfit";
+  color: #f1f2ec;
+}/*# sourceMappingURL=Footer.css.map */

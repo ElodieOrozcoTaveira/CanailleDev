@@ -78,7 +78,8 @@
   margin-left: 1rem;
   cursor: pointer;
 }
-.hero-container__github, .hero-container__linkedin {
+.hero-container__link {
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   padding: 0.8rem;
@@ -180,7 +181,9 @@ span {
     transform: translateY(0);
   }
 }
-.hero > * {
+.hero > :not(.header-container) {
+  /* Exclude the header from the fadeUp animation so its opacity
+     animation doesn't make the hamburger/menu translucent. */
   animation: fadeUp 0.8s ease-out both;
 }
 

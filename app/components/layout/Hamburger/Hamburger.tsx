@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import "./Hamburger.scss";
+import { IoMdClose } from "react-icons/io";
+import Link from "next/link";
 
 export default function Hamburger() {
   const [open, setOpen] = useState(false);
@@ -24,7 +26,7 @@ export default function Hamburger() {
 
   return (
     <>
-      <div className="hamburger-wrapper">
+      <div className={`hamburger-wrapper ${open ? "is-open" : ""}`}>
         <button
           ref={buttonRef}
           aria-controls={menuId}
@@ -33,7 +35,11 @@ export default function Hamburger() {
           className="hamburger-button"
           onClick={() => setOpen((s) => !s)}
         >
-          <CiMenuBurger />
+          {open ? (
+            <IoMdClose aria-hidden="false" />
+          ) : (
+            <CiMenuBurger aria-hidden="false" />
+          )}
         </button>
 
         <nav
@@ -42,26 +48,11 @@ export default function Hamburger() {
           aria-hidden={!open}
         >
           <ul className="hamburger-menu__list">
-            <li>
-              <a href="#apropos" onClick={onLinkClick}>
-                A propos
-              </a>
-            </li>
-            <li>
-              <a href="#skills" onClick={onLinkClick}>
-                Skills
-              </a>
-            </li>
-            <li>
-              <a href="#projets" onClick={onLinkClick}>
-                Projets
-              </a>
-            </li>
-            <li>
-              <a href="#contact" onClick={onLinkClick}>
-                Contact
-              </a>
-            </li>
+            <li><Link onClick={onLinkClick} href="/">ACCUEIL</Link></li>
+            <li><a onClick={onLinkClick} href="#apropos" >A PROPOS</a></li>
+            <li><a onClick={onLinkClick} href="#skills" >SKILLS</a></li>
+            <li><a onClick={onLinkClick} href="#projets" >PROJETS</a></li>
+            <li><a onClick={onLinkClick} href="#contact" >CONTACT</a></li>
           </ul>
         </nav>
       </div>
