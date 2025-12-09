@@ -44,7 +44,7 @@ export default function Hero() {
             alt="avatar canailledev"
             priority
             height={200}
-            width={2000}
+            width={200}
             style={{ width: "auto", height: "auto" }}
           />
         </section>

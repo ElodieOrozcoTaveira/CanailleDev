@@ -6,7 +6,7 @@ import Skills from "./components/Skills/Skills";
 import MesProjets from "./components/MesProjets/MesProjets";
 import Footer from "./components/layout/Footer/Footer";
 import Contact from "./components/contact/Contact";
-import Prestations from "./Prestations/Prestations";
+import Prestations from "./components/Prestations/Prestations";
 import Fleche from "./components/Fleche/Fleche";
 
 export default function Home() {

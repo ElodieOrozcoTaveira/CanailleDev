@@ -1,0 +1,55 @@
+@use '../../styles/variables/variables.scss';
+@use '../../styles/mixins/mixins.scss';
+
+.container-canailleDev{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+   border-bottom: variables.$pink1-color solid 1px;
+        box-shadow: variables.$halo-violet 3px 3px 4px;
+  &__link{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+  }
+&__logo{
+    display: block;
+    margin-left: 5rem;
+    margin-top: 3rem;    
+}
+&__h2{
+    margin-top: 4rem;
+    font-size: 2rem;
+    color: variables.$white-color;
+    font-family: 'Outfit';
+    font-weight: 500;
+}
+}
+
+/* Halo pseudo-element derrière le conteneur */
+.container-canailleDev::before {
+  content: "";
+  position: absolute;
+  /* ajustez ces valeurs pour déplacer le halo */
+  left: 10rem;
+  top: 2rem;
+  width: 40%;
+  height: 40%;
+  z-index: -1;
+  pointer-events: none;
+  /* couleur et dégradé radial en utilisant la variable halo */
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(variables.$halo-blue, 0.85) 0%,
+    rgba(variables.$halo-blue, 0.45) 20%,
+    rgba(variables.$halo-blue, 0.15) 40%,
+    rgba(variables.$halo-blue, 0) 70%
+  );
+  /* utilisez blur pour adoucir le halo */
+  filter: blur(20px);
+  transform: translateZ(0);
+}
+
+

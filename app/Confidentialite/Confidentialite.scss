@@ -1,0 +1,47 @@
+@use '../styles/variables/variables.scss';
+@use '../styles/mixins/mixins.scss';
+
+.container-confidentialite{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+     &__underline{
+        @include mixins.underline;
+        margin-bottom: 2.5rem;
+    }
+     &__h2{
+        @include mixins.h2
+    }
+    &__adress{
+        color: variables.$pink1-color;
+    }
+}
+
+.container-confidentialite h1{
+    font-size: 3rem;
+}
+
+.container-confidentialite p{
+    color: variables.$violet4-color;
+    font-family: 'Outfit';
+    margin-bottom: 2rem;
+}
+
+.container-confidentialite strong{
+    text-shadow: variables.$pink-color 1px 1px 3px;
+}
+
+.container-confidentialite ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.container-confidentialite li{
+    list-style-type: none;
+    color: variables.$violet4-color;
+    font-family: 'Outfit';
+}

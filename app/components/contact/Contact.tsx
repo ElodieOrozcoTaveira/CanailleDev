@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import "../contact/Contact.scss";
 
 export default function Contact() {
@@ -9,14 +9,27 @@ export default function Contact() {
     message: string;
   };
 
+  type StatusType = "idle" | "loading" | "success" | "error";
+
   const [formData, setFormData] = useState<FormState>({
     nom: "",
     mail: "",
     message: "",
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<StatusType>("idle");
   const [statusMessage, setStatusMessage] = useState("");
+
+  // Validation de l'email
+  const validateEmail = (email: string): boolean => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  // Nettoyage des inputs (enlève les balises HTML)
+  const sanitizeInput = (input: string): string => {
+    return input.trim().replace(/<[^>]*>/g, "");
+  };
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -26,47 +39,84 @@ export default function Contact() {
       ...prev,
       [name]: value,
     }));
+    // Réinitialiser le message d'erreur quand l'utilisateur modifie le formulaire
+    if (status === "error") {
+      setStatus("idle");
+      setStatusMessage("");
+    }
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsLoading(true);
+    setStatus("loading");
     setStatusMessage("");
 
-    // Validation des champs avant
+    // Validation des champs
     if (!formData.nom || !formData.mail || !formData.message) {
       setStatusMessage("Veuillez remplir tous les champs");
-      setIsLoading(false);
+      setStatus("error");
+      return;
+    }
+
+    // Validation de l'email
+    if (!validateEmail(formData.mail)) {
+      setStatusMessage("Adresse email invalide");
+      setStatus("error");
+      return;
+    }
+
+    // Validation de la longueur
+    if (formData.nom.length < 2) {
+      setStatusMessage("Le nom doit contenir au moins 2 caractères");
+      setStatus("error");
+      return;
+    }
+
+    if (formData.message.length < 10) {
+      setStatusMessage("Le message doit contenir au moins 10 caractères");
+      setStatus("error");
       return;
     }
 
     try {
-      // Remplacez par vos identifiants EmailJS
+      // Utilisation des variables d'environnement Next.js
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Variables d'environnement EmailJS manquantes");
+      }
+
       const result = await emailjs.send(
-        'service_lzg3d1i',      // Votre Service ID
-        'template_btb1mbs',     // Votre Template ID
+        serviceId,
+        templateId,
         {
-          nom: formData.nom,
-          mail: formData.mail,
-          message: formData.message,
+          from_name: sanitizeInput(formData.nom),
+          from_email: sanitizeInput(formData.mail),
+          message: sanitizeInput(formData.message),
         },
-        'IY-7ZrOtyrijs0BH3'       // Votre Public Key
+        publicKey
       );
 
-      console.log('Email envoyé:', result);
-      setStatusMessage("Message envoyé avec succès !");
-      
-      // Réinitialiser le formulaire
-      setFormData({
-        nom: "",
-        mail: "",
-        message: "",
-      });
+      console.log("Email envoyé:", result);
+      setStatusMessage("✅ Message envoyé avec succès !");
+      setStatus("success");
+
+      // Réinitialiser le formulaire après 2 secondes
+      setTimeout(() => {
+        setFormData({
+          nom: "",
+          mail: "",
+          message: "",
+        });
+        setStatusMessage("");
+        setStatus("idle");
+      }, 3000);
     } catch (error) {
-      console.error('Erreur lors de l\'envoi:', error);
-      setStatusMessage("Erreur lors de l'envoi. Réessayez.");
-    } finally {
-      setIsLoading(false);
+      console.error("Erreur lors de l'envoi:", error);
+      setStatusMessage("❌ Erreur lors de l'envoi. Veuillez réessayer.");
+      setStatus("error");
     }
   };
 
@@ -76,10 +126,7 @@ export default function Contact() {
       <div className="container-contact__underline"></div>
 
       <div className="container-contact__form">
-        <form 
-          className="container-contact__formulaire" 
-          onSubmit={handleSubmit} //évite le rechargement de la page avec preventDefault()
-        >
+        <form className="container-contact__formulaire" onSubmit={handleSubmit}>
           <section className="container-contact__section">
             <input
               type="text"
@@ -89,10 +136,12 @@ export default function Contact() {
               value={formData.nom}
               onChange={handleChange}
               name="nom"
+              maxLength={100}
+              disabled={status === "loading"}
               required
+              aria-label="Nom"
             />
-            
-            
+
             <input
               type="email"
               id="mail"
@@ -101,34 +150,62 @@ export default function Contact() {
               value={formData.mail}
               name="mail"
               onChange={handleChange}
+              maxLength={100}
+              disabled={status === "loading"}
               required
+              aria-label="Email"
             />
           </section>
 
           <section className="container-contact__message-section">
-            <textarea //au lieu d'input, ce qui permet de pouvoir écrire dans toute la case correctement
+            <textarea
               id="message"
               className="container-contact__messageview"
-              placeholder="Sujet*"
+              placeholder="Message*"
               value={formData.message}
               name="message"
               onChange={handleChange}
               rows={5}
+              maxLength={1000}
+              disabled={status === "loading"}
               required
+              aria-label="Message"
             />
           </section>
 
+          {/* Honeypot - Champ caché pour piéger les bots */}
+          <input
+            type="text"
+            name="honeypot"
+            style={{ display: "none" }}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
+
           {statusMessage && (
-            <p className="container-contact__status">{statusMessage}</p>
+            <p
+              className={`container-contact__status ${
+                status === "success"
+                  ? "container-contact__status--success"
+                  : status === "error"
+                  ? "container-contact__status--error"
+                  : ""
+              }`}
+              role="alert"
+            >
+              {statusMessage}
+            </p>
           )}
 
           <div className="container-contact__button">
-            <button 
+            <button
               type="submit"
               className="container-contact__envoyer"
-              disabled={isLoading}
+              disabled={status === "loading"}
+              aria-busy={status === "loading"}
             >
-              {isLoading ? "Envoi..." : "Envoyer"}
+              {status === "loading" ? "Envoi en cours..." : "Envoyer"}
             </button>
           </div>
         </form>

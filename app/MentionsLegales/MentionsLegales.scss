@@ -1,0 +1,48 @@
+@use '../styles/variables/variables.scss';
+@use '../styles/mixins/mixins.scss';
+
+.container-mentions{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    &__h2{
+        @include mixins.h2
+    }
+    &__underline{
+        @include mixins.underline;
+        margin-bottom: 2.5rem;
+    }
+    &__adress{
+        color: variables.$pink1-color;
+    }
+}
+
+.container-mentions h1{
+    font-size: 3rem;
+}
+
+.container-mentions p{
+    color: variables.$violet4-color;
+    font-family: 'Outfit';
+    margin-bottom: 2rem;
+}
+
+.container-mentions strong{
+    text-shadow: variables.$pink-color 1px 1px 3px;
+}
+
+.container-mentions ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.container-mentions li{
+    list-style-type: none;
+    color: variables.$violet4-color;
+    font-family: 'Outfit';
+}
+
