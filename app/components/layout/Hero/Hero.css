@@ -53,7 +53,8 @@
   font-style: italic;
   font-size: 15px;
   font-family: "Sora";
-  color: #cabdff;
+  color: #ff6d92;
+  text-shadow: 2px 2px 1px #3a61ff;
   text-align: right;
   margin-right: 3.5rem;
   margin-top: -0.5rem;
@@ -61,7 +62,8 @@
 }
 .hero-container__p {
   color: #cabdff;
-  letter-spacing: 2px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
   margin-bottom: 2.5rem;
 }
 .hero-container__avatar {
@@ -73,9 +75,9 @@
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  gap: 1.2rem;
+  gap: 2rem;
   justify-content: left;
-  margin-left: 1rem;
+  margin-left: 5rem;
   cursor: pointer;
 }
 .hero-container__link {

@@ -16,13 +16,13 @@
     &__grid{
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 3rem;
     }
     &__article{
         height: 250px;
-        width: 250px;
+        width: 300px;
         margin-top: 1.5rem;
-        box-shadow: 6px 5px 5px variables.$orange-color;
+        box-shadow: 4px 4px 3px variables.$orange-color;
         background-color: variables.$white-color;
         border-radius: 20px;
          animation: fadeUp both;
@@ -64,10 +64,10 @@
        
     }
     &__outil{
-        color: variables.$pink1-color;
+        color: variables.$pink-color;
         font-size: 20px;
         font-family: 'Outfit';
-        font-weight: 400;
+        font-weight: 500;
         margin-bottom: 0.5rem;
 
     }

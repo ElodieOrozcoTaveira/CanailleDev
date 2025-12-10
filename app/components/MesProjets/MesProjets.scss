@@ -18,7 +18,7 @@
         margin-top: 2rem;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 3rem;
         margin-left: auto;
         margin-right: auto;
     }
@@ -32,7 +32,7 @@
         width: 300px;
         background-color: variables.$white-color;
         border-radius: 20px;
-        box-shadow: 6px 5px 5px variables.$orange-color;
+        box-shadow: 4px 4px 3px variables.$orange-color;
         animation: fadeUp both;
         animation-timeline: view();
         

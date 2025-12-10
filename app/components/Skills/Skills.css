@@ -28,13 +28,13 @@
 .container-skills__grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 .container-skills__article {
   height: 250px;
-  width: 250px;
+  width: 300px;
   margin-top: 1.5rem;
-  box-shadow: 6px 5px 5px #ff9671;
+  box-shadow: 4px 4px 3px #ff9671;
   background-color: #f1f2ec;
   border-radius: 20px;
   animation: fadeUp both;
@@ -72,10 +72,10 @@
   margin-left: 1rem;
 }
 .container-skills__outil {
-  color: #ff6d92;
+  color: #d93b7d;
   font-size: 20px;
   font-family: "Outfit";
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 0.5rem;
 }
 

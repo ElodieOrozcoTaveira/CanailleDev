@@ -1,0 +1,58 @@
+/* Variables couleurs */
+/*Breakpoint*/
+.container-confidentialite {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.container-confidentialite__underline {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10rem;
+  border: #ff9671 solid 1px;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
+}
+.container-confidentialite__h2 {
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  font-size: 30px;
+  color: #f1f2ec;
+  font-family: "Outfit";
+  font-weight: 500;
+  text-align: center;
+}
+.container-confidentialite__adress {
+  color: #ff6d92;
+}
+
+.container-confidentialite h1 {
+  font-size: 3rem;
+}
+
+.container-confidentialite p {
+  color: #cabdff;
+  font-family: "Outfit";
+  margin-bottom: 2rem;
+}
+
+.container-confidentialite strong {
+  text-shadow: #d93b7d 1px 1px 3px;
+}
+
+.container-confidentialite ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.container-confidentialite li {
+  list-style-type: none;
+  color: #cabdff;
+  font-family: "Outfit";
+}/*# sourceMappingURL=Confidentialite.css.map */

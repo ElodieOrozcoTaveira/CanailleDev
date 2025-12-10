@@ -5,16 +5,43 @@ export default function Prestations() {
 
     const prestations = [
         {
-            id:1, sujet: 'Création de sites vitrine' , p:'Sites modernes et responsives', image:'/presta/responsive.png'
+            id:1, sujet: 'Création de sites vitrine' ,
+            p: [
+                'Sites modernes et responsives  ( 1 à 5 pages )',
+                'Design personnalisé',
+                'SEO de base',
+                'Mise en ligne',
+                'Formulaire de contact',
+            ],
+            image:'/presta/responsive.png',tarifs:'A partir de 800 euros',
         },
          {
-            id:2, sujet: 'Applications Web' , p:'React, TypeScript, API REST', image:'/presta/eclair.png'
+            id:2, sujet: 'Applications Web' ,
+            p:[
+                'FrontEnd moderne',
+                'BackEnd simple',
+                'Animations douces',
+                'Formulaires',
+                'Optimisation des performances',
+                'Sécurité de base',
+             ],
+              image:'/presta/eclair.png',tarifs:'A partir de 1800 euros',
         },
         {
-            id:3, sujet: 'Sites e-commerce' , p:'Solutions de vente en ligne personnalisées', image:'/presta/boutique.png'
+            id:3, sujet: 'Sites e-commerce' ,
+            p:[
+                'Solutions de vente en ligne personnalisées',
+                'Design personnalisé',
+             ],
+              image:'/presta/boutique.png',tarifs:'A partir de 1200 euros',
         },
          {
-            id:4, sujet: 'Refont/Maintenance' , p:'Améliorations de sites existants', image:'/presta/clé.png'
+            id:4, sujet: 'Refont/Maintenance' , 
+            p:[
+                'Améliorations de sites existants',
+                'Correction de bugs',
+             ],
+            image:'/presta/clé.png',tarifs:'50 euros/heure',
         },
     ]
 
@@ -43,7 +70,13 @@ export default function Prestations() {
                     <h2 className="container-services__sujet">{services.sujet}</h2>
 
                     </div>
-                    <p className="container-services__p">{services.p}</p>
+                    <ul className="container-services__ul">
+                        {services.p.map((presta, index) => (
+                            <li className="container-services__li" key={index}>{presta}</li>
+                        ))}
+                    </ul>
+                    
+                    <p className="container-services__tarifs">{services.tarifs}</p>
                 </article>
             ))}
             <p className="container-services__phrase">Chaque projet est unique. Contactez moi pour un devis personnalisé</p>
