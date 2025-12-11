@@ -4,7 +4,6 @@ import Link from "next/link";
 import Hamburger from "../Hamburger/Hamburger";
 import "./Hero.scss";
 import Image from "next/image";
-import Fleche from "../../Fleche/Fleche";
 
 export default function Hero() {
   return (
@@ -26,6 +25,16 @@ export default function Hero() {
 
         <div className="container-menu">
           <Hamburger />
+          <section className="menu-desktop">
+            <ul className="menu-desktop__ul">
+              <Link href="/" className="menu-desktop__link">Accueil</Link>
+              <li><a href="#apropos" className="menu-desktop__link">A propos</a></li>
+              <li><a href="#skills" className="menu-desktop__link">Skills</a></li>
+              <li><a href="#projets" className="menu-desktop__link">Mes projets</a></li>
+              <li><a href="#contact" className="menu-desktop__link">Contact</a></li>
+
+            </ul>
+          </section>
         </div>
       </header>
       <div className="hero-container">
