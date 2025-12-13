@@ -14,7 +14,7 @@
         margin-bottom: 2.5rem;
     }
     &__adress{
-        color: variables.$pink1-color;
+        color: variables.$color-primary-light;
     }
 }
 
@@ -23,13 +23,14 @@
 }
 
 .container-mentions p{
-    color: variables.$violet4-color;
+    color: variables.$color-bg-light;
     font-family: 'Outfit';
     margin-bottom: 2rem;
 }
 
 .container-mentions strong{
-    text-shadow: variables.$pink-color 1px 1px 3px;
+    text-shadow: variables.$color-bg-dark 1px 1px 3px;
+    color: variables.$color-primary;
 }
 
 .container-mentions ul{
@@ -42,7 +43,18 @@
 
 .container-mentions li{
     list-style-type: none;
-    color: variables.$violet4-color;
+    color: variables.$white-color;
     font-family: 'Outfit';
 }
 
+@media (min-width: variables.$desktop) {
+    
+    .container-mentions{
+        &__underline{
+            margin-bottom: 5rem;
+        }
+    }.container-mentions p{
+    font-size: 22px;
+        margin-left: 10rem;
+}
+}

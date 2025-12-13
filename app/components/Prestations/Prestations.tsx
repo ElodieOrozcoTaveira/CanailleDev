@@ -48,7 +48,7 @@ export default function Prestations() {
     return(
         <>
         <div className="container-services">
-            <h2 className="container-services__h2">Mes Services</h2>
+            <h2 className="container-services__h2">Mes Prestations</h2>
             <div className="container-services__underline"></div>
         </div>
 
@@ -79,8 +79,8 @@ export default function Prestations() {
                     <p className="container-services__tarifs">{services.tarifs}</p>
                 </article>
             ))}
-            <p className="container-services__phrase">Chaque projet est unique. Contactez moi pour un devis personnalisé</p>
         </div>
+            <p className="container-services__phrase">Chaque projet est unique. Contactez moi pour un devis personnalisé</p>
         </>
 
     )

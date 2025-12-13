@@ -1,6 +1,17 @@
 @charset "UTF-8";
 /* Variables couleurs */
 /*Breakpoint*/
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
 .container-projets {
   display: flex;
   flex-direction: column;
@@ -22,7 +33,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 10rem;
-  border: #ff9671 solid 1px;
+  border: #b44d88 solid 1px;
   margin-top: -2rem;
   margin-bottom: 1rem;
 }
@@ -42,9 +53,9 @@
   flex-direction: column;
   height: 200px;
   width: 300px;
-  background-color: #f1f2ec;
+  background-color: #f2f5f7;
   border-radius: 20px;
-  box-shadow: 4px 4px 3px #ff9671;
+  box-shadow: 4px 4px 3px #d86ba9;
   animation: fadeUp both;
   animation-timeline: view();
 }
@@ -80,9 +91,9 @@
   text-align: center;
   font-size: 20px;
   font-family: "Outfit";
-  color: #3d0f65;
-  font-weight: 500;
-  text-shadow: 1px 1px 3px #ff9671;
+  color: #d86ba9;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px #1e262b;
 }
 
 @keyframes text-appear {
@@ -99,14 +110,14 @@
   content: "";
   position: absolute;
   /* ajustez ces valeurs pour déplacer le halo */
-  left: 5rem;
+  left: 2rem;
   right: 40rem;
   width: 60%;
   height: 60%;
   z-index: -1;
   pointer-events: none;
   /* couleur et dégradé radial en utilisant la variable halo */
-  background: radial-gradient(circle at 30% 30%, rgba(217, 59, 125, 0.85) 0%, rgba(217, 59, 125, 0.45) 20%, rgba(217, 59, 125, 0.15) 40%, rgba(217, 59, 125, 0) 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(216, 107, 169, 0.85) 0%, rgba(216, 107, 169, 0.45) 20%, rgba(216, 107, 169, 0.15) 40%, rgba(216, 107, 169, 0) 70%);
   /* utilisez blur pour adoucir le halo */
   filter: blur(50px);
   transform: translateZ(0);
@@ -114,4 +125,22 @@
 
 .container-projets__article:nth-child(1) {
   animation-range: entry 20% cover 40%;
+}
+
+@media (min-width: 1440px) {
+  .container-projets__h2 {
+    font-size: 40px;
+  }
+  .container-projets__underline {
+    margin-bottom: 5rem;
+  }
+  .container-projets__grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .container-projets__article {
+    height: 250px;
+    width: 350px;
+  }
 }/*# sourceMappingURL=MesProjets.css.map */

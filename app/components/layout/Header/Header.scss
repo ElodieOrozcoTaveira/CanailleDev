@@ -1,0 +1,40 @@
+@use '../../../styles/variables/variables.scss';
+@use '../../../styles/mixins/mixins.scss';
+
+.header-container{
+margin: 0;
+padding: 0;    
+    
+}
+
+.container-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 0.1rem;
+  margin-left: 1rem;
+  margin-bottom: 3.5rem;
+  &__canailledev {
+    color: variables.$white-color;
+    font-family: "Sora";
+    font-weight: 500;
+    letter-spacing: -0.75px;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+  &__span{
+    font-size: 1.2rem;
+    color: variables.$color-canaille;
+  }
+  &__img {
+    cursor: pointer;
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+.menu-desktop{
+  display: none;
+}

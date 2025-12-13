@@ -14,7 +14,7 @@
         @include mixins.h2
     }
     &__adress{
-        color: variables.$pink1-color;
+        color: variables.$color-primary-light;
     }
 }
 
@@ -23,13 +23,13 @@
 }
 
 .container-confidentialite p{
-    color: variables.$violet4-color;
+    color: variables.$color-bg-light;
     font-family: 'Outfit';
     margin-bottom: 2rem;
 }
 
 .container-confidentialite strong{
-    text-shadow: variables.$pink-color 1px 1px 3px;
+    text-shadow: variables.$color-bg-dark 1px 1px 3px;
 }
 
 .container-confidentialite ul{
@@ -42,6 +42,29 @@
 
 .container-confidentialite li{
     list-style-type: none;
-    color: variables.$violet4-color;
+    color: variables.$white-color;
     font-family: 'Outfit';
+}
+
+@media(min-width:variables.$desktop) {
+    .container-confidentialite{
+        &__underline{
+            margin-bottom: 5rem;
+        }
+    }
+    
+    .container-confidentialite p{
+    font-size: 22px;
+    margin-left: 10rem;
+}
+.container-confidentialite ul{
+        text-align: left;
+        margin-bottom: 5rem;
+    
+}
+
+.container-confidentialite li{
+    font-size: 22px;
+
+}
 }

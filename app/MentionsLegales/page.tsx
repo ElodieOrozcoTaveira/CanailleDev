@@ -1,4 +1,5 @@
 import CanailleDev from "../components/canailledev/CanailleDev";
+import Fleche from "../components/Fleche/Fleche";
 import Footer from "../components/layout/Footer/Footer";
 import "./MentionsLegales.scss";
 
@@ -84,6 +85,7 @@ export default function MentionsLegales() {
                 <p>Tout litige relève de la compétence des tribunaux français.</p>
             </section>
         </div>
+        <Fleche/>
         <Footer/>
         </>
     )

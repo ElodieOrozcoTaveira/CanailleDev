@@ -1,6 +1,17 @@
 @charset "UTF-8";
 /* Variables couleurs */
 /*Breakpoint*/
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
 .container-skills {
   display: flex;
   flex-direction: column;
@@ -21,7 +32,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 10rem;
-  border: #ff9671 solid 1px;
+  border: #b44d88 solid 1px;
   margin-top: -2rem;
   margin-bottom: 1rem;
 }
@@ -34,8 +45,8 @@
   height: 250px;
   width: 300px;
   margin-top: 1.5rem;
-  box-shadow: 4px 4px 3px #ff9671;
-  background-color: #f1f2ec;
+  box-shadow: 4px 4px 3px #d86ba9;
+  background-color: #f2f5f7;
   border-radius: 20px;
   animation: fadeUp both;
   animation-timeline: view();
@@ -52,12 +63,12 @@
 }
 .container-skills__category {
   margin: 1.5rem;
-  color: #ff9671;
+  color: #b44d88;
   font-size: 30px;
   font-family: "Outfit";
   text-align: center;
   font-weight: 400;
-  text-shadow: 2px 2px 3px #0b0024;
+  text-shadow: 2px 2px 1px #aab7bf;
   margin-bottom: 2rem;
 }
 .container-skills__item {
@@ -72,10 +83,10 @@
   margin-left: 1rem;
 }
 .container-skills__outil {
-  color: #d93b7d;
+  color: #5e5a5c;
   font-size: 20px;
   font-family: "Outfit";
-  font-weight: 500;
+  font-weight: 300;
   margin-bottom: 0.5rem;
 }
 
@@ -83,16 +94,16 @@
   content: "";
   position: absolute;
   /* ajustez ces valeurs pour déplacer le halo */
-  left: 10rem;
-  top: 100rem;
+  left: 15rem;
+  top: 80rem;
   width: 60%;
   height: 60%;
   z-index: -1;
   pointer-events: none;
   /* couleur et dégradé radial en utilisant la variable halo */
-  background: radial-gradient(circle at 30% 30%, rgba(22, 34, 187, 0.85) 0%, rgba(22, 34, 187, 0.45) 20%, rgba(22, 34, 187, 0.15) 40%, rgba(22, 34, 187, 0) 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(216, 107, 169, 0.85) 0%, rgba(216, 107, 169, 0.45) 20%, rgba(216, 107, 169, 0.15) 40%, rgba(216, 107, 169, 0) 70%);
   /* utilisez blur pour adoucir le halo */
-  filter: blur(5px);
+  filter: blur(50px);
   transform: translateZ(0);
 }
 
@@ -107,8 +118,35 @@
   z-index: -1;
   pointer-events: none;
   /* couleur et dégradé radial en utilisant la variable halo */
-  background: radial-gradient(circle at 30% 30%, rgba(255, 109, 146, 0.85) 0%, rgba(255, 109, 146, 0.45) 20%, rgba(255, 109, 146, 0.15) 40%, rgba(255, 109, 146, 0) 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(234, 168, 201, 0.85) 0%, rgba(234, 168, 201, 0.45) 20%, rgba(234, 168, 201, 0.15) 40%, rgba(234, 168, 201, 0) 70%);
   /* utilisez blur pour adoucir le halo */
-  filter: blur(25px);
+  filter: blur(50px);
   transform: translateZ(0);
+}
+
+@media (min-width: 1440px) {
+  .container-skills__h2 {
+    font-size: 40px;
+  }
+  .container-skills__underline {
+    margin-bottom: 5rem;
+  }
+  .container-skills__grid {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+  }
+  .container-skills__article {
+    height: 300px;
+    width: 350px;
+  }
+  .container-skills__item {
+    gap: 1.5rem;
+  }
+  .container-skills__logo {
+    margin-right: 1rem;
+  }
+  .container-skills__outil {
+    font-size: 25px;
+  }
 }/*# sourceMappingURL=Skills.css.map */

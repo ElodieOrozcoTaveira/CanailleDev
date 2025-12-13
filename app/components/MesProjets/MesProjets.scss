@@ -30,9 +30,9 @@
         flex-direction: column;
         height: 200px;
         width: 300px;
-        background-color: variables.$white-color;
+        background-color: variables.$color-bg-light;
         border-radius: 20px;
-        box-shadow: 4px 4px 3px variables.$orange-color;
+        box-shadow: 4px 4px 3px variables.$color-primary;
         animation: fadeUp both;
         animation-timeline: view();
         
@@ -73,9 +73,9 @@
         text-align: center;
         font-size: 20px;
         font-family: 'Outfit';
-        color: variables.$violet1-color;
-        font-weight: 500;
-        text-shadow: 1px 1px 3px variables.$orange-color;
+        color: variables.$color-primary;
+        font-weight: 400;
+        text-shadow: 1px 1px 3px variables.$color-bg-dark;
 
     }
 }
@@ -95,7 +95,7 @@
     content: "";
       position: absolute;
       /* ajustez ces valeurs pour déplacer le halo */
-      left:5rem;
+      left:2rem;
       right: 40rem;
       width: 60%;
       height: 60%;
@@ -104,10 +104,10 @@
       /* couleur et dégradé radial en utilisant la variable halo */
       background: radial-gradient(
         circle at 30% 30%,
-        rgba(variables.$pink-color, 0.85) 0%,
-        rgba(variables.$pink-color, 0.45) 20%,
-        rgba(variables.$pink-color, 0.15) 40%,
-        rgba(variables.$pink-color, 0) 70%
+        rgba(variables.$color-primary, 0.85) 0%,
+        rgba(variables.$color-primary, 0.45) 20%,
+        rgba(variables.$color-primary, 0.15) 40%,
+        rgba(variables.$color-primary, 0) 70%
       );
       /* utilisez blur pour adoucir le halo */
       filter: blur(50px);
@@ -120,3 +120,22 @@
     animation-range: entry 20% cover 40%;
 }
 
+@media (min-width: variables.$desktop){
+    .container-projets{
+        &__h2{
+            font-size: 40px;
+        }
+        &__underline{
+            margin-bottom: 5rem;
+        }
+        &__grid{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        &__article{
+            height: 250px;
+            width: 350px;
+        }
+    }
+}

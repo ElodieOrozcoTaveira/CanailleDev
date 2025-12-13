@@ -8,7 +8,7 @@ export default function MesProjets() {
             id:1, projet: 'Les Chips de Nos Montagnes', image: '/Projets/lcdnm.png', url: "https://www.leschipsdenosmontagnes.com/"
         },
         {
-            id:2, projet: 'Braap! - en cours..', image:'/Projets/braaap.png', url: ''
+            id:2, projet: 'Braap! - en cours..', image:'/Projets/braap.png', url: ''
         },
 
     ]

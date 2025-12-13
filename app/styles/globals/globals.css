@@ -1,8 +1,21 @@
+@charset "UTF-8";
 /* Variables couleurs */
 /*Breakpoint*/
-* {
-  margin: 0;
-  padding: 0;
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
@@ -10,8 +23,13 @@ html {
   animation-timeline: scroll();
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: #1B0E68;
+  background: #5f8f6d;
   min-height: 100vh;
   overflow-x: hidden;
 }/*# sourceMappingURL=globals.css.map */

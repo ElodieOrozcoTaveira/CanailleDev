@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* Variables couleurs */
+/*Breakpoint*/
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
+.hero-container__button {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: left;
+  margin-left: 5.5rem;
+  cursor: pointer;
+}
+.hero-container__link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  color: #f1f2ec;
+  font-family: "Outfit";
+  background: linear-gradient(135deg, #2e86c1, #1b5f8a);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(216, 107, 169, 0.35);
+  border-radius: 14px;
+}
+.hero-container__link:hover {
+  background: linear-gradient(135deg, #eaa8c9, #d86ba9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(216, 107, 169, 0.5);
+}
+.hero-container__githubLogo, .hero-container__linkedinLogo {
+  margin-right: 0.5em;
+  color: #f1f2ec;
+  margin-top: 0.2rem;
+}/*# sourceMappingURL=Button.css.map */

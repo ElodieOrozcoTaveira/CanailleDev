@@ -1,5 +1,17 @@
+@charset "UTF-8";
 /* Variables couleurs */
 /*Breakpoint*/
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
 .container-confidentialite {
   display: flex;
   flex-direction: column;
@@ -11,7 +23,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 10rem;
-  border: #ff9671 solid 1px;
+  border: #b44d88 solid 1px;
   margin-top: -2rem;
   margin-bottom: 1rem;
   margin-bottom: 2.5rem;
@@ -26,7 +38,7 @@
   text-align: center;
 }
 .container-confidentialite__adress {
-  color: #ff6d92;
+  color: #eaa8c9;
 }
 
 .container-confidentialite h1 {
@@ -34,13 +46,13 @@
 }
 
 .container-confidentialite p {
-  color: #cabdff;
+  color: #f2f5f7;
   font-family: "Outfit";
   margin-bottom: 2rem;
 }
 
 .container-confidentialite strong {
-  text-shadow: #d93b7d 1px 1px 3px;
+  text-shadow: #1e262b 1px 1px 3px;
 }
 
 .container-confidentialite ul {
@@ -53,6 +65,23 @@
 
 .container-confidentialite li {
   list-style-type: none;
-  color: #cabdff;
+  color: #f1f2ec;
   font-family: "Outfit";
+}
+
+@media (min-width: 1440px) {
+  .container-confidentialite__underline {
+    margin-bottom: 5rem;
+  }
+  .container-confidentialite p {
+    font-size: 22px;
+    margin-left: 10rem;
+  }
+  .container-confidentialite ul {
+    text-align: left;
+    margin-bottom: 5rem;
+  }
+  .container-confidentialite li {
+    font-size: 22px;
+  }
 }/*# sourceMappingURL=Confidentialite.css.map */

@@ -1,2 +1,14 @@
+@charset "UTF-8";
 /* Variables couleurs */
-/*Breakpoint*//*# sourceMappingURL=variables.css.map */
+/*Breakpoint*/
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent *//*# sourceMappingURL=variables.css.map */

@@ -1,4 +1,5 @@
 import CanailleDev from '../components/canailledev/CanailleDev';
+import Fleche from '../components/Fleche/Fleche';
 import Footer from '../components/layout/Footer/Footer';
 import './Confidentialite.scss';
 
@@ -80,6 +81,7 @@ export default function Confidentialité() {
                 <p className='container-confidentialite__p'><strong>Dernière mise à jour :</strong> Décembre 2025</p>
             </section>
         </div>
+        <Fleche/>
         <Footer/>
         </>
     )

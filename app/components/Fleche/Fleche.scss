@@ -4,6 +4,7 @@
 .btn_arrow {
   display: block;
   position: static;
+  z-index: 1;
 }
 
 .btn_arrow:hover .icone {

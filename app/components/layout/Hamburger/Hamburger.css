@@ -1,5 +1,17 @@
+@charset "UTF-8";
 /* Variables couleurs */
 /*Breakpoint*/
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
 /* Simple responsive hamburger menu styles */
 .hamburger-wrapper {
   display: flex;
@@ -12,14 +24,17 @@
 .hamburger-button {
   background: transparent;
   border: none;
-  font-size: 2rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  margin-left: 11rem;
+  font-size: 2.2rem;
   display: flex;
   justify-content: right;
   padding: 0.25rem;
-  color: #f1f2ec;
+  color: #c0b47e;
   cursor: pointer;
   position: relative;
-  z-index: 10002; /* above hero animated elements and menu */
+  z-index: 10; /* above hero animated elements and menu */
 }
 
 .hamburger-menu {
@@ -30,13 +45,13 @@
   left: 0;
   transform-origin: top right;
   transition: opacity 180ms ease, transform 180ms ease;
-  z-index: 10000; /* ensure above animated content */
+  z-index: 10; /* ensure above animated content */
   opacity: 1;
 }
 
 /* When the menu is open, ensure the button/icon contrasts with the menu background */
 .hamburger-wrapper.is-open .hamburger-button {
-  color: #2a1478;
+  color: #d86ba9;
   border-radius: 6px;
   padding: 0.25rem 0.4rem;
 }
@@ -54,12 +69,12 @@
 }
 
 .hamburger-menu__list {
-  background-color: #cabdff;
+  background-color: #8fbcd6;
   list-style: none;
   margin: 0;
   padding: 8px 0;
-  box-shadow: 3px 3px 4px #f1f2ec;
-  height: 630px;
+  box-shadow: 3px 3px 4px #c0b47e;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -67,20 +82,24 @@
 
 .hamburger-menu__list li {
   padding: 8px 16px;
-  text-align: justify;
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-  color: #1e0a3c;
   text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 3.5rem;
+  margin-left: 10rem;
+  color: #c0b47e;
+  text-align: center;
+  display: flex;
+  justify-content: justify;
 }
 
 .hamburger-menu__list a {
-  color: #2a1478;
+  color: #1f3d2b;
   text-decoration: none;
   display: block;
-  text-shadow: 1px 1px 0.5px #d93b7d;
+  text-shadow: 1px 1px 0.5px #c0b47e;
   font-size: 25px;
   font-family: "Outfit";
+  text-align: center;
 }
 
 @media (min-width: 768px) {

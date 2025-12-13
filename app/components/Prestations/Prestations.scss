@@ -1,91 +1,118 @@
-@use '../../styles/variables/variables.scss';
-@use '../../styles/mixins/mixins.scss';
+@use "../../styles/variables/variables.scss";
+@use "../../styles/mixins/mixins.scss";
 
-.container-services{
+.container-services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8rem;
+  &__h2 {
+    @include mixins.h2;
+  }
+  &__underline {
+    @include mixins.underline;
+  }
+  &__grid {
+    margin-top: 2rem;
+  }
+  &__article {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top: 8rem;
-    &__h2{
-        @include mixins.h2;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem;
+    padding: 1.2rem;
+    border: solid 2px variables.$color-primary-light;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px variables.$color-primary;
+    animation: fadeUp both;
+    animation-timeline: view();
+    height: 450px;
+    width: 300px;
+  }
+  &__article:hover{
+    transition: 2s ease;
+    transform: rotateX(630deg);
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
     }
-    &__underline{
-        @include mixins.underline;
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
-    &__grid{
-        margin-top: 2rem;
-    }
-    &__article{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
-        margin: 2rem;
-        padding: 1.2rem;
-        border: solid 2px variables.$violet4-color;
-        border-radius: 30px;
-        box-shadow: 3px 3px 5px variables.$orange-color;
-        animation: fadeUp both;
-        animation-timeline: view();
-    }
-@keyframes fadeUp {
-        from{
-            opacity: 0;
-            transform: translateY(10px) scale(0.5);
-        }
-        to{
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        
-    }
+  }
 
-    &__logosujet{
-        display: flex;
-        flex-direction: row;
-        gap: 0.5rem;
-    }
-    &__logo{
-        color: variables.$white-color;
-        background-color: variables.$white-color;
-        border-radius: 30%;
-    }
-    &__sujet{
-        color: variables.$orange-color;
-        text-shadow: variables.$white-color 0.0.5px 0.5px 0.5px;
-        font-family: 'Outfit';
-        font-weight: 500;
-
-    }
-    &__p{
-        color: variables.$white-color;
-        font-family: 'Outfit';
-    }
-    &__phrase{
-        text-align: center;
-        font-family: 'Outfit';
-        font-size: 20px;
-        color: variables.$white-color;
-        font-weight: 400;
-    }
-    &__tarifs{
-        color: variables.$white-color;
-        font-family: 'Outfit';
-        font-style: italic;
-    }
-    &__ul{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    &__li{
-        text-decoration: none;
-        color: variables.$white-color;
-        font-size: 18px;
-        font-family: 'Outfit';
-        list-style-type: none;
-    }
+  &__logosujet {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  &__logo {
+    color: variables.$white-color;
+    background-color: variables.$white-color;
+    border-radius: 30%;
+  }
+  &__sujet {
+    color: variables.$color-primary-light;
+    text-shadow: variables.$white-color 0.5px 0.5px 0.5px;
+    font-family: "Outfit";
+    font-weight: 300;
+  }
+  &__p {
+    color: variables.$white-color;
+    font-family: "Outfit";
+  }
+  &__phrase {
+    text-align: center;
+    font-family: "Outfit";
+    font-size: 20px;
+    color: variables.$white-color;
+    font-weight: 400;
+  }
+  &__tarifs {
+    color: variables.$color-primary-light;
+    font-family: "Outfit";
+    font-style: italic;
+  }
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &__li {
+    text-decoration: none;
+    color: variables.$white-color;
+    font-size: 18px;
+    font-family: "Outfit";
+    list-style-type: none;
+  }
 }
 
+@media (min-width: variables.$desktop) {
+  .container-services {
+    &__h2 {
+      font-size: 40px;
+    }
+    &__underline {
+      margin-bottom: 5rem;
+    }
+    &__grid {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 3rem;
+    }
+    &__phrase {
+      margin-top: 5rem;
+     font-size: 25px ;
+    }
+  }
+}

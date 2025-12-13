@@ -52,3 +52,83 @@ $gradient-background: radial-gradient(circle at center,
   rgba(216, 107, 169, 0.35),
   rgba(94, 90, 92, 0.9)
 );
+
+
+// --------------------------------------
+// 🌤️ CIEL
+// --------------------------------------
+$color-sky-primary: #2e86c1;       // Bleu ciel principal
+$color-sky-light: #6fb3e0;         // Bleu ciel clair
+$color-sky-muted: #8fbcd6;         // Bleu lointain / brume
+
+// --------------------------------------
+// 🌲 FORÊT
+// --------------------------------------
+$color-forest-dark: #1f3d2b;       // Vert pin foncé
+$color-forest: #2e5f3e;            // Vert forêt
+$color-forest-light: #5f8f6d;      // Vert plus doux
+$color-canaille: #c0b47e;
+// --------------------------------------
+// 🏔️ MONTAGNE & ROCHES
+// --------------------------------------
+$color-mountain-dark: #4b5c66;     // Gris bleuté foncé
+$color-mountain: #6b7c86;          // Gris minéral
+$color-mountain-light: #9aaab3;    // Roche claire / distance
+
+// --------------------------------------
+// 🌑 NEUTRES & OMBRES
+// --------------------------------------
+$color-bg-dark: #1e262b;            // Fond sombre
+$color-bg: #2b3338;                 // Fond principal
+$color-bg-light: #f2f5f7;           // Fond clair
+$color-card: rgba(255, 255, 255, 0.85);
+
+// --------------------------------------
+// ✍️ TEXTE
+// --------------------------------------
+$color-text-primary: #ffffff;       // Texte principal
+$color-text-secondary: #d3dde3;     // Texte secondaire
+$color-text-muted: #aab7bf;         // Texte discret
+
+// --------------------------------------
+// 🔘 ACCENTS & UI
+// --------------------------------------
+$color-accent: #2e86c1;             // Accent principal (ciel)
+$color-accent-hover: #1b5f8a;       // Hover accent
+$color-border: rgba(255, 255, 255, 0.1);
+
+// --------------------------------------
+// 🌈 GRADIENTS
+// --------------------------------------
+$gradient-hero: linear-gradient(
+  180deg,
+  #2e86c1 0%,
+  #6fb3e0 40%,
+  #6b7c86 70%,
+  #2b3338 100%
+);
+
+$gradient-card: linear-gradient(
+  145deg,
+  rgba(255, 255, 255, 0.15),
+  rgba(255, 255, 255, 0.03)
+);
+
+$gradient-button: linear-gradient(
+  135deg,
+  #2e86c1,
+  #1b5f8a
+);
+
+
+ /*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */

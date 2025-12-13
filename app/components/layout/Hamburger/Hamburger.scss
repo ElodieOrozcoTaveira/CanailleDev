@@ -11,15 +11,18 @@
 
 .hamburger-button {
   background: transparent;
-  border: none;
-  font-size: 2rem;
+  border:none;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  margin-left: 11rem;
+  font-size: 2.2rem;
   display: flex;
   justify-content: right;
   padding: 0.25rem;
-  color: variables.$white-color;
+  color: variables.$color-canaille;
   cursor: pointer;
   position: relative;
-  z-index: 10002; /* above hero animated elements and menu */
+  z-index: 10; /* above hero animated elements and menu */
 }
 
 .hamburger-menu {
@@ -30,13 +33,13 @@
   left: 0;
   transform-origin: top right;
   transition: opacity 180ms ease, transform 180ms ease;
-  z-index: 10000; /* ensure above animated content */
+  z-index: 10; /* ensure above animated content */
   opacity: 1;
 }
 
 /* When the menu is open, ensure the button/icon contrasts with the menu background */
 .hamburger-wrapper.is-open .hamburger-button {
-  color: variables.$violet2-color;
+  color: variables.$color-primary;
   border-radius: 6px;
   padding: 0.25rem 0.4rem;
 }
@@ -54,12 +57,12 @@
 }
 
 .hamburger-menu__list {
-  background-color: variables.$violet4-color;
+  background-color: variables.$color-sky-muted;
   list-style: none;
   margin: 0;
   padding: 8px 0;
-  box-shadow: 3px 3px 4px variables.$white-color;
-  height: 630px;
+  box-shadow: 3px 3px 4px variables.$color-canaille;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -67,21 +70,27 @@
 
 .hamburger-menu__list li {
   padding: 8px 16px;
-  text-align: justify;
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-  color: variables.$violet6-color;
   text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 3.5rem;
+  margin-left: 10rem;
+  color: variables.$color-canaille;
+  text-align: center;
+  display: flex;
+  justify-content: justify;
 }
 
 .hamburger-menu__list a {
-  color: variables.$violet2-color;
+  color: variables.$color-forest-dark;
   text-decoration: none;
   display: block;
-  text-shadow: 1px 1px 0.5px variables.$pink-color;
+  text-shadow: 1px 1px 0.5px variables.$color-canaille;
   font-size: 25px;
   font-family: "Outfit";
+  text-align: center;
 }
+
+
 
 @media (min-width: 768px) {
   /* hide hamburger on larger screens */

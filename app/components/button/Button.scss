@@ -1,0 +1,46 @@
+@use '../../styles/variables/variables.scss';
+@use '../../styles/mixins/mixins.scss';
+
+.hero-container{
+    &__button {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: left;
+    margin-left: 5.5rem;
+    cursor: pointer;
+  }
+
+  
+  
+  &__link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    color: variables.$white-color;
+    font-family: "Outfit";
+    background: variables.$gradient-button;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(216, 107, 169, 0.35);
+    border-radius: 14px;
+
+  }
+
+  &__link:hover{
+    background: linear-gradient(135deg, #eaa8c9, #d86ba9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(216, 107, 169, 0.5);
+
+  }
+
+  &__githubLogo,
+  &__linkedinLogo {
+    margin-right: 0.5em;
+    color: variables.$white-color;
+    margin-top: 0.2rem;
+  }
+}

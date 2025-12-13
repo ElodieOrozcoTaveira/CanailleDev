@@ -1,14 +1,25 @@
 @charset "UTF-8";
 /* Variables couleurs */
 /*Breakpoint*/
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
 .container-canailleDev {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   padding-bottom: 2rem;
   margin-bottom: 3rem;
-  border-bottom: #ff6d92 solid 1px;
-  box-shadow: #68199A 3px 3px 4px;
+  border-bottom: #eaa8c9 solid 1px;
+  box-shadow: #b44d88 3px 3px 4px;
 }
 .container-canailleDev__link {
   display: flex;
@@ -26,22 +37,4 @@
   color: #f1f2ec;
   font-family: "Outfit";
   font-weight: 500;
-}
-
-/* Halo pseudo-element derrière le conteneur */
-.container-canailleDev::before {
-  content: "";
-  position: absolute;
-  /* ajustez ces valeurs pour déplacer le halo */
-  left: 10rem;
-  top: 2rem;
-  width: 40%;
-  height: 40%;
-  z-index: -1;
-  pointer-events: none;
-  /* couleur et dégradé radial en utilisant la variable halo */
-  background: radial-gradient(circle at 30% 30%, rgba(22, 34, 187, 0.85) 0%, rgba(22, 34, 187, 0.45) 20%, rgba(22, 34, 187, 0.15) 40%, rgba(22, 34, 187, 0) 70%);
-  /* utilisez blur pour adoucir le halo */
-  filter: blur(20px);
-  transform: translateZ(0);
 }/*# sourceMappingURL=CanailleDev.css.map */

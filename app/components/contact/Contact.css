@@ -1,6 +1,17 @@
 @charset "UTF-8";
 /* Variables couleurs */
 /*Breakpoint*/
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
 .container-contact {
   margin-top: 8rem;
   margin-bottom: 4rem;
@@ -28,7 +39,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 10rem;
-  border: #ff9671 solid 1px;
+  border: #b44d88 solid 1px;
   margin-top: -2rem;
   margin-bottom: 1rem;
 }
@@ -51,7 +62,7 @@
   height: 40px;
   font-family: "Outfit";
   border-radius: 15px;
-  box-shadow: 3px 3px 4px #ff9671;
+  box-shadow: 3px 3px 4px #eaa8c9;
 }
 .container-contact__section {
   display: flex;
@@ -63,7 +74,7 @@
   width: 376px;
   font-family: "Outfit";
   border-radius: 15px;
-  box-shadow: 3px 3px 4px #ff9671;
+  box-shadow: 3px 3px 4px #eaa8c9;
   font-size: 20px;
   height: 150px;
 }
@@ -77,9 +88,11 @@
   color: #f1f2ec;
   font-family: "Outfit";
   font-weight: bold;
-  background: linear-gradient(197deg, rgb(25, 1, 107) 0%, rgb(25, 1, 107) 51%, rgb(64, 19, 114) 62%, rgb(255, 109, 146) 96%);
-  opacity: 0.8;
-  box-shadow: 3px 3px 3px #cabdff;
+  font-size: 1.2rem;
+  background: linear-gradient(197deg, #b44d88 0%, #b44d88 51%, #d86ba9 62%, #eaa8c9 96%);
+  opacity: 1;
+  box-shadow: 3px 3px 3px #d86ba9;
+  border: none;
 }
 .container-contact__status {
   color: #cabdff;
@@ -100,7 +113,7 @@
   z-index: -1;
   pointer-events: none;
   /* couleur et dégradé radial en utilisant la variable halo */
-  background: radial-gradient(circle at 30% 30%, rgba(255, 150, 113, 0.85) 0%, rgba(255, 150, 113, 0.45) 20%, rgba(255, 150, 113, 0.15) 40%, rgba(255, 150, 113, 0) 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(234, 168, 201, 0.85) 0%, rgba(234, 168, 201, 0.45) 20%, rgba(234, 168, 201, 0.15) 40%, rgba(234, 168, 201, 0) 70%);
   /* utilisez blur pour adoucir le halo */
   filter: blur(50px);
   transform: translateZ(0);
@@ -114,5 +127,28 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+@media (min-width: 1440px) {
+  .container-contact__h2 {
+    font-size: 40px;
+  }
+  .container-contact__underline {
+    margin-bottom: 5rem;
+  }
+  .container-contact__form {
+    width: 600px;
+  }
+  .container-contact__input {
+    height: 60px;
+    width: 600px;
+  }
+  .container-contact__messageview {
+    width: 600px;
+  }
+  .container-contact__envoyer {
+    height: 65px;
+    width: 150px;
+    font-size: 20px;
   }
 }/*# sourceMappingURL=Contact.css.map */

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* Variables couleurs */
+/*Breakpoint*/
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
+.header-container {
+  margin: 0;
+  padding: 0;
+}
+
+.container-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 0.1rem;
+  margin-left: 1rem;
+  margin-bottom: 3.5rem;
+}
+.container-logo__canailledev {
+  color: #f1f2ec;
+  font-family: "Sora";
+  font-weight: 500;
+  letter-spacing: -0.75px;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+.container-logo__span {
+  font-size: 1.2rem;
+  color: #c0b47e;
+}
+.container-logo__img {
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.menu-desktop {
+  display: none;
+}/*# sourceMappingURL=Header.css.map */
