@@ -39,9 +39,10 @@
 
 /* When the menu is open, ensure the button/icon contrasts with the menu background */
 .hamburger-wrapper.is-open .hamburger-button {
-  color: variables.$color-primary;
+  color: variables.$color-forest;
   border-radius: 6px;
   padding: 0.25rem 0.4rem;
+  z-index: 1000;
 }
 
 .hamburger-menu.is-closed {
@@ -62,17 +63,17 @@
   margin: 0;
   padding: 8px 0;
   box-shadow: 3px 3px 4px variables.$color-canaille;
-  height: 100vh;
+  height: 45vh;
+  width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  padding-top: 2.5rem;
 }
 
 .hamburger-menu__list li {
   padding: 8px 16px;
   text-align: center;
-  margin-bottom: 1rem;
-  margin-top: 3.5rem;
   margin-left: 10rem;
   color: variables.$color-canaille;
   text-align: center;
@@ -85,10 +86,18 @@
   text-decoration: none;
   display: block;
   text-shadow: 1px 1px 0.5px variables.$color-canaille;
-  font-size: 25px;
+  font-size: 17px;
   font-family: "Outfit";
   text-align: center;
 }
+
+.hamburger-menu__list a:hover{
+  opacity: 0.7;
+  transform: scale(1);
+
+}
+
+
 
 
 

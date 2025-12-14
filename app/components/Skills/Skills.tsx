@@ -8,24 +8,28 @@ export default function Skills() {
             skill: 'Design',
             outils: [
                 {name: 'Figma', icon:'/Icones/figma.png'},
-                {name: 'SCSS', icon:'/Icones/sass.png'},
-                {name: 'UX/UI', icon:'/Icones/ux.png'}
+                {name: 'UX/UI', icon:'/Icones/ux.png'},
+                {name: 'SCSS', icon:'/Icones/sass.png'}
+
             ] 
         },
         {
             id: 2,
             skill: 'Front-end',
             outils: [
+                {name: 'HTML / CSS', icon:'/Icones/html.png'},
                 {name: 'React', icon: '/Icones/react.png'},
                 {name: 'NextJs', icon:'/Icones/next.png'},
                 {name: 'TypeScript', icon:'/Icones/ts.png'}
-            ]
+
+              ]
         },
         {
             id:3,
             skill: 'Back-end',
             outils: [
                 {name: 'NodeJs', icon: '/Icones/node.png'},
+                {name: 'API REST', icon: '/Icones/api.png'},
                 {name: 'Sequelize', icon:'/Icones/sql.png'},
                 {name: 'Postgresql', icon:'/Icones/postgresql.png'}
            ]
@@ -44,7 +48,7 @@ export default function Skills() {
 
     return(
        <div className="container-skills">
-      <h2 className="container-skills__h2">Mes compétences</h2>
+      <h2 className="container-skills__h2">Skills</h2>
       <div className="container-skills__underline"></div>
 
       <div className="container-skills__grid">
@@ -61,8 +65,8 @@ export default function Skills() {
                    src={outil.icon} 
                    alt={outil.name}
                    priority
-                   width={35}
-                   height={35}
+                   width={32}
+                   height={32}
                    loading="eager"
                  />
                   <h4 className="container-skills__outil">{outil.name}</h4>

@@ -7,43 +7,18 @@
 }
 
 html {
-    scroll-behavior: smooth;
-    animation-timeline: scroll();
-    
+  scroll-behavior: smooth;
+  animation-timeline: scroll();
 }
 
-html,body{
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
-
 
 body {
-    background: variables.$color-forest-light;
-   
-    min-height: 100vh;
-    overflow-x: hidden; // S'assurer qu'il n'y a pas de scroll horizontal non désiré
+  background: variables.$gradient-hero;
+  min-height: 100vh;
+  overflow-x: hidden; // S'assurer qu'il n'y a pas de scroll horizontal non désiré
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -39,8 +39,8 @@
         height: 40px;
         font-family: 'Outfit';
         border-radius: 15px;
-        box-shadow: 3px 3px 4px variables.$color-primary-light;
-    }
+        border: 1.5mm ridge variables.$color-canaille;
+        border-radius: 20px;    }
 
     &__section{
         display:flex;
@@ -52,9 +52,10 @@
         width: 376px;
         font-family: 'Outfit';
         border-radius: 15px;
-        box-shadow: 3px 3px 4px variables.$color-primary-light;
         font-size: 20px;
         height: 150px;
+        border: 1.5mm ridge variables.$color-canaille;
+        border-radius: 20px;
     }
     &__envoyer{
         display: block;
@@ -63,23 +64,16 @@
         padding: 0.8rem;
         margin-top: 1rem;
         border-radius: 1rem;
-        color: variables.$white-color;
+        color: variables.$color-forest-dark;
         font-family: "Outfit";
         font-weight: bold;
         font-size: 1.2rem;
-        background: linear-gradient(
-            197deg,
-            #b44d88 0%,
-            #b44d88 51%,
-            #d86ba9 62%,
-            #eaa8c9 96%
-        );
+        background: variables.$color-canaille;
         opacity: 1;
-        box-shadow: 3px 3px 3px variables.$color-primary;
         border: none;
     }
     &__status{
-        color: variables.$violet4-color;
+        color: variables.$white-color;
         font-size: 18px;
         text-align: center;
         font-weight: 400;
@@ -87,30 +81,6 @@
     }
 }
 
-.container-contact::before{
-    content: "";
-      position: absolute;
-      /* ajustez ces valeurs pour déplacer le halo */
-      left:14rem;
-      right: 60rem;
-      width: 60%;
-      height: 60%;
-      z-index: -1;
-      pointer-events: none;
-      /* couleur et dégradé radial en utilisant la variable halo */
-      background: radial-gradient(
-        circle at 30% 30%,
-        rgba(variables.$color-primary-light, 0.85) 0%,
-        rgba(variables.$color-primary-light, 0.45) 20%,
-        rgba(variables.$color-primary-light, 0.15) 40%,
-        rgba(variables.$color-primary-light, 0) 70%
-      );
-      /* utilisez blur pour adoucir le halo */
-      filter: blur(50px);
-      transform: translateZ(0);
-
-
-}
 @keyframes fadeUp {
         from{
             opacity: 0;

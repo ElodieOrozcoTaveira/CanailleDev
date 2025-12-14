@@ -18,8 +18,10 @@ Accents (liens, icônes) → $color-accent */
   gap: 0.5rem;
   padding-bottom: 2rem;
   margin-bottom: 3rem;
-  border-bottom: #eaa8c9 solid 1px;
-  box-shadow: #b44d88 3px 3px 4px;
+  border-bottom: 1.5mm ridge #c0b47e;
+  background-image: url(/canigou.jpg);
+  background-repeat: no-repeat;
+  background-position: right 45% bottom 55%;
 }
 .container-canailleDev__link {
   display: flex;
@@ -37,4 +39,7 @@ Accents (liens, icônes) → $color-accent */
   color: #f1f2ec;
   font-family: "Outfit";
   font-weight: 500;
+}
+.container-canailleDev__span {
+  color: #c0b47e;
 }/*# sourceMappingURL=CanailleDev.css.map */

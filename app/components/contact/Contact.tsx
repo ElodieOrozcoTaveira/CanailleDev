@@ -1,6 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../contact/Contact.scss";
+import Image from "next/image";
+
 
 export default function Contact() {
   type FormState = {
@@ -124,6 +126,16 @@ export default function Contact() {
     <div className="container-contact">
       <h2 className="container-contact__h2">Me contacter</h2>
       <div className="container-contact__underline"></div>
+
+      <Image
+        className="container-contact__img"
+        src='/CanailleDev/laptop.png'
+        alt="avatar contact "
+        width={180}
+        height={200}
+        priority
+        loading="eager"
+        />
 
       <div className="container-contact__form">
         <form className="container-contact__formulaire" onSubmit={handleSubmit}>

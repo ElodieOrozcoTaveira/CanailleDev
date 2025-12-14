@@ -36,8 +36,7 @@ Accents (liens, icônes) → $color-accent */
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  border: #eaa8c9 solid 1px;
-  box-shadow: #b44d88 3px 3px 4px;
+  border: 1mm ridge #c0b47e;
   margin-top: -2rem;
   margin-bottom: 1rem;
 }

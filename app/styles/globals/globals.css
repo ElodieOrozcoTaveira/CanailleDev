@@ -23,13 +23,14 @@ html {
   animation-timeline: scroll();
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #5f8f6d;
+  background: linear-gradient(180deg, #2e86c1 0%, #6fb3e0 40%, #6b7c86 70%, #2b3338 100%);
   min-height: 100vh;
   overflow-x: hidden;
 }/*# sourceMappingURL=globals.css.map */

@@ -17,7 +17,7 @@ export default function CanailleDev() {
                 loading='eager'
             />
             
-            <h2 className="container-canailleDev__h2">CanailleDev</h2>
+            <h2 className="container-canailleDev__h2">Canaille<span className='container-canailleDev__span' >Dev</span></h2>
             </Link>
         </div>     
         

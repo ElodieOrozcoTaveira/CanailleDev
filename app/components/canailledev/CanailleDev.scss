@@ -7,8 +7,11 @@
     gap: 0.5rem;
     padding-bottom: 2rem;
     margin-bottom: 3rem;
-   border-bottom: variables.$color-primary-light solid 1px;
-    box-shadow: variables.$color-primary-dark 3px 3px 4px;
+    border-bottom: 1.5mm ridge variables.$color-canaille;
+    background-image: url(/canigou.jpg);
+    background-repeat: no-repeat;
+    background-position: right 45% bottom 55%;
+    
   &__link{
     display: flex;
     flex-direction: row;
@@ -25,6 +28,9 @@
     color: variables.$white-color;
     font-family: 'Outfit';
     font-weight: 500;
+}
+&__span{
+  color: variables.$color-canaille;
 }
 }
 

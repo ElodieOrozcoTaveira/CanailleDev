@@ -5,10 +5,16 @@ export default function MesProjets() {
 
     const projets = [
         {
-            id:1, projet: 'Les Chips de Nos Montagnes', image: '/Projets/lcdnm.png', url: "https://www.leschipsdenosmontagnes.com/"
+            id:1, projet: 'Les Chips de Nos Montagnes', image: '/Projets/lcdnm.png', url: "https://www.leschipsdenosmontagnes.com/", privacy: "Projet Public"
         },
         {
-            id:2, projet: 'Braap! - en cours..', image:'/Projets/braap.png', url: ''
+            id:2, projet: 'Braap! - en cours..', image:'/Projets/braap.png', url: '/404', privacy: 'Projet Privé'
+        },
+         {
+            id:3, projet: 'BlaBlaBook, Apothéose fin de formation', image:'/Projets/blablabook.png', url: '/404', privacy: 'Projet Privé'
+        },
+        {
+            id:4, projet: 'OCoffee, projet de formation', image:'/Projets/ocoffee.png', url: '/404', privacy: 'Projet Privé'
         },
 
     ]
@@ -42,6 +48,7 @@ export default function MesProjets() {
 
                     <h4 className="container-projets__h4">{projects.projet}</h4>
                     </a>
+                    <p className="container-projets__privacy">{projects.privacy}</p>
                 </article>
             ))}
         </div>

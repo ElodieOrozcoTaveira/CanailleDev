@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* Variables couleurs */
+/*Breakpoint*/
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
+.container-error__img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  margin-top: -2.5rem;
+}
+.container-error__btn {
+  margin-bottom: -1.5rem;
+  margin-top: 1rem;
+  display: inline-block;
+  margin-left: 7.3rem;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, #2e86c1, #1b5f8a);
+  color: #c0b47e;
+  font-family: "Outfit";
+  border: #1f3d2b 2px solid;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+}/*# sourceMappingURL=404.css.map */

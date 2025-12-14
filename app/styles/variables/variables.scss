@@ -24,10 +24,7 @@ $tablet: 768px;
 $laptop: 1024px;
 $desktop: 1440px;
 
-// Couleurs principales
-$color-primary: #d86ba9;        // Rose principal
-$color-primary-light: #eaa8c9;  // Rose clair
-$color-primary-dark: #b44d88;   // Rose foncé
+
 
 // Couleurs neutres (gris)
 $color-bg: #7a7578;               // Gris du fond principal
@@ -45,13 +42,7 @@ $color-btn-bg: #5e5a5c;           // Fond des boutons
 $color-btn-hover: #4b4749;        // Hover des boutons
 $color-icon: #ffffff;             // Couleur des icônes
 
-// Gradients doux type “glow”
-$gradient-primary: linear-gradient(135deg, #d86ba9, #b44d88);
-$gradient-avatar-bg: linear-gradient(145deg, #d86ba9, #5e5a5c);
-$gradient-background: radial-gradient(circle at center,
-  rgba(216, 107, 169, 0.35),
-  rgba(94, 90, 92, 0.9)
-);
+
 
 
 // --------------------------------------

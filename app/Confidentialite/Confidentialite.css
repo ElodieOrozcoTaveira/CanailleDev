@@ -23,7 +23,7 @@ Accents (liens, icônes) → $color-accent */
   margin-left: auto;
   margin-right: auto;
   width: 10rem;
-  border: #b44d88 solid 1px;
+  border: dashed #c0b47e 2px;
   margin-top: -2rem;
   margin-bottom: 1rem;
   margin-bottom: 2.5rem;
@@ -34,11 +34,12 @@ Accents (liens, icônes) → $color-accent */
   font-size: 30px;
   color: #f1f2ec;
   font-family: "Outfit";
-  font-weight: 500;
+  font-weight: 300;
   text-align: center;
+  letter-spacing: 5px;
 }
 .container-confidentialite__adress {
-  color: #eaa8c9;
+  color: #c0b47e;
 }
 
 .container-confidentialite h1 {
@@ -52,7 +53,8 @@ Accents (liens, icônes) → $color-accent */
 }
 
 .container-confidentialite strong {
-  text-shadow: #1e262b 1px 1px 3px;
+  text-shadow: #c0b47e 1px 1px 3px;
+  color: #f1f2ec;
 }
 
 .container-confidentialite ul {

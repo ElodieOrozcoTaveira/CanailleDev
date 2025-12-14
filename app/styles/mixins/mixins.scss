@@ -5,19 +5,20 @@
         margin-left: auto;
         margin-right: auto;
         width: 10rem;
-        border: variables.$color-primary-dark solid 1px;  
+        border: dashed variables.$color-canaille 2px ;  
         margin-top: -2rem; 
         margin-bottom: 1rem;
 }
 
 @mixin h2{ 
-    margin-top: 3rem;
+        margin-top: 3rem;
         margin-bottom: 2.5rem;
         font-size: 30px;
         color: variables.$white-color;
         font-family: 'Outfit';
-        font-weight: 500;
+        font-weight: 300;
         text-align: center;
+        letter-spacing: 5px;
 }
 
 

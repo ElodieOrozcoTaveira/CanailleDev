@@ -25,20 +25,21 @@ Accents (liens, icônes) → $color-accent */
   font-size: 30px;
   color: #f1f2ec;
   font-family: "Outfit";
-  font-weight: 500;
+  font-weight: 300;
   text-align: center;
+  letter-spacing: 5px;
 }
 .container-projets__underline {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 10rem;
-  border: #b44d88 solid 1px;
+  border: dashed #c0b47e 2px;
   margin-top: -2rem;
   margin-bottom: 1rem;
 }
 .container-projets__grid {
-  margin-top: 2rem;
+  margin: 2rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -51,11 +52,10 @@ Accents (liens, icônes) → $color-accent */
   margin-right: auto;
   padding: 1rem;
   flex-direction: column;
-  height: 200px;
+  height: 360px;
   width: 300px;
-  background-color: #f2f5f7;
+  border: 1.5mm ridge #c0b47e;
   border-radius: 20px;
-  box-shadow: 4px 4px 3px #d86ba9;
   animation: fadeUp both;
   animation-timeline: view();
 }
@@ -77,6 +77,7 @@ Accents (liens, icônes) → $color-accent */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0.5rem;
+  border-radius: 10px;
 }
 .container-projets__link {
   text-decoration: none;
@@ -91,9 +92,20 @@ Accents (liens, icônes) → $color-accent */
   text-align: center;
   font-size: 20px;
   font-family: "Outfit";
-  color: #d86ba9;
+  color: #f1f2ec;
   font-weight: 400;
-  text-shadow: 1px 1px 3px #1e262b;
+  text-shadow: 1px 1px 3px #c0b47e;
+}
+.container-projets__privacy {
+  text-align: center;
+  font-family: "Outfit";
+  padding: 0.5rem;
+  background-color: #c0b47e;
+  border: solid 1px #f1f2ec;
+  border-radius: 10px;
+  color: #f1f2ec;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
 }
 
 @keyframes text-appear {
@@ -106,23 +118,6 @@ Accents (liens, icônes) → $color-accent */
     transform: translateY(0);
   }
 }
-.container-projets::before {
-  content: "";
-  position: absolute;
-  /* ajustez ces valeurs pour déplacer le halo */
-  left: 2rem;
-  right: 40rem;
-  width: 60%;
-  height: 60%;
-  z-index: -1;
-  pointer-events: none;
-  /* couleur et dégradé radial en utilisant la variable halo */
-  background: radial-gradient(circle at 30% 30%, rgba(216, 107, 169, 0.85) 0%, rgba(216, 107, 169, 0.45) 20%, rgba(216, 107, 169, 0.15) 40%, rgba(216, 107, 169, 0) 70%);
-  /* utilisez blur pour adoucir le halo */
-  filter: blur(50px);
-  transform: translateZ(0);
-}
-
 .container-projets__article:nth-child(1) {
   animation-range: entry 20% cover 40%;
 }

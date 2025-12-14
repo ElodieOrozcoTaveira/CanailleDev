@@ -14,7 +14,7 @@
         @include mixins.h2
     }
     &__adress{
-        color: variables.$color-primary-light;
+        color: variables.$color-canaille;
     }
 }
 
@@ -29,7 +29,8 @@
 }
 
 .container-confidentialite strong{
-    text-shadow: variables.$color-bg-dark 1px 1px 3px;
+    text-shadow: variables.$color-canaille 1px 1px 3px;
+    color: variables.$white-color;
 }
 
 .container-confidentialite ul{

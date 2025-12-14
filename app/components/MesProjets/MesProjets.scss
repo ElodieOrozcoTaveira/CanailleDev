@@ -15,7 +15,7 @@
         @include mixins.underline;
     }
     &__grid{
-        margin-top: 2rem;
+        margin: 2rem;
         display: flex;
         flex-direction: column;
         gap: 3rem;
@@ -28,11 +28,10 @@
         margin-right: auto;
         padding: 1rem;
         flex-direction: column;
-        height: 200px;
+        height: 360px;
         width: 300px;
-        background-color: variables.$color-bg-light;
+        border: 1.5mm ridge variables.$color-canaille;
         border-radius: 20px;
-        box-shadow: 4px 4px 3px variables.$color-primary;
         animation: fadeUp both;
         animation-timeline: view();
         
@@ -58,6 +57,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 0.5rem;
+        border-radius: 10px;
     }
     &__link{
         text-decoration: none;
@@ -73,10 +73,21 @@
         text-align: center;
         font-size: 20px;
         font-family: 'Outfit';
-        color: variables.$color-primary;
+        color: variables.$white-color;
         font-weight: 400;
-        text-shadow: 1px 1px 3px variables.$color-bg-dark;
+        text-shadow: 1px 1px 3px variables.$color-canaille;
 
+    }
+    &__privacy{
+        text-align: center;
+        font-family: 'Outfit';
+        padding: 0.5rem;
+        background-color: variables.$color-canaille;
+        border: solid 1px variables.$white-color;
+        border-radius: 10px;
+        color: variables.$white-color;
+        font-weight: 300;
+        margin-bottom: 1.5rem;
     }
 }
 @keyframes text-appear {
@@ -91,30 +102,7 @@
   
 }
 
-.container-projets::before{
-    content: "";
-      position: absolute;
-      /* ajustez ces valeurs pour déplacer le halo */
-      left:2rem;
-      right: 40rem;
-      width: 60%;
-      height: 60%;
-      z-index: -1;
-      pointer-events: none;
-      /* couleur et dégradé radial en utilisant la variable halo */
-      background: radial-gradient(
-        circle at 30% 30%,
-        rgba(variables.$color-primary, 0.85) 0%,
-        rgba(variables.$color-primary, 0.45) 20%,
-        rgba(variables.$color-primary, 0.15) 40%,
-        rgba(variables.$color-primary, 0) 70%
-      );
-      /* utilisez blur pour adoucir le halo */
-      filter: blur(50px);
-      transform: translateZ(0);
 
-
-}
 
 .container-projets__article:nth-child(1){
     animation-range: entry 20% cover 40%;
