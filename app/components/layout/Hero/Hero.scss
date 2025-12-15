@@ -1,7 +1,6 @@
 @use "../../../styles/variables/variables.scss";
 @use "../../../styles/mixins/mixins.scss";
 
-
 .hero-container {
   display: flex;
   flex-direction: column;
@@ -15,21 +14,21 @@
     font-family: "Outfit";
     letter-spacing: 0.5px;
   }
-  &__h2{
+  &__h2 {
     font-size: 1.2rem;
     margin-left: 2rem;
     font-weight: 300;
-    font-family: 'Outfit';
+    font-family: "Outfit";
   }
-  &__h3{
-        margin-left: 1.8rem;
-        font-size: 2.5rem;
-        margin-top: -1rem;
-        font-family: 'Outfit';
-        font-weight: 600;
-        letter-spacing: -2px;
+  &__h3 {
+    margin-left: 1.8rem;
+    font-size: 2.5rem;
+    margin-top: -1rem;
+    font-family: "Outfit";
+    font-weight: 600;
+    letter-spacing: -2px;
   }
-  &__spanCD{
+  &__spanCD {
     color: variables.$color-canaille;
   }
   &__EOT {
@@ -40,7 +39,7 @@
     text-shadow: 0.5px 0.5px 0.5px variables.$white-color;
     text-align: right;
     margin-top: -2.2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     text-align: left;
     margin-left: 2.1rem;
   }
@@ -50,21 +49,24 @@
     text-shadow: 1px 1px 0.5px variables.$white-color;
     font-weight: 200;
     letter-spacing: 2.5px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.7rem;
     text-align: center;
     font-size: 1.5rem;
-   
   }
   &__avatar {
     display: flex;
     justify-content: right;
-    margin-right: -0.7rem;
-    z-index: 1;
+    margin-right: 0;
+    z-index: 10;
+    position: relative;
+    margin-bottom: -50px;
+    padding-right: 1rem;
   }
 
-  
-  
-  
+  &__img {
+    z-index: 10;
+    position: relative;
+  }
 }
 
 /* Halo pseudo-element derrière le conteneur */
@@ -91,44 +93,45 @@
   transform: translateZ(0);
 }
 
-
-
-
-@media (min-width: variables.$desktop) {
-  .container-logo{
-    margin-top: 2rem;
-    height: 5rem;
-    &__img{
-      width: 60px;
-      height: 60px;
-    }
-    &__canailledev{
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .hero-container {
+    &__h2 {
       font-size: 2rem;
+    }
+    &__h3 {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+    }
+    &__EOT {
+      margin-left: 2.2rem;
+      margin-bottom: 2.5rem;
+    }
+    &__p {
+      color: variables.$white-color;
+      text-shadow: 0.5px 0.5px 0.5px variables.$color-canaille;
+      margin-bottom: -0.5rem;
+    }
+    &__img {
+      width: 250px;
+      height: 250px;
+      margin-right: 2rem;
+      z-index: 10;
+    }
+    &__avatar {
+      margin-bottom: -60px;
     }
   }
-  .menu-desktop{
-    display: flex;
-    margin-top: -1.2rem;
-    &__ul{
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      margin-right: 5rem;
-      list-style-type: none;
-    }
-    &__link{
-      color: variables.$white-color;
-      font-size: 2rem;
-      text-decoration: none;
-      font-family: 'Outfit';
-      font-weight: 500;
-      text-shadow: variables.$pink-color 1px 1px 0.5px;
-    }
-    &__link:hover{
-      color: variables.$pink-color;
-      opacity: 0.5;
-      transition: 0.5s ease;
+  .hero-container::before {
+    content: "";
+    position: absolute;
+    /* ajustez ces valeurs pour déplacer le halo */
+    left: 75%;
+    top: 35%;
+    width: 30%;
+    height: 30%;
 
-    }
-}
+    /* utilisez blur pour adoucir le halo */
+    filter: blur(12px);
+    transform: translateZ(0);
+  }
 }

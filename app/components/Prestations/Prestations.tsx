@@ -13,7 +13,7 @@ export default function Prestations() {
                 'Mise en ligne',
                 'Formulaire de contact',
             ],
-            image:'/presta/responsive.png',tarifs:'A partir de 800 euros',
+            image:'/presta/vitrine.png',tarifs:'A partir de 800 euros',
         },
          {
             id:2, sujet: 'Applications Web' ,
@@ -25,7 +25,7 @@ export default function Prestations() {
                 'Optimisation des performances',
                 'Sécurité de base',
              ],
-              image:'/presta/eclair.png',tarifs:'A partir de 1800 euros',
+              image:'/presta/appweb.png',tarifs:'A partir de 1800 euros',
         },
         {
             id:3, sujet: 'Sites e-commerce' ,
@@ -33,7 +33,7 @@ export default function Prestations() {
                 'Solutions de vente en ligne personnalisées',
                 'Design personnalisé',
              ],
-              image:'/presta/boutique.png',tarifs:'A partir de 1200 euros',
+              image:'/presta/ecommerce.png',tarifs:'A partir de 1200 euros',
         },
          {
             id:4, sujet: 'Refont/Maintenance' , 
@@ -41,7 +41,7 @@ export default function Prestations() {
                 'Améliorations de sites existants',
                 'Correction de bugs',
              ],
-            image:'/presta/clé.png',tarifs:'50 euros/heure',
+            image:'/presta/maintenance.png',tarifs:'50 euros/heure',
         },
     ]
 
@@ -50,6 +50,7 @@ export default function Prestations() {
         <div className="container-services">
             <h2 className="container-services__h2">Mes Prestations</h2>
             <div className="container-services__underline"></div>
+
         </div>
 
         <div className="container-services__grid">
@@ -63,8 +64,8 @@ export default function Prestations() {
                         src={services.image} 
                         alt={services.sujet}
                         priority
-                        width={25}
-                        height={25}
+                        width={30}
+                        height={30}
                         loading="eager"
                                      />
                     <h2 className="container-services__sujet">{services.sujet}</h2>

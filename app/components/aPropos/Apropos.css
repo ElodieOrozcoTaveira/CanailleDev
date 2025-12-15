@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* Variables couleurs */
 /*Breakpoint*/
+/* Variables couleurs */
 /*💡 Conseils d’utilisation
 
 Hero section → $gradient-hero
@@ -13,35 +13,91 @@ Cartes / blocs → fond translucide + blur
 
 Accents (liens, icônes) → $color-accent */
 .container-apropos {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  flex-direction: column;
-  background: linear-gradient(135deg, #c3ad8f 80%, #a49479 100%);
-  width: 380px;
-  height: 235px;
-  border-radius: 20px;
-  opacity: 0.85;
+  position: relative;
+  background: linear-gradient(135deg, #f3e6c2 0%, #ead7a5 40%, #e2c98a 70%, #d8b874 100%);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 0.27rem;
+  border: 2px solid #d6b36a;
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2), inset 0 0 60px rgba(120, 90, 40, 0.35), 0 18px 40px rgba(0, 0, 0, 0.35);
+  color: #3a2c18;
+  overflow: hidden;
+  height: 32.5vh;
+  margin-top: 2rem;
+  width: 100%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .container-apropos__h2 {
   text-align: center;
   font-family: "Outfit";
   font-weight: 500;
+  margin-top: 0.5rem;
   margin-bottom: 0.2rem;
   color: #1f3d2b;
 }
 .container-apropos__p {
   text-align: justify;
-  margin-right: 1rem;
-  margin-left: 1rem;
   color: #6b7c86;
   font-family: "Outfit";
   font-size: 14.5px;
+  padding: 0 1rem;
 }
 
+.container-apropos::before {
+  content: "";
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.025), rgba(0, 0, 0, 0.025) 1px, transparent 1px, transparent 3px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 4px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.container-apropos::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: inset 0 0 80px rgba(90, 60, 20, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .container-apropos {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+  }
+  .container-apropos__h2 {
+    font-size: 20px;
+  }
+  .container-apropos__p {
+    font-size: 14.5px;
+    padding: 0.5rem 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container-apropos {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+  }
+  .container-apropos__h2 {
+    font-size: 30px;
+  }
+  .container-apropos__p {
+    font-size: 15px;
+    padding: 0.5rem 1.5rem;
+  }
+}
 @media (min-width: 1440px) {
   .container-apropos {
     margin: 3rem;
+    width: calc(100% - 6rem);
   }
   .container-apropos__h2 {
     font-size: 40px;

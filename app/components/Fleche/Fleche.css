@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* Variables couleurs */
 /*Breakpoint*/
+/* Variables couleurs */
 /*💡 Conseils d’utilisation
 
 Hero section → $gradient-hero
@@ -23,7 +23,8 @@ Accents (liens, icônes) → $color-accent */
 }
 
 .btn_arrow:hover .icone {
-  background-color: transparent;
+  background-color: #f1f2ec;
+  opacity: 0.8;
 }
 
 .icone {
@@ -36,7 +37,7 @@ Accents (liens, icônes) → $color-accent */
   border-radius: 50%;
   transition: background-color 0.2s ease, transform 0.12s ease;
   color: #c0b47e;
-  border: solid 1px #5f8f6d;
+  border: solid 1px #d6b36a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,11 +53,11 @@ Accents (liens, icônes) → $color-accent */
 }
 
 /* small responsive tweak: make it slightly smaller on very small screens */
-@media (max-width: 420px) {
+@media (max-width: 768px) {
   .icone {
     width: 25px;
     height: 25px;
-    right: 32px;
+    right: 15px;
     bottom: calc(55px + env(safe-area-inset-bottom));
     opacity: 0.5;
   }

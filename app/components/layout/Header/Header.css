@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* Variables couleurs */
 /*Breakpoint*/
+/* Variables couleurs */
 /*💡 Conseils d’utilisation
 
 Hero section → $gradient-hero
@@ -45,4 +45,42 @@ Accents (liens, icônes) → $color-accent */
 
 .menu-desktop {
   display: none;
+}
+
+@media (min-width: 1440px) {
+  .container-logo {
+    margin-top: 2rem;
+    height: 5rem;
+  }
+  .container-logo__img {
+    width: 60px;
+    height: 60px;
+  }
+  .container-logo__canailledev {
+    font-size: 2rem;
+  }
+  .menu-desktop {
+    display: flex;
+    margin-top: -1.2rem;
+  }
+  .menu-desktop__ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-right: 5rem;
+    list-style-type: none;
+  }
+  .menu-desktop__link {
+    color: #f1f2ec;
+    font-size: 2rem;
+    text-decoration: none;
+    font-family: "Outfit";
+    font-weight: 500;
+    text-shadow: #d93b7d 1px 1px 0.5px;
+  }
+  .menu-desktop__link:hover {
+    color: #d93b7d;
+    opacity: 0.5;
+    transition: 0.5s ease;
+  }
 }/*# sourceMappingURL=Header.css.map */

@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* Variables couleurs */
 /*Breakpoint*/
+/* Variables couleurs */
 /*💡 Conseils d’utilisation
 
 Hero section → $gradient-hero
@@ -54,10 +54,31 @@ Accents (liens, icônes) → $color-accent */
   flex-direction: column;
   height: 360px;
   width: 300px;
-  border: 1.5mm ridge #c0b47e;
+  border: 1.5mm ridge #d6b36a;
+  background: linear-gradient(135deg, #f3e6c2 0%, #ead7a5 40%, #e2c98a 70%, #d8b874 100%);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2), inset 0 0 60px rgba(120, 90, 40, 0.35), 0 18px 40px rgba(0, 0, 0, 0.35);
+  color: #3a2c18;
   border-radius: 20px;
   animation: fadeUp both;
   animation-timeline: view();
+}
+.container-projets .container-projets__article::before {
+  content: "";
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.025), rgba(0, 0, 0, 0.025) 1px, transparent 1px, transparent 3px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 4px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+.container-projets .container-projets__article::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: inset 0 0 80px rgba(90, 60, 20, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
 }
 @keyframes fadeUp {
   from {
@@ -94,13 +115,13 @@ Accents (liens, icônes) → $color-accent */
   font-family: "Outfit";
   color: #f1f2ec;
   font-weight: 400;
-  text-shadow: 1px 1px 3px #c0b47e;
+  text-shadow: 1px 1px 3px #1b5f8a;
 }
 .container-projets__privacy {
   text-align: center;
   font-family: "Outfit";
   padding: 0.5rem;
-  background-color: #c0b47e;
+  background: linear-gradient(135deg, #2e86c1, #1b5f8a);
   border: solid 1px #f1f2ec;
   border-radius: 10px;
   color: #f1f2ec;
@@ -118,24 +139,14 @@ Accents (liens, icônes) → $color-accent */
     transform: translateY(0);
   }
 }
-.container-projets__article:nth-child(1) {
+.contets__article:nth-child(1) {
   animation-range: entry 20% cover 40%;
 }
 
-@media (min-width: 1440px) {
-  .container-projets__h2 {
-    font-size: 40px;
-  }
-  .container-projets__underline {
-    margin-bottom: 5rem;
-  }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .container-projets__grid {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-  }
-  .container-projets__article {
-    height: 250px;
-    width: 350px;
+    flex-wrap: wrap;
   }
 }/*# sourceMappingURL=MesProjets.css.map */

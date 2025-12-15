@@ -9,7 +9,7 @@ export default function CanailleDev() {
             <Link className='container-canailleDev__link' href='/'>
             <Image
                 className='container-canailleDev__logo'
-                src='/Logo/logo.png'
+                src='/CanailleDev/logoCD.png'
                 alt='logo canailledev'
                 priority
                 width={70}

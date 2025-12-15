@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* Variables couleurs */
 /*Breakpoint*/
+/* Variables couleurs */
 /*💡 Conseils d’utilisation
 
 Hero section → $gradient-hero
@@ -16,35 +16,42 @@ Accents (liens, icônes) → $color-accent */
 .hamburger-wrapper {
   display: flex;
   align-items: center;
-  /* create a new stacking context so the button stays above animated siblings */
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
   z-index: 1001;
+  padding: 1rem 4rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.hamburger-wrapper.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .hamburger-button {
   background: transparent;
   border: none;
-  margin-top: 1rem;
-  margin-right: 2rem;
-  margin-left: 11rem;
   font-size: 2.2rem;
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  align-items: center;
   padding: 0.25rem;
   color: #c0b47e;
   cursor: pointer;
   position: relative;
-  z-index: 10; /* above hero animated elements and menu */
+  z-index: 1001;
 }
 
 .hamburger-menu {
   /* use fixed to escape ancestor stacking contexts created by transforms/animations */
-  position: fixed;
+  position: inherit;
   top: 0;
   right: 0;
   left: 0;
   transform-origin: top right;
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition: opacity 2ms ease, transform 2ms ease;
   z-index: 10; /* ensure above animated content */
   opacity: 1;
 }
@@ -76,21 +83,20 @@ Accents (liens, icônes) → $color-accent */
   padding: 8px 0;
   box-shadow: 3px 3px 4px #c0b47e;
   height: 45vh;
-  width: 400px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
   padding-top: 2.5rem;
 }
 
 .hamburger-menu__list li {
   padding: 8px 16px;
   text-align: center;
-  margin-left: 10rem;
   color: #c0b47e;
-  text-align: center;
   display: flex;
-  justify-content: justify;
+  justify-content: center;
 }
 
 .hamburger-menu__list a {
@@ -108,7 +114,36 @@ Accents (liens, icônes) → $color-accent */
   transform: scale(1);
 }
 
-@media (min-width: 768px) {
+@media screen and (max-width: 767px) {
+  /* mobile: center the menu */
+  .hamburger-menu__list {
+    width: 100%;
+    align-items: center;
+  }
+  .hamburger-menu__list li {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* tablet: center the menu */
+  .hamburger-menu__list {
+    width: 100%;
+    align-items: center;
+  }
+  .hamburger-menu__list li {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .hamburger-wrapper {
+    display: flex;
+  }
+  .hamburger-button svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
   /* hide hamburger on larger screens */
   .hamburger-wrapper {
     display: none;

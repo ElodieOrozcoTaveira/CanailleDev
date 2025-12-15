@@ -11,7 +11,7 @@ export default function Error() {
         <div className="container-error">
             <Image 
                 className='container-error__img'
-                src='/CanailleDev/404.png'
+                src='/CanailleDev/404.webp'
                 alt='avatar 404'
                 width={260}
                 height={310}

@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* Variables couleurs */
 /*Breakpoint*/
+/* Variables couleurs */
 /*💡 Conseils d’utilisation
 
 Hero section → $gradient-hero
@@ -15,7 +15,6 @@ Accents (liens, icônes) → $color-accent */
 .container-services {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-top: 8rem;
 }
@@ -40,13 +39,22 @@ Accents (liens, icônes) → $color-accent */
 }
 .container-services__grid {
   margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+.container-services__avatar {
+  margin-bottom: -60px;
+  z-index: 10;
+  position: relative;
 }
 .container-services__article {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 1.5rem;
   margin: 2rem;
   padding: 1.2rem;
   border: 1.5mm ridge #c0b47e;
@@ -55,10 +63,12 @@ Accents (liens, icônes) → $color-accent */
   animation-timeline: view();
   height: 500px;
   width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 .container-services__article:hover {
-  transition: 2s ease;
-  transform: rotateX(630deg);
+  transform: scale(1.08) translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 @keyframes fadeUp {
   from {
@@ -72,13 +82,17 @@ Accents (liens, icônes) → $color-accent */
 }
 .container-services__logosujet {
   display: flex;
+  align-items: center;
   flex-direction: row;
   gap: 0.5rem;
 }
 .container-services__logo {
   margin-top: 1.6rem;
-  background-color: #f1f2ec;
+  background-color: transparent;
   border-radius: 30%;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 .container-services__sujet {
   color: #f1f2ec;
@@ -117,6 +131,15 @@ Accents (liens, icônes) → $color-accent */
   list-style-type: square;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container-services__grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+}
 @media (min-width: 1440px) {
   .container-services__h2 {
     font-size: 40px;
