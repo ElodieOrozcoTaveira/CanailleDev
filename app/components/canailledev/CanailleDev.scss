@@ -1,39 +1,54 @@
-@use '../../styles/variables/variables.scss';
-@use '../../styles/mixins/mixins.scss';
+@use "../../styles/variables/variables.scss";
+@use "../../styles/mixins/mixins.scss";
 
-.container-canailleDev{
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    padding-bottom: 2rem;
-    margin-bottom: 3rem;
-    border-bottom: 1.5mm ridge variables.$color-canaille;
-    background-image: url(/canigou.png);
-    background-repeat: no-repeat;
-    background-position: right 45% bottom 55%;
-    
-  &__link{
+.container-canailleDev {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 1.5mm ridge variables.$color-canaille;
+  background-image: url(/canigou.webp);
+  background-repeat: no-repeat;
+  background-position: right 45% bottom 55%;
+
+  &__link {
     display: flex;
     flex-direction: row;
     text-decoration: none;
   }
-&__logo{
+  &__logo {
     display: block;
     margin-left: 5rem;
-    margin-top: 3rem;  
-}
-&__h2{
+    margin-top: 3rem;
+  }
+  &__h2 {
     margin-top: 4rem;
     font-size: 2rem;
     color: variables.$white-color;
-    font-family: 'Outfit';
+    font-family: "Outfit";
     font-weight: 500;
+  }
+  &__span {
+    color: variables.$color-canaille;
+  }
 }
-&__span{
-  color: variables.$color-canaille;
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container-canailleDev {
+    display: flex;
+    &__logo {
+      margin-left: 2rem;
+    }
+  }
 }
+
+@media (min-width: variables.$desktop) {
+  .container-canailleDev {
+    /* Assure que l'image couvre toute la largeur en desktop */
+    background-size: cover;
+    /* Conserve la position par défaut, ajustable si besoin */
+    background-position: right 45% bottom 55%;
+    width: 100%;
+  }
 }
-
-
-
-

@@ -43,8 +43,15 @@
 
 .container-confidentialite li{
     list-style-type: none;
-    color: variables.$white-color;
+    color: variables.$color-canaille;
+    text-shadow: variables.$white-color 0.5px 0.5px 0.5px;
     font-family: 'Outfit';
+}
+
+@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
+    .container-confidentialite p{
+        margin-left: 4rem;
+    }
 }
 
 @media(min-width:variables.$desktop) {

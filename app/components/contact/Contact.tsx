@@ -129,7 +129,7 @@ export default function Contact() {
 
       <Image
         className="container-contact__img"
-        src='/CanailleDev/laptop.png'
+        src='/CanailleDev/laptop.webp'
         alt="avatar contact "
         width={180}
         height={200}

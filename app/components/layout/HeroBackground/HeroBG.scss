@@ -1,3 +1,7 @@
+ @use "../../../styles/variables/variables.scss";
+ @use "../../../styles/mixins/mixins.scss";
+
+
 .hero-background {
   position: relative;
   max-height: 100vh;
@@ -9,3 +13,5 @@
   border-bottom-right-radius: 10px;
   
 }
+
+

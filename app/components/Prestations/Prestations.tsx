@@ -48,7 +48,7 @@ export default function Prestations() {
     return(
         <>
         <div className="container-services">
-            <h2 className="container-services__h2">Mes Prestations</h2>
+            <h2 className="container-services__h2">Prestations</h2>
             <div className="container-services__underline"></div>
 
         </div>

@@ -47,6 +47,13 @@
     font-family: 'Outfit';
 }
 
+@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
+    .container-mentions p{
+        margin-left: 4rem;
+    }
+}
+
+
 @media (min-width: variables.$desktop) {
     
     .container-mentions{

@@ -1,10 +1,9 @@
-@use '../../../styles/variables/variables.scss';
-@use '../../../styles/mixins/mixins.scss';
+@use "../../../styles/variables/variables.scss";
+@use "../../../styles/mixins/mixins.scss";
 
-.header-container{
-margin: 0;
-padding: 0;    
-    
+.header-container {
+  margin: 0;
+  padding: 0;
 }
 
 .container-logo {
@@ -23,7 +22,7 @@ padding: 0;
     font-size: 1.2rem;
     margin-top: 2rem;
   }
-  &__span{
+  &__span {
     font-size: 1.2rem;
     color: variables.$color-canaille;
   }
@@ -33,51 +32,70 @@ padding: 0;
   }
 }
 
-
-
-.menu-desktop{
+.menu-desktop {
   display: none;
 }
 
-@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
-
-}
-
 @media (min-width: variables.$desktop) {
-  .container-logo{
-    margin-top: 2rem;
-    height: 5rem;
-    &__img{
-      width: 60px;
-      height: 60px;
+  .header-container {
+    width: 100%;
+  }
+
+  .container-logo {
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    width: 100%;
+    padding: 0 3rem;
+    gap: 1rem;
+
+    &__img {
+      width: 80px;
+      height: 80px;
+      margin-top: 5rem;
+      grid-column: 1;
     }
-    &__canailledev{
+    &__canailledev {
+      margin-top: 6rem;
+      font-size: 2rem;
+      grid-column: 2;
+      justify-self: start;
+    }
+    &__span {
       font-size: 2rem;
     }
   }
-  .menu-desktop{
+
+  .menu-desktop {
     display: flex;
-    margin-top: -1.2rem;
-    &__ul{
+    align-items: center;
+    margin-top: 4rem;
+    grid-column: 3;
+    justify-self: end;
+    margin-right: 5.5rem;
+
+
+    &__ul {
       display: flex;
       flex-direction: row;
       gap: 2rem;
-      margin-right: 5rem;
       list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
-    &__link{
+    &__link {
       color: variables.$white-color;
       font-size: 2rem;
       text-decoration: none;
-      font-family: 'Outfit';
-      font-weight: 500;
-      text-shadow: variables.$pink-color 1px 1px 0.5px;
+      font-family: "Outfit";
+      font-weight: 400;
+      text-shadow: variables.$color-canaille 0.5px 0.5px 0.5px;
     }
-    &__link:hover{
-      color: variables.$pink-color;
-      opacity: 0.5;
-      transition: 0.5s ease;
-
+    &__link:hover {
+      color: variables.$color-canaille;
+      transition: 0.2s ease;
+      text-decoration:underline;
     }
-}
+  }
 }

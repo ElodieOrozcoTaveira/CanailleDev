@@ -5,8 +5,9 @@
   display: flex;
   flex-direction: column;
   position: relative; /* pour que le pseudo-élément soit positionné par rapport au conteneur */
-  overflow: visible;
+  overflow-x: hidden;
   height: 800px;
+  max-width: 100vw;
   &__bienvenue {
     margin-left: 0.5rem;
     font-size: 1rem;
@@ -114,24 +115,73 @@
     &__img {
       width: 250px;
       height: 250px;
-      margin-right: 2rem;
+      margin-right: 0;
       z-index: 10;
     }
     &__avatar {
       margin-bottom: -60px;
+      padding-right: 1rem;
     }
   }
   .hero-container::before {
     content: "";
     position: absolute;
     /* ajustez ces valeurs pour déplacer le halo */
-    left: 75%;
+    left: 65%;
     top: 35%;
-    width: 30%;
-    height: 30%;
+    width: 25%;
+    height: 25%;
 
     /* utilisez blur pour adoucir le halo */
     filter: blur(12px);
+    transform: translateZ(0);
+  }
+}
+
+@media (min-width:variables.$desktop) {
+  .hero-container{
+    &__bienvenue{
+      margin-left: 5rem;
+    }
+    &__h2{
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    &__h3{
+      font-size: 5rem;
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    &__EOT{
+      font-size: 17px;
+      margin-bottom: 1rem;
+    }
+    &__p{
+      font-size: 2rem;
+      margin-bottom: -1rem;
+    }
+    &__avatar{
+      margin-right: 3.5rem;
+      z-index: 10;
+      position:relative;
+      margin-bottom: -4.5rem;
+    }
+    &__img{
+      height: 310px;
+      width: 280px;
+    }
+  }
+   .hero-container::before {
+    content: "";
+    position: absolute;
+    /* ajustez ces valeurs pour déplacer le halo */
+    left: 83%;
+    top: 35%;
+    width: 25%;
+    height: 25%;
+
+    /* utilisez blur pour adoucir le halo */
+    filter: blur(5px);
     transform: translateZ(0);
   }
 }

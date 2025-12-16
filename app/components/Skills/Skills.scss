@@ -125,6 +125,9 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+    &__h2{
+      margin-top: 8rem;
+    }
 
   }
 }
@@ -134,6 +137,7 @@
 @media (min-width: variables.$desktop) {
   .container-skills {
     &__h2 {
+      margin-top: 10rem;
       font-size: 40px;
     }
     &__underline {

@@ -1,29 +1,39 @@
-@use '../styles/variables/variables.scss';
-@use '../styles/mixins/mixins.scss';
+@use "../styles/variables/variables.scss";
+@use "../styles/mixins/mixins.scss";
 
-.container-error{
-    &__img{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1.5rem;
-        margin-top: -2.5rem;
+.container-error {
+  &__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    margin-top: -2.5rem;
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+  &__btn {
+    margin-bottom: -1.5rem;
+    margin-top: 1rem;
+    display: block;
+    padding: 0.7rem 1.5rem;
+    background: variables.$gradient-button;
+    color: variables.$color-canaille;
+    font-family: "Outfit";
+    border: variables.$color-forest-dark 2px solid;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
+  .container-error {
+    &__btn {
+      margin-top: 2rem;
+      margin-bottom: -1.5rem;
     }
-    &__btn{
-        margin-bottom: -1.5rem;
-        margin-top: 1rem;
-         display: inline-block;
-         margin-left: 7.3rem;
-        padding: 0.7rem 1.5rem;
-        background: variables.$gradient-button;
-        color: variables.$color-canaille;
-        font-family: 'Outfit';
-        border: variables.$color-forest-dark 2px solid;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-weight: 500;
-
-
-    }
-    
+  }
 }

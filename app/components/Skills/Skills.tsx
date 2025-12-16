@@ -36,8 +36,8 @@ export default function Skills() {
       id: 4,
       skill: "Outils",
       outils: [
-        { name: "Github", icon: "/Icones/github.png" },
-        { name: "Docker", icon: "/Icones/docker.png" },
+        { name: "Github", icon: "/Icones/github.webp" },
+        { name: "Docker", icon: "/Icones/docker.webp" },
         { name: "Vercel", icon: "/Icones/vercel.webp" },
       ],
     },

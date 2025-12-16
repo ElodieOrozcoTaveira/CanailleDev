@@ -37,7 +37,7 @@ export default function MesProjets() {
   return (
     <>
       <div className="container-projets">
-        <h2 className="container-projets__h2">Mes Projets</h2>
+        <h2 className="container-projets__h2">Projets</h2>
         <div className="container-projets__underline"></div>
       </div>
 
