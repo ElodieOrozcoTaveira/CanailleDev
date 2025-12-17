@@ -67,10 +67,16 @@ Accents (liens, icônes) → $color-accent */
 
 .container-confidentialite li {
   list-style-type: none;
-  color: #f1f2ec;
+  color: #c0b47e;
+  text-shadow: #f1f2ec 0.5px 0.5px 0.5px;
   font-family: "Outfit";
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container-confidentialite p {
+    margin-left: 4rem;
+  }
+}
 @media (min-width: 1440px) {
   .container-confidentialite__underline {
     margin-bottom: 5rem;

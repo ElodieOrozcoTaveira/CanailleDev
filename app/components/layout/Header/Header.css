@@ -47,40 +47,120 @@ Accents (liens, icônes) → $color-accent */
   display: none;
 }
 
-@media (min-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .container-logo {
-    margin-top: 2rem;
-    height: 5rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+    gap: 1rem;
   }
   .container-logo__img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    margin-top: 1rem;
+    grid-column: 1;
   }
   .container-logo__canailledev {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-top: 2.2rem;
+    grid-column: 2;
+    justify-self: start;
+  }
+  .container-logo__span {
+    font-size: 1.5rem;
   }
   .menu-desktop {
     display: flex;
-    margin-top: -1.2rem;
+    align-items: center;
+    margin-top: 1rem;
+    grid-column: 3;
+    justify-self: end;
+    margin-right: 3rem;
   }
   .menu-desktop__ul {
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    margin-right: 5rem;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
   .menu-desktop__link {
+    color: #c0b47e;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: "Outfit";
+    font-weight: 400;
+    text-shadow: #2b3338 0.5px 0.5px 0.5px;
+  }
+  .menu-desktop__link:hover {
     color: #f1f2ec;
+    transition: 0.2s ease;
+    text-decoration: underline;
+    opacity: 0.7;
+  }
+}
+@media (min-width: 1440px) {
+  .header-container {
+    width: 100%;
+  }
+  .container-logo {
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    width: 100%;
+    padding: 0 3rem;
+    gap: 1rem;
+  }
+  .container-logo__img {
+    width: 55px;
+    height: 55px;
+    margin-top: 1rem;
+    grid-column: 1;
+  }
+  .container-logo__canailledev {
+    margin-top: 2.2rem;
+    font-size: 2rem;
+    grid-column: 2;
+    justify-self: start;
+  }
+  .container-logo__span {
+    font-size: 2rem;
+  }
+  .menu-desktop {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    grid-column: 3;
+    justify-self: end;
+    margin-right: 5.5rem;
+  }
+  .menu-desktop__ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .menu-desktop__link {
+    color: #c0b47e;
     font-size: 2rem;
     text-decoration: none;
     font-family: "Outfit";
-    font-weight: 500;
-    text-shadow: #d93b7d 1px 1px 0.5px;
+    font-weight: 400;
+    text-shadow: #2b3338 0.5px 0.5px 0.5px;
   }
   .menu-desktop__link:hover {
-    color: #d93b7d;
-    opacity: 0.5;
-    transition: 0.5s ease;
+    color: #f1f2ec;
+    transition: 0.2s ease;
+    text-decoration: underline;
+    opacity: 0.7;
   }
 }/*# sourceMappingURL=Header.css.map */

@@ -1,6 +1,5 @@
 'use client';
 
-import Apropos from "./components/aPropos/Apropos";
 import Skills from "./components/Skills/Skills";
 import MesProjets from "./components/MesProjets/MesProjets";
 import Footer from "./components/layout/Footer/Footer";

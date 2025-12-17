@@ -1,44 +1,64 @@
 @use "../../../styles/variables/variables.scss";
 
-.container-footer{
+.container-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.2rem;
+  color: variables.$white-color;
+  height: 12rem;
+  &__h2 {
+    font-size: 18px;
+    font-family: "Outfit";
+    font-weight: 400;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__underline {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border: 1mm ridge variables.$color-canaille;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+  }
+  &__docs {
     display: flex;
-    flex-direction: column;
-    margin-top: 3rem;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap: 0.2rem;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  &__links {
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "Outfit";
     color: variables.$white-color;
-    height: 12rem;
-    &__h2{
-        font-size: 18px;
-        font-family: 'Outfit';
-        font-weight: 400;
-        text-align: center;
-        margin-top: 2rem;
-        margin-bottom: 2.5rem;
-    }
-  
-    &__underline{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        border: 1mm ridge variables.$color-canaille;
-        margin-top: -2rem; 
-        margin-bottom: 1rem;
-    }
-    &__docs{
-        display: flex;
-        flex-direction: row;
-        gap: 1.5rem;
-        
-    }
-    &__links{
-        text-decoration: none;
-        font-size: 15px;
-        font-family: 'Outfit';
-        color: variables.$white-color;
-    }
+  }
 }
 
+@media (min-width: variables.$desktop) {
+  .container-footer {
+    height: auto; // ← Laisse le contenu définir la hauteur
+    padding: 1rem 0; // ← Padding réduit au lieu d'une hauteur fixe
+    margin-top: 2rem;
+
+    &__h2 {
+      margin-top: 0.5rem; // ← Réduit
+      margin-bottom: 1rem; // ← Réduit
+      font-size: 16px;
+    }
+
+    &__underline {
+      margin-top: -0.8rem; // ← Réduit
+      margin-bottom: 0.5rem;
+    }
+    
+    &__docs {
+      margin-bottom: 0.5rem; // ← Ajoute pour contrôler l'espacement bas
+    }
+  }
+}

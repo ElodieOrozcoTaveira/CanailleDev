@@ -52,16 +52,30 @@ Accents (liens, icônes) → $color-accent */
   z-index: 1000;
 }
 
-/* small responsive tweak: make it slightly smaller on very small screens */
-@media (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .icone {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     right: 15px;
     bottom: calc(55px + env(safe-area-inset-bottom));
     opacity: 0.5;
   }
   .icone:hover {
     opacity: 1;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .icone {
+    width: 30px;
+    height: 30px;
+    right: 60px;
+    bottom: calc(40px + env(safe-area-inset-bottom));
+  }
+}
+@media (min-width: 1440px) {
+  .icone {
+    width: 28px;
+    height: 28px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
   }
 }/*# sourceMappingURL=Fleche.css.map */

@@ -19,7 +19,7 @@ Accents (liens, icônes) → $color-accent */
   padding-bottom: 2rem;
   margin-bottom: 3rem;
   border-bottom: 1.5mm ridge #c0b47e;
-  background-image: url(/canigou.png);
+  background-image: url(/canigou.webp);
   background-repeat: no-repeat;
   background-position: right 45% bottom 55%;
 }
@@ -42,4 +42,22 @@ Accents (liens, icônes) → $color-accent */
 }
 .container-canailleDev__span {
   color: #c0b47e;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container-canailleDev {
+    display: flex;
+  }
+  .container-canailleDev__logo {
+    margin-left: 2rem;
+  }
+}
+@media (min-width: 1440px) {
+  .container-canailleDev {
+    /* Assure que l'image couvre toute la largeur en desktop */
+    background-size: cover;
+    /* Conserve la position par défaut, ajustable si besoin */
+    background-position: right 45% bottom 55%;
+    width: 100%;
+  }
 }/*# sourceMappingURL=CanailleDev.css.map */

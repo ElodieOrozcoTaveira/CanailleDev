@@ -138,10 +138,49 @@
   }
 }
 
+@media screen and (min-width: variables.$laptop) and (max-width: 1439){
+  .hero-container{
+    &__bienvenue{
+      margin-left: 4rem;
+    }
+    &__h2{
+      font-size: 1.5rem;
+      margin-bottom: 0.2rem;
+    }
+    &__h3{
+      font-size: 4rem;
+      margin-left: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    &__EOT{
+      font-size: 17px;
+      margin-bottom: 7rem;
+    }
+    &__p{
+      font-size: 2rem;
+      margin-bottom: -1rem;
+    }
+  }
+
+  .hero-container::before {
+    content: "";
+    position: absolute;
+    /* ajustez ces valeurs pour déplacer le halo */
+    left: 84%;
+    top: 35%;
+    width: 25%;
+    height: 25%;
+
+    /* utilisez blur pour adoucir le halo */
+    filter: blur(12px);
+    transform: translateZ(0);
+  }
+}
+
 @media (min-width:variables.$desktop) {
   .hero-container{
     &__bienvenue{
-      margin-left: 5rem;
+      margin-left: 4rem;
     }
     &__h2{
       font-size: 2rem;
@@ -149,12 +188,12 @@
     }
     &__h3{
       font-size: 5rem;
-      margin-left: 1.5rem;
+      margin-left: 1.6rem;
       margin-bottom: 1.5rem;
     }
     &__EOT{
-      font-size: 17px;
-      margin-bottom: 1rem;
+      font-size: 18px;
+      margin-bottom: 5rem;
     }
     &__p{
       font-size: 2rem;

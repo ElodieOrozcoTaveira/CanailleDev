@@ -20,12 +20,11 @@ export default function Hero() {
         <section className="hero-container__avatar">
           <Image
             className="hero-container__img"
-            src='/CanailleDev/avatar1.png'
+            src='/CanailleDev/avatar1.webp'
             alt="avatar CD"         
             height={200}
             width={200}
-            priority
-            loading="eager"
+            loading="lazy"
           />
         </section>
           <Apropos/>

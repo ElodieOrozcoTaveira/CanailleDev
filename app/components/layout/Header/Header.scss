@@ -36,45 +36,40 @@
   display: none;
 }
 
-@media (min-width: variables.$desktop) {
-  .header-container {
-    width: 100%;
-  }
-
+@media screen and (min-width: variables.$laptop) and (max-width: 1439px) {
   .container-logo {
+    margin-left: 3rem;
     margin-bottom: 3rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     width: 100%;
-    padding: 0 3rem;
+    padding: 0 2rem;
     gap: 1rem;
 
     &__img {
-      width: 80px;
-      height: 80px;
-      margin-top: 5rem;
+      width: 50px;
+      height: 50px;
+      margin-top: 1rem;
       grid-column: 1;
     }
     &__canailledev {
-      margin-top: 6rem;
-      font-size: 2rem;
+      font-size: 1.5rem;
+      margin-top: 2.2rem;
       grid-column: 2;
       justify-self: start;
     }
     &__span {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
-
   .menu-desktop {
     display: flex;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 1rem;
     grid-column: 3;
     justify-self: end;
-    margin-right: 5.5rem;
-
+    margin-right: 3rem;
 
     &__ul {
       display: flex;
@@ -85,17 +80,82 @@
       padding: 0;
     }
     &__link {
+      color: variables.$color-canaille;
+      font-size: 1.5rem;
+      text-decoration: none;
+      font-family: "Outfit";
+      font-weight: 400;
+      text-shadow: variables.$color-bg 0.5px 0.5px 0.5px;
+    }
+    &__link:hover {
       color: variables.$white-color;
+      transition: 0.2s ease;
+      text-decoration: underline;
+      opacity: 0.7;
+    }
+  }
+}
+
+@media (min-width: variables.$desktop) {
+  .header-container {
+    width: 100%;
+  }
+
+  .container-logo {
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    width: 100%;
+    padding: 0 3rem;
+    gap: 1rem;
+
+    &__img {
+      width: 55px;
+      height: 55px;
+      margin-top: 1rem;
+      grid-column: 1;
+    }
+    &__canailledev {
+      margin-top: 2.2rem;
+      font-size: 2rem;
+      grid-column: 2;
+      justify-self: start;
+    }
+    &__span {
+      font-size: 2rem;
+    }
+  }
+  .menu-desktop {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    grid-column: 3;
+    justify-self: end;
+    margin-right: 5.5rem;
+
+    &__ul {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    &__link {
+      color: variables.$color-canaille;
       font-size: 2rem;
       text-decoration: none;
       font-family: "Outfit";
       font-weight: 400;
-      text-shadow: variables.$color-canaille 0.5px 0.5px 0.5px;
+      text-shadow: variables.$color-bg 0.5px 0.5px 0.5px;
     }
     &__link:hover {
-      color: variables.$color-canaille;
+      color: variables.$white-color;
       transition: 0.2s ease;
-      text-decoration:underline;
+      text-decoration: underline;
+      opacity: 0.7;
     }
   }
 }

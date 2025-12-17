@@ -71,6 +71,11 @@ Accents (liens, icônes) → $color-accent */
   font-family: "Outfit";
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container-mentions p {
+    margin-left: 4rem;
+  }
+}
 @media (min-width: 1440px) {
   .container-mentions__underline {
     margin-bottom: 5rem;

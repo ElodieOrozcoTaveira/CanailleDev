@@ -1,7 +1,21 @@
+@charset "UTF-8";
+/*Breakpoint*/
+/* Variables couleurs */
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
 .hero-background {
   position: relative;
   max-height: 100vh;
-  background-image: url("/canigou.webp");
+  background-image: url("/canigou1.webp");
   background-size: cover;
   background-position: 57% center;
   background-attachment: fixed;

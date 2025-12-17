@@ -16,8 +16,9 @@ Accents (liens, icônes) → $color-accent */
   display: flex;
   flex-direction: column;
   position: relative; /* pour que le pseudo-élément soit positionné par rapport au conteneur */
-  overflow: visible;
+  overflow-x: hidden;
   height: 800px;
+  max-width: 100vw;
 }
 .hero-container__bienvenue {
   margin-left: 0.5rem;
@@ -116,22 +117,101 @@ Accents (liens, icônes) → $color-accent */
   .hero-container__img {
     width: 250px;
     height: 250px;
-    margin-right: 2rem;
+    margin-right: 0;
     z-index: 10;
   }
   .hero-container__avatar {
     margin-bottom: -60px;
+    padding-right: 1rem;
   }
   .hero-container::before {
     content: "";
     position: absolute;
     /* ajustez ces valeurs pour déplacer le halo */
-    left: 75%;
+    left: 65%;
     top: 35%;
-    width: 30%;
-    height: 30%;
+    width: 25%;
+    height: 25%;
     /* utilisez blur pour adoucir le halo */
     filter: blur(12px);
+    transform: translateZ(0);
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439) {
+  .hero-container__bienvenue {
+    margin-left: 4rem;
+  }
+  .hero-container__h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+  .hero-container__h3 {
+    font-size: 4rem;
+    margin-left: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-container__EOT {
+    font-size: 17px;
+    margin-bottom: 7rem;
+  }
+  .hero-container__p {
+    font-size: 2rem;
+    margin-bottom: -1rem;
+  }
+  .hero-container::before {
+    content: "";
+    position: absolute;
+    /* ajustez ces valeurs pour déplacer le halo */
+    left: 84%;
+    top: 35%;
+    width: 25%;
+    height: 25%;
+    /* utilisez blur pour adoucir le halo */
+    filter: blur(12px);
+    transform: translateZ(0);
+  }
+}
+@media (min-width: 1440px) {
+  .hero-container__bienvenue {
+    margin-left: 4rem;
+  }
+  .hero-container__h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero-container__h3 {
+    font-size: 5rem;
+    margin-left: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-container__EOT {
+    font-size: 18px;
+    margin-bottom: 5rem;
+  }
+  .hero-container__p {
+    font-size: 2rem;
+    margin-bottom: -1rem;
+  }
+  .hero-container__avatar {
+    margin-right: 3.5rem;
+    z-index: 10;
+    position: relative;
+    margin-bottom: -4.5rem;
+  }
+  .hero-container__img {
+    height: 310px;
+    width: 280px;
+  }
+  .hero-container::before {
+    content: "";
+    position: absolute;
+    /* ajustez ces valeurs pour déplacer le halo */
+    left: 83%;
+    top: 35%;
+    width: 25%;
+    height: 25%;
+    /* utilisez blur pour adoucir le halo */
+    filter: blur(5px);
     transform: translateZ(0);
   }
 }/*# sourceMappingURL=Hero.css.map */

@@ -15,7 +15,7 @@ export default function Header() {
                       alt="logo canailledev"
                       width={45}
                       height={45}
-                      loading="eager"
+                      loading="lazy"
                     />
                   </Link>
                   <h1 className="container-logo__canailledev">Canaille<span className="container-logo__span">Dev</span></h1>

@@ -19,11 +19,15 @@ Accents (liens, icônes) → $color-accent */
   margin-bottom: 1.5rem;
   margin-top: -2.5rem;
 }
+.container-error__link {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
 .container-error__btn {
   margin-bottom: -1.5rem;
   margin-top: 1rem;
-  display: inline-block;
-  margin-left: 7.3rem;
+  display: block;
   padding: 0.7rem 1.5rem;
   background: linear-gradient(135deg, #2e86c1, #1b5f8a);
   color: #c0b47e;
@@ -32,4 +36,11 @@ Accents (liens, icônes) → $color-accent */
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 500;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container-error__btn {
+    margin-top: 2rem;
+    margin-bottom: -1.5rem;
+  }
 }/*# sourceMappingURL=404.css.map */

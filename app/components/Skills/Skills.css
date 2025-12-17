@@ -121,9 +121,23 @@ Accents (liens, icônes) → $color-accent */
     flex-wrap: wrap;
     justify-content: center;
   }
+  .container-skills__h2 {
+    margin-top: 8rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .container-skills__h2 {
+    margin-top: 8rem;
+  }
+  .container-skills__grid {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
 }
 @media (min-width: 1440px) {
   .container-skills__h2 {
+    margin-top: 10rem;
     font-size: 40px;
   }
   .container-skills__underline {

@@ -148,5 +148,23 @@ Accents (liens, icônes) → $color-accent */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .container-projets__h2 {
+    margin-top: 8rem;
+  }
+  .container-projets__grid {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .container-projets__grid {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
   }
 }/*# sourceMappingURL=MesProjets.css.map */

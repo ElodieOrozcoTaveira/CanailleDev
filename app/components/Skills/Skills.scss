@@ -132,6 +132,18 @@
   }
 }
 
+@media screen and (min-width:variables.$laptop) and (max-width:1439px){
+  .container-skills{
+    &__h2{
+      margin-top: 8rem;
+    }
+    &__grid {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+  }
+}
 
 
 @media (min-width: variables.$desktop) {

@@ -7,7 +7,7 @@ export default function Skills() {
       id: 1,
       skill: "Design",
       outils: [
-        { name: "Figma", icon: "/Icones/figma.png" },
+        { name: "Figma", icon: "/Icones/figma.webp" },
         { name: "UX/UI", icon: "/Icones/ux.webp" },
         { name: "SCSS", icon: "/Icones/sass.webp" },
       ],

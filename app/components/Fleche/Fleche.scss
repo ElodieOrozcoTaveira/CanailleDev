@@ -53,6 +53,17 @@
     opacity: 1;
   }}
 
+  @media screen and (min-width:variables.$laptop) and (max-width:1439px){
+    .icone{
+      width: 30px;
+      height: 30px;
+      right: 60px;
+      bottom: calc(40px + env(safe-area-inset-bottom));
+
+    }
+
+  }
+
   @media (min-width: variables.$desktop){
     .icone{
       width: 28px;

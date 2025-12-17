@@ -133,8 +133,7 @@ export default function Contact() {
         alt="avatar contact "
         width={180}
         height={200}
-        priority
-        loading="eager"
+        loading="lazy"
         />
 
       <div className="container-contact__form">
