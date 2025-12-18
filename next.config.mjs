@@ -13,7 +13,6 @@ const nextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
   // Optimisations du compilateur
@@ -29,6 +28,23 @@ const nextConfig = {
   // Headers HTTP pour cache et sécurité
   async headers() {
     return [
+      {
+  source: '/(.*)',
+  headers: [
+      {
+      key: 'Content-Security-Policy',
+      value: `
+        default-src 'self';
+        connect-src 'self' https://api.emailjs.com;
+        script-src 'self' 'unsafe-inline' https://api.emailjs.com;
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data: blob:;
+        font-src 'self';
+        frame-src 'none';
+      `.replace(/\s{2,}/g, ' ').trim()
+      },
+    ],
+  },
       {
         source: '/:all*(svg|jpg|jpeg|png|gif|webp|avif|ico)',
         headers: [
