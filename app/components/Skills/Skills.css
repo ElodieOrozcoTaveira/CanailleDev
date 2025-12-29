@@ -17,6 +17,7 @@ Accents (liens, icônes) → $color-accent */
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 3rem;
 }
 .container-skills__h2 {
   margin-top: 3rem;

@@ -1,0 +1,96 @@
+
+@use '../styles/variables/variables.scss';
+@use '../styles/mixins/mixins.scss';
+
+
+
+.container-Ocoffee{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -3rem;
+    &__h1{
+        @include mixins.h2;
+    }
+    &__underline {
+        @include mixins.underline;
+    }
+    &__p{
+        margin-left: 15rem;
+        margin-right: 15rem;
+        margin-bottom: 2rem;
+        font-size: 20px;
+        font-weight: 300;
+        text-align: justify;
+        color: variables.$white-color;
+        font-family: 'Outfit';
+    }
+    &__span{
+      color: variables.$color-canaille;
+      font-weight: 400;
+      text-shadow: 1px 1px 0.5px variables.$white-color;
+    }
+}
+
+.video-container{
+  display: flex;
+  justify-content: center;
+  &__project-video{
+    border-radius: 30px;
+  }
+}
+
+
+
+// Responsive
+@media (max-width: 1024px) {
+  .container-Ocoffee {
+    &__p{
+      margin-left: 5rem;
+      margin-right: 5rem;
+    }
+  }
+.video-container{
+  margin-bottom: 3rem;
+}
+}
+
+@media (max-width: 768px) {
+    .container-Ocoffee {
+    &__h1{
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+    &__p{
+      margin-top: 3rem;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      margin-bottom: 3rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+  }
+.video-container{
+  margin-bottom: 3rem;
+}
+}
+
+@media (max-width: 480px) {
+  .container-Ocoffee {
+    &__h1{
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+    &__p{
+      margin-top: 3rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+  }
+.video-container{
+  margin-bottom: 3rem;
+}
+}

@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/*Breakpoint*/
+/* Variables couleurs */
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
+.container-blablabook {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -3rem;
+}
+.container-blablabook__h1 {
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  font-size: 30px;
+  color: #f1f2ec;
+  font-family: "Outfit";
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.container-blablabook__underline {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10rem;
+  border: dashed #c0b47e 2px;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+.container-blablabook__p {
+  margin-left: 15rem;
+  margin-right: 15rem;
+  margin-bottom: 2rem;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: justify;
+  color: #f1f2ec;
+  font-family: "Outfit";
+}
+.container-blablabook__span {
+  color: #c0b47e;
+  font-weight: 600;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+}
+.video-container__project-video {
+  border-radius: 30px;
+}
+
+@media (max-width: 1024px) {
+  .container-blablabook__p {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  .video-container {
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  .container-blablabook__h1 {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  .container-blablabook__p {
+    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .video-container {
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 480px) {
+  .container-blablabook__h1 {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  .container-blablabook__p {
+    margin-top: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .video-container {
+    margin-bottom: 3rem;
+  }
+}/*# sourceMappingURL=bbb.css.map */

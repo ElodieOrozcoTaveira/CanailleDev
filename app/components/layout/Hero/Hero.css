@@ -17,7 +17,8 @@ Accents (liens, icônes) → $color-accent */
   flex-direction: column;
   position: relative; /* pour que le pseudo-élément soit positionné par rapport au conteneur */
   overflow-x: hidden;
-  height: 800px;
+  min-height: 800px;
+  height: auto;
   max-width: 100vw;
 }
 .hero-container__bienvenue {

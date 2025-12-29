@@ -22,14 +22,14 @@ export default function MesProjets() {
       id: 3,
       projet: "BlaBlaBook, Apothéose fin de formation",
       image: "/Projets/blablabook.webp",
-      url: "/404",
+      url: "/BBB",
       privacy: "Projet Privé",
     },
     {
       id: 4,
       projet: "OCoffee, projet de formation",
       image: "/Projets/ocoffee.webp",
-      url: "/404",
+      url: "/Ocoffee",
       privacy: "Projet Privé",
     },
   ];
