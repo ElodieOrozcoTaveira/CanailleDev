@@ -20,5 +20,5 @@ body {
 body {
   background: variables.$gradient-hero;
   min-height: 100vh;
-  overflow-x: hidden; // S'assurer qu'il n'y a pas de scroll horizontal non désiré
+  overflow-x: hidden;
 }
