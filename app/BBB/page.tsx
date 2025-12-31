@@ -24,6 +24,8 @@ export default function ProjectCarousel() {
         <video 
           controls 
           autoPlay
+          muted
+          playsInline // empeche la vidéo en grand écran 
           className="video-container__project-video"
           width={500}
           height={500}
