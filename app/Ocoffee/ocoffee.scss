@@ -73,6 +73,11 @@
   }
 .video-container{
   margin-bottom: 3rem;
+   &__project-video{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 400px;
+  }
 }
 }
 

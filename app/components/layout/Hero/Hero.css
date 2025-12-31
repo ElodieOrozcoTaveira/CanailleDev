@@ -53,18 +53,19 @@ Accents (liens, icônes) → $color-accent */
   text-shadow: 0.5px 0.5px 0.5px #f1f2ec;
   text-align: right;
   margin-top: -2.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   text-align: left;
   margin-left: 2.1rem;
 }
 .hero-container__p {
   color: #c0b47e;
   text-shadow: 1px 1px 0.5px #f1f2ec;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: 2.5px;
   margin-bottom: 2.7rem;
   text-align: center;
   font-size: 1.5rem;
+  font-family: "Outfit";
 }
 .hero-container__avatar {
   display: flex;
@@ -86,33 +87,35 @@ Accents (liens, icônes) → $color-accent */
   position: absolute;
   /* ajustez ces valeurs pour déplacer le halo */
   left: 63%;
-  top: 34%;
+  top: 25%;
   width: 30%;
   height: 30%;
   z-index: 1;
   pointer-events: none;
   /* couleur et dégradé radial en utilisant la variable halo */
-  background: radial-gradient(circle at 30% 30%, rgba(192, 180, 126, 0.85) 0%, rgba(241, 242, 236, 0.45) 20%, rgba(192, 180, 126, 0.15) 40%, rgba(241, 242, 236, 0) 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(241, 242, 236, 0.85) 0%, rgba(241, 242, 236, 0.45) 20%, rgba(241, 242, 236, 0.15) 40%, rgba(241, 242, 236, 0) 70%);
   /* utilisez blur pour adoucir le halo */
-  filter: blur(10px);
+  filter: blur(12px);
   transform: translateZ(0);
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .hero-container__h2 {
+    margin-left: 2.2rem;
     font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
   .hero-container__h3 {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 1.5rem;
   }
   .hero-container__EOT {
     margin-left: 2.2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
   }
   .hero-container__p {
-    color: #f1f2ec;
-    text-shadow: 0.5px 0.5px 0.5px #c0b47e;
+    color: #c0b47e;
+    text-shadow: 0.5px 0.5px 0.5px #f1f2ec;
     margin-bottom: -0.5rem;
   }
   .hero-container__img {
@@ -129,8 +132,8 @@ Accents (liens, icônes) → $color-accent */
     content: "";
     position: absolute;
     /* ajustez ces valeurs pour déplacer le halo */
-    left: 65%;
-    top: 35%;
+    left: 80%;
+    top: 30%;
     width: 25%;
     height: 25%;
     /* utilisez blur pour adoucir le halo */

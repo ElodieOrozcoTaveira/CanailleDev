@@ -19,7 +19,7 @@ Accents (liens, icônes) → $color-accent */
   border-top-right-radius: 24px;
   padding: 0.27rem;
   border: 2px solid #d6b36a;
-  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2), inset 0 0 60px rgba(120, 90, 40, 0.35), 0 18px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2), inset 0 0 60px rgba(120, 90, 40, 0.35), inset 0 0 80px rgba(90, 60, 20, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.25), 0 18px 40px rgba(0, 0, 0, 0.35);
   color: #3a2c18;
   overflow-x: hidden;
   overflow-y: auto;
@@ -48,6 +48,7 @@ Accents (liens, icônes) → $color-accent */
   font-family: "Outfit";
   font-size: 14.5px;
   padding: 0 1rem;
+  letter-spacing: 1.5px;
 }
 
 .container-apropos::before {
@@ -57,16 +58,6 @@ Accents (liens, icônes) → $color-accent */
   inset: 0;
   background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.025), rgba(0, 0, 0, 0.025) 1px, transparent 1px, transparent 3px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 4px);
   opacity: 0.45;
-  pointer-events: none;
-}
-
-.container-apropos::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  box-shadow: inset 0 0 80px rgba(90, 60, 20, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.25);
   pointer-events: none;
 }
 
@@ -85,7 +76,7 @@ Accents (liens, icônes) → $color-accent */
     padding: 0.5rem 1rem;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .container-apropos {
     width: 100%;
     margin-left: 0;
@@ -93,11 +84,15 @@ Accents (liens, icônes) → $color-accent */
     border-radius: 0;
   }
   .container-apropos__h2 {
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: 400;
+    text-shadow: 1px 1px 0.5px #f1f2ec;
   }
   .container-apropos__p {
     font-size: 16.5px;
     padding: 0.5rem 1.5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1439) {
@@ -128,6 +123,8 @@ Accents (liens, icônes) → $color-accent */
     font-size: 30px;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 0.5px #f1f2ec;
   }
   .container-apropos__texte {
     display: block;
@@ -135,7 +132,9 @@ Accents (liens, icônes) → $color-accent */
     margin-right: auto;
   }
   .container-apropos__p {
-    text-align: center;
+    text-align: justify;
     font-size: 25px;
+    margin-left: 10rem;
+    margin-right: 10rem;
   }
 }/*# sourceMappingURL=Apropos.css.map */

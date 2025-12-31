@@ -7,11 +7,25 @@
   max-height: 200vh;
   background-image: url("/canigou1.webp");
   background-size: cover;
-  background-position: 57% center;
+  background-position: 57% -30px;
   background-attachment: fixed;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   
 }
+
+@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop){
+  .hero-background{
+      background-position: 57% -5px;
+  }
+}
+
+@media (min-width: variables.$desktop) {
+  .hero-background{
+    background-position: 57% -230px;
+
+  }
+}
+
 
 

@@ -2,6 +2,7 @@
 
 import '../BBB/bbb.scss';
 import CanailleDev from '../components/canailledev/CanailleDev';
+import Fleche from '../components/Fleche/Fleche';
 import Footer from '../components/layout/Footer/Footer';
 
 export default function ProjectCarousel() {
@@ -31,7 +32,7 @@ export default function ProjectCarousel() {
           Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
       </div>
-
+      <Fleche/>
       <Footer/>
     </>
   )

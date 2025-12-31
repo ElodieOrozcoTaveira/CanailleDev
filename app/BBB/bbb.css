@@ -86,6 +86,11 @@ Accents (liens, icônes) → $color-accent */
   .video-container {
     margin-bottom: 3rem;
   }
+  .video-container__project-video {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 400px;
+  }
 }
 @media (max-width: 480px) {
   .container-blablabook__h1 {
