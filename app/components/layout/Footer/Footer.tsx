@@ -21,7 +21,7 @@ export default function Footer() {
                     </svg>
                 </a>
                 <a 
-                    href="www.linkedin.com/in/elodieorozcotaveira"      
+                    href="https://www.linkedin.com/in/elodieorozcotaveira"      
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="container-footer__social-link"
@@ -30,7 +30,7 @@ export default function Footer() {
                     <Linkedin size={24} />
                 </a>
                 <a 
-                    href="https://https://github.com/ElodieOrozcoTaveira" 
+                    href="https://github.com/ElodieOrozcoTaveira" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="container-footer__social-link"
