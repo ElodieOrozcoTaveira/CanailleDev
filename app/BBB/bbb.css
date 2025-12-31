@@ -87,8 +87,8 @@ Accents (liens, icônes) → $color-accent */
     margin-bottom: 3rem;
   }
   .video-container__project-video {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
     width: 400px;
   }
 }
