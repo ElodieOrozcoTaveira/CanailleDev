@@ -1,17 +1,17 @@
 // BodyContent.tsx
-'use client'
+"use client";
 
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
-export default function BodyContent({ 
-  children 
-}: { 
-  children: React.ReactNode 
+export default function BodyContent({
+  children,
+}: {
+  children: React.ReactNode;
 }) {
   useEffect(() => {
     // Nettoie les attributs d'extensions
-    document.body.removeAttribute('cz-shortcut-listen')
-  }, [])
+    document.body.removeAttribute("cz-shortcut-listen");
+  }, []);
 
-  return <body suppressHydrationWarning>{children}</body>
+  return <>{children}</>;
 }

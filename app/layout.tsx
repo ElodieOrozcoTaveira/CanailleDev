@@ -2,6 +2,7 @@
 import { Outfit } from 'next/font/google';
 import BodyContent from "./components/BodyContent/Body";
 import "./styles/globals/globals.scss";
+import GoogleAnalytics from './components/Analytics/analytics';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={outfit.className}>
       <body suppressHydrationWarning>
+        <GoogleAnalytics/>
         <BodyContent>{children}</BodyContent>
       </body>
     </html>

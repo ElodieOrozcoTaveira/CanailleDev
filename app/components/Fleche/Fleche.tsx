@@ -1,9 +1,7 @@
-
 "use client";
 
 import "../Fleche/Fleche.scss";
 import { FaArrowCircleUp } from "react-icons/fa";
-
 
 export default function Fleche() {
   const scrollToTop = () => {
@@ -28,12 +26,7 @@ export default function Fleche() {
       onClick={scrollToTop}
       onKeyDown={onKeyDown}
     >
-      <FaArrowCircleUp 
-        className="icone"
-        width={40}
-        height={40}
-         />
-        
+      <FaArrowCircleUp className="icone" size={24} />
     </div>
   );
 }

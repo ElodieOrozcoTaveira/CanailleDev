@@ -25,7 +25,7 @@ const nextConfig = {
         : false,
   },
 
-  // Compression (activée par défaut mais on peut le préciser)
+  // Compression
   compress: true,
 
   // Headers HTTP pour cache et sécurité
@@ -38,10 +38,10 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: `
         default-src 'self';
-        connect-src 'self' https://api.emailjs.com;
-        script-src 'self' 'unsafe-inline' https://api.emailjs.com;
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-        img-src 'self' data: blob:;
+        connect-src 'self' https://api.emailjs.com https://www.google-analytics.com https://analytics.google.com;;
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://api.emailjs.com https://cdn.jsdelivr.net https://www.googletagmanager.com;;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.googleapis.com;
+        img-src 'self' data: blob: https://www.google-analytics.com;
         font-src 'self' https://fonts.gstatic.com;
         frame-src 'none';
       `

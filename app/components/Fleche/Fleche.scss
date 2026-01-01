@@ -1,38 +1,37 @@
 @use "../../styles/variables/variables.scss";
 
 .btn_arrow {
-  display: block;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  display: contents;
+  opacity: 1;
 }
 
 .btn_arrow:hover .icone {
   background-color: variables.$white-color;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .icone {
+  position: fixed;
+  right: 0.3rem;
+  bottom: 0.5rem;
+  cursor: pointer;
   width: 30px;
   height: 30px;
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  cursor: pointer;
+  padding: 1px;
   border-radius: 50%;
-  transition: background-color 0.2s ease, transform 0.12s ease;
-  color: variables.$color-canaille;
-  border: solid 1px variables.$color-parchemin;
+  transition: background-color 0.2s ease, transform 0.12s ease,
+  opacity 0.2s ease;
+  color: variables.$color-parchemin;
+  border: solid 2px variables.$color-canaille;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: variables.$color-canaille;
+  background: variables.$white-color;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   z-index: 2000;
   pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
 }
 
 .icone:active {
@@ -40,8 +39,7 @@
   z-index: 1000;
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 1023px){
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .icone {
     width: 30px;
     height: 30px;
@@ -51,23 +49,22 @@
   }
   .icone:hover {
     opacity: 1;
-  }}
-
-  @media screen and (min-width:variables.$laptop) and (max-width:1439px){
-    .icone{
-      width: 30px;
-      height: 30px;
-      right: 60px;
-      bottom: calc(40px + env(safe-area-inset-bottom));
-
-    }
-
   }
+}
 
-  @media (min-width: variables.$desktop){
-    .icone{
-      width: 28px;
-      height: 28px;
-      bottom: calc(10px + env(safe-area-inset-bottom));
-    }
+@media screen and (min-width: variables.$laptop) and (max-width: 1439px) {
+  .icone {
+    width: 30px;
+    height: 30px;
+    right: 60px;
+    bottom: calc(40px + env(safe-area-inset-bottom));
   }
+}
+
+@media (min-width: variables.$desktop) {
+  .icone {
+    width: 28px;
+    height: 28px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+  }
+}
