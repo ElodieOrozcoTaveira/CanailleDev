@@ -32,7 +32,7 @@ export default function CookieBanner() {
       onDecline={handleDecline}
       cookieName="canaille-dev-cookie-consent"
       style={{ 
-        background: "variables.$color-forest-light",
+        background: "#5f8f6d",
         padding: "20px",
         alignItems: "center"
       }}
@@ -54,7 +54,7 @@ export default function CookieBanner() {
       }}
       expires={365}
     >
-      Ce site utilise des cookies pour améliorer votre expérience et analyser le trafic.{" "}
+      🍪 Ce site utilise des cookies pour améliorer votre expérience et analyser le trafic 🍪{" "}
     </CookieConsent>
   );
 }
