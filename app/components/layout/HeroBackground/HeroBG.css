@@ -16,7 +16,7 @@ Accents (liens, icônes) → $color-accent */
   position: relative;
   background-image: url("/canigou-moyen.webp");
   background-size: cover;
-  background-position: 61% -340px;
+  background-position: 61% -300px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -39,11 +39,12 @@ Accents (liens, icônes) → $color-accent */
 @media (min-width: 1024px) {
   .hero-background {
     background-image: url("/canigou-grand.webp");
-    background-position: 65% -335px;
+    background-position: 85% -245px;
   }
 }
 @media (min-width: 1440px) {
   .hero-background {
     background-position: 33% -210px;
+    background-image: url("/canigou-grand.webp");
   }
 }/*# sourceMappingURL=HeroBG.css.map */

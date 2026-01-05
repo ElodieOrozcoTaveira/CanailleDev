@@ -45,6 +45,7 @@ Accents (liens, icônes) → $color-accent */
 .container-apropos__p {
   text-align: justify;
   color: #6b7c86;
+  text-shadow: #f1f2ec 2px 1px 1px;
   font-family: "Outfit";
   font-size: 14.5px;
   letter-spacing: 1px;

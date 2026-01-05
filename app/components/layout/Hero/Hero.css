@@ -51,7 +51,7 @@ Accents (liens, icônes) → $color-accent */
   font-family: "Outfit";
   font-weight: 400;
   color: #c0b47e;
-  text-shadow: 0.5px 0.5px 0.5px #f1f2ec;
+  text-shadow: 1.5px 1px 1px #1b5f8a;
   text-align: right;
   margin-top: -2.8rem;
   margin-bottom: 4rem;
@@ -63,7 +63,7 @@ Accents (liens, icônes) → $color-accent */
   text-shadow: 5px 5px 5px #2e5f3e;
   font-weight: 400;
   letter-spacing: 2.5px;
-  margin-bottom: 2.7rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   font-size: 1.6rem;
   font-family: "Outfit";
