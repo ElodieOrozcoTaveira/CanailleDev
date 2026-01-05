@@ -13,6 +13,7 @@
     margin-left: 0.5rem;
     font-size: 1rem;
     color: variables.$white-color;
+    text-shadow: variables.$color-accent-hover 2px 2px 1px;
     font-family: "Outfit";
     letter-spacing: 0.5px;
   }
@@ -195,7 +196,7 @@
     &__h3 {
       font-size: 5rem;
       margin-left: 1.6rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
     &__EOT {
       font-size: 18px;

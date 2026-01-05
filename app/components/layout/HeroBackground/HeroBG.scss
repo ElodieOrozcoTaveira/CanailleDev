@@ -2,9 +2,9 @@
 
 .hero-background {
   position: relative;
-  background-image: url("/canigou3.jpg");
+  background-image: url("/canigou-moyen.webp");
   background-size: cover;
-  background-position: 65% -340px;
+  background-position: 61% -340px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -25,18 +25,19 @@
 
 @media screen and (min-width: variables.$tablet) and (max-width: 1023px) {
   .hero-background {
-    background-position: 77% -295px;
+    background-position: 64% -295px;
   }
 }
 
 @media (min-width: variables.$laptop) {
   .hero-background {
+    background-image: url('/canigou-grand.webp');
     background-position: 65% -335px;
   }
 }
 
 @media (min-width: variables.$desktop) {
   .hero-background {
-    background-position: 100% -370px;
+    background-position: 33% -210px;
   }
 }

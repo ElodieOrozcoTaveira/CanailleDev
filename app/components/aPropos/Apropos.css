@@ -47,8 +47,8 @@ Accents (liens, icônes) → $color-accent */
   color: #6b7c86;
   font-family: "Outfit";
   font-size: 14.5px;
+  letter-spacing: 1px;
   padding: 0 1rem;
-  letter-spacing: 1.5px;
 }
 
 .container-apropos::before {

@@ -29,16 +29,15 @@ Accents (liens, icônes) → $color-accent */
   cursor: pointer;
   width: 30px;
   height: 30px;
-  padding: 1px;
+  padding: 0.2px;
   border-radius: 50%;
   transition: background-color 0.2s ease, transform 0.12s ease, opacity 0.2s ease;
   color: #d6b36a;
-  border: solid 2px #c0b47e;
+  border: solid 0.2px #f1f2ec;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #f1f2ec;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   z-index: 2000;
   pointer-events: auto;
   opacity: 1;
@@ -55,8 +54,8 @@ Accents (liens, icônes) → $color-accent */
     width: 30px;
     height: 30px;
     right: 15px;
-    bottom: calc(55px + env(safe-area-inset-bottom));
-    opacity: 0.5;
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    opacity: 1;
   }
   .icone:hover {
     opacity: 1;

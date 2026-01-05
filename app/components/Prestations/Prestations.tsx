@@ -14,6 +14,7 @@ export default function Prestations() {
                 'Formulaire de contact',
             ],
             image:'/presta/vitrine.png',
+            tarifs:'A partir de 1500 euros',
         },
          {
             id:2, sujet: 'Applications Web' ,
@@ -26,6 +27,8 @@ export default function Prestations() {
                 'Sécurité de base',
              ],
               image:'/presta/appweb.png',
+              tarifs:'A partir de 3000 euros'
+
         },
         {
             id:3, sujet: 'Sites e-commerce' ,
@@ -34,6 +37,8 @@ export default function Prestations() {
                 'Design personnalisé',
              ],
               image:'/presta/ecommerce.png',
+              tarifs:'A partir de 2500 euros',
+
         },
          {
             id:4, sujet: 'Refont/Maintenance' , 
@@ -42,6 +47,8 @@ export default function Prestations() {
                 'Correction de bugs',
              ],
             image:'/presta/maintenance.png',
+            tarifs:'A partir de 50 euros / heure'
+
         },
     ]
 
@@ -76,6 +83,9 @@ export default function Prestations() {
                             <li className="container-services__li" key={index}>{presta}</li>
                         ))}
                     </ul>
+                    <p className="container-services__tarifs">
+                        {services.tarifs}
+                    </p>
                     
                 </article>
             ))}

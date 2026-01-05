@@ -28,6 +28,7 @@ Accents (liens, icônes) → $color-accent */
 }
 .container-logo__canailledev {
   color: #f1f2ec;
+  text-shadow: #1b5f8a 2px 2px 1px;
   font-family: "Outfit";
   font-weight: 500;
   letter-spacing: -0.75px;

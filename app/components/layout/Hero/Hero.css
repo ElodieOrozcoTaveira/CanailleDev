@@ -25,6 +25,7 @@ Accents (liens, icônes) → $color-accent */
   margin-left: 0.5rem;
   font-size: 1rem;
   color: #f1f2ec;
+  text-shadow: #1b5f8a 2px 2px 1px;
   font-family: "Outfit";
   letter-spacing: 0.5px;
 }
@@ -187,7 +188,7 @@ Accents (liens, icônes) → $color-accent */
   .hero-container__h3 {
     font-size: 5rem;
     margin-left: 1.6rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
   .hero-container__EOT {
     font-size: 18px;
