@@ -20,7 +20,8 @@ Accents (liens, icônes) → $color-accent */
   align-content: center;
   gap: 0.2rem;
   color: #f1f2ec;
-  height: 12rem;
+  padding: 8rem 0;
+  height: 2rem;
 }
 .container-footer__h2 {
   font-size: 18px;

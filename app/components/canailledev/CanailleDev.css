@@ -19,9 +19,9 @@ Accents (liens, icônes) → $color-accent */
   padding-bottom: 2rem;
   margin-bottom: 3rem;
   border-bottom: 1.5mm ridge #c0b47e;
-  background-image: url(/canigou.webp);
+  background-image: url(/canigou-grand.webp);
   background-repeat: no-repeat;
-  background-position: right 45% bottom 55%;
+  background-position: right 42% bottom 49%;
 }
 .container-canailleDev__link {
   display: flex;
@@ -30,12 +30,14 @@ Accents (liens, icônes) → $color-accent */
 }
 .container-canailleDev__logo {
   display: block;
-  margin-left: 5rem;
-  margin-top: 3rem;
+  margin-left: 1rem;
+  margin-top: 2rem;
+  height: 50px;
+  width: 50px;
 }
 .container-canailleDev__h2 {
-  margin-top: 4rem;
-  font-size: 2rem;
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
   color: #f1f2ec;
   font-family: "Outfit";
   font-weight: 500;
@@ -47,9 +49,19 @@ Accents (liens, icônes) → $color-accent */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .container-canailleDev {
     display: flex;
+    background-position: right 25% bottom 50%;
   }
   .container-canailleDev__logo {
     margin-left: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container-canailleDev {
+    /* Assure que l'image couvre toute la largeur en desktop */
+    background-size: cover;
+    /* Conserve la position par défaut, ajustable si besoin */
+    background-position: right 45% bottom 48%;
+    width: 100%;
   }
 }
 @media (min-width: 1440px) {
