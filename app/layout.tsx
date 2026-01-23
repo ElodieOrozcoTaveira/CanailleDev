@@ -1,15 +1,21 @@
 // app/layout.tsx
-import { Outfit } from 'next/font/google';
+import { Fira_Code } from 'next/font/google';
 import BodyContent from "./components/BodyContent/Body";
 import "./styles/globals/globals.scss";
 import GoogleAnalytics from './components/Analytics/analytics';
 import CookieBanner from './components/cookie/cookieBanner';
 
-const outfit = Outfit({
+/*const outfit = Outfit({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500','600', '700', '800', '900'],
   display: 'swap',
-});
+});*/
+
+const fira = Fira_Code({
+  subsets: ['latin'],
+  weight: ['300', '400', '500','600', '700'],
+  display: 'swap',
+})
 
 export default function RootLayout({
   children,
@@ -17,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={outfit.className}>
+    <html lang="fr" className={fira.className}>
       <body suppressHydrationWarning>
         <GoogleAnalytics/>
         <CookieBanner/>

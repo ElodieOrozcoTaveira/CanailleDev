@@ -1,0 +1,99 @@
+@use "../../styles/variables/variables.scss";
+
+.hero-container {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  &__leftside {
+    background-color: variables.$color-forest-light;
+    width: 49%;
+  }
+  &__vertical {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 300;
+    padding-top: 2.5rem;
+    color: variables.$color-parchemin;
+  }
+  &__rightside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+    background-color: variables.$white-color;
+    width: 55%;
+    position: relative;
+    color: variables.$color-marron;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &__EOT {
+    position: absolute;
+    bottom: 2rem;
+    right: 5rem;
+  }
+  &__title {
+    text-transform: uppercase;
+    font-family: "Fira Code";
+    font-size: 30px;
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+  &__subtitle {
+    text-transform: uppercase;
+    font-size: 25px;
+    padding-bottom: 2rem;
+  }
+  &__reseaux {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+  }
+  &__btnreseaux1 {
+    border: variables.$color-marron 1px solid;
+    color: variables.$color-marron;
+    font-size: 16px;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    border-bottom-left-radius: 20px;
+  }
+  &__btnreseaux2 {
+    background-color: variables.$color-marron;
+    color: variables.$color-canaille;
+    font-size: 16px;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    border-bottom-left-radius: 20px;
+  }
+  &__nbrprojet{
+    padding-top: 2rem;
+    font-size: 18px;
+  }
+  &__span{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  &__EOT{
+    color: variables.$color-marron;
+  }
+  &__avatar {
+    position: absolute;
+    bottom: -25;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  &__img {
+    position: relative;
+    z-index: 10;
+  }
+}

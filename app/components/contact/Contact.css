@@ -51,7 +51,6 @@ Accents (liens, icônes) → $color-accent */
   flex-direction: column;
 }
 .container-contact__label, .container-contact__email {
-  color: #cabdff;
   font-family: "Outfit";
   font-weight: bold;
   font-size: 18px;

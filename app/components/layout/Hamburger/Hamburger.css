@@ -20,7 +20,7 @@ Accents (liens, icônes) → $color-accent */
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1001;
+  z-index: 3000;
   padding: 1.5rem 1rem;
   opacity: 1;
   transition: opacity 0.3s ease;
@@ -42,19 +42,30 @@ Accents (liens, icônes) → $color-accent */
   color: #c0b47e;
   cursor: pointer;
   position: relative;
-  z-index: 1001;
+  z-index: 3001; /* above menu so it stays clickable */
+  width: 1px;
+  height: 50px;
+  padding: 0;
+}
+
+.hamburger-icon {
+  width: 55px;
+  height: 55px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .hamburger-menu {
-  /* use fixed to escape ancestor stacking contexts created by transforms/animations */
-  position: inherit;
+  /* force on top of hero sections */
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
   transform-origin: top right;
-  transition: opacity 2ms ease, transform 2ms ease;
-  z-index: 10; /* ensure above animated content */
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 3000;
   opacity: 1;
+  pointer-events: none;
 }
 
 /* When the menu is open, ensure the button/icon contrasts with the menu background */
@@ -78,14 +89,14 @@ Accents (liens, icônes) → $color-accent */
 }
 
 .hamburger-menu__list {
-  background-color: #8fbcd6;
+  background-color: #5f8f6d;
   list-style: none;
   margin: 0;
   padding: 8px 0;
   box-shadow: 3px 3px 4px #c0b47e;
   height: 45vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.5rem;
   justify-content: center;
   align-items: center;
@@ -121,6 +132,10 @@ Accents (liens, icônes) → $color-accent */
     width: 100%;
     align-items: center;
   }
+  .hamburger-wrapper {
+    right: 15;
+    top: -15;
+  }
   .hamburger-menu__list li {
     margin-left: 0;
   }
@@ -135,18 +150,12 @@ Accents (liens, icônes) → $color-accent */
     margin-left: 0;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   .hamburger-wrapper {
     display: flex;
   }
   .hamburger-button svg {
     width: 2rem;
     height: 2rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  /* hide hamburger on larger screens */
-  .hamburger-wrapper {
-    display: none;
   }
 }/*# sourceMappingURL=Hamburger.css.map */

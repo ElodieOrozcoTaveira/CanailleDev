@@ -1,0 +1,118 @@
+@use "../../styles/variables/variables.scss";
+
+//version mobile
+.hero-container {
+  height: 100vh;
+  display: flex;
+  font-family: "Fira Code";
+  &__leftside {
+    width:35%;
+    background-color: variables.$color-forest-light;
+    height: 100vh;
+  }
+  &__vertical {
+    writing-mode: sideways-rl;
+    text-orientation: upright;
+    padding-top: 1.8rem;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: variables.$color-canaille;
+    font-weight: 500;
+    letter-spacing: 10px;
+  }
+  &__dev {
+    color: variables.$color-forest-dark;
+    font-weight: bold;
+  }
+  &__rightside {
+    height: 100vh;
+    background-color: variables.$white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    width: 65%;
+  }
+   &__avatar {
+    position: absolute;
+    top: 40;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  &__img {
+    position: relative;
+    z-index: 10;
+    width: 320px;
+    height: 320px;
+  }
+
+  &__title {
+    padding-top: 20rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    font-size: 25px;
+    color: variables.$color-forest;
+    font-weight: 500;
+  }
+  &__subtitle {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    font-size: 20px;
+    color: variables.$color-forest;
+  }
+  &__reseaux {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-left: 1rem;
+  }
+  &__a{
+    text-decoration: none;
+    cursor: pointer;
+  }
+  &__btnreseaux1 {
+    padding: 0.65rem 1.5rem 0.65rem 1.5rem;
+    border: solid 2.5px variables.$color-forest-dark;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: variables.$color-forest-dark;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+  &__btnreseaux2 {
+    padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: variables.$white-color;
+    font-weight: 500;
+    background-color: variables.$color-canaille;
+  }
+ 
+  &__nbrprojet{
+    font-size: 18px;
+    text-align: right;
+    margin-right: 1rem;
+    color: variables.$color-forest-dark;
+    font-family: 'Fira Code';
+    padding-bottom: 8rem;
+
+  }
+  &__span{
+    font-size: 25px;
+    color: variables.$color-forest-dark;
+  }
+  &__EOT{
+    font-style: italic;
+    color: variables.$color-forest-dark;
+    font-weight: 500;
+}
+}

@@ -24,20 +24,20 @@ Accents (liens, icônes) → $color-accent */
 
 .icone {
   position: fixed;
-  right: 0.3rem;
-  bottom: 0.5rem;
+  right: 0.2rem;
+  bottom: 0.1rem;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   padding: 0.2px;
   border-radius: 50%;
   transition: background-color 0.2s ease, transform 0.12s ease, opacity 0.2s ease;
-  color: #d6b36a;
+  color: #c0b47e;
   border: solid 0.2px #f1f2ec;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f1f2ec;
+  background: transparent;
   z-index: 2000;
   pointer-events: auto;
   opacity: 1;

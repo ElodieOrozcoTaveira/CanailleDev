@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CiMenuBurger } from "react-icons/ci";
 import "./Hamburger.scss";
 import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hamburger() {
   const [open, setOpen] = useState(false);
@@ -70,7 +70,14 @@ export default function Hamburger() {
           {open ? (
             <IoMdClose aria-hidden="false" />
           ) : (
-            <CiMenuBurger aria-hidden="false" />
+            <Image
+              src="/CanailleDev/newlogo.png"
+              alt="Ouvrir le menu"
+              width={55}
+              height={55}
+              className="hamburger-icon"
+              priority
+            />
           )}
         </button>
 

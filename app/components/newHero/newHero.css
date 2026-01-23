@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/*Breakpoint*/
+/* Variables couleurs */
+/*💡 Conseils d’utilisation
+
+Hero section → $gradient-hero
+
+Fond global → $color-bg
+
+Boutons CTA → $gradient-button
+
+Cartes / blocs → fond translucide + blur
+
+Accents (liens, icônes) → $color-accent */
+.hero-container {
+  height: 100vh;
+  display: flex;
+  font-family: "Fira Code";
+}
+.hero-container__leftside {
+  width: 35%;
+  background-color: #5f8f6d;
+  height: 100vh;
+}
+.hero-container__vertical {
+  writing-mode: sideways-rl;
+  text-orientation: upright;
+  padding-top: 1.8rem;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #c0b47e;
+  font-weight: 500;
+  letter-spacing: 10px;
+}
+.hero-container__dev {
+  color: #1f3d2b;
+  font-weight: bold;
+}
+.hero-container__rightside {
+  height: 100vh;
+  background-color: #f1f2ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  width: 65%;
+}
+.hero-container__avatar {
+  position: absolute;
+  top: 40;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.hero-container__img {
+  position: relative;
+  z-index: 10;
+  width: 320px;
+  height: 320px;
+}
+.hero-container__title {
+  padding-top: 20rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  font-size: 25px;
+  color: #2e5f3e;
+  font-weight: 500;
+}
+.hero-container__subtitle {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  font-size: 20px;
+  color: #2e5f3e;
+}
+.hero-container__reseaux {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-left: 1rem;
+}
+.hero-container__a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.hero-container__btnreseaux1 {
+  padding: 0.65rem 1.5rem 0.65rem 1.5rem;
+  border: solid 2.5px #1f3d2b;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #1f3d2b;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.hero-container__btnreseaux2 {
+  padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #f1f2ec;
+  font-weight: 500;
+  background-color: #c0b47e;
+}
+.hero-container__nbrprojet {
+  font-size: 18px;
+  text-align: right;
+  margin-right: 1rem;
+  color: #1f3d2b;
+  font-family: "Fira Code";
+  padding-bottom: 8rem;
+}
+.hero-container__span {
+  font-size: 25px;
+  color: #1f3d2b;
+}
+.hero-container__EOT {
+  font-style: italic;
+  color: #1f3d2b;
+  font-weight: 500;
+}/*# sourceMappingURL=newHero.css.map */
