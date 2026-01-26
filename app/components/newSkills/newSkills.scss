@@ -34,3 +34,23 @@
     animation: fadeUp both;
     animation-timeline: view();
 }
+
+.skills-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+&__id{
+    border: variables.$color-canaille solid 1px;
+    width: 250;
+    height: 50px;
+    padding: 1rem;
+
+}
+&__titre{
+    color: variables.$color-forest-dark;
+    font-family: 'Fira Code';
+    font-weight: 500;
+}
+}
