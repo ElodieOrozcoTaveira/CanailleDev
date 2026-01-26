@@ -5,6 +5,7 @@ import "./Hamburger.scss";
 import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
+import { AtSign, Cog, House, Presentation, UserRound, X } from "lucide-react";
 
 export default function Hamburger() {
   const [open, setOpen] = useState(false);
@@ -89,27 +90,27 @@ export default function Hamburger() {
           <ul className="hamburger-menu__list">
             <li>
               <Link onClick={onLinkClick} href="/">
-                ACCUEIL
+                <House color="#c0b47e" />
               </Link>
             </li>
             <li>
               <a onClick={onLinkClick} href="#apropos">
-                A PROPOS
+                <UserRound color="#c0b47e"/>
               </a>
             </li>
             <li>
               <a onClick={onLinkClick} href="#skills">
-                SKILLS
+                <Cog color="#c0b47e"/>
               </a>
             </li>
             <li>
               <a onClick={onLinkClick} href="#projets">
-                PROJETS
+                <Presentation color="#c0b47e"/>
               </a>
             </li>
             <li>
               <a onClick={onLinkClick} href="#contact">
-                CONTACT
+                <AtSign color="#c0b47e"/>
               </a>
             </li>
           </ul>

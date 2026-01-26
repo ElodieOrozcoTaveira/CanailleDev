@@ -30,7 +30,7 @@ body {
 }
 
 body {
-  background: linear-gradient(180deg, #2e86c1 0%, #6fb3e0 40%, #6b7c86 70%, #2b3338 100%);
+  background: #f1f2ec;
   min-height: 100vh;
   overflow-x: hidden;
 }/*# sourceMappingURL=globals.css.map */
