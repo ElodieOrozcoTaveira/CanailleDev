@@ -35,7 +35,9 @@ export default function Skills() {
 
     { id: 16, icon: "https://skillicons.dev/icons?i=vercel", titre: "Vercel" },
 
-    { id: 17, icon: "https://skillicons.dev/icons?i=react", titre: "React" },
+    { id: 17, icon: "https://skillicons.dev/icons?i=git", titre: "Git" },
+    { id: 18, icon: "https://skillicons.dev/icons?i=github", titre: "Github" },
+
   ];
 
   return (
