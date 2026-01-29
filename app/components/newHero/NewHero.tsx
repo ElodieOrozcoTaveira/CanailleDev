@@ -30,11 +30,12 @@ export default function NewHero() {
         <section className="hero-container__avatar">
           <Image
             className="hero-container__img"
-            src="/CanailleDev/funavatar.png"
+            src="/CanailleDev/avatar1.png"
             alt="avatar"
-            height={510}
-            width={500}
+            height={350}
+            width={260}
             priority
+            loading="eager"
           />
         </section>
       </div>

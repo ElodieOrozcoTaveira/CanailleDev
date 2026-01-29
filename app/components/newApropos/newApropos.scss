@@ -2,7 +2,7 @@
 
 .about-h2{
     font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Fira Code';
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 3rem;
@@ -23,7 +23,7 @@
 }
 .about-h3{
     font-size: 22px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Fira Code';
     font-weight: 500;
     text-transform: uppercase;
     margin-right: 8rem;
@@ -40,8 +40,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
-    gap: 3rem;
+    margin-top: 2rem;
+    gap: 1rem;
     background-color: variables.$white-color;
     
     
@@ -57,7 +57,7 @@
         border-radius: 30px;
         margin-bottom: 5rem;
         padding: 2rem 1rem 2rem 1rem;
-        background-color: #B9D0C0;
+        background-color: variables.$color-forest-extralight;
         color: variables.$color-forest-dark;
         font-family: 'Fira Code';
     }

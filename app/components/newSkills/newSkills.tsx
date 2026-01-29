@@ -42,10 +42,11 @@ export default function Skills() {
 
   return (
     <>
+      <div className="skills-container">
+        <section className="container-skills">
       <h2 className="skills-h2">Mes Compétences</h2>
       <h3 className="skills-h3">Mes Compétences</h3>
-
-      <div className="skills-container">
+        </section>
         {skills.map((skill) => (
           <div key={skill.id} className="skills-container__id">
             <Image className="skills-container__img"  src={skill.icon} alt={skill.titre} width={48} height={48} />

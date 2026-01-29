@@ -7,10 +7,7 @@
   gap: 0.5rem;
   padding-bottom: 2rem;
   margin-bottom: 3rem;
-  border-bottom: 1.5mm ridge variables.$color-canaille;
-  background-image: url(/canigou-grand.webp);
-  background-repeat: no-repeat;
-  background-position: right 42% bottom 49%;
+  background-color: #5f8f6d;
 
   &__link {
     display: flex;
@@ -27,12 +24,15 @@
   &__h2 {
     padding-top: 1.5rem;
     font-size: 1.5rem;
-    color: variables.$white-color;
-    font-family: "Outfit";
+    color: variables.$color-canaille;
+    font-family: "Fira Code";
     font-weight: 500;
+    text-transform: uppercase;
   }
   &__span {
-    color: variables.$color-canaille;
+    color: variables.$color-forest-dark;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 }
 

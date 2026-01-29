@@ -6,15 +6,12 @@
     flex-direction: column;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-     &__underline{
-        @include mixins.underline;
-        margin-bottom: 2.5rem;
-    }
+     
      &__h2{
         @include mixins.h2
     }
     &__adress{
-        color: variables.$color-canaille;
+        color: variables.$color-forest-dark;
     }
 }
 
@@ -23,14 +20,13 @@
 }
 
 .container-confidentialite p{
-    color: variables.$color-bg-light;
+    color: variables.$color-forest;
     font-family: 'Outfit';
     margin-bottom: 2rem;
 }
 
 .container-confidentialite strong{
-    text-shadow: variables.$color-canaille 1px 1px 3px;
-    color: variables.$white-color;
+    color: variables.$color-forest;
 }
 
 .container-confidentialite ul{

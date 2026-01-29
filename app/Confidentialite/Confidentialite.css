@@ -18,28 +18,18 @@ Accents (liens, icônes) → $color-accent */
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
-.container-confidentialite__underline {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10rem;
-  border: dashed #c0b47e 2px;
-  margin-top: -2rem;
-  margin-bottom: 1rem;
-  margin-bottom: 2.5rem;
-}
 .container-confidentialite__h2 {
   margin-top: 3rem;
   margin-bottom: 2.5rem;
-  font-size: 30px;
-  color: #f1f2ec;
-  font-family: "Outfit";
+  font-size: 25px;
+  color: #5f8f6d;
+  font-family: "Fira Code";
   font-weight: 300;
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 }
 .container-confidentialite__adress {
-  color: #c0b47e;
+  color: #1f3d2b;
 }
 
 .container-confidentialite h1 {
@@ -47,14 +37,13 @@ Accents (liens, icônes) → $color-accent */
 }
 
 .container-confidentialite p {
-  color: #f2f5f7;
+  color: #2e5f3e;
   font-family: "Outfit";
   margin-bottom: 2rem;
 }
 
 .container-confidentialite strong {
-  text-shadow: #c0b47e 1px 1px 3px;
-  color: #f1f2ec;
+  color: #2e5f3e;
 }
 
 .container-confidentialite ul {

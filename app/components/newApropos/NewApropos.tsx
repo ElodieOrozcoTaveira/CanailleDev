@@ -47,7 +47,7 @@ export default function NewApropos() {
           const IconComponent = apropos.img;
 
           return (
-            <AnimatedItem key={apropos.id} delay={index * 150}>
+            <AnimatedItem key={apropos.id} delay={index * 10}>
               <article className="about-container__article">
                 <IconComponent 
                   className="about-container__img"

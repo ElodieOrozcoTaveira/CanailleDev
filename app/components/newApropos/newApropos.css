@@ -14,7 +14,7 @@ Cartes / blocs → fond translucide + blur
 Accents (liens, icônes) → $color-accent */
 .about-h2 {
   font-size: 24px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Fira Code";
   font-weight: 500;
   text-transform: uppercase;
   margin-top: 3rem;
@@ -36,7 +36,7 @@ Accents (liens, icônes) → $color-accent */
 }
 .about-h3 {
   font-size: 22px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Fira Code";
   font-weight: 500;
   text-transform: uppercase;
   margin-right: 8rem;
@@ -53,8 +53,8 @@ Accents (liens, icônes) → $color-accent */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
-  gap: 3rem;
+  margin-top: 2rem;
+  gap: 1rem;
   background-color: #f1f2ec;
 }
 .about-container__article {

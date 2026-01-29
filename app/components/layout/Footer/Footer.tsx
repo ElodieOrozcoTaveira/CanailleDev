@@ -1,6 +1,6 @@
 import "../Footer/Footer.scss";
 import Link from "next/link";
-import { Linkedin, Github } from "lucide-react";
+import { Linkedin, Github, Copyright } from "lucide-react";
 
 export default function Footer() {
     return(
@@ -41,7 +41,7 @@ export default function Footer() {
                 
             </div>
 
-            <h2 className="container-footer__h2">©️Copyright 2025 CanailleDev - Tous droits réservés</h2>
+            <h2 className="container-footer__h2"><Copyright  size={16}/>2025 CanailleDev - Tous droits réservés</h2>
             
             <div className="container-footer__docs">
                 <Link className="container-footer__links" href='/MentionsLegales'>Mentions Légales</Link>

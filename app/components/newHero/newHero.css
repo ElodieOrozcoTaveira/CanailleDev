@@ -59,8 +59,7 @@ Accents (liens, icônes) → $color-accent */
 .hero-container__img {
   position: relative;
   z-index: 10;
-  width: 320px;
-  height: 320px;
+  border-bottom: #c0b47e 2px double;
 }
 .hero-container__title {
   padding-top: 20rem;

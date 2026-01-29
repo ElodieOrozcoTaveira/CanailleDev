@@ -78,7 +78,7 @@ export default function Confidentialité() {
                 <div className="container-confidentialite__underline"></div>
                 <p className='container-confidentialite__p'>Cette politique peut être modifiée à tout moment afin de rester conforme à la loi.</p>
                 <p className='container-confidentialite__p'>La date de dernière mise à jour sera indiquée ci-dessous.</p>
-                <p className='container-confidentialite__p'><strong>Dernière mise à jour :</strong> Décembre 2025</p>
+                <p className='container-confidentialite__p'><strong>Dernière mise à jour :</strong> Janvier 2026</p>
             </section>
         </div>
         <Fleche/>

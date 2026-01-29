@@ -1,8 +1,15 @@
-@use "../../styles/variables/variables.scss";
+@use '../../styles/variables/variables.scss';
 
-.projets-h2 {
+.container-prestations{
+  background-color: variables.$color-forest-extralight;
+  margin-top: 10rem;
+  margin-bottom: -15rem;
+}
+
+.prestations-h2 {
+  padding-top: 2rem;
   margin-top: 5rem;
-  font-size: 22px;
+  font-size: 24px;
   font-family: 'Fira Code';
   font-weight: 500;
   text-transform: uppercase;
@@ -24,13 +31,13 @@
   }
 }
 
-.projets-h3 {
-  font-size: 20px;
+.prestations-h3 {
+  font-size: 23px;
   font-family: 'Fira Code';
   font-weight: 500;
   text-transform: uppercase;
-  margin-right: 1rem;
-  margin-top: -1.5rem;
+  margin-right: 13rem;
+  margin-top: -2rem;
   margin-bottom: 3rem;
   opacity: 0.5;
   color: variables.$color-forest-light;
@@ -47,13 +54,13 @@
 }
 
 // Personnalisation du Swiper
-.projets-swiper {
+.prestations-swiper {
   padding-bottom: 3rem;
 
   // Boutons de navigation
   .swiper-button-next,
   .swiper-button-prev {
-    background-color: variables.$color-forest-dark;
+    background-color: variables.$color-canaille;
     color: variables.$white-color;
     width: 40px;
     height: 40px;
@@ -77,14 +84,14 @@
     height: 12px;
 
     &-active {
-      background-color: variables.$color-forest-dark;
+      background-color: variables.$color-canaille;
       opacity: 1;
     }
   }
 }
 
 // Carte de projet
-.projets-container__id {
+.prestations-container__id {
   border: solid 1.5px variables.$color-forest-light;
   box-shadow: 1px 1px 2px variables.$color-forest-light;
   border-radius: 30px;
@@ -95,7 +102,7 @@
   margin-left: 2rem;
   justify-content: center;
   align-items: center;
-  background-color: #b9d0c0;
+  background-color:variables.$white-color;
   color: variables.$color-forest-dark;
   font-family: "Fira Code";
   height: 100%;
@@ -105,28 +112,25 @@
     transform: translateY(-10px);
     box-shadow: 2px 4px 8px variables.$color-forest-light;
   }
-  &__link {
-    text-decoration: none;
-    list-style-type: none;
-  }
+ 
+}
+.prestations-container__icon{
+    color: variables.$color-canaille;
 }
 
-.projets-container__img {
+
+
+.prestations-container__icon {
   margin-bottom: 0.5rem;
   margin-top: 1rem;
   border-radius: 10px;
 }
 
-.projets-container__titre {
+.prestations-container__sujet {
   margin-top: 0.5rem;
   text-align: center;
   font-weight: 500;
+  font-size: 22px;
 }
 
-.projets-container__privacy {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: variables.$color-canaille;
-  border-radius: 20px;
-  box-shadow: 1px 1px 2px variables.$color-forest-light;
-}
+
