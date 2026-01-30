@@ -47,11 +47,11 @@ export default function NewApropos() {
           const IconComponent = apropos.img;
 
           return (
-            <AnimatedItem key={apropos.id} delay={index * 150}>
+            <AnimatedItem key={apropos.id} delay={index * 10}>
               <article className="about-container__article">
                 <IconComponent 
                   className="about-container__img"
-                  color="#2e5f3e" 
+                  color="#5f8f6d" 
                   size={30}
                 />
                 <h2 className="about-container__titre">{apropos.titre}</h2>

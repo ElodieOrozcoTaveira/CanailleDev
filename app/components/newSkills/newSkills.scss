@@ -1,70 +1,118 @@
-@use '../../styles/variables/variables.scss';
+@use "../../styles/variables/variables.scss";
 
-.skills-h2{
-    font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-top: 3rem;
-    margin-left: 1rem;
-    color: variables.$color-forest-dark;
-    animation: fadeUp both;
-    animation-timeline: view();
+.container-skills {
+  background-color: variables.$color-forest-extralight;
 }
-@keyframes fadeUp{
-    from{
-        opacity: 0;
-        transform: translateY(10px) scale(0);
-    }
-    to{
-        opacity: 1;
-        transform: translateY((0) scale(1));
-    }
+.skills-h2 {
+  font-size: 24px;
+  font-family: 'Fira Code';
+  font-weight: 500;
+  text-transform: uppercase;
+  color: variables.$color-forest-dark;
+  animation: fadeUp both;
+  animation-timeline: view();
+  align-self: flex-start;
+  margin-top: 3rem;
+  margin-left: -2rem;
 }
-.skills-h3{
-    font-size: 22px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-right: 8rem;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY((0) scale(1));
+  }
+}
+.skills-h3 {
+  font-size: 22px;
+  font-family: 'Fira Code';
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 0.5;
+  color: variables.$color-forest-light;
+  rotate: (180deg);
+  animation: fadeUp both;
+  animation-timeline: view();
+  align-self: flex-end;
+  margin-right: 8rem;
     margin-top: -2rem;
-    opacity: 0.5;
-    color: variables.$color-forest-light;
-    rotate:(180deg) ;
-    animation: fadeUp both;
-    animation-timeline: view();
 }
 
-.skills-container{
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: variables.$color-forest-extralight;
+  padding-bottom: 2rem;
+
+  &__id {
+    border: variables.$color-canaille dashed 1px;
+    background-color: variables.$white-color;
+    border-radius: 20px;
+    width: 280px;
+    height: 50px;
+    padding: 2rem;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    gap: 3rem;
+    animation: autoBlurAnimation ease-out both;
+    animation-timeline: view();
+    animation-range: entry 15% cover 70%;
+    will-change: filter;
+    
+  }
+  &__titre {
+    color: variables.$color-forest;
+    font-family: "Fira Code";
+    font-weight: 500;
+  }
+}
+
+@keyframes autoBlurAnimation {
+  0% {
+    filter: blur(12px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@media screen and (min-width:variables.$tablet) and (max-width:variables.$laptop) {
+  .skills-container{
     &__id{
-        padding: 1rem;
-        margin-top: 1rem;
-        border: solid 1px variables.$color-canaille;
-        border-radius: 10px;
-        display: flex;
-        gap: 2rem;
-        width: 280px;
+      height: 80px;
+      width: 400px;
     }
-    &__id:hover{
-        background-color: variables.$color-forest-light;
-        opacity: 0.6;
-        
+  }
+}
+
+@media (min-width: variables.$desktop){
+    .skills-h2{
+        font-size: 35px;
+        margin-left: -5rem;
     }
-    &__img{
-        width: 50px;
-        height: 50px;
+    .skills-h3{
+        margin-right: 75rem;
+        font-size: 32px;
+        margin-top: -2.8rem;
+        margin-bottom: 5rem;
+
     }
-    &__titre{
-        font-family: 'Fira Code';
-        font-weight: 500;
-        color: variables.$color-forest-light;
-    }
-    &__titre:hover{
-color: variables.$color-canaille;
+    .skills-container{
+       display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding-bottom: 8rem;
+          margin-bottom: 3rem;
+        &__id{
+            width: 450px;
+            height: 120px;
+    
+        }
     }
 }

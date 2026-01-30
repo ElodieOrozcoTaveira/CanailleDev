@@ -1,0 +1,176 @@
+@use '../../styles/variables/variables.scss';
+
+.container-prestations{
+  background-color: variables.$color-forest-extralight;
+  margin-top: 10rem;
+  margin-bottom: -15rem;
+}
+
+.prestations-h2 {
+  padding-top: 2rem;
+  margin-top: 5rem;
+  font-size: 24px;
+  font-family: 'Fira Code';
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 5rem;
+  margin-left: 1rem;
+  color: variables.$color-forest-dark;
+  animation: fadeUp both;
+  animation-timeline: view();
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.prestations-h3 {
+  font-size: 23px;
+  font-family: 'Fira Code';
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 13rem;
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+  opacity: 0.5;
+  color: variables.$color-forest-light;
+  rotate: 180deg;
+  animation: fadeUp both;
+  animation-timeline: view();
+}
+
+// Wrapper pour le Swiper
+.swiper-wrapper-custom {
+  width: 100%;
+  padding: 2rem 3rem;
+  margin: 3rem auto;
+}
+
+// Personnalisation du Swiper
+.prestations-swiper {
+  padding-bottom: 3rem;
+
+  // Boutons de navigation
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: variables.$color-canaille;
+    color: variables.$white-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+
+    &::after {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: variables.$color-forest-light;
+    }
+  }
+
+  // Pagination
+  .swiper-pagination-bullet {
+    background-color: variables.$color-forest-light;
+    opacity: 0.5;
+    width: 12px;
+    height: 12px;
+
+    &-active {
+      background-color: variables.$color-canaille;
+      opacity: 1;
+    }
+  }
+}
+
+// Carte de projet
+.prestations-container__id {
+  border: solid 1.5px variables.$color-forest-light;
+  box-shadow: 1px 1px 2px variables.$color-forest-light;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color:variables.$white-color;
+  color: variables.$color-forest-dark;
+  font-family: "Fira Code";
+  height: 100%;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 2px 4px 8px variables.$color-forest-light;
+  }
+ 
+}
+.prestations-container__icon{
+    color: variables.$color-canaille;
+}
+
+
+
+.prestations-container__icon {
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+.prestations-container__sujet {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+@media screen and (min-width:variables.$tablet) and (max-width:variables.$laptop){
+  .prestations-container__id{
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+    display: block;
+  }
+  .prestations-container__icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .prestations-h2{
+    margin-left: 12rem;
+  }
+  .prestations-h3{
+        margin-right: 32rem;
+
+  }
+
+}
+
+@media (min-width: variables.$desktop) {
+  .prestations-h2 {
+    font-size: 35px;
+    margin-left: 3rem;
+    padding-top: 5rem;
+  }
+  .prestations-h3 {
+    margin-right: 95rem;
+    font-size: 32px;
+    margin-top: -2.8rem;
+    margin-bottom: 5rem;
+  }
+  .prestations-container__id{
+    width: 500px;
+    height: 400px;
+    margin-left: 20rem;
+    margin-bottom: 5rem;
+  }
+}

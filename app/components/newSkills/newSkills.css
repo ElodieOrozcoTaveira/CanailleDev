@@ -12,16 +12,21 @@ Boutons CTA → $gradient-button
 Cartes / blocs → fond translucide + blur
 
 Accents (liens, icônes) → $color-accent */
+.container-skills {
+  background-color: #B9D0C0;
+}
+
 .skills-h2 {
   font-size: 24px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Fira Code";
   font-weight: 500;
   text-transform: uppercase;
-  margin-top: 3rem;
-  margin-left: 1rem;
   color: #1f3d2b;
   animation: fadeUp both;
   animation-timeline: view();
+  align-self: flex-start;
+  margin-top: 3rem;
+  margin-left: -2rem;
 }
 
 @keyframes fadeUp {
@@ -36,14 +41,84 @@ Accents (liens, icônes) → $color-accent */
 }
 .skills-h3 {
   font-size: 22px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Fira Code";
   font-weight: 500;
   text-transform: uppercase;
-  margin-right: 8rem;
-  margin-top: -2rem;
   opacity: 0.5;
   color: #5f8f6d;
   rotate: 180deg;
   animation: fadeUp both;
   animation-timeline: view();
+  align-self: flex-end;
+  margin-right: 8rem;
+  margin-top: -2rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #B9D0C0;
+  padding-bottom: 2rem;
+}
+.skills-container__id {
+  border: #c0b47e dashed 1px;
+  background-color: #f1f2ec;
+  border-radius: 20px;
+  width: 280px;
+  height: 50px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+  animation: autoBlurAnimation ease-out both;
+  animation-timeline: view();
+  animation-range: entry 15% cover 70%;
+  will-change: filter;
+}
+.skills-container__titre {
+  color: #2e5f3e;
+  font-family: "Fira Code";
+  font-weight: 500;
+}
+
+@keyframes autoBlurAnimation {
+  0% {
+    filter: blur(12px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .skills-container__id {
+    height: 80px;
+    width: 400px;
+  }
+}
+@media (min-width: 1440px) {
+  .skills-h2 {
+    font-size: 35px;
+    margin-left: -5rem;
+  }
+  .skills-h3 {
+    margin-right: 75rem;
+    font-size: 32px;
+    margin-top: -2.8rem;
+    margin-bottom: 5rem;
+  }
+  .skills-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 8rem;
+    margin-bottom: 3rem;
+  }
+  .skills-container__id {
+    width: 450px;
+    height: 120px;
+  }
 }/*# sourceMappingURL=newSkills.css.map */

@@ -3,7 +3,6 @@ import emailjs from "@emailjs/browser";
 import "../contact/Contact.scss";
 import Image from "next/image";
 
-
 export default function Contact() {
   type FormState = {
     nom: string;
@@ -34,7 +33,7 @@ export default function Contact() {
   };
 
   const handleChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = event.target;
     setFormData((prev) => ({
@@ -98,7 +97,7 @@ export default function Contact() {
           from_email: sanitizeInput(formData.mail),
           message: sanitizeInput(formData.message),
         },
-        publicKey
+        publicKey,
       );
 
       console.log("Email envoyé:", result);
@@ -124,17 +123,18 @@ export default function Contact() {
 
   return (
     <div className="container-contact">
-      <h2 className="container-contact__h2">Me contacter</h2>
-      <div className="container-contact__underline"></div>
 
+      
+      <h2 className="contact-h2">Me Contacter</h2>
+      <h3 className="contact-h3">Me Contacter</h3>
       <Image
         className="container-contact__img"
-        src='/CanailleDev/laptop.webp'
+        src="/CanailleDev/contact.png"
         alt="avatar contact "
-        width={180}
-        height={200}
+        width={500}
+        height={600}
         loading="lazy"
-        />
+      />
 
       <div className="container-contact__form">
         <form className="container-contact__formulaire" onSubmit={handleSubmit}>
@@ -200,8 +200,8 @@ export default function Contact() {
                 status === "success"
                   ? "container-contact__status--success"
                   : status === "error"
-                  ? "container-contact__status--error"
-                  : ""
+                    ? "container-contact__status--error"
+                    : ""
               }`}
               role="alert"
             >
@@ -219,6 +219,7 @@ export default function Contact() {
               {status === "loading" ? "Envoi en cours..." : "Envoyer"}
             </button>
           </div>
+          <p className="container-contact__p">Un projet <span className="container-contact__span">=</span> un besoin <span className="container-contact__span">=</span> un devis personnalisé.</p>
         </form>
       </div>
     </div>

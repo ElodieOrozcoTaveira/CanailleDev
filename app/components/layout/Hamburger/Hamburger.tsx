@@ -36,7 +36,7 @@ export default function Hamburger() {
 
     const handleScrollStop = () => {
       clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(onScrollStop, 2000);
+      scrollTimeout = setTimeout(onScrollStop, 500);
     };
 
     window.addEventListener("scroll", handleScrollStop);

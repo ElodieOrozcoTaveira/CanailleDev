@@ -1,0 +1,232 @@
+@use "../../styles/variables/variables.scss";
+
+.projets-h2 {
+  margin-top: 5rem;
+  font-size: 22px;
+  font-family: "Fira Code";
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 5rem;
+  margin-left: 1rem;
+  color: variables.$color-forest-dark;
+  animation: fadeUp both;
+  animation-timeline: view();
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.projets-h3 {
+  font-size: 20px;
+  font-family: "Fira Code";
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  margin-top: -1.5rem;
+  margin-bottom: 3rem;
+  opacity: 0.5;
+  color: variables.$color-forest-light;
+  rotate: 180deg;
+  animation: fadeUp both;
+  animation-timeline: view();
+}
+
+// Wrapper pour le Swiper
+.swiper-wrapper-custom {
+  width: 100%;
+  padding: 2rem 3rem;
+  margin: 3rem auto;
+}
+
+// Personnalisation du Swiper
+.projets-swiper {
+  padding-bottom: 3rem;
+
+  // Boutons de navigation
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: variables.$color-forest-dark;
+    color: variables.$white-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+
+    &::after {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: variables.$color-forest-light;
+    }
+  }
+
+  // Pagination
+  .swiper-pagination-bullet {
+    background-color: variables.$color-forest-light;
+    opacity: 0.5;
+    width: 12px;
+    height: 12px;
+
+    &-active {
+      background-color: variables.$color-forest-dark;
+      opacity: 1;
+    }
+  }
+}
+
+// Carte de projet
+.projets-container__id {
+  border: solid 1.5px variables.$color-forest-light;
+  box-shadow: 1px 1px 2px variables.$color-forest-light;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #b9d0c0;
+  color: variables.$color-forest-dark;
+  font-family: "Fira Code";
+  height: 100%;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 2px 4px 8px variables.$color-forest-light;
+  }
+  &__link {
+    text-decoration: none;
+    list-style-type: none;
+  }
+}
+
+.projets-container__img {
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+.projets-container__titre {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.projets-container__privacy {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: variables.$color-canaille;
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px variables.$color-forest-light;
+}
+
+@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
+  .projets-h2 {
+    margin-left: 12rem;
+  }
+  .projets-h3 {
+    margin-right: 18rem;
+  }
+  .swiper-wrapper-custom {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  .projets-container__id {
+    width: 500px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+  }
+  .projets-container__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: variables.$desktop) {
+  .projets-h2 {
+    font-size: 35px;
+    margin-left: 3rem;
+    padding-top: 5rem;
+  }
+  .projets-h3 {
+    margin-right: 75rem;
+    font-size: 32px;
+    margin-top: -2.8rem;
+    margin-bottom: 10rem;
+  }
+  
+  .swiper-wrapper-custom {
+    width: 450px; // Largeur fixe du carré
+    height: 450px; // Hauteur fixe du carré
+    padding: 0;
+    margin: 3rem auto;
+    overflow: hidden; // Important pour ne pas déborder
+  }
+  
+  .projets-swiper {
+    width: 100%;
+    height: 100%;
+    
+    // Boutons de navigation adaptés au petit format
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 30px; // Boutons plus petits
+      height: 30px;
+      display: block;
+      
+      
+      &::after {
+        font-size: 1rem; // Icônes plus petites
+      }
+    }
+    
+    .swiper-button-next {
+      right: 5px;
+    }
+    
+    .swiper-button-prev {
+      left: 5px;
+    }
+  }
+  
+  .projets-container__id {
+    height: 380px; // Ajusté pour laisser de la place à la pagination
+    width: 350px;
+    max-width: 320px; // Un peu moins que 350px pour le padding
+    margin: 0 auto;
+    padding: 1rem; // Padding réduit
+    gap: 0.5rem; // Gap réduit
+  }
+  
+  .projets-container__img {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px; // Limite la hauteur de l'image
+    object-fit: cover;
+  }
+  
+  .projets-container__titre {
+    font-size: 16px; // Texte plus petit
+    margin-top: 0.25rem;
+  }
+  
+  .projets-container__privacy {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 12px; // Texte plus petit
+  }
+}

@@ -1,78 +1,153 @@
 @use '../styles/variables/variables.scss';
 @use '../styles/mixins/mixins.scss';
 
-.container-confidentialite{
-    display: flex;
-    flex-direction: column;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-     &__underline{
-        @include mixins.underline;
-        margin-bottom: 2.5rem;
-    }
-     &__h2{
-        @include mixins.h2
-    }
-    &__adress{
-        color: variables.$color-canaille;
-    }
+/* ===========================
+   Animation douce
+=========================== */
+@keyframes animation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.container-confidentialite h1{
-    font-size: 3rem;
+/* ===========================
+   Container principal
+=========================== */
+.container-confidentialite {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.container-confidentialite p{
-    color: variables.$color-bg-light;
-    font-family: 'Outfit';
-    margin-bottom: 2rem;
+/* ===========================
+   Titres
+=========================== */
+.container-confidentialite h1 {
+  font-family: 'Fira Code', monospace;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: variables.$color-forest-dark;
+  line-height: 1.2;
 }
 
-.container-confidentialite strong{
-    text-shadow: variables.$color-canaille 1px 1px 3px;
-    color: variables.$white-color;
+.container-confidentialite__h2 {
+  @include mixins.h2;
+  margin-bottom: 1.5rem;
 }
 
-.container-confidentialite ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.5rem;
+/* ===========================
+   Paragraphes
+=========================== */
+.container-confidentialite p {
+  font-family: 'Fira Code', monospace;
+  color: variables.$color-forest;
+  line-height: 1.8;
+  max-width: 900px;
 }
 
-.container-confidentialite li{
-    list-style-type: none;
-    color: variables.$color-canaille;
-    text-shadow: variables.$white-color 0.5px 0.5px 0.5px;
-    font-family: 'Outfit';
+.container-confidentialite strong {
+  color: variables.$color-forest-dark;
+  font-weight: 600;
 }
 
-@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
-    .container-confidentialite p{
-        margin-left: 4rem;
-    }
+/* ===========================
+   Bloc adresse / infos
+=========================== */
+.container-confidentialite__adress {
+  background: rgba(variables.$white-color, 0.7);
+  border: 1px solid rgba(variables.$color-forest-light, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  line-height: 1.7;
+  max-width: 900px;
 }
 
-@media(min-width:variables.$desktop) {
-    .container-confidentialite{
-        &__underline{
-            margin-bottom: 5rem;
-        }
-    }
-    
-    .container-confidentialite p{
-    font-size: 22px;
-    margin-left: 10rem;
-}
-.container-confidentialite ul{
-        text-align: left;
-        margin-bottom: 5rem;
-    
+/* ===========================
+   Sections
+=========================== */
+.container-confidentialite section {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(variables.$color-forest-light, 0.15);
+
+  animation: animation 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
-.container-confidentialite li{
-    font-size: 22px;
-
+/* ===========================
+   Listes
+=========================== */
+.container-confidentialite ul {
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 1rem;
 }
+
+.container-confidentialite li {
+  list-style: none;
+  background: rgba(variables.$white-color, 0.7);
+  border: 1px solid rgba(variables.$color-forest-light, 0.15);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-family: 'Fira Code', monospace;
+  color: variables.$color-forest-dark;
+}
+
+/* ===========================
+   Liens
+=========================== */
+.container-confidentialite a {
+  color: variables.$color-canaille;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(variables.$color-canaille, 0.4);
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-bottom-color: variables.$color-canaille;
+  }
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (min-width: variables.$tablet) {
+  .container-confidentialite {
+    padding: 4rem;
+  }
+
+  .container-confidentialite ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container-confidentialite h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width: variables.$desktop) {
+  .container-confidentialite {
+    padding: 5rem 6rem;
+  }
+
+  .container-confidentialite h1 {
+    font-size: 3.2rem;
+  }
+
+  .container-confidentialite p {
+    font-size: 1.1rem;
+  }
 }

@@ -12,76 +12,150 @@ Boutons CTA → $gradient-button
 Cartes / blocs → fond translucide + blur
 
 Accents (liens, icônes) → $color-accent */
+/* ===========================
+   Animation douce au scroll
+=========================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===========================
+   Container principal
+=========================== */
 .container-mentions {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-.container-mentions__h2 {
-  margin-top: 3rem;
-  margin-bottom: 2.5rem;
-  font-size: 30px;
-  color: #f1f2ec;
-  font-family: "Outfit";
-  font-weight: 300;
-  text-align: center;
-  letter-spacing: 5px;
-}
-.container-mentions__underline {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10rem;
-  border: dashed #c0b47e 2px;
-  margin-top: -2rem;
-  margin-bottom: 1rem;
-  margin-bottom: 2.5rem;
-}
-.container-mentions__adress {
-  color: #c0b47e;
+  gap: 3rem;
 }
 
+/* ===========================
+   Titres
+=========================== */
 .container-mentions h1 {
-  font-size: 3rem;
+  font-family: "Fira Code", monospace;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1f3d2b;
+  line-height: 1.2;
 }
 
-.container-mentions p {
-  color: #f2f5f7;
-  font-family: "Outfit";
-  margin-bottom: 2rem;
-}
-
-.container-mentions strong {
-  text-shadow: #1e262b 1px 1px 3px;
-  color: #c0b47e;
-}
-
-.container-mentions ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.container-mentions__h2 {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  font-size: 25px;
+  color: #5f8f6d;
+  font-family: "Fira Code";
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 2px;
   margin-bottom: 1.5rem;
 }
 
-.container-mentions li {
-  list-style-type: none;
-  color: #f1f2ec;
-  font-family: "Outfit";
+/* ===========================
+   Paragraphes
+=========================== */
+.container-mentions p {
+  font-family: "Fira Code", monospace;
+  color: #2e5f3e;
+  line-height: 1.8;
+  max-width: 900px;
+}
+.container-mentions p:first-of-type {
+  color: #1f3d2b;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .container-mentions p {
-    margin-left: 4rem;
+.container-mentions strong {
+  color: #c0b47e;
+  font-weight: 600;
+}
+
+/* ===========================
+   Bloc adresse / infos
+=========================== */
+.container-mentions__adress {
+  background: rgba(241, 242, 236, 0.7);
+  border: 1px solid rgba(95, 143, 109, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-family: "Fira Code", monospace;
+  line-height: 1.7;
+  max-width: 900px;
+}
+
+/* ===========================
+   Sections (cartes)
+=========================== */
+.container-mentions section {
+  background: rgba(241, 242, 236, 0.75);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(95, 143, 109, 0.15);
+  animation: fadeUp 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
+
+/* ===========================
+   Listes
+=========================== */
+.container-mentions ul {
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.container-mentions li {
+  list-style: none;
+  background: rgba(241, 242, 236, 0.7);
+  border: 1px solid rgba(95, 143, 109, 0.15);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-family: "Outfit", sans-serif;
+  color: #1f3d2b;
+}
+
+/* ===========================
+   Liens
+=========================== */
+.container-mentions a {
+  color: #c0b47e;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(192, 180, 126, 0.4);
+  transition: border-color 0.2s ease;
+}
+.container-mentions a:hover {
+  border-bottom-color: #c0b47e;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (min-width: 768px) {
+  .container-mentions {
+    padding: 4rem;
+  }
+  .container-mentions ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .container-mentions h1 {
+    font-size: 2.8rem;
   }
 }
 @media (min-width: 1440px) {
-  .container-mentions__underline {
-    margin-bottom: 5rem;
+  .container-mentions {
+    padding: 5rem 6rem;
   }
-  .container-mentions p {
-    font-size: 22px;
-    margin-left: 10rem;
+  .container-mentions h1 {
+    font-size: 3.2rem;
   }
 }/*# sourceMappingURL=MentionsLegales.css.map */

@@ -12,99 +12,120 @@ Boutons CTA → $gradient-button
 Cartes / blocs → fond translucide + blur
 
 Accents (liens, icônes) → $color-accent */
+/* ===========================
+   Animation légère
+=========================== */
+@keyframes anime {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===========================
+   Container principal
+=========================== */
 .container-blablabook {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-top: -3rem;
+  gap: 2rem;
+  animation: anime 0.6s ease-out both;
 }
 .container-blablabook__h1 {
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 2.5rem;
-  font-size: 30px;
-  color: #f1f2ec;
-  font-family: "Outfit";
-  font-weight: 300;
+  font-size: 25px;
+  color: #5f8f6d;
+  font-family: "Fira Code";
+  font-weight: 400;
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
+  text-align: center;
 }
 .container-blablabook__underline {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 10rem;
-  border: dashed #c0b47e 2px;
+  border: dashed #c0b47e 1px;
   margin-top: -2rem;
   margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 .container-blablabook__p {
-  margin-left: 15rem;
-  margin-right: 15rem;
-  margin-bottom: 2rem;
-  font-size: 20px;
-  font-weight: 300;
+  max-width: 900px;
+  font-family: "Fira Code", monospace;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.9;
   text-align: justify;
-  color: #f1f2ec;
-  font-family: "Outfit";
+  color: #2e5f3e;
 }
 .container-blablabook__span {
   color: #c0b47e;
   font-weight: 600;
 }
 
+/* ===========================
+   Vidéo
+=========================== */
 .video-container {
   display: flex;
   justify-content: center;
+  margin: 3rem 0 4rem;
 }
 .video-container__project-video {
-  border-radius: 30px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(31, 61, 43, 0.12);
 }
 
+/* ===========================
+   Responsive tablette
+=========================== */
 @media (max-width: 1024px) {
-  .container-blablabook__p {
-    margin-left: 5rem;
-    margin-right: 5rem;
+  .container-blablabook {
+    padding-top: 3rem;
   }
-  .video-container {
-    margin-bottom: 3rem;
+  .container-blablabook__p {
+    font-size: 1.05rem;
   }
 }
+/* ===========================
+   Mobile
+=========================== */
 @media (max-width: 768px) {
+  .container-blablabook {
+    padding: 3rem 1.2rem;
+  }
   .container-blablabook__h1 {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin: 0 1rem;
   }
   .container-blablabook__p {
-    margin-top: 3rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 3rem;
-    line-height: 1.7;
-    font-weight: 300;
+    font-size: 1rem;
+    text-align: left;
   }
   .video-container {
-    margin-bottom: 3rem;
+    margin: 2.5rem 0;
   }
   .video-container__project-video {
-    margin-left: 3rem;
-    margin-right: 3rem;
-    width: 400px;
+    border-radius: 18px;
   }
 }
+/* ===========================
+   Petit mobile
+=========================== */
 @media (max-width: 480px) {
-  .container-blablabook__h1 {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
   .container-blablabook__p {
-    margin-top: 3rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    line-height: 1.7;
-    font-weight: 300;
-  }
-  .video-container {
-    margin-bottom: 3rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
   }
 }/*# sourceMappingURL=bbb.css.map */

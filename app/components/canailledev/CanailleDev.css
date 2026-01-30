@@ -16,12 +16,9 @@ Accents (liens, icônes) → $color-accent */
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
-  padding-bottom: 2rem;
-  margin-bottom: 3rem;
-  border-bottom: 1.5mm ridge #c0b47e;
-  background-image: url(/canigou-grand.webp);
-  background-repeat: no-repeat;
-  background-position: right 42% bottom 49%;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  background-color: #5f8f6d;
 }
 .container-canailleDev__link {
   display: flex;
@@ -38,12 +35,15 @@ Accents (liens, icônes) → $color-accent */
 .container-canailleDev__h2 {
   padding-top: 1.5rem;
   font-size: 1.5rem;
-  color: #f1f2ec;
-  font-family: "Outfit";
+  color: #c0b47e;
+  font-family: "Fira Code";
   font-weight: 500;
+  text-transform: uppercase;
 }
 .container-canailleDev__span {
-  color: #c0b47e;
+  color: #1f3d2b;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
