@@ -121,6 +121,8 @@
   }
   &__img {
     margin-bottom: 2rem;
+    border: dashed 2px variables.$color-forest-extralight;
+    border-radius: 30px;
   }
   &__p{
     margin-top: 3rem;
@@ -170,5 +172,19 @@
       width: 150px;
       font-size: 20px;
     }
+  }
+}
+
+@media (min-width: variables.$desktop) {
+  .contact-h2 {
+    font-size: 35px;
+    margin-left: -100rem;
+    padding-top: 5rem;
+  }
+  .contact-h3 {
+    margin-right: 95rem;
+    font-size: 32px;
+    margin-top: -2.8rem;
+    margin-bottom: 5rem;
   }
 }

@@ -73,7 +73,11 @@ export default function NewProject() {
             },
             1024: {
               slidesPerView: 2,
-              spaceBetween: 20,
+              spaceBetween: 5,
+            },
+            1440:{
+              slidesPerView:2,
+              spaceBetween:5,
             },
           }}
           className="projets-swiper"

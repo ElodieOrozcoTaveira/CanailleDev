@@ -3,7 +3,7 @@
 .projets-h2 {
   margin-top: 5rem;
   font-size: 22px;
-  font-family: 'Fira Code';
+  font-family: "Fira Code";
   font-weight: 500;
   text-transform: uppercase;
   margin-top: 5rem;
@@ -26,7 +26,7 @@
 
 .projets-h3 {
   font-size: 20px;
-  font-family: 'Fira Code';
+  font-family: "Fira Code";
   font-weight: 500;
   text-transform: uppercase;
   margin-right: 1rem;
@@ -129,4 +129,104 @@
   background-color: variables.$color-canaille;
   border-radius: 20px;
   box-shadow: 1px 1px 2px variables.$color-forest-light;
+}
+
+@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
+  .projets-h2 {
+    margin-left: 12rem;
+  }
+  .projets-h3 {
+    margin-right: 18rem;
+  }
+  .swiper-wrapper-custom {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  .projets-container__id {
+    width: 500px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+  }
+  .projets-container__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: variables.$desktop) {
+  .projets-h2 {
+    font-size: 35px;
+    margin-left: 3rem;
+    padding-top: 5rem;
+  }
+  .projets-h3 {
+    margin-right: 75rem;
+    font-size: 32px;
+    margin-top: -2.8rem;
+    margin-bottom: 10rem;
+  }
+  
+  .swiper-wrapper-custom {
+    width: 450px; // Largeur fixe du carré
+    height: 450px; // Hauteur fixe du carré
+    padding: 0;
+    margin: 3rem auto;
+    overflow: hidden; // Important pour ne pas déborder
+  }
+  
+  .projets-swiper {
+    width: 100%;
+    height: 100%;
+    
+    // Boutons de navigation adaptés au petit format
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 30px; // Boutons plus petits
+      height: 30px;
+      display: block;
+      
+      
+      &::after {
+        font-size: 1rem; // Icônes plus petites
+      }
+    }
+    
+    .swiper-button-next {
+      right: 5px;
+    }
+    
+    .swiper-button-prev {
+      left: 5px;
+    }
+  }
+  
+  .projets-container__id {
+    height: 380px; // Ajusté pour laisser de la place à la pagination
+    width: 350px;
+    max-width: 320px; // Un peu moins que 350px pour le padding
+    margin: 0 auto;
+    padding: 1rem; // Padding réduit
+    gap: 0.5rem; // Gap réduit
+  }
+  
+  .projets-container__img {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px; // Limite la hauteur de l'image
+    object-fit: cover;
+  }
+  
+  .projets-container__titre {
+    font-size: 16px; // Texte plus petit
+    margin-top: 0.25rem;
+  }
+  
+  .projets-container__privacy {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 12px; // Texte plus petit
+  }
 }

@@ -64,7 +64,7 @@ Accents (liens, icônes) → $color-accent */
   padding-bottom: 2rem;
 }
 .skills-container__id {
-  border: #5f8f6d solid 1px;
+  border: #c0b47e dashed 1px;
   background-color: #f1f2ec;
   border-radius: 20px;
   width: 280px;
@@ -91,5 +91,34 @@ Accents (liens, icônes) → $color-accent */
   }
   100% {
     filter: blur(0px);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .skills-container__id {
+    height: 80px;
+    width: 400px;
+  }
+}
+@media (min-width: 1440px) {
+  .skills-h2 {
+    font-size: 35px;
+    margin-left: -5rem;
+  }
+  .skills-h3 {
+    margin-right: 75rem;
+    font-size: 32px;
+    margin-top: -2.8rem;
+    margin-bottom: 5rem;
+  }
+  .skills-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 8rem;
+    margin-bottom: 3rem;
+  }
+  .skills-container__id {
+    width: 450px;
+    height: 120px;
   }
 }/*# sourceMappingURL=newSkills.css.map */

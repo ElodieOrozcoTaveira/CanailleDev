@@ -50,7 +50,7 @@
   padding-bottom: 2rem;
 
   &__id {
-    border: variables.$color-forest-light solid 1px;
+    border: variables.$color-canaille dashed 1px;
     background-color: variables.$white-color;
     border-radius: 20px;
     width: 280px;
@@ -64,6 +64,7 @@
     animation-timeline: view();
     animation-range: entry 15% cover 70%;
     will-change: filter;
+    
   }
   &__titre {
     color: variables.$color-forest;
@@ -79,4 +80,39 @@
   100% {
     filter: blur(0px);
   }
+}
+
+@media screen and (min-width:variables.$tablet) and (max-width:variables.$laptop) {
+  .skills-container{
+    &__id{
+      height: 80px;
+      width: 400px;
+    }
+  }
+}
+
+@media (min-width: variables.$desktop){
+    .skills-h2{
+        font-size: 35px;
+        margin-left: -5rem;
+    }
+    .skills-h3{
+        margin-right: 75rem;
+        font-size: 32px;
+        margin-top: -2.8rem;
+        margin-bottom: 5rem;
+
+    }
+    .skills-container{
+       display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding-bottom: 8rem;
+          margin-bottom: 3rem;
+        &__id{
+            width: 450px;
+            height: 120px;
+    
+        }
+    }
 }

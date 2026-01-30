@@ -1,12 +1,23 @@
 @use "../styles/variables/variables.scss";
 @use "../styles/mixins/mixins.scss";
 
+.error-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .container-error {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   &__img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2rem;
+    margin-left: 6rem;
+    width: 400px;
   }
   &__link {
     display: flex;
@@ -14,14 +25,14 @@
     text-decoration: none;
   }
   &__btn {
-    margin-top: 1rem;
+    margin-top: 0;
     margin-bottom: 2rem;
     display: block;
     padding: 0.7rem 1.5rem;
-    background: variables.$gradient-button;
-    color: variables.$color-canaille;
-    font-family: "Outfit";
-    border: variables.$color-forest-dark 2px solid;
+    background: variables.$color-forest-extralight;
+    color: variables.$color-forest;
+    font-family: "Fira Code";
+    border: variables.$color-forest 1px dashed;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 500;

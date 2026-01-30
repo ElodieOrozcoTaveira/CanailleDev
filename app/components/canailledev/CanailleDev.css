@@ -16,8 +16,8 @@ Accents (liens, icônes) → $color-accent */
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
-  padding-bottom: 2rem;
-  margin-bottom: 3rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
   background-color: #5f8f6d;
 }
 .container-canailleDev__link {

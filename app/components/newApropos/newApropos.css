@@ -62,8 +62,8 @@ Accents (liens, icônes) → $color-accent */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 1rem;
-  margin-left: 1rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
   border: solid 1.5px #5f8f6d;
   box-shadow: 1px 1px 2px #5f8f6d;
   border-radius: 30px;
@@ -72,6 +72,10 @@ Accents (liens, icônes) → $color-accent */
   background-color: #B9D0C0;
   color: #1f3d2b;
   font-family: "Fira Code";
+  transform: transition 0.1s ease;
+}
+.about-container__article:hover {
+  transform: translateY(-10px);
 }
 .about-container__img {
   margin-bottom: 0.5rem;
@@ -98,5 +102,70 @@ Accents (liens, icônes) → $color-accent */
   .animated-item.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about-h2 {
+    margin-left: 4.5rem;
+  }
+  .about-h3 {
+    margin-right: 35rem;
+  }
+  .animated-item {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.7 ease;
+  }
+  .animated-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .about-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    animation: imageReveal both;
+    animation-timeline: view(100% 20%);
+  }
+  .about-container__article {
+    width: 360px;
+    height: 450px;
+  }
+}
+@keyframes imageReveal {
+  from {
+    filter: saturate(0) contrast(5) brightness(0.2) blur(5px);
+    opacity: 0;
+    scale: 0.95;
+    translate: 0 4rem;
+  }
+  to {
+    filter: none;
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+}
+@media (min-width: 1440px) {
+  .about-h2 {
+    margin-left: 3rem;
+    font-size: 35px;
+  }
+  .about-h3 {
+    margin-right: 90rem;
+    font-size: 32px;
+    margin-top: -2.8rem;
+    margin-bottom: 5rem;
+  }
+  .about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1rem;
+    margin-bottom: 5rem;
+  }
+  .about-container__article {
+    width: 500px;
+    height: 350px;
   }
 }/*# sourceMappingURL=newApropos.css.map */

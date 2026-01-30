@@ -51,7 +51,7 @@ export default function NewApropos() {
               <article className="about-container__article">
                 <IconComponent 
                   className="about-container__img"
-                  color="#2e5f3e" 
+                  color="#5f8f6d" 
                   size={30}
                 />
                 <h2 className="about-container__titre">{apropos.titre}</h2>

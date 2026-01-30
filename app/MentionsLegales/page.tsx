@@ -8,6 +8,7 @@ export default function MentionsLegales() {
     <>
       <CanailleDev />
       <div className="container-mentions">
+
         <section className="container-mentions__section">
           <h2 className="container-mentions__h2">1. Éditeur du site</h2>
           <div className="container-mentions__underline"></div>
@@ -74,23 +75,40 @@ export default function MentionsLegales() {
           <div className="container-mentions__underline"></div>
 
           <p>
-            L&apos;ensemble des contenus du site CanaillDev (textes, images,
+            L&apos;ensemble des contenus du site CanailleDev (textes,
             graphismes, logos, vidéos, structure, code) est la propriété
             exclusive d&apos;Elodie Orozco Taveira et est protégé par le droit
             de la propriété intellectuelle.
           </p>
           <p>
-            Les icônes utilisées proviennent du site{" "}
-            <a
-              className="container-mentions__adress"
-              href="https://icons8.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Icons8
-            </a>{" "}
-            et sont utilisées conformément à leur licence.
+            <strong>Crédits :</strong>
           </p>
+          <ul>
+            <li>
+              Les icônes utilisées proviennent de{" "}
+              <a
+                className="container-mentions__adress"
+                href="https://lucide.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lucide React
+              </a>
+              , une bibliothèque d&apos;icônes open source sous licence ISC.
+            </li>
+            <li>
+              Les images illustratives ont été générées avec{" "}
+              <a
+                className="container-mentions__adress"
+                href="https://openai.com/dall-e"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                DALL-E (ChatGPT)
+              </a>{" "}
+              d&apos;OpenAI.
+            </li>
+          </ul>
           <p>
             Toute reproduction, distribution, modification ou utilisation sans
             autorisation écrite préalable est strictement interdite.
@@ -109,7 +127,7 @@ export default function MentionsLegales() {
             site.
           </p>
           <p>
-            Des liens vers des sites tiers peuvent être présents. CanaillDev
+            Des liens vers des sites tiers peuvent être présents. CanailleDev
             n&apos;exerce aucun contrôle sur ces sites et ne peut être tenue
             responsable de leur contenu.
           </p>
@@ -130,14 +148,14 @@ export default function MentionsLegales() {
             (RGPD), vous disposez de droits :
           </p>
           <ul>
-            <li>d&apos;accès</li>
-            <li>de rectification</li>
-            <li>de suppression</li>
-            <li>d&apos;opposition</li>
+            <li>Droit d&apos;accès à vos données personnelles</li>
+            <li>Droit de rectification des données inexactes</li>
+            <li>Droit de suppression de vos données</li>
+            <li>Droit d&apos;opposition au traitement</li>
+            <li>Droit à la portabilité de vos données</li>
           </ul>
-          <p>sur vos données personnelles.</p>
           <p>
-            <strong>Pour exercer vos droits :</strong>{" "}
+            <strong>Pour exercer vos droits, contactez :</strong>{" "}
             <a
               className="container-mentions__adress"
               href="mailto:elodie.orotav@hotmail.com"

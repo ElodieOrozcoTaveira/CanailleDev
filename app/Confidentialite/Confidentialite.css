@@ -12,73 +12,151 @@ Boutons CTA → $gradient-button
 Cartes / blocs → fond translucide + blur
 
 Accents (liens, icônes) → $color-accent */
+/* ===========================
+   Animation douce
+=========================== */
+@keyframes animation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===========================
+   Container principal
+=========================== */
 .container-confidentialite {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  gap: 3rem;
 }
+
+/* ===========================
+   Titres
+=========================== */
+.container-confidentialite h1 {
+  font-family: "Fira Code", monospace;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1f3d2b;
+  line-height: 1.2;
+}
+
 .container-confidentialite__h2 {
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 2.5rem;
   font-size: 25px;
   color: #5f8f6d;
   font-family: "Fira Code";
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
   letter-spacing: 2px;
-}
-.container-confidentialite__adress {
-  color: #1f3d2b;
-}
-
-.container-confidentialite h1 {
-  font-size: 3rem;
-}
-
-.container-confidentialite p {
-  color: #2e5f3e;
-  font-family: "Outfit";
-  margin-bottom: 2rem;
-}
-
-.container-confidentialite strong {
-  color: #2e5f3e;
-}
-
-.container-confidentialite ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 1.5rem;
 }
 
-.container-confidentialite li {
-  list-style-type: none;
-  color: #c0b47e;
-  text-shadow: #f1f2ec 0.5px 0.5px 0.5px;
-  font-family: "Outfit";
+/* ===========================
+   Paragraphes
+=========================== */
+.container-confidentialite p {
+  font-family: "Fira Code", monospace;
+  color: #2e5f3e;
+  line-height: 1.8;
+  max-width: 900px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .container-confidentialite p {
-    margin-left: 4rem;
+.container-confidentialite strong {
+  color: #1f3d2b;
+  font-weight: 600;
+}
+
+/* ===========================
+   Bloc adresse / infos
+=========================== */
+.container-confidentialite__adress {
+  background: rgba(241, 242, 236, 0.7);
+  border: 1px solid rgba(95, 143, 109, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-family: "Fira Code", monospace;
+  line-height: 1.7;
+  max-width: 900px;
+}
+
+/* ===========================
+   Sections
+=========================== */
+.container-confidentialite section {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(95, 143, 109, 0.15);
+  animation: animation 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
+.container-confidentialite section:last-child {
+  border-bottom: none;
+}
+
+/* ===========================
+   Listes
+=========================== */
+.container-confidentialite ul {
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.container-confidentialite li {
+  list-style: none;
+  background: rgba(241, 242, 236, 0.7);
+  border: 1px solid rgba(95, 143, 109, 0.15);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-family: "Fira Code", monospace;
+  color: #1f3d2b;
+}
+
+/* ===========================
+   Liens
+=========================== */
+.container-confidentialite a {
+  color: #c0b47e;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(192, 180, 126, 0.4);
+  transition: border-color 0.2s ease;
+}
+.container-confidentialite a:hover {
+  border-bottom-color: #c0b47e;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (min-width: 768px) {
+  .container-confidentialite {
+    padding: 4rem;
+  }
+  .container-confidentialite ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .container-confidentialite h1 {
+    font-size: 2.8rem;
   }
 }
 @media (min-width: 1440px) {
-  .container-confidentialite__underline {
-    margin-bottom: 5rem;
+  .container-confidentialite {
+    padding: 5rem 6rem;
+  }
+  .container-confidentialite h1 {
+    font-size: 3.2rem;
   }
   .container-confidentialite p {
-    font-size: 22px;
-    margin-left: 10rem;
-  }
-  .container-confidentialite ul {
-    text-align: left;
-    margin-bottom: 5rem;
-  }
-  .container-confidentialite li {
-    font-size: 22px;
+    font-size: 1.1rem;
   }
 }/*# sourceMappingURL=Confidentialite.css.map */

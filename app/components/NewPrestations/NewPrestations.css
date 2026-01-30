@@ -131,4 +131,43 @@ Accents (liens, icônes) → $color-accent */
   text-align: center;
   font-weight: 500;
   font-size: 22px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .prestations-container__id {
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+    display: block;
+  }
+  .prestations-container__icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .prestations-h2 {
+    margin-left: 12rem;
+  }
+  .prestations-h3 {
+    margin-right: 32rem;
+  }
+}
+@media (min-width: 1440px) {
+  .prestations-h2 {
+    font-size: 35px;
+    margin-left: 3rem;
+    padding-top: 5rem;
+  }
+  .prestations-h3 {
+    margin-right: 95rem;
+    font-size: 32px;
+    margin-top: -2.8rem;
+    margin-bottom: 5rem;
+  }
+  .prestations-container__id {
+    width: 500px;
+    height: 400px;
+    margin-left: 20rem;
+    margin-bottom: 5rem;
+  }
 }/*# sourceMappingURL=NewPrestations.css.map */

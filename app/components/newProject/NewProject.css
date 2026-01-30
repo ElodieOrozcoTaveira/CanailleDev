@@ -131,4 +131,93 @@ Accents (liens, icônes) → $color-accent */
   background-color: #c0b47e;
   border-radius: 20px;
   box-shadow: 1px 1px 2px #5f8f6d;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .projets-h2 {
+    margin-left: 12rem;
+  }
+  .projets-h3 {
+    margin-right: 18rem;
+  }
+  .swiper-wrapper-custom {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  .projets-container__id {
+    width: 500px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+  }
+  .projets-container__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 1440px) {
+  .projets-h2 {
+    font-size: 35px;
+    margin-left: 3rem;
+    padding-top: 5rem;
+  }
+  .projets-h3 {
+    margin-right: 75rem;
+    font-size: 32px;
+    margin-top: -2.8rem;
+    margin-bottom: 10rem;
+  }
+  .swiper-wrapper-custom {
+    width: 450px;
+    height: 450px;
+    padding: 0;
+    margin: 3rem auto;
+    overflow: hidden;
+  }
+  .projets-swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .projets-swiper .swiper-button-next,
+  .projets-swiper .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
+  .projets-swiper .swiper-button-next::after,
+  .projets-swiper .swiper-button-prev::after {
+    font-size: 1rem;
+  }
+  .projets-swiper .swiper-button-next {
+    right: 5px;
+  }
+  .projets-swiper .swiper-button-prev {
+    left: 5px;
+  }
+  .projets-container__id {
+    height: 380px;
+    width: 350px;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  .projets-container__img {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .projets-container__titre {
+    font-size: 16px;
+    margin-top: 0.25rem;
+  }
+  .projets-container__privacy {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=NewProject.css.map */

@@ -65,14 +65,14 @@ Accents (liens, icônes) → $color-accent */
   animation-timeline: view();
 }
 .container-contact__h2 {
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 2.5rem;
-  font-size: 30px;
-  color: #f1f2ec;
-  font-family: "Outfit";
-  font-weight: 300;
+  font-size: 25px;
+  color: #5f8f6d;
+  font-family: "Fira Code";
+  font-weight: 400;
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 }
 .container-contact__form {
   height: 25rem;
@@ -136,6 +136,8 @@ Accents (liens, icônes) → $color-accent */
 }
 .container-contact__img {
   margin-bottom: 2rem;
+  border: dashed 2px #B9D0C0;
+  border-radius: 30px;
 }
 .container-contact__p {
   margin-top: 3rem;
@@ -181,5 +183,18 @@ Accents (liens, icônes) → $color-accent */
     height: 65px;
     width: 150px;
     font-size: 20px;
+  }
+}
+@media (min-width: 1440px) {
+  .contact-h2 {
+    font-size: 35px;
+    margin-left: -100rem;
+    padding-top: 5rem;
+  }
+  .contact-h3 {
+    margin-right: 95rem;
+    font-size: 32px;
+    margin-top: -2.8rem;
+    margin-bottom: 5rem;
   }
 }/*# sourceMappingURL=Contact.css.map */
