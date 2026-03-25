@@ -1,24 +1,13 @@
 @charset "UTF-8";
 /*Breakpoint*/
 /* Variables couleurs */
-/*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
 .container-canailleDev {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   padding-bottom: 0;
   margin-bottom: 0;
-  background-color: #5f8f6d;
+  position: relative;
 }
 .container-canailleDev__link {
   display: flex;
@@ -31,11 +20,13 @@ Accents (liens, icônes) → $color-accent */
   margin-top: 2rem;
   height: 50px;
   width: 50px;
+  position: relative;
+  z-index: 3102;
 }
 .container-canailleDev__h2 {
-  padding-top: 1.5rem;
-  font-size: 1.5rem;
-  color: #c0b47e;
+  padding-top: 2.2rem;
+  font-size: 1rem;
+  color: #2e5f3e;
   font-family: "Fira Code";
   font-weight: 500;
   text-transform: uppercase;
@@ -43,7 +34,7 @@ Accents (liens, icônes) → $color-accent */
 .container-canailleDev__span {
   color: #1f3d2b;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {

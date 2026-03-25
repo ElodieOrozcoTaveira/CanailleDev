@@ -1,151 +1,89 @@
-@use "../styles/variables/variables.scss";
+@use '../styles/variables/variables.scss';
 @use "../styles/mixins/mixins.scss";
 
-/* ===========================
-   Animation douce au scroll
-=========================== */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===========================
-   Container principal
-=========================== */
 .container-mentions {
-  max-width: 1100px;
-  margin: 0 auto;
+  background-color: #e7dbb7;
+  margin-top: 10rem;
   padding: 3rem 1.5rem;
+  margin-bottom: -15rem;
+
   display: flex;
   flex-direction: column;
   gap: 3rem;
-}
 
-/* ===========================
-   Titres
-=========================== */
-.container-mentions h1 {
-  font-family: "Fira Code", monospace;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: variables.$color-forest-dark;
-  line-height: 1.2;
-}
+  &__h2 {
+    @include mixins.h2;
+    margin-bottom: 0.5rem;
+  }
 
-.container-mentions__h2 {
-  @include mixins.h2;
-  margin-bottom: 1.5rem;
-}
+  &__underline {
+    @include mixins.underline;
+    margin-bottom: 1.5rem;
+  }
 
-/* ===========================
-   Paragraphes
-=========================== */
-.container-mentions p {
-  font-family: "Fira Code", monospace;
-  color: variables.$color-forest;
-  line-height: 1.8;
-  max-width: 900px;
-
-  &:first-of-type {
+  &__section {
+    background-color: variables.$white-color;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
     color: variables.$color-forest-dark;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    p {
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    ul {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+
+      li {
+        margin-bottom: 0.4rem;
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__adress {
+    color: variables.$color-forest-light;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+      color: variables.$color-forest-dark;
+    }
   }
 }
 
-.container-mentions strong {
-  color: variables.$color-canaille;
-  font-weight: 600;
-}
-
-/* ===========================
-   Bloc adresse / infos
-=========================== */
-.container-mentions__adress {
-  background: rgba(variables.$white-color, 0.7);
-  border: 1px solid rgba(variables.$color-forest-light, 0.2);
-  border-radius: 12px;
-  padding: 1.5rem;
-  font-family: "Fira Code", monospace;
-  line-height: 1.7;
-  max-width: 900px;
-}
-
-/* ===========================
-   Sections (cartes)
-=========================== */
-.container-mentions section {
-  background: rgba(variables.$white-color, 0.75);
-  border-radius: 16px;
-  padding: 2rem;
-  border: 1px solid rgba(variables.$color-forest-light, 0.15);
-
-  animation: fadeUp 0.6s ease-out both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
-}
-
-/* ===========================
-   Listes
-=========================== */
-.container-mentions ul {
-  padding: 0;
-  margin: 1.5rem 0;
-  display: grid;
-  gap: 1rem;
-}
-
-.container-mentions li {
-  list-style: none;
-  background: rgba(variables.$white-color, 0.7);
-  border: 1px solid rgba(variables.$color-forest-light, 0.15);
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
-  font-family: "Outfit", sans-serif;
-  color: variables.$color-forest-dark;
-}
-
-/* ===========================
-   Liens
-=========================== */
-.container-mentions a {
-  color: variables.$color-canaille;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(variables.$color-canaille, 0.4);
-  transition: border-color 0.2s ease;
-
-  &:hover {
-    border-bottom-color: variables.$color-canaille;
-  }
-}
-
-/* ===========================
-   Responsive
-=========================== */
-@media (min-width: variables.$tablet) {
+@media screen and (min-width: variables.$tablet) {
   .container-mentions {
-    padding: 4rem;
-  }
+    padding: 4rem 3rem;
 
-  .container-mentions ul {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .container-mentions h1 {
-    font-size: 2.8rem;
+    &__section {
+      padding: 2.5rem;
+    }
   }
 }
 
 @media (min-width: variables.$desktop) {
   .container-mentions {
-    padding: 5rem 6rem;
-  }
+    width: 70%;
+    margin: 10rem auto -15rem auto;
 
-  .container-mentions h1 {
-    font-size: 3.2rem;
+    &__h2 {
+      font-size: 30px;
+    }
+
+    &__section {
+      padding: 3rem;
+    }
   }
 }

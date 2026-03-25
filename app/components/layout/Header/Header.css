@@ -1,17 +1,5 @@
-@charset "UTF-8";
 /*Breakpoint*/
 /* Variables couleurs */
-/*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
 .header-container {
   margin: 0;
   padding: 0;

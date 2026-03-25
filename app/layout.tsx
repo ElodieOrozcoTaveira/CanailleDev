@@ -1,17 +1,12 @@
 // app/layout.tsx
-import { Fira_Code } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import BodyContent from "./components/BodyContent/Body";
 import "./styles/globals/globals.scss";
 import GoogleAnalytics from './components/Analytics/analytics';
 import CookieBanner from './components/cookie/cookieBanner';
+import Hamburger from './components/layout/Hamburger/Hamburger';
 
-/*const outfit = Outfit({
-  subsets: ['latin'],
-  weight: ['100', '300', '400', '500','600', '700', '800', '900'],
-  display: 'swap',
-});*/
-
-const fira = Fira_Code({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500','600', '700'],
   display: 'swap',
@@ -23,10 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={fira.className}>
+    <html lang="fr" className={inter.className}>
       <body suppressHydrationWarning>
         <GoogleAnalytics/>
         <CookieBanner/>
+        <Hamburger /> {/* ✅ au niveau racine, rien ne peut le couvrir */}
         <BodyContent>{children}</BodyContent>
       </body>
     </html>

@@ -1,17 +1,5 @@
-@charset "UTF-8";
 /*Breakpoint*/
 /* Variables couleurs */
-/*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
 .btn_arrow {
   display: contents;
   opacity: 1;
@@ -33,7 +21,6 @@ Accents (liens, icônes) → $color-accent */
   border-radius: 50%;
   transition: background-color 0.2s ease, transform 0.12s ease, opacity 0.2s ease;
   color: #c0b47e;
-  border: solid 0.2px #f1f2ec;
   display: flex;
   align-items: center;
   justify-content: center;

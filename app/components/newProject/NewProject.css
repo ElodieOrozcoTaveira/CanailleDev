@@ -1,53 +1,27 @@
-@charset "UTF-8";
 /*Breakpoint*/
 /* Variables couleurs */
-/*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
-.projets-h2 {
-  margin-top: 5rem;
-  font-size: 22px;
-  font-family: "Fira Code";
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-top: 5rem;
-  margin-left: 1rem;
+.container-project__h2 {
+  padding-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
   color: #1f3d2b;
-  animation: fadeUp both;
-  animation-timeline: view();
+  font-size: 2rem;
 }
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-.projets-h3 {
-  font-size: 20px;
-  font-family: "Fira Code";
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-right: 1rem;
-  margin-top: -1.5rem;
+.container-project__underline {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100px;
   margin-bottom: 3rem;
-  opacity: 0.5;
-  color: #5f8f6d;
-  rotate: 180deg;
-  animation: fadeUp both;
-  animation-timeline: view();
+  border: solid 1.5px #5f8f6d;
+}
+.container-project__p {
+  text-align: center;
+  color: #2e5f3e;
+  font-weight: 300;
+  margin-left: 4rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
 }
 
 .swiper-wrapper-custom {
@@ -63,8 +37,8 @@ Accents (liens, icônes) → $color-accent */
 .projets-swiper .swiper-button-prev {
   background-color: #1f3d2b;
   color: #f1f2ec;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   border-radius: 20%;
 }
 .projets-swiper .swiper-button-next::after,
@@ -88,19 +62,18 @@ Accents (liens, icônes) → $color-accent */
 }
 
 .projets-container__id {
-  border: solid 1.5px #5f8f6d;
-  box-shadow: 1px 1px 2px #5f8f6d;
+  border: dashed 0.5px #d6b36a;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  padding-bottom: 2rem;
+  margin-right: 3.5rem;
+  margin-left: 3.5rem;
   justify-content: center;
   align-items: center;
-  background-color: #b9d0c0;
+  background-color: white;
   color: #1f3d2b;
-  font-family: "Fira Code";
+  font-family: "Inter";
   height: 100%;
   transition: transform 0.3s ease;
 }
@@ -108,15 +81,26 @@ Accents (liens, icônes) → $color-accent */
   transform: translateY(-10px);
   box-shadow: 2px 4px 8px #5f8f6d;
 }
-.projets-container__id__link {
+
+.projets-container__link {
   text-decoration: none;
   list-style-type: none;
 }
 
+.projets-container__id[data-id="1"] .projets-container__link {
+  display: block;
+  margin-top: 1rem;
+}
+
+.projets-container__fonction {
+  color: #5f8f6d;
+  font-size: 14px;
+}
+
 .projets-container__img {
   margin-bottom: 0.5rem;
-  margin-top: 1rem;
-  border-radius: 10px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 .projets-container__titre {
@@ -128,9 +112,10 @@ Accents (liens, icônes) → $color-accent */
 .projets-container__privacy {
   margin-top: 1rem;
   padding: 1rem;
-  background-color: #c0b47e;
+  background-color: #1f3d2b;
+  color: white;
   border-radius: 20px;
-  box-shadow: 1px 1px 2px #5f8f6d;
+  box-shadow: 1px 1px 2px #B9D0C0;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

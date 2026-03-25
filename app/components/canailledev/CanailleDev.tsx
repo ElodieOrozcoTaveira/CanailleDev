@@ -16,6 +16,7 @@ export default function CanailleDev() {
                 height={70}
                 loading='eager'
             />
+             
             
             <h2 className="container-canailleDev__h2">Canaille<span className='container-canailleDev__span' >Dev</span></h2>
             </Link>

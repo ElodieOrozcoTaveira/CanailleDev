@@ -1,124 +1,141 @@
-@charset "UTF-8";
 /*Breakpoint*/
 /* Variables couleurs */
-/*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
 .container-skills {
-  background-color: #B9D0C0;
+  background-color: #e7dbb7;
+  padding-bottom: 3rem;
 }
-
-.skills-h2 {
-  font-size: 24px;
-  font-family: "Fira Code";
-  font-weight: 500;
-  text-transform: uppercase;
+.container-skills__h2 {
+  padding-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
   color: #1f3d2b;
-  animation: fadeUp both;
-  animation-timeline: view();
-  align-self: flex-start;
-  margin-top: 3rem;
-  margin-left: -2rem;
+  font-size: 2rem;
 }
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0 scale(1));
-  }
+.container-skills__underline {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100px;
+  margin-bottom: 3rem;
+  border: solid 1.5px #5f8f6d;
 }
-.skills-h3 {
-  font-size: 22px;
-  font-family: "Fira Code";
-  font-weight: 500;
-  text-transform: uppercase;
-  opacity: 0.5;
-  color: #5f8f6d;
-  rotate: 180deg;
-  animation: fadeUp both;
-  animation-timeline: view();
-  align-self: flex-end;
-  margin-right: 8rem;
-  margin-top: -2rem;
+.container-skills__p {
+  text-align: center;
+  color: #2e5f3e;
+  font-weight: 300;
+  margin-left: 4rem;
+  margin-right: 3rem;
 }
-
-.skills-container {
+.container-skills__pFront {
+  margin: 4rem 3rem 3rem 1.5rem;
+  color: #1f3d2b;
+  font-weight: bold;
+}
+.container-skills__Front, .container-skills__back {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  background-color: #B9D0C0;
-  padding-bottom: 2rem;
-}
-.skills-container__id {
-  border: #c0b47e dashed 1px;
-  background-color: #f1f2ec;
-  border-radius: 20px;
-  width: 280px;
-  height: 50px;
-  padding: 2rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 3rem;
-  animation: autoBlurAnimation ease-out both;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  gap: 2rem;
+  animation-name: fadeUp;
+  animation-fill-mode: both;
   animation-timeline: view();
-  animation-range: entry 15% cover 70%;
-  will-change: filter;
+  animation-range: entry 10% cover 35%;
 }
-.skills-container__titre {
-  color: #2e5f3e;
-  font-family: "Fira Code";
+.container-skills__skillfront {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  background-color: beige;
+  border-radius: 30px;
+  border: solid 1px #f2f5f7;
+  box-shadow: 1px 1px 1px #B9D0C0;
+}
+.container-skills__img {
+  margin-bottom: -0.5rem;
+}
+.container-skills__title {
+  font-size: 15px;
+  color: #1f3d2b;
   font-weight: 500;
+  letter-spacing: -0.5px;
+}
+.container-skills__fonction {
+  font-size: 13px;
+  color: #5f8f6d;
+}
+.container-skills__sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 4rem 3rem 2rem 1.5rem;
+  color: #1f3d2b;
+  font-weight: bold;
+}
+.container-skills__sectionTitle::after {
+  content: "";
+  width: 100px;
+  height: 1px;
+  background-color: #5f8f6d;
+  opacity: 0.65;
+  animation: section-line-fade 1.5s ease-in-out infinite;
 }
 
-@keyframes autoBlurAnimation {
-  0% {
-    filter: blur(12px);
+@keyframes section-line-fade {
+  0%, 100% {
+    opacity: 0.65;
   }
-  100% {
-    filter: blur(0px);
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .skills-container__id {
-    height: 80px;
-    width: 400px;
+  50% {
+    opacity: 0;
   }
 }
-@media (min-width: 1440px) {
-  .skills-h2 {
-    font-size: 35px;
-    margin-left: -5rem;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.96);
   }
-  .skills-h3 {
-    margin-right: 75rem;
-    font-size: 32px;
-    margin-top: -2.8rem;
-    margin-bottom: 5rem;
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
-  .skills-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-bottom: 8rem;
-    margin-bottom: 3rem;
-  }
-  .skills-container__id {
-    width: 450px;
-    height: 120px;
-  }
+}
+.competence-card {
+  margin: 3rem 2rem 2rem 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.chip {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  color: #1f3d2b;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  background: #5f8f6d;
+  color: white;
+  transform: translateY(-5px);
 }/*# sourceMappingURL=newSkills.css.map */

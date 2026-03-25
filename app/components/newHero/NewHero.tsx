@@ -1,43 +1,58 @@
-import Hamburger from "../layout/Hamburger/Hamburger";
+import Link from "next/link";
+import CanailleDev from "../canailledev/CanailleDev";
 import "../newHero/newHero.scss";
-import Image from "next/image";
+import { ChevronDown, Sparkle } from "lucide-react";
 
-export default function NewHero() {
+export default function Hero() {
+  const roulement = [
+    "Front End",
+    "React",
+    "NextJs",
+    "SCSS",
+    "JavaScript",
+    "TypeScript",
+    "Angular",
+  ];
+
   return (
     <>
-    <Hamburger/>
       <div className="hero-container">
-        <section className="hero-container__leftside">
-          <div className="hero-container__vertical">Canaille<span className="hero-container__dev">Dev</span></div>
-        </section>
-        <section className="hero-container__rightside">
-          <div className="hero-container__content">
-            <div className="hero-container__title">
-              Conceptrice Développeuse d&apos;Applications
-            </div>
-            <div className="hero-container__subtitle">Développeuse Junior</div>
-            <div className="hero-container__reseaux">
-                <a className="hero-container__a" href="https://www.linkedin.com/in/elodieorozcotaveira/">
-              <div className="hero-container__btnreseaux1">LinkedIn</div></a>
-              <a className="hero-container__a" href="https://github.com/ElodieOrozcoTaveira">
-              <div className="hero-container__btnreseaux2">Github</div></a>
-            </div>
-            <div className="hero-container__nbrprojet">Projet: <span className="hero-container__span">1</span></div>
-            <div className="hero-container__EOT">by Elodie Orozco Taveira</div>
-          </div>
-        </section>
+        <CanailleDev />
+        <h3 className="hero-container__dispo">
+          <Sparkle size={10} /> Disponible pour de nouveaux projets{" "}
+          <Sparkle size={10} />
+        </h3>
+        <h2 className="hero-container__E">Elodie</h2>
+        <h2 className="hero-container__OT">Orozco Taveira</h2>
+        <h3 className="hero-container__h3">Développeuse Web Junior</h3>
+        <p className="hero-container__p">
+          Spécialisée en{" "}
+          <span className="hero-container__rolling" aria-label="Technologies">
+            <span className="hero-container__rollingTrack">
+              {roulement.map((word) => (
+                <span key={word} className="hero-container__span">
+                  {word}
+                </span>
+              ))}
+              <span className="hero-container__span">{roulement[0]}</span>
+            </span>
+          </span>
+        </p>
+        <p className="hero-container__p1">
+          Des interfaces claires, du code solide, des projets qui avancent.
+        </p>
 
-        <section className="hero-container__avatar">
-          <Image
-            className="hero-container__img"
-            src="/CanailleDev/avatar1.png"
-            alt="avatar"
-            height={350}
-            width={260}
-            priority
-            loading="eager"
-          />
-        </section>
+        <div className="hero-container__contbuton">
+          <Link href="#contact" className="hero-container__button1">
+            Me contacter
+          </Link>
+          <Link href="#projets" className="hero-container__button2">
+            Voir mes Projets
+          </Link>
+          <div className="hero-container__arrow">
+            <ChevronDown color="#fff" />
+          </div>
+        </div>
       </div>
     </>
   );

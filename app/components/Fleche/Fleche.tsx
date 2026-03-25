@@ -1,7 +1,7 @@
 "use client";
 
+import { ChevronUp } from "lucide-react";
 import "../Fleche/Fleche.scss";
-import { FaArrowCircleUp } from "react-icons/fa";
 
 export default function Fleche() {
   const scrollToTop = () => {
@@ -26,7 +26,7 @@ export default function Fleche() {
       onClick={scrollToTop}
       onKeyDown={onKeyDown}
     >
-      <FaArrowCircleUp className="icone" size={24} />
+      <ChevronUp className="icone" size={30} color="#2e5f3e" />
     </div>
   );
 }

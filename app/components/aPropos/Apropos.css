@@ -1,147 +1,58 @@
-@charset "UTF-8";
 /*Breakpoint*/
 /* Variables couleurs */
-/*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
 .container-apropos {
-  position: relative;
-  background: linear-gradient(135deg, #f3e6c2 0%, #ead7a5 40%, #e2c98a 70%, #d8b874 100%);
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-  padding: 0.27rem;
-  border: 2px solid #d6b36a;
-  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2), inset 0 0 60px rgba(120, 90, 40, 0.35), inset 0 0 80px rgba(90, 60, 20, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.25), 0 18px 40px rgba(0, 0, 0, 0.35);
-  color: #3a2c18;
-  overflow-x: hidden;
-  overflow-y: auto;
-  min-height: 65vh;
-  max-height: 80vh;
-  height: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: #b88a3a rgba(0, 0, 0, 0.08);
-  margin-top: 2rem;
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
+  display: flex;
+  flex-direction: column;
 }
 .container-apropos__h2 {
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
   text-align: center;
-  font-family: "Outfit";
-  font-weight: 500;
-  margin-top: 0.5rem;
-  margin-bottom: 0.2rem;
   color: #1f3d2b;
+  font-size: 2rem;
+}
+.container-apropos__underline {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100px;
+  margin-bottom: 3rem;
+  border: solid 1.5px #5f8f6d;
+}
+.container-apropos__image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  border: solid #B9D0C0 3.5px;
+}
+.container-apropos__nom {
+  margin-top: 1.5rem;
+  margin-left: 4rem;
+  margin-bottom: 0.5rem;
+  color: #1f3d2b;
+  font-size: 22px;
+}
+.container-apropos__dev {
+  margin-left: 4rem;
+  margin-top: 0.2rem;
+  color: #5f8f6d;
+  font-weight: 400;
+  letter-spacing: -0.2px;
 }
 .container-apropos__p {
-  text-align: justify;
-  color: #6b7c86;
-  text-shadow: #f1f2ec 2px 1px 1px;
-  font-family: "Outfit";
-  font-size: 14.5px;
-  letter-spacing: 1px;
-  padding: 0 1rem;
+  display: block;
+  margin-left: 4rem;
+  margin-right: 3rem;
+  color: #1f3d2b;
+  font-weight: 300;
+  font-size: 15px;
 }
-
-.container-apropos::before {
-  content: "";
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.025), rgba(0, 0, 0, 0.025) 1px, transparent 1px, transparent 3px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 4px);
-  opacity: 0.45;
-  pointer-events: none;
-}
-
-@media (max-width: 767px) {
-  .container-apropos {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 0;
-  }
-  .container-apropos__h2 {
-    font-size: 20px;
-  }
-  .container-apropos__p {
-    font-size: 15px;
-    padding: 0.5rem 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .container-apropos {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 0;
-  }
-  .container-apropos__h2 {
-    font-size: 25px;
-    font-weight: 400;
-    text-shadow: 1px 1px 0.5px #f1f2ec;
-  }
-  .container-apropos__p {
-    font-size: 16.5px;
-    padding: 0.5rem 1.5rem;
-    margin-left: 8rem;
-    margin-right: 8rem;
-    text-align: left;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1439) {
-  .container-apropos {
-    width: 100%;
-  }
-  .container-apropos__h2 {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  .container-apropos__texte {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: -1rem;
-  }
-  .container-apropos__p {
-    font-size: 18px;
-    text-align: center;
-    margin-left: 8rem;
-    margin-right: 8rem;
-    text-align: left;
-  }
-}
-@media (min-width: 1440px) {
-  .container-apropos {
-    width: 100%;
-  }
-  .container-apropos__h2 {
-    font-size: 30px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    text-shadow: 1px 1px 0.5px #f1f2ec;
-  }
-  .container-apropos__texte {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .container-apropos__p {
-    text-align: justify;
-    font-size: 25px;
-    margin-left: 10rem;
-    margin-right: 10rem;
-  }
+.container-apropos__intro {
+  text-align: center;
+  font-style: italic;
+  margin-left: 4rem;
+  margin-right: 3rem;
+  font-weight: 400;
+  color: #5f8f6d;
 }/*# sourceMappingURL=Apropos.css.map */

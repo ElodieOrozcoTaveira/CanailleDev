@@ -1,176 +1,128 @@
-@charset "UTF-8";
 /*Breakpoint*/
 /* Variables couleurs */
-/*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
 .hero-container {
-  height: 100vh;
-  display: flex;
-  font-family: "Fira Code";
-  margin-bottom: 5rem;
+  background-image: linear-gradient(rgba(2, 107, 2, 0.35), rgba(6, 76, 6, 0.35)), url(/CanailleDev/Pro/bg.jpeg);
+  height: 100svh;
+  background-position: center top 40%;
+  background-size: cover;
 }
-.hero-container__leftside {
-  width: 35%;
-  background-color: #5f8f6d;
-  height: 100vh;
-}
-.hero-container__vertical {
-  writing-mode: sideways-rl;
-  text-orientation: upright;
-  padding-top: 1.8rem;
-  font-size: 25px;
-  text-transform: uppercase;
-  color: #c0b47e;
-  font-weight: 500;
-  letter-spacing: 10px;
-}
-.hero-container__dev {
-  color: #1f3d2b;
-  font-weight: bold;
-}
-.hero-container__rightside {
-  height: 100vh;
-  background-color: #f1f2ec;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 5rem;
-  width: 65%;
-}
-.hero-container__avatar {
-  position: absolute;
-  top: 40;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-.hero-container__img {
-  position: relative;
-  z-index: 10;
-  border-bottom: #c0b47e 2px double;
-}
-.hero-container__title {
-  padding-top: 22rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  font-size: 25px;
-  color: #2e5f3e;
-  font-weight: 500;
-}
-.hero-container__subtitle {
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  font-size: 20px;
-  color: #2e5f3e;
-}
-.hero-container__reseaux {
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 1rem;
-  margin-left: 1rem;
-}
-.hero-container__a {
-  text-decoration: none;
-  cursor: pointer;
-}
-.hero-container__btnreseaux1 {
-  padding: 0.65rem 1.5rem 0.65rem 1.5rem;
-  border: solid 2.5px #1f3d2b;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  color: #1f3d2b;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.hero-container__btnreseaux2 {
-  padding: 0.7rem 1.5rem 0.7rem 1.5rem;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.hero-container__dispo {
+  text-align: center;
+  margin: 5rem 4rem 4rem 4rem;
+  font-size: 12px;
+  font-weight: 400;
   color: #f1f2ec;
-  font-weight: 500;
-  background-color: #c0b47e;
+  padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+  border: solid 1px white;
+  border-radius: 30px;
 }
-.hero-container__nbrprojet {
-  font-size: 18px;
-  text-align: right;
-  margin-right: 1rem;
-  color: #1f3d2b;
-  font-family: "Fira Code";
-  padding-bottom: 5rem;
+.hero-container__E {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: -1rem;
+  color: #f1f2ec;
+}
+.hero-container__OT {
+  text-align: center;
+  font-size: 30px;
+  color: #2e5f3e;
+}
+.hero-container__h3, .hero-container__p, .hero-container__p1 {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2.3rem;
+  color: #f1f2ec;
+  font-weight: 400;
+  text-shadow: 3px 2px 3px #5f8f6d;
 }
 .hero-container__span {
-  font-size: 25px;
-  color: #1f3d2b;
+  color: #2e5f3e;
+  text-shadow: 1px 1px 3px #f1f2ec;
+  font-weight: bold;
+  display: block;
+  line-height: 1.25;
 }
-.hero-container__EOT {
-  font-style: italic;
-  color: #1f3d2b;
-  font-weight: 400;
-  margin-left: 0.5rem;
+.hero-container__rolling {
+  display: inline-flex;
+  align-items: flex-start;
+  height: 1.25em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.hero-container__rollingTrack {
+  display: flex;
+  flex-direction: column;
+  animation: skills-roll 12s ease-in-out infinite;
+}
+.hero-container__contbuton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+.hero-container__button1, .hero-container__button2 {
+  color: #f1f2ec;
+  padding: 0.9rem;
+  text-decoration: none;
+  border-radius: 15px;
+}
+.hero-container__button1 {
+  margin-top: 5rem;
+  background-color: #2e5f3e;
+  border: 1px solid rgba(241, 242, 236, 0.25);
+  box-shadow: 1px 1px 1px #9aaab3;
+  animation: button-border-pulse 1.8s ease-in-out infinite;
+}
+.hero-container__button2 {
+  border: solid 1px #f1f2ec;
+  opacity: 0.9;
+}
+.hero-container__arrow {
+  animation: chevron-blink 1.2s ease-in-out infinite;
 }
 
-@media screen and (min-width: 768px) {
-  .hero-container__avatar {
-    bottom: 0;
-    left: 250;
+@keyframes chevron-blink {
+  0%, 100% {
+    opacity: 1;
   }
-  .hero-container__img {
-    height: 550px;
-    width: 400px;
-  }
-  .hero-container__title, .hero-container__subtitle, .hero-container__EOT {
-    text-align: right;
-    margin-right: 1rem;
-  }
-  .hero-container__reseaux {
-    display: flex;
-    justify-content: right;
-    margin-right: 1rem;
-    gap: 0.5rem;
-  }
-  .hero-container__EOT {
-    margin-right: 3rem;
+  50% {
+    opacity: 0.2;
   }
 }
-@media screen and (min-width: 1024px) {
-  .hero-container__img {
-    height: 550px;
-    width: 415px;
+@keyframes button-border-pulse {
+  0%, 100% {
+    border-color: rgba(241, 242, 236, 0.25);
+    box-shadow: 3px 2px 1px #9aaab3, 0 0 0 0 rgba(241, 242, 236, 0);
+  }
+  50% {
+    border-color: #2e5f3e;
+    box-shadow: 1px 1px 1px #9aaab3, 0 0 0 3px rgba(241, 242, 236, 0.35);
   }
 }
-@media screen and (min-width: 1440px) {
-  .hero-container__img {
-    height: 600px;
-    width: 450px;
-    margin-left: 47.5rem;
+@keyframes skills-roll {
+  0%, 10% {
+    transform: translateY(0%);
   }
-  .hero-container__vertical {
-    margin-left: 2rem;
-    margin-top: 2rem;
-    font-size: 40px;
+  14%, 24% {
+    transform: translateY(-12.5%);
   }
-  .hero-container__title {
-    text-align: right;
+  28%, 38% {
+    transform: translateY(-25%);
   }
-  .hero-container__EOT {
-    padding-top: 12rem;
-    padding-bottom: -1rem;
-    text-align: right;
+  42%, 52% {
+    transform: translateY(-37.5%);
+  }
+  56%, 66% {
+    transform: translateY(-50%);
+  }
+  70%, 80% {
+    transform: translateY(-62.5%);
+  }
+  84%, 94% {
+    transform: translateY(-75%);
+  }
+  100% {
+    transform: translateY(-87.5%);
   }
 }/*# sourceMappingURL=newHero.css.map */

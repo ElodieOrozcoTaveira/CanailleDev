@@ -1,30 +1,56 @@
+import { Sparkle } from "lucide-react";
 import "../aPropos/Apropos.scss";
+import Image from "next/image";
 
 export default function Apropos() {
-  return(
+  return (
     <div className="container-apropos">
       <h2 className="container-apropos__h2">À propos de moi</h2>
       <div className="container-apropos__underline"></div>
 
+      <Image
+        src="/CanailleDev/Pro/portrait-hq.webp"
+        alt="photo portrait"
+        width={280}
+        height={420}
+        quality={100}
+        sizes="(max-width: 768px) 70vw, 280px"
+        className="container-apropos__image"
+      />
+
+      <h3 className="container-apropos__nom">Elodie Orozco Taveira</h3>
+      <h4 className="container-apropos__dev">
+        Développeuse Web Junior Front End
+      </h4>
+     
       <section className="container-apropos__texte">
-      <p className="container-apropos__p">
-      Après une reconversion professionnelle, j’ai choisi de transformer ma curiosité pour le numérique et la technologie en un véritable projet de carrière. Cette transition m’a permis de donner du sens à mon parcours en m’orientant vers un domaine en constante évolution, où l’apprentissage, la créativité et la résolution de problèmes occupent une place centrale. Je suis aujourd’hui diplômée du titre professionnel de Concepteur Développeur d’Applications, et également développeuse web, avec de solides bases techniques et méthodologiques acquises tout au long de ma formation.
-      </p>
+        <p className="container-apropos__p">
+          Développeuse web freelance, je conçois des applications modernes,
+          performantes et centrées sur l’utilisateur.
+        </p>
 
-      <p className="container-apropos__p">
-      Aujourd’hui, je conçois et développe des applications web avec passion, rigueur et engagement. J’accorde une attention particulière à la qualité du code, à sa lisibilité et à sa maintenabilité, tout en veillant à créer des interfaces à la fois esthétiques, accessibles et intuitives. L’expérience utilisateur est au cœur de ma démarche, car je suis convaincue qu’une application efficace doit être aussi performante qu’agréable à utiliser.
-      </p>
+        <p className="container-apropos__p">
+          Issue d’une reconversion professionnelle, j’ai choisi de quitter ma carrière dans la surêté ferroviaire afin de m’orienter
+          vers le développement web pour allier logique, créativité et
+          résolution de problèmes. Cette transition m’a permis de développer une
+          forte capacité d’adaptation, de la rigueur et un réel sens du détail.
+        </p>
 
-       <p className="container-apropos__p">
-     Cette reconversion m’a permis de développer une forte capacité d’adaptation, une grande autonomie et une réelle persévérance face aux défis techniques. Curieuse et animée par une envie constante d’apprendre, j’aime explorer de nouvelles technologies, approfondir mes compétences et rester à l’écoute des bonnes pratiques du développement. Chaque projet est pour moi une opportunité de progresser, d’expérimenter et de proposer des solutions modernes, utiles et centrées sur les besoins des utilisateurs.
-      </p>
+        <p className="container-apropos__p">
+          Aujourd’hui, je développe des interfaces claires, accessibles et
+          maintenables, avec une attention particulière portée à l’expérience
+          utilisateur et à la qualité du code.
+        </p>
 
+        <p className="container-apropos__p">
+          Curieuse et en constante évolution, je continue d’apprendre chaque
+          jour pour proposer des solutions modernes, fiables et adaptées aux
+          besoins de chaque projet.
+        </p>
       </section>
+       <p className="container-apropos__intro">
+        <Sparkle size={12} />  Rigueur, précision et sens du détail au service de vos projets web <Sparkle size={12} />
+      </p>
     </div>
-  )
+  );
 }
-
-
-
-
-

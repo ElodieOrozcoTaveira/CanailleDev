@@ -1,60 +1,24 @@
-@charset "UTF-8";
 /*Breakpoint*/
 /* Variables couleurs */
-/*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
 .container-prestations {
-  background-color: #B9D0C0;
+  background-color: #e7dbb7;
   margin-top: 10rem;
   margin-bottom: -15rem;
 }
-
-.prestations-h2 {
+.container-prestations__h2 {
   padding-top: 2rem;
-  margin-top: 5rem;
-  font-size: 24px;
-  font-family: "Fira Code";
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-top: 5rem;
-  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
   color: #1f3d2b;
-  animation: fadeUp both;
-  animation-timeline: view();
+  font-size: 2rem;
 }
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-.prestations-h3 {
-  font-size: 23px;
-  font-family: "Fira Code";
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-right: 13rem;
-  margin-top: -2rem;
+.container-prestations__underline {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100px;
   margin-bottom: 3rem;
-  opacity: 0.5;
-  color: #5f8f6d;
-  rotate: 180deg;
-  animation: fadeUp both;
-  animation-timeline: view();
+  border: solid 1.5px #5f8f6d;
 }
 
 .swiper-wrapper-custom {
@@ -68,10 +32,10 @@ Accents (liens, icônes) → $color-accent */
 }
 .prestations-swiper .swiper-button-next,
 .prestations-swiper .swiper-button-prev {
-  background-color: #c0b47e;
+  background-color: #5f8f6d;
   color: #f1f2ec;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   border-radius: 20%;
 }
 .prestations-swiper .swiper-button-next::after,
@@ -81,7 +45,7 @@ Accents (liens, icônes) → $color-accent */
 }
 .prestations-swiper .swiper-button-next:hover,
 .prestations-swiper .swiper-button-prev:hover {
-  background-color: #5f8f6d;
+  background-color: #1f3d2b;
 }
 .prestations-swiper .swiper-pagination-bullet {
   background-color: #5f8f6d;
@@ -90,24 +54,23 @@ Accents (liens, icônes) → $color-accent */
   height: 12px;
 }
 .prestations-swiper .swiper-pagination-bullet-active {
-  background-color: #c0b47e;
+  background-color: #1f3d2b;
   opacity: 1;
 }
 
 .prestations-container__id {
-  border: solid 1.5px #5f8f6d;
-  box-shadow: 1px 1px 2px #5f8f6d;
+  border: solid 1.5px #f2f5f7;
+  box-shadow: 1px 1px 2px #f2f5f7;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  margin-right: 3.5rem;
+  margin-left: 3.5rem;
   justify-content: center;
   align-items: center;
   background-color: #f1f2ec;
   color: #1f3d2b;
-  font-family: "Fira Code";
   height: 100%;
   transition: transform 0.3s ease;
 }
@@ -117,7 +80,7 @@ Accents (liens, icônes) → $color-accent */
 }
 
 .prestations-container__icon {
-  color: #c0b47e;
+  color: #B9D0C0;
 }
 
 .prestations-container__icon {

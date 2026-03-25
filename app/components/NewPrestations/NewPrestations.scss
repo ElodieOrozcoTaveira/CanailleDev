@@ -1,50 +1,19 @@
 @use '../../styles/variables/variables.scss';
+@use "../../styles/mixins/mixins.scss";
 
 .container-prestations{
-  background-color: variables.$color-forest-extralight;
+  background-color: #e7dbb7;
   margin-top: 10rem;
   margin-bottom: -15rem;
-}
-
-.prestations-h2 {
-  padding-top: 2rem;
-  margin-top: 5rem;
-  font-size: 24px;
-  font-family: 'Fira Code';
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-top: 5rem;
-  margin-left: 1rem;
-  color: variables.$color-forest-dark;
-  animation: fadeUp both;
-  animation-timeline: view();
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0);
+  &__h2{
+    @include mixins.h2;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  &__underline{
+    @include mixins.underline;
   }
 }
 
-.prestations-h3 {
-  font-size: 23px;
-  font-family: 'Fira Code';
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-right: 13rem;
-  margin-top: -2rem;
-  margin-bottom: 3rem;
-  opacity: 0.5;
-  color: variables.$color-forest-light;
-  rotate: 180deg;
-  animation: fadeUp both;
-  animation-timeline: view();
-}
+
 
 // Wrapper pour le Swiper
 .swiper-wrapper-custom {
@@ -60,10 +29,10 @@
   // Boutons de navigation
   .swiper-button-next,
   .swiper-button-prev {
-    background-color: variables.$color-canaille;
+    background-color: variables.$color-forest-light;
     color: variables.$white-color;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     border-radius: 20%;
 
     &::after {
@@ -72,7 +41,7 @@
     }
 
     &:hover {
-      background-color: variables.$color-forest-light;
+      background-color: variables.$color-forest-dark;
     }
   }
 
@@ -84,7 +53,7 @@
     height: 12px;
 
     &-active {
-      background-color: variables.$color-canaille;
+      background-color: variables.$color-forest-dark;
       opacity: 1;
     }
   }
@@ -92,19 +61,18 @@
 
 // Carte de projet
 .prestations-container__id {
-  border: solid 1.5px variables.$color-forest-light;
-  box-shadow: 1px 1px 2px variables.$color-forest-light;
+  border: solid 1.5px variables.$color-bg-light;
+  box-shadow: 1px 1px 2px variables.$color-bg-light;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  margin-right: 3.5rem;
+  margin-left: 3.5rem;
   justify-content: center;
   align-items: center;
   background-color:variables.$white-color;
   color: variables.$color-forest-dark;
-  font-family: "Fira Code";
   height: 100%;
   transition: transform 0.3s ease;
 
@@ -115,7 +83,7 @@
  
 }
 .prestations-container__icon{
-    color: variables.$color-canaille;
+    color: variables.$color-forest-extralight;
 }
 
 

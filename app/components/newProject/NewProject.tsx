@@ -21,6 +21,7 @@ export default function NewProject() {
       privacy: "Projet Public",
       width: 200,
       height: 120,
+      
     },
     {
       id: 2,
@@ -28,8 +29,9 @@ export default function NewProject() {
       image: "/Projets/braap.png",
       url: "/404",
       privacy: "Projet Privé",
-      width: 150,
-      height: 100,
+      width: 300,
+      height: 200,
+    
     },
     {
       id: 3,
@@ -37,8 +39,8 @@ export default function NewProject() {
       image: "/Projets/blablabook.webp",
       url: "/BBB",
       privacy: "Projet Privé",
-      width: 200,
-      height: 120,
+      width: 285,
+      height: 250,
     },
     {
       id: 4,
@@ -46,15 +48,18 @@ export default function NewProject() {
       image: "/Projets/ocoffee.webp",
       url: "/Ocoffee",
       privacy: "Projet Privé",
-      width: 200,
-      height: 120,
+      width: 285,
+      height: 250,
     },
   ];
   return (
     <>
-      <h2 className="projets-h2">Mes Projets (privés/publics)</h2>
-      <h3 className="projets-h3">Mes Projets (privés/publics)</h3>
-
+    <section className="container-project">
+      <h2 className="container-project__h2">Mes Projets</h2>
+      <div className="container-project__underline"></div>
+      <p className="container-project__p">
+          Découvrez mes réalisations et projets en développement web.
+        </p>
       <div className="swipper-wrapper-custom">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -75,9 +80,9 @@ export default function NewProject() {
               slidesPerView: 2,
               spaceBetween: 5,
             },
-            1440:{
-              slidesPerView:2,
-              spaceBetween:5,
+            1440: {
+              slidesPerView: 2,
+              spaceBetween: 5,
             },
           }}
           className="projets-swiper"
@@ -101,15 +106,27 @@ export default function NewProject() {
                     alt={projet.titre}
                     width={projet.width}
                     height={projet.height}
-                    />
-                  </Link>
-                  <p className="projets-container__titre">{projet.titre}</p>
-                  <p className="projets-container__privacy">{projet.privacy}</p>
+                  />
+                </Link>
+                <p className="projets-container__titre">
+                  {projet.id === 4 ? (
+                    <>
+                      OCoffee,
+                      <br />
+                      projet de formation
+                    </>
+                  ) : (
+                    projet.titre
+                  )}
+                </p>
+               
+                <p className="projets-container__privacy">{projet.privacy}</p>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
+      </section>
     </>
   );
 }

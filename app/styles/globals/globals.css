@@ -1,17 +1,5 @@
-@charset "UTF-8";
 /*Breakpoint*/
 /* Variables couleurs */
-/*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
 *,
 *::before,
 *::after {
@@ -30,7 +18,7 @@ body {
 }
 
 body {
-  background: #f1f2ec;
+  background: #F5F5DC;
   min-height: 100vh;
   overflow-x: hidden;
 }/*# sourceMappingURL=globals.css.map */

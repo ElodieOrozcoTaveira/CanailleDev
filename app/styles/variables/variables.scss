@@ -11,33 +11,6 @@ $desktop: 1440px;
 
 $white-color: #f1f2ec;
 
-// Couleurs neutres (gris)
-$color-bg: #7a7578;               // Gris du fond principal
-$color-bg-dark: #5e5a5c;          // Gris plus foncé (boutons, nav)
-$color-bg-light: #d9d9d9;         // Gris clair
-$color-card: #ffffff;             // Fond clair éventuel
-
-// Typographie
-$color-text: #ffffff;             // Texte principal blanc
-$color-text-muted: #cfcfcf;       // Texte secondaire
-$color-heading: #ffffff;          // Titres
-
-// Éléments UI
-$color-btn-bg: #5e5a5c;           // Fond des boutons
-$color-btn-hover: #4b4749;        // Hover des boutons
-$color-icon: #ffffff;             // Couleur des icônes
-
-
-
-
-// --------------------------------------
-// 🌤️ CIEL
-// --------------------------------------
-$color-sky-primary: #2e86c1;       // Bleu ciel principal
-$color-sky-light: #6fb3e0;         // Bleu ciel clair
-$color-sky-muted: #8fbcd6;    
-$coloer-cap:#284766;     // Bleu lointain / brume
-
 // --------------------------------------
 // 🌲 FORÊT
 // --------------------------------------
@@ -78,38 +51,10 @@ $color-accent: #2e86c1;             // Accent principal (ciel)
 $color-accent-hover: #1b5f8a;       // Hover accent
 $color-border: rgba(255, 255, 255, 0.1);
 
-// --------------------------------------
-// 🌈 GRADIENTS
-// --------------------------------------
-$gradient-hero: linear-gradient(
-  180deg,
-  #2e86c1 0%,
-  #6fb3e0 40%,
-  #6b7c86 70%,
-  #2b3338 100%
-);
 
-$gradient-card: linear-gradient(
-  145deg,
-  rgba(255, 255, 255, 0.15),
-  rgba(255, 255, 255, 0.03)
-);
-
-$gradient-button: linear-gradient(
-  135deg,
-  #2e86c1,
-  #1b5f8a
-);
-
-
- /*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
+//Couleur Nouveau Site pro 
+$color-beige:#F5F5DC;
+$color-vert:#B2AC88;
+$color-sauge:#B2AC88;
+$color-teal:#82B0AF;
+$color-tealprofond:#008080;

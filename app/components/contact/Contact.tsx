@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../contact/Contact.scss";
-import Image from "next/image";
+import { Beer, Coffee, MailIcon, MapPin, Send, Smile } from "lucide-react";
 
 export default function Contact() {
   type FormState = {
@@ -123,20 +123,42 @@ export default function Contact() {
 
   return (
     <div className="container-contact">
+      <h2 className="container-contact__h2">Contactez-moi</h2>
+      <h3 className="container-contact__underline"></h3>
+      <p className="container-contact__phrase">
+        Un projet en tête? N&apos;hésitez pas à me contacter pour en disctuer
+      </p>
+      <p className="container-contact__travail">Travaillons ensemble</p>
+      <p className="container-contact__paragraph">
+        Que ce soit pour un projet web, une collaboration ou simplement
+        échanger, je serais ravie de discuter avec vous autour d&apos;un verre
+        <Beer color="#1f3d2b" size={15} />
+        <Coffee color="#1f3d2b" size={15} />
+        <Smile color="#1f3d2b" size={15} />
+      </p>
 
-      
-      <h2 className="contact-h2">Me Contacter</h2>
-      <h3 className="contact-h3">Me Contacter</h3>
-      <Image
-        className="container-contact__img"
-        src="/CanailleDev/contact.png"
-        alt="avatar contact "
-        width={500}
-        height={600}
-        loading="lazy"
-      />
+      <section className="container-contact__contact">
+        <div className="container-contact__composant">
+          <div className="container-contact__logo">
+            <MailIcon color="#5f8f6d" size={18} />
+          </div>
+          <div className="container-contact__mail">elorotav@gmail.com</div>
+        </div>
+        <div className="container-contact__composant">
+          <div className="container-contact__logo">
+            <MapPin color="#5f8f6d" size={18} />{" "}
+          </div>
+          <div className="container-contact__mail">
+            Saint-Feliu d&apos;Avall (66)
+          </div>
+        </div>
+      </section>
 
       <div className="container-contact__form">
+        <h2 className="container-contact__formh2">Envoyez moi un message</h2>
+        <h3 className="container-contact__formh3">
+          Remplissez le formulaire ci-dessous et je vous répondrai rapidement
+        </h3>
         <form className="container-contact__formulaire" onSubmit={handleSubmit}>
           <section className="container-contact__section">
             <input
@@ -172,7 +194,7 @@ export default function Contact() {
             <textarea
               id="message"
               className="container-contact__messageview"
-              placeholder="Message*"
+              placeholder="Parlez moi de votre projet*"
               value={formData.message}
               name="message"
               onChange={handleChange}
@@ -216,10 +238,16 @@ export default function Contact() {
               disabled={status === "loading"}
               aria-busy={status === "loading"}
             >
-              {status === "loading" ? "Envoi en cours..." : "Envoyer"}
+              {status === "loading" ? (
+                "Envoi en cours..."
+              ) : (
+                <>
+                  <Send size={18} aria-hidden="true" />
+                  <span>Envoyer le message</span>
+                </>
+              )}
             </button>
           </div>
-          <p className="container-contact__p">Un projet <span className="container-contact__span">=</span> un besoin <span className="container-contact__span">=</span> un devis personnalisé.</p>
         </form>
       </div>
     </div>

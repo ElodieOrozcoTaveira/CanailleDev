@@ -2,164 +2,49 @@
 @use "../../styles/mixins/mixins.scss";
 
 .container-apropos {
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    #f3e6c2 0%,
-    #ead7a5 40%,
-    #e2c98a 70%,
-    #d8b874 100%
-  );
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-  padding: 0.27rem;
-  border: 2px solid #d6b36a;
-  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2),
-    inset 0 0 60px rgba(120, 90, 40, 0.35), inset 0 0 80px rgba(90, 60, 20, 0.4),
-    inset 0 0 20px rgba(0, 0, 0, 0.25), 0 18px 40px rgba(0, 0, 0, 0.35);
-  color: #3a2c18;
-  overflow-x: hidden;
-  overflow-y: auto;
-  min-height: 65vh;
-  max-height: 80vh;
-  height: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: #b88a3a rgba(0, 0, 0, 0.08);
-  margin-top: 2rem;
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-
+  display: flex;
+  flex-direction: column;
   &__h2 {
-    text-align: center;
-    font-family: "Outfit";
-    font-weight: 500;
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
+    @include mixins.h2;
+  }
+  &__underline {
+    @include mixins.underline;
+  }
+  &__image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    border: solid variables.$color-forest-extralight 3.5px;
+  }
+  &__nom {
+    margin-top: 1.5rem;
+    margin-left: 4rem;
+    margin-bottom: 0.5rem;
     color: variables.$color-forest-dark;
+    font-size: 22px;
+  }
+  &__dev {
+    margin-left: 4rem;
+    margin-top: 0.2rem;
+    color: variables.$color-forest-light;
+    font-weight: 400;
+    letter-spacing: -0.2px;
   }
   &__p {
-    text-align: justify;
-    color: variables.$color-mountain;
-    text-shadow: variables.$white-color 2px 1px 1px;
-    font-family: "Outfit";
-    font-size: 14.5px;
-    letter-spacing: 1px;
-    padding: 0 1rem;
+    display: block;
+    margin-left: 4rem;
+    margin-right: 3rem;
+    color: variables.$color-forest-dark;
+    font-weight: 300;
+    font-size: 15px;
   }
-}
-
-.container-apropos::before {
-  content: "";
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: repeating-linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.025),
-      rgba(0, 0, 0, 0.025) 1px,
-      transparent 1px,
-      transparent 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0.02) 1px,
-      transparent 1px,
-      transparent 4px
-    );
-
-  opacity: 0.45;
-  pointer-events: none;
-}
-
-@media (max-width: 767px) {
-  .container-apropos {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 0;
-
-    &__h2 {
-      font-size: 20px;
-    }
-
-    &__p {
-      font-size: 15px;
-      padding: 0.5rem 1rem;
-      margin-left: 1rem;
-      margin-right: 1rem;
-    }
-  }
-}
-
-@media (min-width: variables.$tablet) and (max-width: 1023px) {
-  .container-apropos {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 0;
-    &__h2 {
-      font-size: 25px;
-      font-weight: 400;
-      text-shadow: 1px 1px 0.5px variables.$white-color;
-    }
-    &__p {      
-      font-size: 16.5px;
-      padding: 0.5rem 1.5rem;
-      margin-left: 8rem;
-      margin-right: 8rem;
-      text-align: left;
-    }
-  }
-}
-
-@media screen and (min-width: variables.$laptop) and (max-width: 1439) {
-  .container-apropos {
-    width: 100%;
-    &__h2 {
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    &__texte {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: -1rem;
-    }
-    &__p {
-      font-size: 18px;
-      text-align: center;
-      margin-left: 8rem;
-      margin-right: 8rem;
-      text-align: left;
-    }
-  }
-}
-@media (min-width: variables.$desktop) {
-  .container-apropos {
-    width: 100%;
-    &__h2 {
-      font-size: 30px;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      font-weight: 400;
-      text-shadow: 1px 1px 0.5px variables.$white-color;
-    }
-
-    &__texte {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    &__p {
-      text-align: justify;
-      font-size: 25px;
-      margin-left: 10rem;
-      margin-right: 10rem;
-    }
+  &__intro {
+    text-align: center;
+    font-style: italic;
+    margin-left: 4rem;
+    margin-right: 3rem;
+    font-weight: 400;
+    color: variables.$color-forest-light;
   }
 }

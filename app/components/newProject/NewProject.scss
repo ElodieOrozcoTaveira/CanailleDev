@@ -1,42 +1,21 @@
 @use "../../styles/variables/variables.scss";
+@use "../../styles/mixins/mixins.scss";
 
-.projets-h2 {
-  margin-top: 5rem;
-  font-size: 22px;
-  font-family: "Fira Code";
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-top: 5rem;
-  margin-left: 1rem;
-  color: variables.$color-forest-dark;
-  animation: fadeUp both;
-  animation-timeline: view();
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0);
+.container-project {
+  &__h2 {
+    @include mixins.h2;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  &__underline {
+    @include mixins.underline;
   }
-}
-
-.projets-h3 {
-  font-size: 20px;
-  font-family: "Fira Code";
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-right: 1rem;
-  margin-top: -1.5rem;
-  margin-bottom: 3rem;
-  opacity: 0.5;
-  color: variables.$color-forest-light;
-  rotate: 180deg;
-  animation: fadeUp both;
-  animation-timeline: view();
+  &__p {
+    text-align: center;
+    color: variables.$color-forest;
+    font-weight: 300;
+    margin-left: 4rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+  }
 }
 
 // Wrapper pour le Swiper
@@ -55,8 +34,8 @@
   .swiper-button-prev {
     background-color: variables.$color-forest-dark;
     color: variables.$white-color;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     border-radius: 20%;
 
     &::after {
@@ -85,19 +64,18 @@
 
 // Carte de projet
 .projets-container__id {
-  border: solid 1.5px variables.$color-forest-light;
-  box-shadow: 1px 1px 2px variables.$color-forest-light;
+  border: dashed 0.5px variables.$color-parchemin;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  padding-bottom: 2rem;
+  margin-right: 3.5rem;
+  margin-left: 3.5rem;
   justify-content: center;
   align-items: center;
-  background-color: #b9d0c0;
+  background-color: white;
   color: variables.$color-forest-dark;
-  font-family: "Fira Code";
+  font-family: "Inter";
   height: 100%;
   transition: transform 0.3s ease;
 
@@ -105,16 +83,28 @@
     transform: translateY(-10px);
     box-shadow: 2px 4px 8px variables.$color-forest-light;
   }
-  &__link {
-    text-decoration: none;
-    list-style-type: none;
-  }
 }
 
+.projets-container__link {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.projets-container__id[data-id="1"] .projets-container__link {
+  display: block;
+  margin-top: 1rem;
+}
+
+.projets-container {
+  &__fonction {
+    color: variables.$color-forest-light;
+    font-size: 14px;
+  }
+}
 .projets-container__img {
   margin-bottom: 0.5rem;
-  margin-top: 1rem;
-  border-radius: 10px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 .projets-container__titre {
@@ -126,9 +116,10 @@
 .projets-container__privacy {
   margin-top: 1rem;
   padding: 1rem;
-  background-color: variables.$color-canaille;
+  background-color: variables.$color-forest-dark;
+  color: white;
   border-radius: 20px;
-  box-shadow: 1px 1px 2px variables.$color-forest-light;
+  box-shadow: 1px 1px 2px variables.$color-forest-extralight;
 }
 
 @media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
@@ -168,7 +159,7 @@
     margin-top: -2.8rem;
     margin-bottom: 10rem;
   }
-  
+
   .swiper-wrapper-custom {
     width: 450px; // Largeur fixe du carré
     height: 450px; // Hauteur fixe du carré
@@ -176,33 +167,32 @@
     margin: 3rem auto;
     overflow: hidden; // Important pour ne pas déborder
   }
-  
+
   .projets-swiper {
     width: 100%;
     height: 100%;
-    
+
     // Boutons de navigation adaptés au petit format
     .swiper-button-next,
     .swiper-button-prev {
       width: 30px; // Boutons plus petits
       height: 30px;
       display: block;
-      
-      
+
       &::after {
         font-size: 1rem; // Icônes plus petites
       }
     }
-    
+
     .swiper-button-next {
       right: 5px;
     }
-    
+
     .swiper-button-prev {
       left: 5px;
     }
   }
-  
+
   .projets-container__id {
     height: 380px; // Ajusté pour laisser de la place à la pagination
     width: 350px;
@@ -211,19 +201,18 @@
     padding: 1rem; // Padding réduit
     gap: 0.5rem; // Gap réduit
   }
-  
   .projets-container__img {
     max-width: 100%;
     height: auto;
     max-height: 120px; // Limite la hauteur de l'image
     object-fit: cover;
   }
-  
+
   .projets-container__titre {
     font-size: 16px; // Texte plus petit
     margin-top: 0.25rem;
   }
-  
+
   .projets-container__privacy {
     margin-top: 0.5rem;
     padding: 0.5rem;

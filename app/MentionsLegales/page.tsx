@@ -1,7 +1,7 @@
 import CanailleDev from "../components/canailledev/CanailleDev";
 import Fleche from "../components/Fleche/Fleche";
 import Footer from "../components/layout/Footer/Footer";
-import "./MentionsLegales.scss";
+import "../MentionsLegales/MentionsLegales.scss";
 
 export default function MentionsLegales() {
   return (

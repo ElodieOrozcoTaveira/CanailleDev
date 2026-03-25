@@ -1,28 +1,36 @@
 @charset "UTF-8";
 /*Breakpoint*/
 /* Variables couleurs */
-/*💡 Conseils d’utilisation
-
-Hero section → $gradient-hero
-
-Fond global → $color-bg
-
-Boutons CTA → $gradient-button
-
-Cartes / blocs → fond translucide + blur
-
-Accents (liens, icônes) → $color-accent */
-/* Simple responsive hamburger menu styles */
+/* ─────────────────────────────────────────
+   Wrapper
+───────────────────────────────────────── */
 .hamburger-wrapper {
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: space-between;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
+  width: 100%;
   z-index: 3000;
-  padding: 1.5rem 1rem;
-  opacity: 1;
+  padding: 0.6rem 1rem;
+  transition: background-color 220ms ease, box-shadow 220ms ease, padding 220ms ease;
+}
+
+.hamburger-wrapper.is-top {
+  justify-content: flex-end;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.hamburger-wrapper.is-top .hamburger-brand {
+  display: none;
+}
+
+.hamburger-wrapper.is-visible {
+  justify-content: space-between;
+  background-color: #F5F5DC;
+  box-shadow: 0 1px 6px rgba(46, 95, 62, 0.12);
 }
 
 .hamburger-wrapper.is-hidden {
@@ -31,21 +39,53 @@ Accents (liens, icônes) → $color-accent */
   transition: none;
 }
 
+.hamburger-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+.hamburger-brand__logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.hamburger-brand__text {
+  color: #1f3d2b;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  font-size: 1.15rem;
+}
+.hamburger-brand__accent {
+  color: #c0b47e;
+}
+
+/* ─────────────────────────────────────────
+   Bouton burger
+───────────────────────────────────────── */
 .hamburger-button {
   background: transparent;
   border: none;
-  font-size: 2.2rem;
+  font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.25rem;
-  color: #c0b47e;
+  color: #1f3d2b;
   cursor: pointer;
   position: relative;
-  z-index: 3001; /* above menu so it stays clickable */
-  width: 1px;
-  height: 50px;
+  /* TOUJOURS au-dessus du menu et de la liste */
+  z-index: 3002;
+  width: 50px;
+  height: 85px;
+  margin-left: auto;
   padding: 0;
+  border-radius: 6px;
+  transition: color 150ms ease;
+}
+
+.hamburger-wrapper.is-top .hamburger-button {
+  color: #1f3d2b;
+  margin-top: 0;
 }
 
 .hamburger-icon {
@@ -55,102 +95,113 @@ Accents (liens, icônes) → $color-accent */
      object-fit: contain;
 }
 
+/* Couleur du bouton quand le menu est ouvert */
+.hamburger-wrapper.is-open .hamburger-button {
+  color: #5f8f6d;
+  padding: 0.25rem 0.4rem;
+  /* z-index intentionnellement absent : on hérite des 3002 ci-dessus */
+}
+
+/* ─────────────────────────────────────────
+   Menu nav
+───────────────────────────────────────── */
 .hamburger-menu {
-  /* force on top of hero sections */
   position: fixed;
-  top: 0;
+  top: -20;
   right: 0;
-  left: auto; /* ancré à droite */
+  left: auto;
   display: flex;
-  justify-content: flex-end; /* pousse la liste à droite */
+  justify-content: flex-end;
   width: 100%;
   transform-origin: top right;
   z-index: 3000;
-  opacity: 1;
   pointer-events: none;
-}
-
-/* When the menu is open, ensure the button/icon contrasts with the menu background */
-.hamburger-wrapper.is-open .hamburger-button {
-  color: #2e5f3e;
-  border-radius: 6px;
-  padding: 0.25rem 0.4rem;
-  z-index: 1000;
 }
 
 .hamburger-menu.is-closed {
-  opacity: 1;
   transform: translateY(-100%);
   pointer-events: none;
-  transition: transform 0ms ease, opacity 0ms ease;
+  transition: transform 200ms ease, opacity 200ms ease;
+  opacity: 0;
 }
 
 .hamburger-menu.is-open {
-  opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-  transition: transform 0ms ease, opacity 0ms ease;
+  transition: transform 200ms ease, opacity 200ms ease;
+  opacity: 1;
 }
 
+/* ─────────────────────────────────────────
+   Liste
+───────────────────────────────────────── */
 .hamburger-menu__list {
-  background-color: #5f8f6d;
-  border-radius: 30px;
+  background-color: #F5F5DC;
   list-style: none;
-  right: 2;
-  padding: 8px 0;
-  box-shadow: 3px 3px 4px #1f3d2b;
-  height: 38vh;
-  width: 200px;
-  max-width: 50px;
+  height: 50vh;
+  width: 400px;
+  max-width: 500px;
+  /* z-index sous le bouton (3002) mais au-dessus du reste */
+  z-index: 3001;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  justify-content: right;
-  align-items: flex-end;
+  justify-content: center;
+  align-content: flex-end;
   padding-top: 1.5rem;
-  margin-right: 0.5rem; /* petit recul du bord droit */
-  opacity: 0.8;
+}
+
+.hamburger-menu.is-top-state .hamburger-menu__list {
+  padding-top: 0;
 }
 
 .hamburger-menu__list li {
   padding: 8px 16px;
-  text-align: center;
   color: #c0b47e;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hamburger-menu__list a {
-  color: #1f3d2b;
+  color: #5f8f6d;
   text-decoration: none;
   display: block;
-  text-shadow: 1px 1px 0.5px #c0b47e;
-  font-size: 17px;
-  font-family: "Outfit";
-  text-align: center;
+  font-size: 15px;
+  font-family: "Inter";
+  transition: opacity 150ms ease;
+  margin-bottom: 0.5rem;
 }
 
 .hamburger-menu__list a:hover {
   opacity: 0.7;
-  transform: scale(1);
 }
 
+/* ─────────────────────────────────────────
+   Responsive
+───────────────────────────────────────── */
 @media screen and (max-width: 767px) {
-  /* mobile: center the menu */
+  .hamburger-wrapper {
+    padding: 0.5rem 0.8rem;
+  }
+  .hamburger-brand__logo {
+    width: 36px;
+    height: 36px;
+  }
+  .hamburger-brand__text {
+    font-size: 1rem;
+  }
   .hamburger-menu__list {
     width: 100%;
     align-items: center;
-  }
-  .hamburger-wrapper {
-    right: 15;
-    top: -15;
   }
   .hamburger-menu__list li {
     margin-left: 0;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  /* tablet: center the menu */
+  .hamburger-wrapper {
+    padding: 0.55rem 1rem;
+  }
   .hamburger-menu__list {
     width: 100%;
     align-items: center;
@@ -158,14 +209,8 @@ Accents (liens, icônes) → $color-accent */
   .hamburger-menu__list li {
     margin-left: 0;
   }
-  .hamburger-wrapper {
-    margin-right: 1rem;
-  }
 }
 @media screen and (max-width: 1024px) {
-  .hamburger-wrapper {
-    display: flex;
-  }
   .hamburger-button svg {
     width: 2rem;
     height: 2rem;
@@ -173,16 +218,21 @@ Accents (liens, icônes) → $color-accent */
 }
 @media (min-width: 1440px) {
   .hamburger-wrapper {
-    right: 50;
-    top: 30;
+    padding: 0.6rem 2rem;
   }
   .hamburger-icon {
     width: 80px;
-    height: 800px;
+    height: 80px;
+  }
+  .hamburger-brand__logo {
+    width: 44px;
+    height: 44px;
+  }
+  .hamburger-brand__text {
+    font-size: 1.3rem;
   }
   .hamburger-menu__list {
     height: 300px;
-    display: flex;
     align-items: center;
     margin-right: 1.5rem;
   }

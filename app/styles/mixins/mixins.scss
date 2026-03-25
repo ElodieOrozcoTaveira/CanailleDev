@@ -1,24 +1,18 @@
 @use "../variables/variables.scss";
 
 @mixin underline {
-    display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 10rem;
-        border: dashed variables.$color-canaille 1px ;  
-        margin-top: -2rem; 
-        margin-bottom: 1rem;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100px;
+  margin-bottom: 3rem;
+  border: solid 1.5px variables.$color-forest-light;
 }
 
-@mixin h2{ 
-        margin-top: 2rem;
-        margin-bottom: 2.5rem;
-        font-size: 25px;
-        color: #5f8f6d;
-        font-family: 'Fira Code';
-        font-weight: 400;
-        text-align: center;
-        letter-spacing: 2px;
+@mixin h2 {
+  padding-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: variables.$color-forest-dark;
+  font-size: 2rem;
 }
-
-
