@@ -3,23 +3,34 @@
 .hero-container {
   background-image:
     linear-gradient(rgba(2, 107, 2, 0.35), rgba(6, 76, 6, 0.35)),
-    url(/CanailleDev/Pro/bg.jpeg);
+    url(/CanailleDev/Pro/bg.webp);
   height: 100svh;
-  background-position: center top 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center 40%;
   background-size: cover;
   &__dispo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    width: fit-content;
     text-align: center;
-    margin: 5rem 4rem 4rem 4rem;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 12px;
     font-weight: 400;
     color: variables.$white-color;
-    padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+    padding: 0.55rem 0.9rem;
+    transform: translateY(3rem);
     border: solid 1px white;
     border-radius: 30px;
   }
   &__E {
     text-align: center;
     font-size: 30px;
+    margin-top: 4rem;
     margin-bottom: -1rem;
     color: variables.$white-color;
   }
@@ -33,13 +44,15 @@
   &__p1 {
     text-align: center;
     margin-top: 2rem;
-    margin-bottom: 2.3rem;
     color: variables.$white-color;
     font-weight: 400;
     text-shadow: 3px 2px 3px variables.$color-forest-light;
   }
+  &__p {
+    margin-bottom: 2rem;
+  }
   &__span {
-    color: variables.$color-forest;
+    color: variables.$color-forest-dark;
     text-shadow: 1px 1px 3px variables.$white-color;
     font-weight: bold;
     display: block;
@@ -70,6 +83,10 @@
     padding: 0.9rem;
     text-decoration: none;
     border-radius: 15px;
+  }
+  &__button1,
+  &__button2:hover {
+    font-size: 20px;
   }
   &__button1 {
     margin-top: 5rem;
@@ -144,5 +161,32 @@
   }
   100% {
     transform: translateY(-87.5%);
+  }
+}
+
+@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
+  .hero-container {
+    &__dispo {
+      font-size: 16px;
+      padding: 0.55rem 0.9rem;
+    }
+    &__E,
+    &__OT {
+      font-size: 35px;
+    }
+    &__OT {
+      text-shadow: 1px 1px 1px white;
+    }
+    &__E {
+      text-shadow: 1px 1px 1px variables.$color-forest-dark;
+    }
+    &__h3,
+    &__p,
+    &__p1 {
+      font-size: 20px;
+    }
+    &__p {
+      margin-bottom: 2rem;
+    }
   }
 }

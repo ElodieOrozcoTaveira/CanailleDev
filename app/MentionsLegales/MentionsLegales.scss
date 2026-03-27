@@ -1,11 +1,11 @@
-@use '../styles/variables/variables.scss';
+@use "../styles/variables/variables.scss";
 @use "../styles/mixins/mixins.scss";
 
 .container-mentions {
   background-color: #e7dbb7;
-  margin-top: 10rem;
+  margin-top: 1rem;
   padding: 3rem 1.5rem;
-  margin-bottom: -15rem;
+  margin-bottom: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@
 @media (min-width: variables.$desktop) {
   .container-mentions {
     width: 70%;
-    margin: 10rem auto -15rem auto;
+    margin: 10rem auto 2rem auto;
 
     &__h2 {
       font-size: 30px;

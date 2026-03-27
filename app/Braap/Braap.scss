@@ -1,0 +1,36 @@
+@use "../styles/variables/variables.scss";
+@use "../styles/mixins/mixins.scss";
+
+.container-braap{
+    &__section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__img{
+        margin-bottom: -5rem;
+    }
+    &__h1{
+        @include mixins.h2;
+    }
+    &__underline{
+        @include mixins.underline;
+    }
+    &__paragraph{
+       margin-left: 3rem;
+       margin-right: 3rem;
+       text-align: justify;
+        color: variables.$color-forest-dark;
+    }
+    &__h4{
+        color: variables.$color-forest-light;
+        font-weight: 500;
+        font-style: italic;
+        margin-bottom: 3rem;
+    }
+}
+
+strong{
+    font-weight: bold;
+}

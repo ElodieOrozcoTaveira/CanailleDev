@@ -1,24 +1,36 @@
 /*Breakpoint*/
 /* Variables couleurs */
 .hero-container {
-  background-image: linear-gradient(rgba(2, 107, 2, 0.35), rgba(6, 76, 6, 0.35)), url(/CanailleDev/Pro/bg.jpeg);
+  background-image: linear-gradient(rgba(2, 107, 2, 0.35), rgba(6, 76, 6, 0.35)), url(/CanailleDev/Pro/bg.webp);
   height: 100svh;
-  background-position: center top 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center 40%;
   background-size: cover;
 }
 .hero-container__dispo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: -moz-fit-content;
+  width: fit-content;
   text-align: center;
-  margin: 5rem 4rem 4rem 4rem;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 12px;
   font-weight: 400;
   color: #f1f2ec;
-  padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+  padding: 0.55rem 0.9rem;
+  transform: translateY(3rem);
   border: solid 1px white;
   border-radius: 30px;
 }
 .hero-container__E {
   text-align: center;
   font-size: 30px;
+  margin-top: 4rem;
   margin-bottom: -1rem;
   color: #f1f2ec;
 }
@@ -30,13 +42,15 @@
 .hero-container__h3, .hero-container__p, .hero-container__p1 {
   text-align: center;
   margin-top: 2rem;
-  margin-bottom: 2.3rem;
   color: #f1f2ec;
   font-weight: 400;
   text-shadow: 3px 2px 3px #5f8f6d;
 }
+.hero-container__p {
+  margin-bottom: 2rem;
+}
 .hero-container__span {
-  color: #2e5f3e;
+  color: #1f3d2b;
   text-shadow: 1px 1px 3px #f1f2ec;
   font-weight: bold;
   display: block;
@@ -66,6 +80,9 @@
   padding: 0.9rem;
   text-decoration: none;
   border-radius: 15px;
+}
+.hero-container__button1, .hero-container__button2:hover {
+  font-size: 20px;
 }
 .hero-container__button1 {
   margin-top: 5rem;
@@ -124,5 +141,26 @@
   }
   100% {
     transform: translateY(-87.5%);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hero-container__dispo {
+    font-size: 16px;
+    padding: 0.55rem 0.9rem;
+  }
+  .hero-container__E, .hero-container__OT {
+    font-size: 35px;
+  }
+  .hero-container__OT {
+    text-shadow: 1px 1px 1px white;
+  }
+  .hero-container__E {
+    text-shadow: 1px 1px 1px #1f3d2b;
+  }
+  .hero-container__h3, .hero-container__p, .hero-container__p1 {
+    font-size: 20px;
+  }
+  .hero-container__p {
+    margin-bottom: 2rem;
   }
 }/*# sourceMappingURL=newHero.css.map */

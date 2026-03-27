@@ -8,7 +8,9 @@ export default function MentionsLegales() {
     <>
       <CanailleDev />
       <div className="container-mentions">
-
+ <h1 className="container-confidentialite__title">
+                Mentions Légales
+            </h1>
         <section className="container-mentions__section">
           <h2 className="container-mentions__h2">1. Éditeur du site</h2>
           <div className="container-mentions__underline"></div>
@@ -43,7 +45,7 @@ export default function MentionsLegales() {
           </p>
         </section>
 
-        <section>
+        <section className="container-mentions__section">
           <h2 className="container-mentions__h2">2. Hébergeur du site</h2>
           <div className="container-mentions__underline"></div>
 

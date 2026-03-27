@@ -76,7 +76,7 @@
   /* TOUJOURS au-dessus du menu et de la liste */
   z-index: 3002;
   width: 50px;
-  height: 85px;
+  height: 108px;
   margin-left: auto;
   padding: 0;
   border-radius: 6px;
@@ -204,10 +204,17 @@
   }
   .hamburger-menu__list {
     width: 100%;
+    max-width: 1023px;
     align-items: center;
   }
   .hamburger-menu__list li {
     margin-left: 0;
+  }
+  .hamburger-menu__list a {
+    font-size: 18px;
+  }
+  .hamburger-button {
+    height: 65px;
   }
 }
 @media screen and (max-width: 1024px) {

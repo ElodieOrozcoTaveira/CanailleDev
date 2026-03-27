@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 .container-apropos__h2 {
-  margin-top: 3rem;
+  padding-top: 2rem;
   margin-bottom: 0.5rem;
   text-align: center;
   color: #1f3d2b;
@@ -55,4 +55,16 @@
   margin-right: 3rem;
   font-weight: 400;
   color: #5f8f6d;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container-apropos__nom, .container-apropos__dev {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+  }
+  .container-apropos__p {
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=Apropos.css.map */

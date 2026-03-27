@@ -20,7 +20,6 @@
 =========================== */
 .container-blablabook {
   max-width: 1100px;
-  margin: 0 auto;
   padding: 4rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -41,17 +40,18 @@
 
   &__p {
     max-width: 900px;
-    font-family: 'Fira Code', monospace;
     font-size: 1.1rem;
     font-weight: 400;
     line-height: 1.9;
     text-align: justify;
     color: variables.$color-forest;
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
 
   &__span {
-    color: variables.$color-canaille;
-    font-weight: 600;
+    color: variables.$color-forest-dark;
+    font-weight: bold;
   }
 }
 
@@ -66,8 +66,7 @@
   &__project-video {
     width: 100%;
     max-width: 900px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(variables.$color-forest-dark, 0.12);
+    
   }
 }
 
@@ -105,7 +104,6 @@
     margin: 2.5rem 0;
 
     &__project-video {
-      border-radius: 18px;
     }
   }
 }

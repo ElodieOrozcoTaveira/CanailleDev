@@ -41,16 +41,17 @@
 
   &__p {
     max-width: 900px;
-    font-family: 'Fira Code', monospace;
     font-size: 1.1rem;
     font-weight: 400;
     line-height: 1.9;
     text-align: justify;
     color: variables.$color-forest;
+    margin-right: 3rem;
+    margin-left: 3rem;
   }
 
   &__span {
-    color: variables.$color-canaille;
+    color: variables.$color-forest-dark;
     font-weight: 600;
   }
 }
@@ -66,7 +67,6 @@
   &__project-video {
     width: 100%;
     max-width: 900px;
-    border-radius: 24px;
     box-shadow: 0 10px 30px rgba(variables.$color-forest-dark, 0.12);
   }
 }
@@ -104,9 +104,7 @@
   .video-container {
     margin: 2.5rem 0;
 
-    &__project-video {
-      border-radius: 18px;
-    }
+   
   }
 }
 

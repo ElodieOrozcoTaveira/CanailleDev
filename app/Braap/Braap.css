@@ -1,0 +1,42 @@
+/*Breakpoint*/
+/* Variables couleurs */
+.container-braap__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-braap__img {
+  margin-bottom: -5rem;
+}
+.container-braap__h1 {
+  padding-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #1f3d2b;
+  font-size: 2rem;
+}
+.container-braap__underline {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100px;
+  margin-bottom: 3rem;
+  border: solid 1.5px #5f8f6d;
+}
+.container-braap__paragraph {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  text-align: justify;
+  color: #1f3d2b;
+}
+.container-braap__h4 {
+  color: #5f8f6d;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 3rem;
+}
+
+strong {
+  font-weight: bold;
+}/*# sourceMappingURL=Braap.css.map */

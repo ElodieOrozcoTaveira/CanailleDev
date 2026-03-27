@@ -75,8 +75,8 @@ export default function NewPrestations() {
             }}
             breakpoints={{
               640: {
-                slidesPerView: 1,
-                spaceBetween: 10,
+                slidesPerView: 2,
+                spaceBetween: 4,
               },
               1024: {
                 slidesPerView: 2,

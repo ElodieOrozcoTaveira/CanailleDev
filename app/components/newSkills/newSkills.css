@@ -44,7 +44,7 @@
   animation-timeline: view();
   animation-range: entry 10% cover 35%;
 }
-.container-skills__skillfront {
+.container-skills__skillfront, .container-skills__skillback {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -138,4 +138,29 @@
   background: #5f8f6d;
   color: white;
   transform: translateY(-5px);
+}
+
+@media screen and (min-width: 768px) {
+  .container-skills__h2 {
+    padding-top: 3rem;
+  }
+  .container-skills__Front, .container-skills__back {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .container-skills__skillfront, .container-skills__skillback {
+    width: calc(50% - 3.5rem);
+    height: 250px;
+  }
+  .container-skills__skillfront:hover, .container-skills__skillback:hover {
+    box-shadow: 3px 3px 3px #2e5f3e;
+  }
+  .container-skills__title {
+    font-size: 16px;
+  }
+  .container-skills__fonction {
+    font-size: 14px;
+    text-align: center;
+  }
 }/*# sourceMappingURL=newSkills.css.map */

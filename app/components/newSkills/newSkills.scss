@@ -36,7 +36,8 @@
     animation-timeline: view();
     animation-range: entry 10% cover 35%;
   }
-  &__skillfront {
+  &__skillfront,
+  &__skillback {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -131,7 +132,36 @@
 }
 
 .chip:hover {
-  background:variables.$color-forest-light;
+  background: variables.$color-forest-light;
   color: white;
   transform: translateY(-5px);
+}
+
+@media screen and (min-width: variables.$tablet) {
+  .container-skills {
+    &__h2 {
+      padding-top: 3rem;
+    }
+    &__Front,
+    &__back {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &__skillfront,
+    &__skillback {
+      width: calc(50% - 3.5rem);
+      height: 250px;
+    }
+    &__skillfront:hover,&__skillback:hover{
+      box-shadow: 3px 3px 3px variables.$color-forest;
+    }
+    &__title{
+      font-size: 16px;
+    }
+    &__fonction{
+      font-size: 14px;
+      text-align: center;
+    }
+  }
 }

@@ -161,28 +161,180 @@
   }
 }
 
+@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
+  .container-contact {
+    margin-top: 15rem;
+
+    &__phrase {
+      font-size: 16px;
+      margin: 1rem 5rem 3rem 5rem;
+    }
+
+    &__travail {
+      font-size: 22px;
+      margin-left: 4rem;
+    }
+
+    &__paragraph {
+      font-size: 16px;
+      margin: 2rem 5rem 2rem 4rem;
+    }
+
+    &__contact {
+      margin: 2rem 5rem 2rem 5rem;
+    }
+
+    &__composant {
+      font-size: 14px;
+    }
+
+    &__form {
+      width: 480px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1.5rem;
+    }
+
+    &__formh2 {
+      font-size: 22px;
+    }
+
+    &__formh3 {
+      font-size: 13px;
+      margin-bottom: 1.5rem;
+    }
+
+    &__input {
+      height: 48px;
+      width: 100%;
+      font-size: 15px;
+    }
+
+    &__messageview {
+      width: 100%;
+      height: 160px;
+    }
+
+    &__envoyer {
+      width: 100%;
+      height: 50px;
+      font-size: 18px;
+    }
+
+    &__p {
+      font-size: 22px;
+      margin-top: 2rem;
+    }
+
+    &__span {
+      font-size: 27px;
+    }
+  }
+}
+
 @media (min-width: variables.$desktop) {
   .container-contact {
+    margin-top: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     &__h2 {
       font-size: 40px;
     }
+
     &__underline {
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
     }
+
+    &__phrase {
+      font-size: 18px;
+      margin: 1rem 15rem 3rem 15rem;
+      text-align: center;
+    }
+
+    &__travail {
+      font-size: 24px;
+      margin-left: 0;
+      text-align: center;
+    }
+
+    &__paragraph {
+      font-size: 16px;
+      margin: 1.5rem 15rem 1.5rem 15rem;
+      text-align: center;
+    }
+
+    &__contact {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 3rem;
+      margin: 2rem auto;
+    }
+
+    &__composant {
+      font-size: 15px;
+      gap: 1.25rem;
+    }
+
     &__form {
       width: 600px;
+      height: auto;
+      padding: 2rem;
+      margin: 1rem auto 3rem auto;
+      border-radius: 24px;
     }
+
+    &__formh2 {
+      font-size: 24px;
+      margin-bottom: 0.25rem;
+    }
+
+    &__formh3 {
+      font-size: 14px;
+      margin-bottom: 1.5rem;
+    }
+
     &__input {
       height: 60px;
-      width: 600px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 12px;
     }
+
     &__messageview {
-      width: 600px;
+      width: 100%;
+      height: 180px;
+      font-size: 16px;
     }
+
     &__envoyer {
-      height: 65px;
-      width: 150px;
-      font-size: 20px;
+      width: 200px;
+      height: 55px;
+      font-size: 18px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    &__img {
+      margin-bottom: 1.5rem;
+    }
+
+    &__p {
+      font-size: 24px;
+      margin-top: 2rem;
+      padding-bottom: 3rem;
+    }
+
+    &__span {
+      font-size: 30px;
     }
   }
 }

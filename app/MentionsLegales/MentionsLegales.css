@@ -1,0 +1,83 @@
+/*Breakpoint*/
+/* Variables couleurs */
+.container-mentions {
+  background-color: #e7dbb7;
+  margin-top: 1rem;
+  padding: 3rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.container-mentions__h2 {
+  padding-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #1f3d2b;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.container-mentions__underline {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100px;
+  margin-bottom: 3rem;
+  border: solid 1.5px #5f8f6d;
+  margin-bottom: 1.5rem;
+}
+.container-mentions__section {
+  background-color: #f1f2ec;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
+  color: #1f3d2b;
+  transition: transform 0.3s ease;
+}
+.container-mentions__section:hover {
+  transform: translateY(-5px);
+  box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.08);
+}
+.container-mentions__section p {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  font-size: 15px;
+}
+.container-mentions__section ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+.container-mentions__section ul li {
+  margin-bottom: 0.4rem;
+  font-size: 15px;
+}
+.container-mentions__adress {
+  color: #5f8f6d;
+  text-decoration: none;
+  font-weight: 500;
+}
+.container-mentions__adress:hover {
+  text-decoration: underline;
+  color: #1f3d2b;
+}
+
+@media screen and (min-width: 768px) {
+  .container-mentions {
+    padding: 4rem 3rem;
+  }
+  .container-mentions__section {
+    padding: 2.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .container-mentions {
+    width: 70%;
+    margin: 10rem auto 2rem auto;
+  }
+  .container-mentions__h2 {
+    font-size: 30px;
+  }
+  .container-mentions__section {
+    padding: 3rem;
+  }
+}/*# sourceMappingURL=MentionsLegales.css.map */

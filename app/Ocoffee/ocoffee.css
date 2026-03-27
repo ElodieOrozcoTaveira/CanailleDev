@@ -28,37 +28,34 @@
   animation: effet 0.6s ease-out both;
 }
 .container-Ocoffee__h1 {
-  margin-top: 2rem;
-  margin-bottom: 2.5rem;
-  font-size: 25px;
-  color: #5f8f6d;
-  font-family: "Fira Code";
-  font-weight: 400;
+  padding-top: 2rem;
+  margin-bottom: 0.5rem;
   text-align: center;
-  letter-spacing: 2px;
+  color: #1f3d2b;
+  font-size: 2rem;
   text-align: center;
 }
 .container-Ocoffee__underline {
   display: block;
-  margin-left: auto;
   margin-right: auto;
-  width: 10rem;
-  border: dashed #c0b47e 1px;
-  margin-top: -2rem;
-  margin-bottom: 1rem;
+  margin-left: auto;
+  width: 100px;
+  margin-bottom: 3rem;
+  border: solid 1.5px #5f8f6d;
   margin-bottom: 1.5rem;
 }
 .container-Ocoffee__p {
   max-width: 900px;
-  font-family: "Fira Code", monospace;
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.9;
   text-align: justify;
   color: #2e5f3e;
+  margin-right: 3rem;
+  margin-left: 3rem;
 }
 .container-Ocoffee__span {
-  color: #c0b47e;
+  color: #1f3d2b;
   font-weight: 600;
 }
 
@@ -73,7 +70,6 @@
 .video-container__project-video {
   width: 100%;
   max-width: 900px;
-  border-radius: 24px;
   box-shadow: 0 10px 30px rgba(31, 61, 43, 0.12);
 }
 
@@ -104,9 +100,6 @@
   }
   .video-container {
     margin: 2.5rem 0;
-  }
-  .video-container__project-video {
-    border-radius: 18px;
   }
 }
 /* ===========================

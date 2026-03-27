@@ -124,11 +124,11 @@ export default function Skills() {
           </div>
         </section>
 
-        <section className="container-skills__secfront">
+        <section className="container-skills__secback">
           <p className="container-skills__sectionTitle">Back-End</p>
           <div className="container-skills__back">
             {back.map((skillback) => (
-              <div key={skillback.id} className="container-skills__skillfront">
+              <div key={skillback.id} className="container-skills__skillback">
                 <Image
                   className="container-skills__img"
                   alt={skillback.icon}

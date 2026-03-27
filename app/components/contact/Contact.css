@@ -163,27 +163,150 @@
   color: #c0b47e;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container-contact {
+    margin-top: 15rem;
+  }
+  .container-contact__phrase {
+    font-size: 16px;
+    margin: 1rem 5rem 3rem 5rem;
+  }
+  .container-contact__travail {
+    font-size: 22px;
+    margin-left: 4rem;
+  }
+  .container-contact__paragraph {
+    font-size: 16px;
+    margin: 2rem 5rem 2rem 4rem;
+  }
+  .container-contact__contact {
+    margin: 2rem 5rem 2rem 5rem;
+  }
+  .container-contact__composant {
+    font-size: 14px;
+  }
+  .container-contact__form {
+    width: 480px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+  }
+  .container-contact__formh2 {
+    font-size: 22px;
+  }
+  .container-contact__formh3 {
+    font-size: 13px;
+    margin-bottom: 1.5rem;
+  }
+  .container-contact__input {
+    height: 48px;
+    width: 100%;
+    font-size: 15px;
+  }
+  .container-contact__messageview {
+    width: 100%;
+    height: 160px;
+  }
+  .container-contact__envoyer {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+  }
+  .container-contact__p {
+    font-size: 22px;
+    margin-top: 2rem;
+  }
+  .container-contact__span {
+    font-size: 27px;
+  }
+}
 @media (min-width: 1440px) {
+  .container-contact {
+    margin-top: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .container-contact__h2 {
     font-size: 40px;
   }
   .container-contact__underline {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+  }
+  .container-contact__phrase {
+    font-size: 18px;
+    margin: 1rem 15rem 3rem 15rem;
+    text-align: center;
+  }
+  .container-contact__travail {
+    font-size: 24px;
+    margin-left: 0;
+    text-align: center;
+  }
+  .container-contact__paragraph {
+    font-size: 16px;
+    margin: 1.5rem 15rem 1.5rem 15rem;
+    text-align: center;
+  }
+  .container-contact__contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem auto;
+  }
+  .container-contact__composant {
+    font-size: 15px;
+    gap: 1.25rem;
   }
   .container-contact__form {
     width: 600px;
+    height: auto;
+    padding: 2rem;
+    margin: 1rem auto 3rem auto;
+    border-radius: 24px;
+  }
+  .container-contact__formh2 {
+    font-size: 24px;
+    margin-bottom: 0.25rem;
+  }
+  .container-contact__formh3 {
+    font-size: 14px;
+    margin-bottom: 1.5rem;
   }
   .container-contact__input {
     height: 60px;
-    width: 600px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 12px;
   }
   .container-contact__messageview {
-    width: 600px;
+    width: 100%;
+    height: 180px;
+    font-size: 16px;
   }
   .container-contact__envoyer {
-    height: 65px;
-    width: 150px;
-    font-size: 20px;
+    width: 200px;
+    height: 55px;
+    font-size: 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  .container-contact__envoyer:hover {
+    opacity: 0.85;
+  }
+  .container-contact__img {
+    margin-bottom: 1.5rem;
+  }
+  .container-contact__p {
+    font-size: 24px;
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+  }
+  .container-contact__span {
+    font-size: 30px;
   }
 }
 @media (min-width: 1440px) {
