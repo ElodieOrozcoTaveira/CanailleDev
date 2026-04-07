@@ -26,9 +26,19 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-
+  position: relative;
   animation: effet 0.6s ease-out both;
-
+&::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 100vw;
+        height: 10px;
+        background: linear-gradient(to bottom, transparent, variables.$white-color);
+        pointer-events: none;
+      }
   &__h1 {
     @include mixins.h2;
     text-align: center;
@@ -45,13 +55,13 @@
     font-weight: 400;
     line-height: 1.9;
     text-align: justify;
-    color: variables.$color-forest;
+    color: variables.$color-beige;
     margin-right: 3rem;
     margin-left: 3rem;
   }
 
   &__span {
-    color: variables.$color-forest-dark;
+    color: variables.$color-fluo;
     font-weight: 600;
   }
 }
@@ -63,10 +73,12 @@
   display: flex;
   justify-content: center;
   margin: 3rem 0 4rem;
+  background-color: variables.$color-forest-dark;
+  width: 100%;
 
   &__project-video {
+    margin-top: 3rem;
     width: 100%;
-    max-width: 900px;
     box-shadow: 0 10px 30px rgba(variables.$color-forest-dark, 0.12);
   }
 }

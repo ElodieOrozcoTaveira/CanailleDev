@@ -1,5 +1,5 @@
-@use '../styles/variables/variables.scss';
-@use '../styles/mixins/mixins.scss';
+@use "../styles/variables/variables.scss";
+@use "../styles/mixins/mixins.scss";
 
 /* ===========================
    Animation légère
@@ -25,9 +25,19 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-
   animation: anime 0.6s ease-out both;
-
+  position: relative;
+&::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 100vw;
+        height: 10px;
+        background: linear-gradient(to bottom, transparent, variables.$white-color);
+        pointer-events: none;
+      }
   &__h1 {
     @include mixins.h2;
     text-align: center;
@@ -44,13 +54,13 @@
     font-weight: 400;
     line-height: 1.9;
     text-align: justify;
-    color: variables.$color-forest;
+    color: variables.$color-beige;
     margin-left: 3rem;
     margin-right: 3rem;
   }
 
   &__span {
-    color: variables.$color-forest-dark;
+    color: variables.$color-fluo;
     font-weight: bold;
   }
 }
@@ -66,19 +76,36 @@
   &__project-video {
     width: 100%;
     max-width: 900px;
-    
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin-top: 5rem;
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
   }
 }
 
 /* ===========================
    Responsive tablette
 =========================== */
-@media (max-width: 1024px) {
+@media (max-width: variables.$laptop) {
   .container-blablabook {
     padding-top: 3rem;
 
     &__p {
       font-size: 1.05rem;
+    }
+  }
+  .video-container {
+    &__project-video {
+      width: 100%;
+      background-color: variables.$color-forest-dark;
     }
   }
 }
@@ -102,9 +129,6 @@
 
   .video-container {
     margin: 2.5rem 0;
-
-    &__project-video {
-    }
   }
 }
 

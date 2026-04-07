@@ -18,7 +18,7 @@ export default function Header() {
                       loading="lazy"
                     />
                   </Link>
-                  <h1 className="container-logo__canailledev">Canaille<span className="container-logo__span">Dev</span></h1>
+                  <h1 className="container-logo__canailledev">Elo<span className="container-logo__span">Dev</span></h1>
                    <section className="menu-desktop">
                     <ul className="menu-desktop__ul">
                       <Link href="/" className="menu-desktop__link">Accueil</Link>

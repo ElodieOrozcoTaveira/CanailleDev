@@ -2,15 +2,28 @@
 @use "../styles/mixins/mixins.scss";
 
 .container-mentions {
-  background-color: #e7dbb7;
+  background-color: variables.$color-forest-dark;
   margin-top: 1rem;
   padding: 3rem 1.5rem;
   margin-bottom: 2rem;
-
   display: flex;
   flex-direction: column;
   gap: 3rem;
-
+  position: relative;
+   &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 100vw;
+        height: 10px;
+        background: linear-gradient(to bottom, transparent, variables.$white-color);
+        pointer-events: none;
+      }
+&__title{
+  @include mixins.h2;
+}
   &__h2 {
     @include mixins.h2;
     margin-bottom: 0.5rem;
@@ -22,7 +35,7 @@
   }
 
   &__section {
-    background-color: variables.$white-color;
+    background-color: variables.$color-forest-light;
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
@@ -52,7 +65,7 @@
   }
 
   &__adress {
-    color: variables.$color-forest-light;
+    color: variables.$color-fluo;
     text-decoration: none;
     font-weight: 500;
 

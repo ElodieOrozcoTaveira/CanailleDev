@@ -18,13 +18,9 @@
 }
 
 .hamburger-wrapper.is-top {
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: transparent;
   box-shadow: none;
-}
-
-.hamburger-wrapper.is-top .hamburger-brand {
-  display: none;
 }
 
 .hamburger-wrapper.is-visible {
@@ -43,7 +39,9 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  text-transform: uppercase;
   text-decoration: none;
+  text-shadow: 2px 2px 2px #f1f2ec;
 }
 .hamburger-brand__logo {
   display: block;
@@ -51,13 +49,18 @@
   height: 40px;
 }
 .hamburger-brand__text {
-  color: #1f3d2b;
-  font-weight: 600;
+  color: #2e5f3e;
+  font-weight: 700;
   letter-spacing: -0.4px;
-  font-size: 1.15rem;
+  font-family: "Manrope";
+  font-size: 14px;
 }
 .hamburger-brand__accent {
-  color: #c0b47e;
+  color: #1f3d2b;
+  text-shadow: 2px 2px 2px #f1f2ec;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 /* ─────────────────────────────────────────
@@ -145,7 +148,7 @@
   z-index: 3001;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
   justify-content: center;
   align-content: flex-end;
   padding-top: 1.5rem;
@@ -155,27 +158,56 @@
   padding-top: 0;
 }
 
+.hamburger-menu__logo {
+  margin-right: 1rem;
+  background-color: #5f8f6d;
+  color: white;
+}
+
 .hamburger-menu__list li {
-  padding: 8px 16px;
+  padding: 0;
   color: #c0b47e;
   display: flex;
   justify-content: flex-start;
+  font-family: "Manrope";
 }
 
 .hamburger-menu__list a {
-  color: #5f8f6d;
+  color: #1f3d2b;
   text-decoration: none;
-  display: block;
-  font-size: 15px;
-  font-family: "Inter";
-  transition: opacity 150ms ease;
-  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: "Manrope";
+}
+.hamburger-menu__list a .hamburger-menu__logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-right: 0.6rem;
+  padding: 0.2rem;
+  background-color: #1f3d2b;
+  opacity: 0.8;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px #5f8f6d;
+}
+.hamburger-menu__list a {
+  letter-spacing: -1.5px;
 }
 
 .hamburger-menu__list a:hover {
   opacity: 0.7;
+  color: whitesmoke;
+  text-shadow: 2px 2px 2px #1f3d2b;
 }
 
+/* Liens renforces uniquement quand le menu mobile est ouvert */
+@media screen and (max-width: 1023px) {
+  .hamburger-wrapper.is-open .hamburger-menu__list a {
+    font-variation-settings: "wght" 400;
+    letter-spacing: 0.2px;
+    font-family: "Manrope";
+  }
+}
 /* ─────────────────────────────────────────
    Responsive
 ───────────────────────────────────────── */
@@ -192,7 +224,7 @@
   }
   .hamburger-menu__list {
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
   }
   .hamburger-menu__list li {
     margin-left: 0;
@@ -223,13 +255,85 @@
     height: 2rem;
   }
 }
+@media (min-width: 1024px) {
+  .hamburger-wrapper,
+  .hamburger-wrapper.is-top,
+  .hamburger-wrapper.is-visible {
+    justify-content: space-between;
+    padding: 0.65rem 2rem;
+  }
+  .hamburger-wrapper,
+  .hamburger-wrapper.is-top {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .hamburger-wrapper.is-visible {
+    background-color: #F5F5DC;
+    box-shadow: 0 1px 6px rgba(46, 95, 62, 0.12);
+  }
+  .hamburger-wrapper.is-top .hamburger-brand {
+    display: flex;
+  }
+  .hamburger-button {
+    display: none;
+  }
+  .hamburger-menu,
+  .hamburger-menu.is-open,
+  .hamburger-menu.is-closed {
+    position: static;
+    width: auto;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    transition: none;
+  }
+  .hamburger-menu__list {
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    max-width: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    padding-top: 0;
+  }
+  .hamburger-menu__list li {
+    padding: 0;
+    background-color: transparent;
+  }
+  .hamburger-menu__list a {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    color: #1f3d2b;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-image: linear-gradient(90deg, rgb(12, 188, 15) 0%, rgb(12, 188, 15) 100%);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 0% 100%;
+    transition: background-size 0.5s ease, color 0.5s ease, transform 0.5s ease;
+  }
+  .hamburger-menu__list a:hover {
+    color: #f1f2ec;
+    opacity: 1;
+    text-shadow: 0 0 8px #0cbc0f;
+    background-size: 100% 100%;
+    transform: translateX(2px);
+  }
+  .hamburger-menu__list a:hover .hamburger-menu__logo {
+    box-shadow: 0 0 0 1px rgba(241, 242, 236, 0.35);
+  }
+}
 @media (min-width: 1440px) {
   .hamburger-wrapper {
     padding: 0.6rem 2rem;
-  }
-  .hamburger-icon {
-    width: 80px;
-    height: 80px;
   }
   .hamburger-brand__logo {
     width: 44px;
@@ -238,9 +342,7 @@
   .hamburger-brand__text {
     font-size: 1.3rem;
   }
-  .hamburger-menu__list {
-    height: 300px;
-    align-items: center;
-    margin-right: 1.5rem;
+  .hamburger-menu__list a {
+    font-size: 1.35rem;
   }
 }/*# sourceMappingURL=Hamburger.css.map */

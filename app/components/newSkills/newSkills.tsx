@@ -1,5 +1,8 @@
+'use client';
+
 import "../newSkills/newSkills.scss";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Skills() {
   const front = [
@@ -93,6 +96,42 @@ export default function Skills() {
     },
   ];
 
+  useEffect(() => {
+    const frontSection = document.querySelector(".container-skills__Front");
+    const backSection = document.querySelector(".container-skills__back");
+
+    if (!frontSection || !backSection) return;
+
+    if (!("IntersectionObserver" in window)) {
+      frontSection.classList.add("is-in-view");
+      backSection.classList.add("is-in-view");
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      },
+    );
+
+    observer.observe(frontSection);
+    observer.observe(backSection);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <section className="container-skills">
@@ -103,8 +142,8 @@ export default function Skills() {
           des applications web modernes
         </p>
 
-        <section className="container-skills__secfront">
           <p className="container-skills__sectionTitle">Front-End</p>
+        <section className="container-skills__secfront">
           <div className="container-skills__Front">
             {front.map((skillfront) => (
               <div key={skillfront.id} className="container-skills__skillfront">
@@ -124,8 +163,8 @@ export default function Skills() {
           </div>
         </section>
 
-        <section className="container-skills__secback">
           <p className="container-skills__sectionTitle">Back-End</p>
+        <section className="container-skills__secback">
           <div className="container-skills__back">
             {back.map((skillback) => (
               <div key={skillback.id} className="container-skills__skillback">
@@ -153,7 +192,6 @@ export default function Skills() {
             <span className="chip">PHP</span>
             <span className="chip">TypeScript</span>
             <span className="chip">HTML/SCSS</span>
-
           </div>
         </div>
       </section>

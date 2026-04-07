@@ -8,7 +8,6 @@ import { SparkleIcon, SparklesIcon } from "lucide-react";
 export default function Braap() {
   return (
     <>
-      <CanailleDev />
       <section className="container-braap__section">
         <Image
           className="container-braap__img"

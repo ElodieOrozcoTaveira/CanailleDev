@@ -1,0 +1,154 @@
+@use "../../styles/variables/variables.scss";
+@use "../../styles/mixins/mixins.scss";
+
+.container-processus {
+  position: relative;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to bottom, transparent, variables.$white-color);
+    pointer-events: none;
+  }
+
+  &__h2 {
+    @include mixins.h2;
+  }
+  &__underline {
+    @include mixins.underline;
+  }
+  &__h3 {
+    text-align: center;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    color: variables.$color-beige;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 2rem;
+  }
+  &__h2 .container-processus__span {
+    color: greenyellow;
+    text-shadow: 0.5px 0.5px 0.5px variables.$white-color
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    gap: 1.25rem;
+    width: calc(100% - 6rem);
+    box-sizing: border-box;
+  }
+  &__key {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  &__number {
+    margin-top: 2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-bottom: 0.5rem;
+    border: solid 1px variables.$color-fluo;
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: variables.$color-fluo;
+    background-color: variables.$color-forest;
+    opacity: 0.85;
+    font-weight: 700;
+    line-height: 1;
+    transition:
+      background-color 220ms ease,
+      color 220ms ease,
+      box-shadow 220ms ease,
+      transform 220ms ease;
+    animation: process-number-glow 4s infinite ease-in-out;
+  }
+  &__number:hover {
+    background-color: variables.$color-fluo;
+    color: variables.$white-color;
+    box-shadow: 0 0 14px rgba(variables.$color-fluo, 0.65);
+    transform: translateY(-1px);
+  }
+
+  &__key:nth-child(1) .container-processus__number {
+    animation-delay: 1s;
+  }
+
+  &__key:nth-child(2) .container-processus__number {
+    animation-delay: 2s;
+  }
+
+  &__key:nth-child(3) .container-processus__number {
+    animation-delay: 3s;
+  }
+
+  &__key:nth-child(4) .container-processus__number {
+    animation-delay: 4s;
+  }
+  &__img {
+    width: 15px;
+    height: 15px;
+    color: variables.$color-fluo;
+  }
+  &__titre {
+    color: variables.$color-beige;
+    font-weight: bold;
+    margin-bottom: -0.5rem;
+  }
+
+  &__paragraphe {
+    color: variables.$color-beige;
+    font-size: 12px;
+  }
+}
+
+@keyframes process-number-glow {
+  0%,
+  18% {
+    background-color: variables.$color-forest;
+    color: variables.$color-fluo;
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+  25%,
+  33% {
+    background-color: variables.$color-fluo;
+    color: variables.$white-color;
+    box-shadow: 0 0 14px rgba(variables.$color-fluo, 0.65);
+    transform: translateY(-1px);
+  }
+
+  40%,
+  100% {
+    background-color: variables.$color-forest;
+    color: variables.$color-fluo;
+    box-shadow: none;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
+.container-processus{
+    &__section{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+}

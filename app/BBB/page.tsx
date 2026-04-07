@@ -1,14 +1,12 @@
 'use client';
 
 import '../BBB/bbb.scss';
-import CanailleDev from '../components/canailledev/CanailleDev';
 import Fleche from '../components/Fleche/Fleche';
 import Footer from '../components/layout/Footer/Footer';
 
 export default function ProjectCarousel() {
   return (
     <>
-      <CanailleDev/>
       <div className="video-container">
         <video 
           controls 

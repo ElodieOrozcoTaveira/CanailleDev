@@ -25,13 +25,43 @@
   align-items: center;
   gap: 2rem;
   animation: anime 0.6s ease-out both;
+  position: relative;
+}
+.container-blablabook::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100vw;
+  height: 10px;
+  background: linear-gradient(to bottom, transparent, #f1f2ec);
+  pointer-events: none;
 }
 .container-blablabook__h1 {
   padding-top: 2rem;
   margin-bottom: 0.5rem;
   text-align: center;
-  color: #1f3d2b;
+  color: #F5F5DC;
   font-size: 2rem;
+  font-weight: 400;
+}
+.container-blablabook__h1 .word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.3em;
+}
+.container-blablabook__h1 .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.container-blablabook__h1 .letter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.container-blablabook__h1 {
   text-align: center;
 }
 .container-blablabook__underline {
@@ -41,6 +71,7 @@
   width: 100px;
   margin-bottom: 3rem;
   border: solid 1.5px #5f8f6d;
+  box-shadow: 1px 1px 5px #B9D0C0;
   margin-bottom: 1.5rem;
 }
 .container-blablabook__p {
@@ -49,12 +80,12 @@
   font-weight: 400;
   line-height: 1.9;
   text-align: justify;
-  color: #2e5f3e;
+  color: #F5F5DC;
   margin-left: 3rem;
   margin-right: 3rem;
 }
 .container-blablabook__span {
-  color: #1f3d2b;
+  color: rgb(12, 188, 15);
   font-weight: bold;
 }
 
@@ -69,6 +100,15 @@
 .video-container__project-video {
   width: 100%;
   max-width: 900px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin-top: 5rem;
+}
+.video-container__project-video:focus, .video-container__project-video:focus-visible, .video-container__project-video:active {
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 /* ===========================
@@ -80,6 +120,10 @@
   }
   .container-blablabook__p {
     font-size: 1.05rem;
+  }
+  .video-container__project-video {
+    width: 100%;
+    background-color: #1f3d2b;
   }
 }
 /* ===========================

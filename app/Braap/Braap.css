@@ -5,16 +5,45 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.container-braap__section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100vw;
+  height: 10px;
+  background: linear-gradient(to bottom, transparent, #f1f2ec);
+  pointer-events: none;
 }
 .container-braap__img {
   margin-bottom: -5rem;
+  margin-top: 5rem;
 }
 .container-braap__h1 {
   padding-top: 2rem;
   margin-bottom: 0.5rem;
   text-align: center;
-  color: #1f3d2b;
+  color: #F5F5DC;
   font-size: 2rem;
+  font-weight: 400;
+}
+.container-braap__h1 .word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.3em;
+}
+.container-braap__h1 .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.container-braap__h1 .letter.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .container-braap__underline {
   display: block;
@@ -23,15 +52,16 @@
   width: 100px;
   margin-bottom: 3rem;
   border: solid 1.5px #5f8f6d;
+  box-shadow: 1px 1px 5px #B9D0C0;
 }
 .container-braap__paragraph {
   margin-left: 3rem;
   margin-right: 3rem;
   text-align: justify;
-  color: #1f3d2b;
+  color: #F5F5DC;
 }
 .container-braap__h4 {
-  color: #5f8f6d;
+  color: rgb(12, 188, 15);
   font-weight: 500;
   font-style: italic;
   margin-bottom: 3rem;
@@ -39,4 +69,10 @@
 
 strong {
   font-weight: bold;
+}
+
+@media (min-width: 1024px) {
+  .container-braap {
+    margin-bottom: 5rem;
+  }
 }/*# sourceMappingURL=Braap.css.map */

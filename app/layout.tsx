@@ -1,14 +1,21 @@
 // app/layout.tsx
-import { Inter } from 'next/font/google';
+import { Metadata } from 'next'; // Importez le type Metadata
+import { Manrope } from 'next/font/google';
 import BodyContent from "./components/BodyContent/Body";
 import "./styles/globals/globals.scss";
 import GoogleAnalytics from './components/Analytics/analytics';
 import CookieBanner from './components/cookie/cookieBanner';
 import Hamburger from './components/layout/Hamburger/Hamburger';
+import WhatsAppButton from './components/WhatsappButton/WhatsappBtn';
 
-const inter = Inter({
+export const metadata: Metadata = {
+  title: "CanailleDev by Elodie Orozco Taveira - Conceptrice Développeur d'Applications Web",
+  description: "CanailleDev par Elodie Orozco Taveira : création de sites web sur mesure, performants et intuitifs. Boostez votre visibilité avec une experte passionnée.",
+};
+
+const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['300', '400', '500','600', '700'],
+  weight: ['200','300', '400', '500','600', '700','800'],
   display: 'swap',
 })
 
@@ -18,12 +25,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={inter.className}>
+    <html lang="fr" className={manrope.className}>
       <body suppressHydrationWarning>
         <GoogleAnalytics/>
         <CookieBanner/>
-        <Hamburger /> {/* ✅ au niveau racine, rien ne peut le couvrir */}
-        <BodyContent>{children}</BodyContent>
+        <Hamburger />
+        
+        {/* 2. AJOUT DE LA BALISE <main> (C'est ici que vous réglez l'accessibilité) */}
+        <main>
+          <BodyContent>{children}</BodyContent>
+        </main>
+
+        <WhatsAppButton/>
       </body>
     </html>
   );

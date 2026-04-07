@@ -17,13 +17,25 @@
    Container principal
 =========================== */
 .container-confidentialite {
-  background-color: #e7dbb7;
+  background-color: #1f3d2b;
   margin-top: 1rem;
   margin-bottom: 2rem;
   padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  position: relative;
+}
+.container-confidentialite::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100vw;
+  height: 10px;
+  background: linear-gradient(to bottom, transparent, #f1f2ec);
+  pointer-events: none;
 }
 .container-confidentialite__title {
   text-align: center;
@@ -34,8 +46,26 @@
   padding-top: 2rem;
   margin-bottom: 0.5rem;
   text-align: center;
-  color: #1f3d2b;
+  color: #F5F5DC;
   font-size: 2rem;
+  font-weight: 400;
+}
+.container-confidentialite__h2 .word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.3em;
+}
+.container-confidentialite__h2 .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.container-confidentialite__h2 .letter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.container-confidentialite__h2 {
   margin-bottom: 0.5rem;
 }
 .container-confidentialite__underline {
@@ -45,10 +75,11 @@
   width: 100px;
   margin-bottom: 3rem;
   border: solid 1.5px #5f8f6d;
+  box-shadow: 1px 1px 5px #B9D0C0;
   margin-bottom: 1.5rem;
 }
 .container-confidentialite__section {
-  background-color: #f1f2ec;
+  background-color: #5f8f6d;
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
@@ -99,7 +130,7 @@
   color: #1f3d2b;
 }
 .container-confidentialite a {
-  color: #c0b47e;
+  color: rgb(12, 188, 15);
   text-decoration: none;
   border-bottom: 1px solid rgba(192, 180, 126, 0.4);
   transition: all 0.2s ease;

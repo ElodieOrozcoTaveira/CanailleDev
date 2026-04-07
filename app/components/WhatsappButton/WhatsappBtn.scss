@@ -1,0 +1,65 @@
+@use '../../styles/variables/variables.scss';
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 15px;
+  right: 8px;
+  width: 45px;
+  height: 45px;
+
+  background: rgb(12, 188, 15);
+  box-shadow: 2px 5px 5px rgb(12, 188, 15);
+  color: variables.$white-color;
+      animation: button-border-pulse 1.8s ease-in-out infinite;
+
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &__tooltip {
+    position: absolute;
+    right: 70px;
+    background: variables.$color-forest-dark;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.2s ease;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    background: variables.$color-forest-dark;
+  }
+
+  &:hover &__tooltip {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes button-border-pulse {
+  0%,
+  100% {
+    border-color: rgba(variables.$white-color, 0.25);
+    box-shadow:
+      3px 2px 1px variables.$color-mountain-light,
+      0 0 0 0 rgba(variables.$white-color, 0);
+  }
+  50% {
+    border-color: variables.$color-forest;
+    box-shadow:
+      1px 1px 1px variables.$color-mountain-light,
+      0 0 0 3px rgba(variables.$white-color, 0.35);
+  }
+}

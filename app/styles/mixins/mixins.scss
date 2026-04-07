@@ -7,12 +7,47 @@
   width: 100px;
   margin-bottom: 3rem;
   border: solid 1.5px variables.$color-forest-light;
+  box-shadow: 1px 1px 5px variables.$color-forest-extralight;
 }
 
 @mixin h2 {
   padding-top: 2rem;
   margin-bottom: 0.5rem;
   text-align: center;
-  color: variables.$color-forest-dark;
+  color: variables.$color-beige;
   font-size: 2rem;
+  font-weight: 400;
+
+  .word {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 0.3em;
+  }
+
+  .letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@mixin neon-halo($color, $size, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  background: radial-gradient(circle, $color 0%, transparent 70%);
+  filter: blur(calc($size / 4));
+  pointer-events: none; // Pour que le halo ne bloque pas les clics
 }

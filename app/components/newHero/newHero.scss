@@ -1,15 +1,59 @@
 @use "../../styles/variables/variables.scss";
 
 .hero-container {
-  background-image:
-    linear-gradient(rgba(2, 107, 2, 0.35), rgba(6, 76, 6, 0.35)),
-    url(/CanailleDev/Pro/bg.webp);
+  position: relative;
+  overflow: hidden;
   height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-position: center 40%;
-  background-size: cover;
+  // On retire le background-image d'ici !
+  background-color: transparent !important; // Couleur de secours pendant le chargement
+
+  // L'overlay (le gradient vert) se déplace ici pour être au-dessus de l'image
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(2, 107, 2, 0.35), rgba(6, 76, 6, 0.35));
+    z-index: 0; // Entre l'image (-1) et le texte (1)
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: variables.$color-forest-dark;
+    transform-origin: bottom;
+    animation: hero-curtain-reveal 1.9s cubic-bezier(0.7, 0, 0.2, 1) forwards;
+    z-index: 3; // Reste au-dessus de tout pour l'effet rideau
+    pointer-events: none;
+  }
+
+  &::after {
+    // Ton dégradé blanc du bas
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, variables.$white-color);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  // C'est ici qu'on gère le z-index de l'image Next.js
+  .hero-bg-image {
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  > *:not(.hero-bg-image):not(.hero-container__overlay) {
+    position: relative;
+    z-index: 1;
+    animation: hero-content-reveal 900ms ease-out 700ms both;
+  }
+
   &__dispo {
     display: inline-flex;
     align-items: center;
@@ -17,57 +61,65 @@
     gap: 0.35rem;
     width: fit-content;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10rem auto 2rem auto;
     font-size: 12px;
     font-weight: 400;
     color: variables.$white-color;
     padding: 0.55rem 0.9rem;
     transform: translateY(3rem);
-    border: solid 1px white;
+    border: solid 1.5px white;
     border-radius: 30px;
   }
   &__E {
     text-align: center;
     font-size: 30px;
-    margin-top: 4rem;
+    margin-top: 1rem;
     margin-bottom: -1rem;
     color: variables.$white-color;
+    text-shadow: 5px 2px 5px variables.$color-forest-dark;
   }
   &__OT {
     text-align: center;
     font-size: 30px;
     color: variables.$color-forest;
+    text-shadow: 5px 2px 5px variables.$white-color;
+  }
+  &__h3 {
+    font-size: 20px;
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
   &__h3,
-  &__p,
-  &__p1 {
+  &__p {
     text-align: center;
     margin-top: 2rem;
     color: variables.$white-color;
     font-weight: 400;
     text-shadow: 3px 2px 3px variables.$color-forest-light;
   }
-  &__p {
-    margin-bottom: 2rem;
-  }
+
   &__span {
     color: variables.$color-forest-dark;
     text-shadow: 1px 1px 3px variables.$white-color;
     font-weight: bold;
-    display: block;
+    display: flex;
+    align-items: center;
     line-height: 1.25;
+    font-size: 1em;
+    min-height: 1.25em;
   }
   &__rolling {
     display: inline-flex;
+    font-size: 20px;
     align-items: flex-start;
-    height: 1.25em;
+    height: 1.4em;
     overflow: hidden;
     vertical-align: bottom;
   }
   &__rollingTrack {
     display: flex;
     flex-direction: column;
+    will-change: transform;
     animation: skills-roll 12s ease-in-out infinite;
   }
   &__contbuton {
@@ -84,9 +136,9 @@
     text-decoration: none;
     border-radius: 15px;
   }
-  &__button1,
+  &__button1:hover,
   &__button2:hover {
-    font-size: 20px;
+    background-color: variables.$color-fluo;
   }
   &__button1 {
     margin-top: 5rem;
@@ -98,9 +150,43 @@
   &__button2 {
     border: solid 1px variables.$white-color;
     opacity: 0.9;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  &__rocket {
+    color: variables.$color-fluo;
+    transition: color 0.2s ease;
+  }
+  &__button2:hover &__rocket {
+    color: variables.$white-color;
   }
   &__arrow {
     animation: chevron-blink 1.2s ease-in-out infinite;
+  }
+  &__chevron {
+    color: variables.$color-fluo;
+    margin-top: 1rem;
+  }
+}
+
+@keyframes hero-curtain-reveal {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes hero-content-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -187,6 +273,34 @@
     }
     &__p {
       margin-bottom: 2rem;
+    }
+    &__button1 {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+@media (min-width: variables.$laptop) {
+  .hero-container {
+    background-size: cover;
+    background-position: center 35%;
+    &__dispo {
+      font-size: 16px;
+      margin-top: 13rem;
+    }
+    &__E,
+    &__OT {
+      font-size: 40px;
+    }
+    &__h3 {
+      font-size: 30px;
+    }
+    &__p,
+    &__p1 {
+      font-size: 25px;
+    }
+    &__arrow {
+      margin-top: 1rem;
     }
   }
 }

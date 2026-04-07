@@ -1,4 +1,3 @@
-import CanailleDev from '../components/canailledev/CanailleDev';
 import Fleche from '../components/Fleche/Fleche';
 import Footer from '../components/layout/Footer/Footer';
 import './Confidentialite.scss';
@@ -6,12 +5,11 @@ import './Confidentialite.scss';
 export default function Confidentialité() {
     return(
         <>
-        <CanailleDev/>
         <div className="container-confidentialite">
 
-            <h1 className="container-confidentialite__title">
+            <h2 className="container-confidentialite__title">
                 Politique de confidentialité
-            </h1>
+            </h2>
 
             <section className='container-confidentialite__section'>
                 <h2 className='container-confidentialite__h2'>Responsable du traitement</h2>

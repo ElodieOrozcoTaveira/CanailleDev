@@ -1,4 +1,3 @@
-import CanailleDev from "../components/canailledev/CanailleDev";
 import Fleche from "../components/Fleche/Fleche";
 import Footer from "../components/layout/Footer/Footer";
 import "../MentionsLegales/MentionsLegales.scss";
@@ -6,11 +5,8 @@ import "../MentionsLegales/MentionsLegales.scss";
 export default function MentionsLegales() {
   return (
     <>
-      <CanailleDev />
       <div className="container-mentions">
- <h1 className="container-confidentialite__title">
-                Mentions Légales
-            </h1>
+        <h2 className="container-mentions__title">Mentions Légales</h2>
         <section className="container-mentions__section">
           <h2 className="container-mentions__h2">1. Éditeur du site</h2>
           <div className="container-mentions__underline"></div>

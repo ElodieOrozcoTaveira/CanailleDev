@@ -7,9 +7,22 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+        &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 100vw;
+        height: 10px;
+        background: linear-gradient(to bottom, transparent, variables.$white-color);
+        pointer-events: none;
+      }
     }
     &__img{
         margin-bottom: -5rem;
+        margin-top: 5rem;
     }
     &__h1{
         @include mixins.h2;
@@ -21,10 +34,10 @@
        margin-left: 3rem;
        margin-right: 3rem;
        text-align: justify;
-        color: variables.$color-forest-dark;
+        color: variables.$color-beige;
     }
     &__h4{
-        color: variables.$color-forest-light;
+        color: variables.$color-fluo;
         font-weight: 500;
         font-style: italic;
         margin-bottom: 3rem;
@@ -33,4 +46,10 @@
 
 strong{
     font-weight: bold;
+}
+
+@media (min-width:variables.$laptop){
+    .container-braap{
+        margin-bottom: 5rem;
+    }
 }

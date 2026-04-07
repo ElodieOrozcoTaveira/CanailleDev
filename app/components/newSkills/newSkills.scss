@@ -1,9 +1,80 @@
 @use "../../styles/variables/variables.scss";
 @use "../../styles/mixins/mixins.scss";
 
+$neon-forest: rgba(variables.$color-forest-light, 0.2);
+$neon-accent: rgba(variables.$color-forest-extralight, 0.2);
+
+.skills {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  overflow-x: hidden;
+}
+
 .container-skills {
-  background-color: #e7dbb7;
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  z-index: 2;
   padding-bottom: 3rem;
+  margin-bottom: 3rem;
+
+  > * {
+    position: relative;
+    z-index: 3;
+  }
+
+  // Halo Néon principal
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    top: 20%;
+    left: 5%;
+    width: 250px;
+    height: 350px;
+    background: variables.$white-color;
+    filter: blur(70px);
+    animation: neon-pulse 10s infinite ease-in-out;
+  }
+
+  // Trait/dégradé blanc pleine largeur écran
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100vw;
+    height: 10px;
+    background: linear-gradient(to bottom, transparent, variables.$white-color);
+    pointer-events: none;
+  }
+
+  &__secback {
+    position: relative;
+
+    // Second halo déplacé ici pour éviter le conflit avec ::after du container
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 5%;
+      left: -5%;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: radial-gradient(circle, $neon-accent 0%, transparent 70%);
+      filter: blur(60px);
+      animation: neon-pulse 8s infinite ease-in-out reverse;
+      z-index: 1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+  }
+
   &__h2 {
     @include mixins.h2;
   }
@@ -12,7 +83,7 @@
   }
   &__p {
     text-align: center;
-    color: variables.$color-forest;
+    color: variables.$color-beige;
     font-weight: 300;
     margin-left: 4rem;
     margin-right: 3rem;
@@ -31,10 +102,14 @@
     margin-left: 2rem;
     margin-right: 2rem;
     gap: 2rem;
+  }
+
+  &__Front.is-in-view,
+  &__back.is-in-view {
     animation-name: fadeUp;
     animation-fill-mode: both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 35%;
+    animation-timing-function: cubic-bezier(0.5, 1, 0.5, 1);
+    animation-duration: 900ms;
   }
   &__skillfront,
   &__skillback {
@@ -45,10 +120,11 @@
     margin-left: 1rem;
     margin-right: 1rem;
     padding: 1rem;
-    background-color: beige;
+    background-color: variables.$color-forest-light;
     border-radius: 30px;
-    border: solid 1px variables.$color-bg-light;
-    box-shadow: 1px 1px 1px variables.$color-forest-extralight;
+    border: solid 1px variables.$color-beige;
+    box-shadow: 2px 5px 5px variables.$color-fluo;
+    width: 250px;
   }
   &__img {
     margin-bottom: -0.5rem;
@@ -56,20 +132,26 @@
   &__title {
     font-size: 15px;
     color: variables.$color-forest-dark;
-    font-weight: 500;
+    text-shadow: 1px 1px 3px variables.$color-beige;
+    font-weight: 700;
     letter-spacing: -0.5px;
   }
   &__fonction {
     font-size: 13px;
-    color: variables.$color-forest-light;
+    color: variables.$color-beige;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 1px 1px 3px variables.$color-forest-light;
   }
   &__sectionTitle {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin: 4rem 3rem 2rem 1.5rem;
-    color: variables.$color-forest-dark;
+    color: variables.$color-beige;
+    text-shadow: 2px 2px 5px rgb(12, 188, 15);
     font-weight: bold;
+    font-size: 18px;
   }
 
   &__sectionTitle::after {
@@ -79,6 +161,86 @@
     background-color: variables.$color-forest-light;
     opacity: 0.65;
     animation: section-line-fade 1.5s ease-in-out infinite;
+  }
+}
+
+.competence-card {
+  margin: 3rem 2rem 2rem 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.chip {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 999px;
+  background: variables.$color-fluo;
+  box-shadow: 2px 2px 2px variables.$color-beige;
+  backdrop-filter: blur(6px);
+  color: variables.$color-beige;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  background: variables.$color-forest-light;
+  color: white;
+  transform: translateY(-5px);
+}
+
+@media screen and (min-width: variables.$tablet) {
+  .container-skills {
+    &__sectionTitle {
+      font-size: 25px;
+    }
+    &__h2 {
+      padding-top: 3rem;
+    }
+    &__Front,
+    &__back {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &__skillfront,
+    &__skillback {
+      width: calc(50% - 3.5rem);
+      height: 250px;
+    }
+    &__skillfront:hover,
+    &__skillback:hover {
+      box-shadow: 3px 3px 3px variables.$color-forest;
+    }
+    &__title {
+      font-size: 16px;
+    }
+    &__fonction {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+
+@keyframes neon-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1) translate(10px, -10px);
   }
 }
 
@@ -103,65 +265,31 @@
   }
 }
 
-.competence-card {
-  margin: 3rem 2rem 2rem 3rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.chip {
-  padding: 6px 12px;
-  font-size: 13px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(6px);
-  color: variables.$color-forest-dark;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.chip:hover {
-  background: variables.$color-forest-light;
-  color: white;
-  transform: translateY(-5px);
-}
-
-@media screen and (min-width: variables.$tablet) {
-  .container-skills {
-    &__h2 {
-      padding-top: 3rem;
-    }
-    &__Front,
-    &__back {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-    &__skillfront,
-    &__skillback {
-      width: calc(50% - 3.5rem);
-      height: 250px;
-    }
-    &__skillfront:hover,&__skillback:hover{
-      box-shadow: 3px 3px 3px variables.$color-forest;
-    }
-    &__title{
-      font-size: 16px;
-    }
-    &__fonction{
-      font-size: 14px;
-      text-align: center;
-    }
+@media (min-width: variables.$laptop){
+.container-skills{
+  &__sectionTitle{
+    margin-left: 4rem;
+    font-size: 28px;
   }
+  &__title{
+    font-size: 20px;
+  }
+  &__fonction{
+    font-size: 15px;
+  }
+  &__skillback,
+  &__skillfront{
+    width: 250px;
+    
+  }
+  &__Front,
+  &__back{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5rem;
+    
+
+  }
+}
+
 }

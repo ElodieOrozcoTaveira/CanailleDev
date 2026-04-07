@@ -2,13 +2,11 @@
 
 import '../Ocoffee/ocoffee.scss';
 import Fleche from '../components/Fleche/Fleche';
-import CanailleDev from '../components/canailledev/CanailleDev';
 import Footer from '../components/layout/Footer/Footer';
 
 export default function ProjectCarousel() {
   return (
     <>
-      <CanailleDev/>
       <div className="video-container">
         <video 
           controls 

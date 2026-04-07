@@ -11,16 +11,18 @@
 
 .icone {
   position: fixed;
-  right: 0.2rem;
-  bottom: 0.1rem;
+  right: 1rem;
+  bottom: calc(15px + 45px + 12px + env(safe-area-inset-bottom));
   cursor: pointer;
   width: 25px;
   height: 25px;
   padding: 0.2px;
   border-radius: 50%;
-  transition: background-color 0.2s ease, transform 0.12s ease,
-  opacity 0.2s ease;
-  color: variables.$color-canaille;
+  transition:
+    background-color 0.2s ease,
+    transform 0.12s ease,
+    opacity 0.2s ease;
+  color: variables.$white-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +43,7 @@
     width: 30px;
     height: 30px;
     right: 15px;
-    bottom: calc(20px + env(safe-area-inset-bottom));
+    bottom: calc(15px + 45px + 12px + env(safe-area-inset-bottom));
     opacity: 1;
   }
   .icone:hover {
@@ -54,7 +56,7 @@
     width: 30px;
     height: 30px;
     right: 60px;
-    bottom: calc(40px + env(safe-area-inset-bottom));
+    bottom: calc(15px + 45px + 12px + env(safe-area-inset-bottom));
   }
 }
 
@@ -62,6 +64,6 @@
   .icone {
     width: 28px;
     height: 28px;
-    bottom: calc(10px + env(safe-area-inset-bottom));
+    bottom: calc(15px + 45px + 12px + env(safe-area-inset-bottom));
   }
 }

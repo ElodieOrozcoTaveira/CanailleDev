@@ -1,3 +1,5 @@
+"use client";
+
 import { ChangeEvent, FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../contact/Contact.scss";
@@ -140,13 +142,13 @@ export default function Contact() {
       <section className="container-contact__contact">
         <div className="container-contact__composant">
           <div className="container-contact__logo">
-            <MailIcon color="#5f8f6d" size={18} />
+            <MailIcon color="rgb(12, 188, 15)" size={18} />
           </div>
           <div className="container-contact__mail">elorotav@gmail.com</div>
         </div>
         <div className="container-contact__composant">
           <div className="container-contact__logo">
-            <MapPin color="#5f8f6d" size={18} />{" "}
+            <MapPin color="rgb(12, 188, 15)" size={18} />{" "}
           </div>
           <div className="container-contact__mail">
             Saint-Feliu d&apos;Avall (66)
@@ -155,7 +157,7 @@ export default function Contact() {
       </section>
 
       <div className="container-contact__form">
-        <h2 className="container-contact__formh2">Envoyez moi un message</h2>
+        <h3 className="container-contact__formh2">Envoyez moi un message</h3>
         <h3 className="container-contact__formh3">
           Remplissez le formulaire ci-dessous et je vous répondrai rapidement
         </h3>

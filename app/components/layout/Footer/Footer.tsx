@@ -38,7 +38,6 @@ export default function Footer() {
         <section className="container-footer__contact">
           <div className="container-footer__titrecontact">Contact</div>
           <div className="container-footer__tel">elorotav@gmail.com</div>
-          <div className="container-footer__tel">06.40.67.55.87 </div>
         </section>
 
         <div className="container-footer__social">

@@ -4,26 +4,52 @@ import { useEffect, useRef, useState } from "react";
 import "./Hamburger.scss";
 import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import {
+  FolderCog,
+  GalleryHorizontal,
+  Mail,
+  Menu,
+  PackageSearch,
+  Presentation,
+  User,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function Hamburger() {
   const [open, setOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const menuId = "main-navigation";
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const isMenuOpen = isDesktop || open;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    setIsDesktop(mediaQuery.matches);
+
+    function onChange(e: MediaQueryListEvent) {
+      setIsDesktop(e.matches);
+      if (e.matches) {
+        setOpen(false);
+      }
+    }
+
+    mediaQuery.addEventListener("change", onChange);
+
+    return () => mediaQuery.removeEventListener("change", onChange);
+  }, []);
 
   // Fermer avec Escape
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") {
+      if (e.key === "Escape" && !isDesktop) {
         setOpen(false);
         buttonRef.current?.focus();
       }
     }
-    if (open) document.addEventListener("keydown", onKey);
+    if (open && !isDesktop) document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [open]);
+  }, [open, isDesktop]);
 
   // Afficher la barre complète après scroll
   useEffect(() => {
@@ -38,13 +64,15 @@ export default function Hamburger() {
   }, []);
 
   function onLinkClick() {
-    setOpen(false);
-    buttonRef.current?.focus();
+    if (!isDesktop) {
+      setOpen(false);
+      buttonRef.current?.focus();
+    }
   }
 
   return (
     <div
-      className={`hamburger-wrapper${open ? " is-open" : ""}${isVisible ? " is-visible" : " is-top"}`}
+      className={`hamburger-wrapper${isMenuOpen ? " is-open" : ""}${isVisible ? " is-visible" : " is-top"}`}
     >
       <Link
         href="/"
@@ -67,7 +95,7 @@ export default function Hamburger() {
       <button
         ref={buttonRef}
         aria-controls={menuId}
-        aria-expanded={open}
+        aria-expanded={isMenuOpen}
         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
         className="hamburger-button"
         onClick={() => setOpen((s) => !s)}
@@ -81,34 +109,43 @@ export default function Hamburger() {
 
       <nav
         id={menuId}
-        className={`hamburger-menu${open ? " is-open" : " is-closed"}${!isVisible ? " is-top-state" : ""}`}
-        aria-hidden={!open}
+        className={`hamburger-menu${isMenuOpen ? " is-open" : " is-closed"}${!isVisible && !isDesktop ? " is-top-state" : ""}`}
+        aria-hidden={!isMenuOpen}
         aria-label="Menu principal"
       >
         <ul className="hamburger-menu__list">
           <li>
-            <Link onClick={onLinkClick} href="/">
-              Accueil
-            </Link>
-          </li>
-          <li>
             <a onClick={onLinkClick} href="#apropos">
-              À propos
+              <User size={18} className="hamburger-menu__logo" /> À propos
             </a>
           </li>
           <li>
             <a onClick={onLinkClick} href="#skills">
-              Compétences
+              <FolderCog size={18} className="hamburger-menu__logo" /> Mes
+              compétences
             </a>
           </li>
           <li>
             <a onClick={onLinkClick} href="#projets">
-              Projets
+              <Presentation size={18} className="hamburger-menu__logo" />
+              Mes projets
+            </a>
+          </li>
+          <li>
+            <a onClick={onLinkClick} href="#process">
+              <PackageSearch size={18} className="hamburger-menu__logo" />
+              Processus
+            </a>
+          </li>
+          <li>
+            <a onClick={onLinkClick} href="#services">
+              <GalleryHorizontal size={18} className="hamburger-menu__logo" />
+              Prestations
             </a>
           </li>
           <li>
             <a onClick={onLinkClick} href="#contact">
-              Contact
+              <Mail size={18} className="hamburger-menu__logo" /> Contact
             </a>
           </li>
         </ul>

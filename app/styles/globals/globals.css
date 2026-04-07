@@ -18,7 +18,8 @@ body {
 }
 
 body {
-  background: #F5F5DC;
+  font-family: "Manrope";
+  background-color: #1f3d2b;
   min-height: 100vh;
   overflow-x: hidden;
 }/*# sourceMappingURL=globals.css.map */

@@ -1,3 +1,5 @@
+"use client";
+
 import "../newProject/NewProject.scss";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,8 +21,9 @@ export default function NewProject() {
       image: "/Projets/lcdnm.webp",
       url: "https://www.leschipsdenosmontagnes.com/",
       privacy: "Projet Public",
-      width: 200,
-      height: 120,
+      type: "Site Web",
+      width: 620,
+      height: 380,
     },
     {
       id: 2,
@@ -28,6 +31,7 @@ export default function NewProject() {
       image: "/Projets/braap.png",
       url: "/Braap",
       privacy: "Projet Privé",
+      type: "Application Mobile",
       width: 300,
       height: 200,
     },
@@ -37,8 +41,9 @@ export default function NewProject() {
       image: "/Projets/blablabook.webp",
       url: "/BBB",
       privacy: "Projet Privé",
+      type: "Projet Formation",
       width: 285,
-      height: 250,
+      height: 200,
     },
     {
       id: 4,
@@ -46,8 +51,9 @@ export default function NewProject() {
       image: "/Projets/ocoffee.webp",
       url: "/Ocoffee",
       privacy: "Projet Privé",
+      type: "Projet Formation",
       width: 285,
-      height: 250,
+      height: 200,
     },
   ];
   return (
@@ -106,6 +112,7 @@ export default function NewProject() {
                       height={projet.height}
                     />
                   </Link>
+                  <h3 className="projets-container__type">{projet.type}</h3>
                   <p className="projets-container__titre">
                     {projet.id === 4 ? (
                       <>

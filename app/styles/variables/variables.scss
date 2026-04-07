@@ -22,6 +22,7 @@ $color-canaille: #c0b47e;
 $color-parchemin: #d6b36a;
 $color-terre: #3a2c18;
 $color-marron: #824a2f;
+$color-fluo: rgb(12, 188, 15);
 // --------------------------------------
 // 🏔️ MONTAGNE & ROCHES
 // --------------------------------------
@@ -58,3 +59,8 @@ $color-vert:#B2AC88;
 $color-sauge:#B2AC88;
 $color-teal:#82B0AF;
 $color-tealprofond:#008080;
+
+//NEON
+// Dans ton fichier variables ou en haut de ton fichier actuel
+$neon-forest: rgba($color-forest-light, 0.15); // Un vert doux et lumineux
+$neon-accent: rgba($color-forest-extralight, 0.1);

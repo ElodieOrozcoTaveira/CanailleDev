@@ -1,0 +1,53 @@
+/*Breakpoint*/
+/* Variables couleurs */
+.whatsapp-button {
+  position: fixed;
+  bottom: 15px;
+  right: 8px;
+  width: 45px;
+  height: 45px;
+  background: rgb(12, 188, 15);
+  box-shadow: 2px 5px 5px rgb(12, 188, 15);
+  color: #f1f2ec;
+  animation: button-border-pulse 1.8s ease-in-out infinite;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.whatsapp-button__tooltip {
+  position: absolute;
+  right: 70px;
+  background: #1f3d2b;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.2s ease;
+}
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  background: #1f3d2b;
+}
+.whatsapp-button:hover .whatsapp-button__tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes button-border-pulse {
+  0%, 100% {
+    border-color: rgba(241, 242, 236, 0.25);
+    box-shadow: 3px 2px 1px #9aaab3, 0 0 0 0 rgba(241, 242, 236, 0);
+  }
+  50% {
+    border-color: #2e5f3e;
+    box-shadow: 1px 1px 1px #9aaab3, 0 0 0 3px rgba(241, 242, 236, 0.35);
+  }
+}/*# sourceMappingURL=WhatsappBtn.css.map */

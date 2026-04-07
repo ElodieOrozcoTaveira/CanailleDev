@@ -1,19 +1,29 @@
-@use '../../styles/variables/variables.scss';
+@use "../../styles/variables/variables.scss";
 @use "../../styles/mixins/mixins.scss";
 
-.container-prestations{
-  background-color: #e7dbb7;
-  margin-top: 10rem;
+.container-prestations {
+  margin-top: 5rem;
   margin-bottom: -15rem;
-  &__h2{
+  position: relative;
+  padding-bottom: 3rem;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100vw;
+    height: 10px;
+    background: linear-gradient(to bottom, transparent, variables.$white-color);
+    pointer-events: none;
+  }
+  &__h2 {
     @include mixins.h2;
   }
-  &__underline{
+  &__underline {
     @include mixins.underline;
   }
 }
-
-
 
 // Wrapper pour le Swiper
 .swiper-wrapper-custom {
@@ -29,8 +39,9 @@
   // Boutons de navigation
   .swiper-button-next,
   .swiper-button-prev {
-    background-color: variables.$color-forest-light;
+    background-color: variables.$color-fluo;
     color: variables.$white-color;
+    box-shadow: 2px 2px 2px white;
     width: 25px;
     height: 25px;
     border-radius: 20%;
@@ -41,19 +52,19 @@
     }
 
     &:hover {
-      background-color: variables.$color-forest-dark;
+      background-color: variables.$color-fluo;
     }
   }
 
   // Pagination
   .swiper-pagination-bullet {
-    background-color: variables.$color-forest-light;
+    background-color: variables.$color-forest-extralight;
     opacity: 0.5;
     width: 12px;
     height: 12px;
 
     &-active {
-      background-color: variables.$color-forest-dark;
+      background-color: variables.$color-beige;
       opacity: 1;
     }
   }
@@ -62,31 +73,38 @@
 // Carte de projet
 .prestations-container__id {
   border: solid 1.5px variables.$color-bg-light;
-  box-shadow: 1px 1px 2px variables.$color-bg-light;
+  box-shadow: 2px 5px 5px rgb(12, 188, 15);
   border-radius: 30px;
-  display: flex;
-  flex-direction: column;
+  display: block;
   padding: 2rem;
-  margin-right: 3.5rem;
-  margin-left: 3.5rem;
+  margin-right: auto;
+  margin-left: auto;
   justify-content: center;
   align-items: center;
-  background-color:variables.$white-color;
-  color: variables.$color-forest-dark;
+ background: linear-gradient(
+    165deg,
+    variables.$color-forest-dark 0%,
+    variables.$color-forest-light 100%
+  );
+  color: variables.$color-beige;  color: variables.$white-color;
   height: 100%;
+  width: 300px;
   transition: transform 0.3s ease;
 
   &:hover {
     transform: translateY(-10px);
     box-shadow: 2px 4px 8px variables.$color-forest-light;
   }
- 
 }
-.prestations-container__icon{
-    color: variables.$color-forest-extralight;
+.prestations-container__icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: variables.$color-fluo;
+  background-color: variables.$white-color;
+  padding: 0.5rem;
+  border: solid 1px variables.$white-color;
 }
-
-
 
 .prestations-container__icon {
   margin-bottom: 0.5rem;
@@ -95,14 +113,16 @@
 }
 
 .prestations-container__sujet {
+  color: variables.$color-fluo;
+  text-shadow: 1.5px 1px 2px variables.$color-forest-dark;
   margin-top: 0.5rem;
   text-align: center;
   font-weight: 500;
   font-size: 22px;
 }
 
-@media screen and (min-width:variables.$tablet) and (max-width:variables.$laptop){
-  .prestations-container__id{
+@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
+  .prestations-container__id {
     margin-right: auto;
     margin-left: auto;
     width: 500px;
@@ -110,19 +130,17 @@
     width: 300px;
     height: 350px;
   }
-  .prestations-container__icon{
+  .prestations-container__icon {
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
-  .prestations-h2{
+  .prestations-h2 {
     margin-left: 12rem;
   }
-  .prestations-h3{
-        margin-right: 32rem;
-
+  .prestations-h3 {
+    margin-right: 32rem;
   }
-
 }
 
 @media (min-width: variables.$desktop) {
@@ -137,7 +155,7 @@
     margin-top: -2.8rem;
     margin-bottom: 5rem;
   }
-  .prestations-container__id{
+  .prestations-container__id {
     width: 500px;
     height: 400px;
     margin-left: 20rem;

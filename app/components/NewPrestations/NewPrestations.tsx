@@ -1,13 +1,16 @@
+"use client";
+
 import "../NewPrestations/NewPrestations.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { MonitorCog, ServerCog, ShoppingBag, Store } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 interface PrestaItem {
   id: number;
   sujet: string;
   p: string[];
-  image: any; // ou React.ComponentType si tu préfères typer les icônes Lucide
+  image: LucideIcon;
   tarifs: string;
 }
 
