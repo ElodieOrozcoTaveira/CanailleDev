@@ -47,7 +47,7 @@ export default function NewProject() {
     },
     {
       id: 4,
-      titre: "OCoffee, projet de formation",
+      titre: "OCoffee",
       image: "/Projets/ocoffee.webp",
       url: "/Ocoffee",
       privacy: "Projet Privé",

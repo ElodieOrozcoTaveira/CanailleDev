@@ -89,6 +89,7 @@
   width: 12px;
   height: 12px;
   margin-bottom: 5rem;
+  z-index: 1;
 }
 .projets-swiper .swiper-pagination-bullet-active {
   background-color: #F5F5DC;
@@ -111,8 +112,8 @@
   background: linear-gradient(165deg, #1f3d2b 0%, #5f8f6d 100%);
   color: #F5F5DC;
   font-size: 17px;
-  max-height: 370px;
-  width: min(100%, 400px);
+  max-height: 320px;
+  width: min(100%, 340px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .projets-container__id:hover {
@@ -141,7 +142,7 @@
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   width: 100%;
-  height: 200px;
+  height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -175,6 +176,10 @@
   margin-top: 0.75rem;
 }
 
+.projets-container__id[data-id="2"] .projets-container__img {
+  margin-top: 1.5rem;
+}
+
 .projets-container__titre {
   text-align: left;
   margin-top: 0;
@@ -196,7 +201,7 @@
 
 .projets-container__privacy {
   position: relative;
-  z-index: 2;
+  z-index: 50;
   align-self: flex-start;
   padding: 0.5rem;
   background-color: rgb(12, 188, 15);
@@ -232,8 +237,8 @@
     margin-right: 5rem;
   }
   .projets-container__id {
-    width: 300px;
-    height: 490px;
+    width: 280px;
+    height: 420px;
     max-height: none;
     display: flex;
     flex-direction: column;

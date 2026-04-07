@@ -29,7 +29,7 @@
   }
 
   &__h4 {
-    margin: 0 0 0.35rem;
+    margin: 0 0 1.35rem;
     font-weight: 400;
     color: variables.$color-forest-extralight;
     text-align: center;
@@ -49,7 +49,7 @@
 
   &__navigation,
   &__contact {
-    margin: 0;
+    margin: 0 0 3 0;
     text-align: center;
   }
 
@@ -57,7 +57,7 @@
   &__titrecontact {
     font-weight: bold;
     margin-top: 0;
-    margin-bottom: 0.35rem;
+    margin-bottom: 1.35rem;
   }
 
   &__tel {

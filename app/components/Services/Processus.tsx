@@ -1,5 +1,5 @@
 import "../Services/Processus.scss";
-import { Brush, Code, MessageSquare, PackageCheck } from "lucide-react";
+import { Brush, Code, Handshake, PackageCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface ProcessItem {
@@ -17,8 +17,8 @@ export default function Processus() {
         {    id:1,
              etape:1,
              numero:1, 
-             logo:MessageSquare, 
-             titre:'Discovery', 
+             logo:Handshake, 
+             titre:'Echange', 
              paragraphe: 'On échange sur nos visions, vos objectifs et votre audience pour définir la direction parfaite'},
         {    id:2,
              etape:2,
