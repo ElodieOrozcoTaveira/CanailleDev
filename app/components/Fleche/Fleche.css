@@ -55,6 +55,11 @@
     bottom: calc(72px + env(safe-area-inset-bottom));
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+  .icone {
+    right: 16px;
+  }
+}
 @media (min-width: 1440px) {
   .icone {
     width: 28px;

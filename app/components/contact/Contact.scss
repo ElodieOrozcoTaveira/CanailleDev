@@ -360,3 +360,87 @@
     margin-bottom: 5rem;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+  .container-contact {
+    margin-top: 17rem;
+
+    &__phrase {
+      font-size: 1rem;
+      margin: 1rem auto 2.2rem;
+      max-width: 56rem;
+      text-align: center;
+    }
+
+    &__travail {
+      margin-left: 0;
+      text-align: center;
+      font-size: 1.45rem;
+    }
+
+    &__paragraph {
+      margin: 1.25rem auto 1.6rem;
+      max-width: 58rem;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    &__contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem 2.2rem;
+      margin: 1.2rem auto 1.8rem;
+    }
+
+    &__composant {
+      align-items: center;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    &__form {
+      width: min(92vw, 620px);
+      height: auto;
+      padding: 1.4rem;
+      margin: 0 auto 2.4rem;
+      border-radius: 22px;
+    }
+
+    &__formh2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    &__formh3 {
+      font-size: 0.82rem;
+      margin-bottom: 1.25rem;
+    }
+
+    &__input {
+      width: 100%;
+      height: 46px;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    &__messageview {
+      width: 100%;
+      height: 145px;
+      font-size: 0.95rem;
+    }
+
+    &__envoyer {
+      width: 100%;
+      height: 48px;
+      font-size: 1rem;
+      margin-top: 0.7rem;
+    }
+
+    &__status {
+      font-size: 1rem;
+      margin-top: 0.55rem;
+    }
+  }
+}

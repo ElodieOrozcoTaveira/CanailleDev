@@ -17,7 +17,7 @@ export default function Home() {
       <section className="hero">
         <Hero />
       </section>
-      <section className="propos">
+      <section id="propos" className="propos">
         <Apropos />
       </section>
       <section id="skills" className="skills">

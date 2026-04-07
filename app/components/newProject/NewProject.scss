@@ -211,6 +211,12 @@
   margin-bottom: 3rem;
 }
 
+@media (min-width: variables.$laptop) {
+  .projets-container__id {
+    min-height: 320px;
+  }
+}
+
 @media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
   .projets-h2 {
     margin-left: 12rem;

@@ -200,6 +200,14 @@
   text-shadow: 2px 2px 2px #1f3d2b;
 }
 
+.hamburger-wrapper.has-white-menu-links.is-top .hamburger-menu__list a {
+  color: #f1f2ec;
+}
+
+.hamburger-wrapper.has-white-menu-links.is-top .hamburger-menu__list a:hover {
+  color: #f1f2ec;
+}
+
 /* Liens renforces uniquement quand le menu mobile est ouvert */
 @media screen and (max-width: 1023px) {
   .hamburger-wrapper.is-open .hamburger-menu__list a {
@@ -304,7 +312,7 @@
   }
   .hamburger-menu__list a {
     margin-bottom: 0;
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     color: #1f3d2b;
     display: inline-flex;
     align-items: center;

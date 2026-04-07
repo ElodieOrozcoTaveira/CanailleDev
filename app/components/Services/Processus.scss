@@ -34,7 +34,7 @@
   }
   &__h2 .container-processus__span {
     color: greenyellow;
-    text-shadow: 0.5px 0.5px 0.5px variables.$white-color
+    text-shadow: 0.5px 0.5px 0.5px variables.$white-color;
   }
 
   &__section {
@@ -144,11 +144,39 @@
 }
 
 @media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
-.container-processus{
-    &__section{
-        display: flex;
-        flex-direction: row;
+  .container-processus {
+    &__section {
+      display: flex;
+      flex-direction: row;
     }
+  }
 }
 
+@media screen and (min-width: variables.$laptop) {
+  .container-processus {
+    &__section{
+      display: flex;
+      flex-direction: row;
+    }
+    &__h3{
+      font-size: 16px;
+    }
+    &__titre {
+      font-size: 18px;
+    }
+    &__paragraphe {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+  .container-processus {
+    &__titre {
+      font-size: 18px;
+    }
+    &__paragraphe {
+      font-size: 14px;
+    }
+  }
 }

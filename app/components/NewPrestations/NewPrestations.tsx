@@ -85,6 +85,10 @@ export default function NewPrestations() {
                 slidesPerView: 2,
                 spaceBetween: 20,
               },
+              1440:{
+                slidesPerView:4,
+                spaceBetween:15,
+              }
             }}
             className="prestations-swiper"
           >

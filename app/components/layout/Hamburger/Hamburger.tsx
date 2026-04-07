@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import "./Hamburger.scss";
 import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   FolderCog,
   GalleryHorizontal,
@@ -18,26 +19,13 @@ import Image from "next/image";
 export default function Hamburger() {
   const [open, setOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
   const menuId = "main-navigation";
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const pathname = usePathname();
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
   const isMenuOpen = isDesktop || open;
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 1024px)");
-    setIsDesktop(mediaQuery.matches);
-
-    function onChange(e: MediaQueryListEvent) {
-      setIsDesktop(e.matches);
-      if (e.matches) {
-        setOpen(false);
-      }
-    }
-
-    mediaQuery.addEventListener("change", onChange);
-
-    return () => mediaQuery.removeEventListener("change", onChange);
-  }, []);
+  const hasWhiteMenuLinks =
+    pathname === "/BBB" || pathname === "/Ocoffee" || pathname === "/Braap";
 
   // Fermer avec Escape
   useEffect(() => {
@@ -72,7 +60,7 @@ export default function Hamburger() {
 
   return (
     <div
-      className={`hamburger-wrapper${isMenuOpen ? " is-open" : ""}${isVisible ? " is-visible" : " is-top"}`}
+      className={`hamburger-wrapper${isMenuOpen ? " is-open" : ""}${isVisible ? " is-visible" : " is-top"}${hasWhiteMenuLinks ? " has-white-menu-links" : ""}`}
     >
       <Link
         href="/"
@@ -115,41 +103,54 @@ export default function Hamburger() {
       >
         <ul className="hamburger-menu__list">
           <li>
-            <a onClick={onLinkClick} href="#apropos">
+            <Link onClick={onLinkClick} href="/#propos">
               <User size={18} className="hamburger-menu__logo" /> À propos
-            </a>
+            </Link>
           </li>
           <li>
-            <a onClick={onLinkClick} href="#skills">
+            <Link onClick={onLinkClick} href="/#skills">
               <FolderCog size={18} className="hamburger-menu__logo" /> Mes
               compétences
-            </a>
+            </Link>
           </li>
           <li>
-            <a onClick={onLinkClick} href="#projets">
+            <Link onClick={onLinkClick} href="/#projets">
               <Presentation size={18} className="hamburger-menu__logo" />
               Mes projets
-            </a>
+            </Link>
           </li>
           <li>
-            <a onClick={onLinkClick} href="#process">
+            <Link onClick={onLinkClick} href="/#process">
               <PackageSearch size={18} className="hamburger-menu__logo" />
               Processus
-            </a>
+            </Link>
           </li>
           <li>
-            <a onClick={onLinkClick} href="#services">
+            <Link onClick={onLinkClick} href="/#services">
               <GalleryHorizontal size={18} className="hamburger-menu__logo" />
               Prestations
-            </a>
+            </Link>
           </li>
           <li>
-            <a onClick={onLinkClick} href="#contact">
+            <Link onClick={onLinkClick} href="/#contact">
               <Mail size={18} className="hamburger-menu__logo" /> Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
     </div>
+  );
+}
+
+function useMediaQuery(query: string) {
+  return useSyncExternalStore(
+    (onStoreChange) => {
+      const mediaQuery = window.matchMedia(query);
+      mediaQuery.addEventListener("change", onStoreChange);
+
+      return () => mediaQuery.removeEventListener("change", onStoreChange);
+    },
+    () => window.matchMedia(query).matches,
+    () => false,
   );
 }

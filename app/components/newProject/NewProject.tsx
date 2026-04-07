@@ -85,7 +85,7 @@ export default function NewProject() {
                 spaceBetween: 2,
               },
               1440: {
-                slidesPerView: 2,
+                slidesPerView: 4,
                 spaceBetween: 2,
               },
             }}
