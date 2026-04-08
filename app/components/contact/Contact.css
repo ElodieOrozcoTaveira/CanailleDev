@@ -336,6 +336,10 @@
   }
 }
 @media (min-width: 1440px) {
+  .container-contact__envoyer {
+    width: 300px;
+    margin-top: 1rem;
+  }
   .contact-h2 {
     font-size: 35px;
     margin-left: -100rem;

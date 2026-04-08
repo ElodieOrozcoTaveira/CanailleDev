@@ -348,6 +348,12 @@
 }
 
 @media (min-width: variables.$desktop) {
+  .container-contact{
+    &__envoyer{
+      width: 300px;
+      margin-top: 1rem;
+    }
+  }
   .contact-h2 {
     font-size: 35px;
     margin-left: -100rem;
