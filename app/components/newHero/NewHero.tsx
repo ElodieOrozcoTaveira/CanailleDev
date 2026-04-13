@@ -55,7 +55,7 @@ export default function Hero() {
 
       {/* H1 pour le SEO et l'Accessibilité */}
       <h4 className="hero-container__h3">
-        Conceptrice Développeuse d&apos;Applications Web Junior
+        Conceptrice Développeuse d&apos;Applications Web 
       </h4>
 
       <p className="hero-container__p">

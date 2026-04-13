@@ -1,9 +1,16 @@
+"use client";
+
 import "../Header/Header.scss";
 import Link from "next/link";
 import Image from "next/image";
 import Hamburger from "../Hamburger/Hamburger";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+  const hasWhiteDesktopLinks =
+    pathname === "/BBB" || pathname === "/Ocoffee" || pathname === "/Braap";
+
   return (
     <>
       <header className="header-container">
@@ -21,7 +28,9 @@ export default function Header() {
           <h1 className="container-logo__canailledev">
             Elo<span className="container-logo__span">Dev</span>
           </h1>
-          <section className="menu-desktop">
+          <section
+            className={`menu-desktop${hasWhiteDesktopLinks ? " menu-desktop--white-links" : ""}`}
+          >
             <ul className="menu-desktop__ul">
               <Link href="/" className="menu-desktop__link">
                 Accueil

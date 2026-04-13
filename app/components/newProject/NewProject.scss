@@ -166,6 +166,11 @@
   margin-top: 1.5rem;
 }
 
+.projets-container__id[data-id="3"] .projets-container__img,
+.projets-container__id[data-id="4"] .projets-container__img {
+  object-position: center 0%;
+}
+
 .projets-container__titre {
   text-align: left;
   margin-top: 0;

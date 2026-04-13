@@ -37,8 +37,8 @@ export default function NewProject() {
     },
     {
       id: 3,
-      titre: "BlaBlaBook, Apothéose fin de formation",
-      image: "/Projets/blablabook.webp",
+      titre: "BlaBlaBook",
+      image: "/Projets/BBB.webp",
       url: "/BBB",
       privacy: "Projet Privé",
       type: "Projet Formation",

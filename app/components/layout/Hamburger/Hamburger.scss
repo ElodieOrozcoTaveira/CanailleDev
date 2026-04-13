@@ -205,10 +205,20 @@
 }
 
 .hamburger-wrapper.has-white-menu-links.is-top .hamburger-menu__list a {
-  color: variables.$color-forest-dark;
+  color: variables.$white-color;
 }
 
 .hamburger-wrapper.has-white-menu-links.is-top .hamburger-menu__list a:hover {
+  color: variables.$white-color;
+}
+
+.hamburger-wrapper.has-white-menu-links.is-visible .hamburger-menu__list a {
+  color: variables.$color-forest-dark;
+}
+
+.hamburger-wrapper.has-white-menu-links.is-visible
+  .hamburger-menu__list
+  a:hover {
   color: variables.$color-forest-dark;
 }
 

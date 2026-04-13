@@ -17,7 +17,7 @@ export default function ProjectCarousel() {
           width={500}
           height={500}
         >
-          <source src="/BBB/BBB.mp4" type="video/mp4" />
+          <source src="/BBB/BBBnew.webm" type="video/mp4" />
           Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
       </div>
