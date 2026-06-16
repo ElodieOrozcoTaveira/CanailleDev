@@ -47,13 +47,14 @@ export default function NewProject() {
     },
     {
       id: 4,
-      titre: "OCoffee",
-      image: "/Projets/ocoffee.webp",
-      url: "/Ocoffee",
+      titre: "Nana's Coffee",
+      image: "/Projets/logo.png",
+      url: "/NanasCoffee",
       privacy: "Projet Privé",
-      type: "Projet Formation",
-      width: 285,
-      height: 200,
+      type: "Projet Wordpress",
+      // Utiliser les dimensions réelles de l'image pour éviter le flou
+      width: 1693,
+      height: 929,
     },
   ];
   return (
@@ -116,9 +117,9 @@ export default function NewProject() {
                   <p className="projets-container__titre">
                     {projet.id === 4 ? (
                       <>
-                        OCoffee,
+                        Nana&apos;s Coffee,
                         <br />
-                        projet de formation
+                        Projet personnel
                       </>
                     ) : (
                       projet.titre

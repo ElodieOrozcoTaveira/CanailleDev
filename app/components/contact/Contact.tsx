@@ -128,7 +128,7 @@ export default function Contact() {
       <h2 className="container-contact__h2">Contactez-moi</h2>
       <h3 className="container-contact__underline"></h3>
       <p className="container-contact__phrase">
-        Un projet en tête? N&apos;hésitez pas à me contacter pour en disctuer
+        Un projet en tête? N&apos;hésitez pas à me contacter pour en discuter
       </p>
       <p className="container-contact__travail">Travaillons ensemble</p>
       <p className="container-contact__paragraph">
