@@ -1,0 +1,243 @@
+@use "../../styles/variables/variables.scss" as v;
+@use "../../styles/mixins/mixins.scss" as m;
+
+.project-page {
+  background: v.$cream;
+  color: v.$ink;
+
+  // ── En-tête sombre ──
+  &__hero {
+    background: v.$pine;
+    color: v.$on-dark;
+  }
+
+  &__hero-inner {
+    @include m.container;
+    padding-top: 128px;
+    padding-bottom: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__back {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: v.$on-dark-muted;
+    text-decoration: none;
+
+    &:hover {
+      color: v.$on-dark;
+    }
+  }
+
+  &__tag {
+    @include m.eyebrow(v.$accent);
+    margin: 0;
+  }
+
+  &__title {
+    margin: 0;
+    max-width: 900px;
+    font-family: var(--font-display), sans-serif;
+    font-weight: 800;
+    font-size: clamp(40px, 7vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+  }
+
+  &__subtitle {
+    margin: 0;
+    max-width: 640px;
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.5;
+    color: #d9e3dc;
+  }
+
+  &__stack {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    li {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(245, 242, 234, 0.3);
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  // ── Vidéo / image, à cheval sur l'en-tête ──
+  &__media-wrap {
+    @include m.container;
+    margin-top: -112px;
+  }
+
+  &__media {
+    border-radius: 28px;
+    overflow: hidden;
+    background: #0b1711;
+    box-shadow: 0 30px 60px -30px rgba(15, 31, 23, 0.55);
+
+    &--image {
+      background: v.$paper;
+      border: 1px solid v.$line;
+      display: flex;
+      justify-content: center;
+      padding: clamp(24px, 5vw, 56px);
+    }
+  }
+
+  &__video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: #0b1711;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+
+    &--phone {
+      max-width: 260px;
+      border-radius: 36px;
+      border: 8px solid v.$pine;
+      box-shadow: 0 24px 48px -24px rgba(15, 31, 23, 0.5);
+    }
+  }
+
+  // ── Description + fiche ──
+  &__body {
+    @include m.container;
+    @include m.section-padding;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+    align-items: flex-start;
+  }
+
+  &__content {
+    flex: 999 1 480px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.75;
+      color: v.$ink-soft;
+    }
+
+    strong {
+      color: v.$ink;
+      font-weight: 600;
+    }
+  }
+
+  &__h2 {
+    @include m.display(clamp(28px, 3.4vw, 40px));
+  }
+
+  &__notice {
+    align-self: flex-start;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: v.$sage;
+    color: v.$sage-ink !important;
+    font-size: 15px !important;
+    font-weight: 600;
+    line-height: 1.4 !important;
+  }
+
+  &__facts {
+    flex: 1 1 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 28px;
+    border-radius: 24px;
+    background: v.$paper;
+    border: 1px solid v.$line;
+
+    @media (min-width: 900px) {
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__fact {
+    padding: 14px 0;
+    border-top: 1px solid v.$line;
+
+    &:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    dt {
+      @include m.eyebrow(v.$muted);
+      font-size: 12px;
+    }
+
+    dd {
+      margin: 6px 0 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  &__visit {
+    @include m.pill-button;
+    background: v.$pine;
+    color: v.$on-dark;
+    font-size: 15px;
+  }
+
+  // ── Appel à l'action ──
+  &__cta {
+    background: v.$sage;
+  }
+
+  &__cta-inner {
+    @include m.container;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__cta-title {
+    @include m.display(clamp(28px, 4vw, 48px));
+  }
+
+  &__cta-button {
+    @include m.pill-button;
+    background: v.$pine;
+    color: v.$on-dark;
+  }
+}

@@ -64,3 +64,26 @@ $color-tealprofond:#008080;
 // Dans ton fichier variables ou en haut de ton fichier actuel
 $neon-forest: rgba($color-forest-light, 0.15); // Un vert doux et lumineux
 $neon-accent: rgba($color-forest-extralight, 0.1);
+
+// --------------------------------------
+// Refonte 2026 — Elodie Orozco Taveira
+// --------------------------------------
+$pine: #0f1f17;          // fond sombre principal
+$pine-deep: #0b1711;     // pied de page
+$cream: #f5f2ea;         // fond clair principal
+$paper: #fbfaf6;         // cartes claires
+$line: #e3ded1;          // bordures claires
+$line-strong: #d5cfbf;   // bordures des champs
+$ink: #14231b;           // texte principal
+$ink-soft: #33433a;      // paragraphes
+$muted: #4f5e55;         // texte secondaire
+$forest-new: #2e5f3e;    // surtitres
+$sage: #dce8df;          // fond de section / pastilles
+$sage-ink: #1f3d2b;      // texte sur fond sauge
+$on-dark: #f5f2ea;       // texte sur fond sombre
+$on-dark-muted: #c9d6cd; // texte secondaire sur fond sombre
+$accent: #d6b36a;        // doré (accent)
+$available: #7bd88f;     // pastille "disponible"
+
+$content-width: 1240px;
+$nav-breakpoint: 900px;

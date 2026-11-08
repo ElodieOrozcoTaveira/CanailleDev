@@ -2,8 +2,8 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
-import "../contact/Contact.scss";
-import { Beer, Coffee, MailIcon, MapPin, Send, Smile } from "lucide-react";
+import "./Contact.scss";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
 
 export default function Contact() {
   type FormState = {
@@ -123,90 +123,94 @@ export default function Contact() {
     }
   };
 
+
+  const isLoading = status === "loading";
+
   return (
-    <div className="container-contact">
-      <h2 className="container-contact__h2">Contactez-moi</h2>
-      <h3 className="container-contact__underline"></h3>
-      <p className="container-contact__phrase">
-        Un projet en tête? N&apos;hésitez pas à me contacter pour en discuter
-      </p>
-      <p className="container-contact__travail">Travaillons ensemble</p>
-      <p className="container-contact__paragraph">
-        Que ce soit pour un projet web, une collaboration ou simplement
-        échanger, je serais ravie de discuter avec vous autour d&apos;un verre
-        <Beer color="#1f3d2b" size={15} />
-        <Coffee color="#1f3d2b" size={15} />
-        <Smile color="#1f3d2b" size={15} />
-      </p>
-
-      <section className="container-contact__contact">
-        <div className="container-contact__composant">
-          <div className="container-contact__logo">
-            <MailIcon color="rgb(12, 188, 15)" size={18} />
-          </div>
-          <div className="container-contact__mail">elorotav@gmail.com</div>
+    <section id="contact" className="home-contact" aria-labelledby="contact-title">
+      <div className="home-contact__inner">
+        <div className="home-contact__intro">
+          <p className="home-contact__eyebrow">Contact</p>
+          <h2 id="contact-title" className="home-contact__title">
+            {"Un projet en tête ? Parlons-en."}
+          </h2>
+          <p className="home-contact__text">
+            Projet web, collaboration ou simple échange : je serais ravie
+            d&apos;en discuter avec vous, autour d&apos;un café ou d&apos;un
+            verre.
+          </p>
+          <ul className="home-contact__infos">
+            <li>
+              <a href="mailto:elodie.orotav@hotmail.com" className="home-contact__info">
+                <span className="home-contact__icon" aria-hidden="true">
+                  <Mail size={18} />
+                </span>
+                elodie.orotav@hotmail.com
+              </a>
+            </li>
+            <li className="home-contact__info">
+              <span className="home-contact__icon" aria-hidden="true">
+                <MapPin size={18} />
+              </span>
+              Saint-Feliu d&apos;Avall (66)
+            </li>
+          </ul>
         </div>
-        <div className="container-contact__composant">
-          <div className="container-contact__logo">
-            <MapPin color="rgb(12, 188, 15)" size={18} />{" "}
+
+        <form className="home-contact__form" onSubmit={handleSubmit} noValidate>
+          <h3 className="home-contact__form-title">Envoyez-moi un message</h3>
+
+          <div className="home-contact__row">
+            <label className="home-contact__field" htmlFor="nom">
+              Nom
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                className="home-contact__input"
+                placeholder="Votre nom"
+                value={formData.nom}
+                onChange={handleChange}
+                maxLength={100}
+                disabled={isLoading}
+                autoComplete="name"
+                required
+              />
+            </label>
+
+            <label className="home-contact__field" htmlFor="mail">
+              Email
+              <input
+                type="email"
+                id="mail"
+                name="mail"
+                className="home-contact__input"
+                placeholder="vous@exemple.fr"
+                value={formData.mail}
+                onChange={handleChange}
+                maxLength={100}
+                disabled={isLoading}
+                autoComplete="email"
+                required
+              />
+            </label>
           </div>
-          <div className="container-contact__mail">
-            Saint-Feliu d&apos;Avall (66)
-          </div>
-        </div>
-      </section>
 
-      <div className="container-contact__form">
-        <h3 className="container-contact__formh2">Envoyez moi un message</h3>
-        <h3 className="container-contact__formh3">
-          Remplissez le formulaire ci-dessous et je vous répondrai rapidement
-        </h3>
-        <form className="container-contact__formulaire" onSubmit={handleSubmit}>
-          <section className="container-contact__section">
-            <input
-              type="text"
-              id="nom"
-              className="container-contact__input"
-              placeholder="Nom*"
-              value={formData.nom}
-              onChange={handleChange}
-              name="nom"
-              maxLength={100}
-              disabled={status === "loading"}
-              required
-              aria-label="Nom"
-            />
-
-            <input
-              type="email"
-              id="mail"
-              className="container-contact__input"
-              placeholder="Email*"
-              value={formData.mail}
-              name="mail"
-              onChange={handleChange}
-              maxLength={100}
-              disabled={status === "loading"}
-              required
-              aria-label="Email"
-            />
-          </section>
-
-          <section className="container-contact__message-section">
+          <label className="home-contact__field" htmlFor="message">
+            Votre projet
             <textarea
               id="message"
-              className="container-contact__messageview"
-              placeholder="Parlez moi de votre projet*"
-              value={formData.message}
               name="message"
+              className="home-contact__input home-contact__input--area"
+              placeholder="Parlez-moi de votre projet"
+              value={formData.message}
               onChange={handleChange}
               rows={5}
               maxLength={1000}
-              disabled={status === "loading"}
+              disabled={isLoading}
               required
-              aria-label="Message"
             />
-          </section>
+          </label>
 
           {/* Honeypot - Champ caché pour piéger les bots */}
           <input
@@ -220,38 +224,30 @@ export default function Contact() {
 
           {statusMessage && (
             <p
-              className={`container-contact__status ${
-                status === "success"
-                  ? "container-contact__status--success"
-                  : status === "error"
-                    ? "container-contact__status--error"
-                    : ""
-              }`}
+              className={`home-contact__status home-contact__status--${status}`}
               role="alert"
             >
               {statusMessage}
             </p>
           )}
 
-          <div className="container-contact__button">
-            <button
-              type="submit"
-              className="container-contact__envoyer"
-              disabled={status === "loading"}
-              aria-busy={status === "loading"}
-            >
-              {status === "loading" ? (
-                "Envoi en cours..."
-              ) : (
-                <>
-                  <Send size={18} aria-hidden="true" />
-                  <span>Envoyer le message</span>
-                </>
-              )}
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="home-contact__submit"
+            disabled={isLoading}
+            aria-busy={isLoading}
+          >
+            {isLoading ? (
+              "Envoi en cours..."
+            ) : (
+              <>
+                Envoyer le message
+                <ArrowRight size={18} aria-hidden="true" />
+              </>
+            )}
+          </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,138 +1,129 @@
-"use client";
-
-import "../newProject/NewProject.scss";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import "./NewProject.scss";
 
-import React from "react";
+type Projet = {
+  titre: string;
+  type: string;
+  statut?: string;
+  description: string;
+  image: string;
+  url: string;
+  externe?: boolean;
+  // Carte mise en avant, sur toute la largeur
+  vedette?: boolean;
+};
 
-//style swiper
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+const projets: Projet[] = [
+  {
+    titre: "66partners",
+    type: "Application mobile",
+    description:
+      "Application de recherche de partenaires sportifs, lancée dans les Pyrénées-Orientales puis étendue à toute l'Occitanie.",
+    image: "/66Partners/logo.png",
+    url: "https://66partners.fr",
+    externe: true,
+    vedette: true,
+  },
+  {
+    titre: "Les Chips de Nos Montagnes",
+    type: "Site web",
+    statut: "Projet client",
+    description:
+      "Site vitrine pour une marque artisanale de chips des Pyrénées.",
+    image: "/Projets/lcdnm.webp",
+    url: "https://www.leschipsdenosmontagnes.com/",
+    externe: true,
+  },
+  {
+    titre: "Braap!",
+    type: "Application mobile",
+    statut: "En cours",
+    description: "Application mobile en cours de développement.",
+    image: "/Projets/braap.png",
+    url: "/Braap",
+  },
+  {
+    titre: "BlaBlaBook",
+    type: "Projet formation",
+    statut: "Projet privé",
+    description: "Application web de gestion de bibliothèque personnelle.",
+    image: "/Projets/BBB.webp",
+    url: "/BBB",
+  },
+  {
+    titre: "Nana's Coffee",
+    type: "WordPress",
+    statut: "Projet personnel",
+    description: "Site WordPress pour un coffee shop.",
+    image: "/Projets/logo.png",
+    url: "/NanasCoffee",
+  },
+];
 
 export default function NewProject() {
-  const projets = [
-    {
-      id: 1,
-      titre: "Les Chips de Nos Montagnes",
-      image: "/Projets/lcdnm.webp",
-      url: "https://www.leschipsdenosmontagnes.com/",
-      privacy: "Projet Public",
-      type: "Site Web",
-      width: 620,
-      height: 380,
-    },
-    {
-      id: 2,
-      titre: "Braap! - en cours..",
-      image: "/Projets/braap.png",
-      url: "/Braap",
-      privacy: "Projet Privé",
-      type: "Application Mobile",
-      width: 300,
-      height: 200,
-    },
-    {
-      id: 3,
-      titre: "BlaBlaBook",
-      image: "/Projets/BBB.webp",
-      url: "/BBB",
-      privacy: "Projet Privé",
-      type: "Projet Formation",
-      width: 285,
-      height: 200,
-    },
-    {
-      id: 4,
-      titre: "Nana's Coffee",
-      image: "/Projets/logo.png",
-      url: "/NanasCoffee",
-      privacy: "Projet Privé",
-      type: "Projet Wordpress",
-      // Utiliser les dimensions réelles de l'image pour éviter le flou
-      width: 1693,
-      height: 929,
-    },
-  ];
   return (
-    <>
-      <section className="container-project">
-        <h2 className="container-project__h2">Mes Projets</h2>
-        <div className="container-project__underline"></div>
-        <p className="container-project__p">
-          Découvrez mes réalisations et projets en développement web.
-        </p>
-        <div className="swipper-wrapper-custom">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 2,
-              },
-              1440: {
-                slidesPerView: 4,
-                spaceBetween: 2,
-              },
-            }}
-            className="projets-swiper"
-          >
-            {projets.map((projet) => (
-              <SwiperSlide key={projet.id}>
-                <div
-                  key={projet.id}
-                  className="projets-container__id"
-                  data-id={projet.id}
-                >
-                  <Link
-                    href={projet.url}
-                    target={projet.id === 1 ? "_blank" : undefined}
-                    rel={projet.id === 1 ? "noopener noreferrer" : undefined}
-                    className="projets-container__link"
-                  >
-                    <Image
-                      className="projets-container__img"
-                      src={projet.image}
-                      alt={projet.titre}
-                      width={projet.width}
-                      height={projet.height}
-                    />
-                  </Link>
-                  <h3 className="projets-container__type">{projet.type}</h3>
-                  <p className="projets-container__titre">
-                    {projet.id === 4 ? (
-                      <>
-                        Nana&apos;s Coffee,
-                        <br />
-                        Projet personnel
-                      </>
-                    ) : (
-                      projet.titre
-                    )}
-                  </p>
-
-                  <p className="projets-container__privacy">{projet.privacy}</p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+    <section id="projets" className="home-work" aria-labelledby="work-title">
+      <div className="home-work__inner">
+        <div className="home-work__head">
+          <div className="home-work__heading">
+            <p className="home-work__eyebrow">Réalisations</p>
+            <h2 id="work-title" className="home-work__title">
+              Projets sélectionnés
+            </h2>
+          </div>
+          <p className="home-work__intro">
+            Sites clients, applications et projets de formation, du design à la
+            mise en ligne.
+          </p>
         </div>
-      </section>
-    </>
+
+        <ul className="home-work__grid">
+          {projets.map((projet) => (
+            <li
+              key={projet.titre}
+              className={projet.vedette ? "home-work__featured" : undefined}
+            >
+              <Link
+                href={projet.url}
+                className={`home-work__card${projet.vedette ? " home-work__card--featured" : ""}`}
+                target={projet.externe ? "_blank" : undefined}
+                rel={projet.externe ? "noopener noreferrer" : undefined}
+              >
+                <div className="home-work__media">
+                  <Image
+                    src={projet.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    className="home-work__img"
+                  />
+                </div>
+                <div className="home-work__body">
+                  <div className="home-work__tags">
+                    <span className="home-work__tag">{projet.type}</span>
+                    {projet.statut && (
+                      <span className="home-work__tag home-work__tag--outline">
+                        {projet.statut}
+                      </span>
+                    )}
+                  </div>
+                  <div className="home-work__row">
+                    <h3 className="home-work__name">{projet.titre}</h3>
+                    <ArrowUpRight
+                      className="home-work__arrow"
+                      size={22}
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <p className="home-work__desc">{projet.description}</p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }

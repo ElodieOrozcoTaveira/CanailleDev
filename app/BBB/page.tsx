@@ -1,70 +1,55 @@
-"use client";
+import type { Metadata } from "next";
+import ProjectPage from "../components/ProjectPage/ProjectPage";
 
-import "../BBB/bbb.scss";
-import Fleche from "../components/Fleche/Fleche";
-import Footer from "../components/layout/Footer/Footer";
+export const metadata: Metadata = {
+  title: "BlaBlaBook - Elodie Orozco Taveira",
+  description:
+    "BlaBlaBook, application web de gestion de bibliothèque personnelle réalisée en équipe (React, Node.js, Express, Redis).",
+};
 
-export default function ProjectCarousel() {
+export default function BlaBlaBook() {
   return (
-    <>
-      <div className="video-container">
-        <video
-          controls
-          autoPlay
-          muted
-          playsInline // empeche la vidéo en grand écran
-          className="video-container__project-video"
-          width={500}
-          height={500}
-        >
-          <source src="/BBB/BBBnew.webm" type="video/mp4" />
-          Votre navigateur ne supporte pas la lecture de vidéos.
-        </video>
-      </div>
-      <div className="container-blablabook">
-        <p className="container-blablabook__tag">
-            Projet Formation
-          </p>
-        <h1 className="container-blablabook__h1">
-          BlaBlaBook - Plateforme de Gestion Personnelle de Bibliothèque
-        </h1>
-        <div className="container-blablabook__underline"></div>
-        <div
-          className="container-blablabook__stack"
-          aria-label="Stack utilisée"
-        >
-          <span>React</span>
-          <span>Node.js</span>
-          <span>Express</span>
-          <span>Redis</span>
-          <span>Open Library API</span>
-        </div>
-        <p className="container-blablabook__p">
-          <span className="container-blablabook__span">BlaBlaBook</span> est une
-          application web dédiée aux passionnés de lecture, permettant de gérer
-          facilement une bibliothèque personnelle tout en favorisant
-          l&apos;échange et la découverte de nouveaux ouvrages. Les utilisateurs
-          peuvent rechercher des livres via{" "}
-          <span className="container-blablabook__span">
-            l&apos;API Open Library
-          </span>
-          , les ajouter à leur collection, suivre leurs lectures et consulter
-          les détails de chaque ouvrage. Le projet repose sur une architecture
-          moderne avec une{" "}
-          <span className="container-blablabook__span">API REST</span>{" "}
-          développée en Node.js / Express, une SPA React côté Front end et une
-          authentification sécurisée par cookies de session stockés dans Redis.
-          BlaBlaBook a été réalisé en équipe dans le cadre du projet de fin de
-          formation (Apothéose) à l&apos;école O&apos;clock, et m&apos;a permis
-          de consolider mes compétences en développement fullstack, en
-          architecture applicative et en travail collaboratif. Ce projet a été
-          présenté devant un jury pour valider mon Titre Professionnel de
-          Concepteur Développeur d&apos;Applications.
-        </p>
-      </div>
-
-      <Fleche />
-      <Footer />
-    </>
+    <ProjectPage
+      tag="Projet formation"
+      title="BlaBlaBook"
+      subtitle="Plateforme de gestion personnelle de bibliothèque."
+      stack={["React", "Node.js", "Express", "Redis", "Open Library API"]}
+      media={{
+        kind: "video",
+        sources: [{ src: "/BBB/BBBnew.webm", type: "video/webm" }],
+      }}
+      facts={[
+        { label: "Type", value: "Application web fullstack" },
+        { label: "Contexte", value: "Projet de fin de formation (Apothéose), école O'clock" },
+        { label: "Organisation", value: "Projet réalisé en équipe" },
+        { label: "Validation", value: "Titre Professionnel Concepteur Développeur d'Applications" },
+      ]}
+    >
+      <p>
+        <strong>BlaBlaBook</strong> est une application web dédiée aux
+        passionnés de lecture. Elle permet de gérer facilement une bibliothèque
+        personnelle tout en favorisant l&apos;échange et la découverte de
+        nouveaux ouvrages.
+      </p>
+      <p>
+        Les utilisateurs peuvent rechercher des livres via{" "}
+        <strong>l&apos;API Open Library</strong>, les ajouter à leur collection,
+        suivre leurs lectures et consulter les détails de chaque ouvrage.
+      </p>
+      <p>
+        Le projet repose sur une architecture moderne : une{" "}
+        <strong>API REST</strong> développée en Node.js / Express, une SPA React
+        côté front-end et une authentification sécurisée par cookies de session
+        stockés dans Redis.
+      </p>
+      <p>
+        BlaBlaBook a été réalisé en équipe dans le cadre du projet de fin de
+        formation (Apothéose) à l&apos;école O&apos;clock. Il m&apos;a permis de
+        consolider mes compétences en développement fullstack, en architecture
+        applicative et en travail collaboratif. Ce projet a été présenté devant
+        un jury pour valider mon Titre Professionnel de Concepteur Développeur
+        d&apos;Applications.
+      </p>
+    </ProjectPage>
   );
 }

@@ -1,175 +1,129 @@
-@use "../../styles/variables/variables.scss";
-@use "../../styles/mixins/mixins.scss";
+@use "../../styles/variables/variables.scss" as v;
+@use "../../styles/mixins/mixins.scss" as m;
 
-.container-prestations {
-  margin-top: 5rem;
-  margin-bottom: -15rem;
-  position: relative;
-  padding-bottom: 3rem;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 100vw;
-    height: 10px;
-    background: linear-gradient(to bottom, transparent, variables.$white-color);
-    pointer-events: none;
-  }
-  &__h2 {
-    @include mixins.h2;
-  }
-  &__underline {
-    @include mixins.underline;
-  }
-}
+.home-offers {
+  @include m.container;
+  @include m.section-padding;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 
-// Wrapper pour le Swiper
-.swiper-wrapper-custom {
-  width: 100%;
-  padding: 2rem 3rem;
-  margin: 3rem auto;
-}
-
-// Personnalisation du Swiper
-.prestations-swiper {
-  padding-bottom: 3rem;
-
-  .swiper-slide {
+  &__head {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
   }
 
-  // Boutons de navigation
-  .swiper-button-next,
-  .swiper-button-prev {
-    background-color: variables.$color-fluo;
-    color: variables.$white-color;
-    box-shadow: 2px 2px 2px white;
-    width: 25px;
-    height: 25px;
-    border-radius: 20%;
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 640px;
+  }
 
-    &::after {
-      font-size: 1.5rem;
-      font-weight: bold;
+  &__eyebrow {
+    @include m.eyebrow;
+    margin: 0;
+  }
+
+  &__title {
+    @include m.display;
+  }
+
+  &__intro {
+    margin: 0;
+    max-width: 380px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: v.$muted;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 20px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 30px;
+    border-radius: 24px;
+    background: v.$paper;
+    color: v.$ink;
+    border: 1px solid v.$line;
+
+    --card-line: #{v.$line};
+    --cta-bg: #{v.$pine};
+    --cta-fg: #{v.$on-dark};
+
+    &--dark {
+      background: v.$pine;
+      color: v.$on-dark;
+      border-color: v.$pine;
+
+      --card-line: rgba(245, 242, 234, 0.18);
+      --cta-bg: #{v.$accent};
+      --cta-fg: #{v.$pine};
     }
+  }
 
-    &:hover {
-      background-color: variables.$color-fluo;
+  &__name {
+    margin: 0;
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  &__price {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-display), sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    letter-spacing: -0.03em;
+  }
+
+  &__from {
+    font-family: var(--font-body), sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0;
+    opacity: 0.75;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 18px 0 0;
+    border-top: 1px solid var(--card-line);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+  }
+
+  &__item {
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 1.45;
+
+    svg {
+      flex: none;
+      margin-top: 2px;
     }
   }
 
-  // Pagination
-  .swiper-pagination-bullet {
-    background-color: variables.$color-forest-extralight;
-    opacity: 0.5;
-    width: 12px;
-    height: 12px;
-
-    &-active {
-      background-color: variables.$color-beige;
-      opacity: 1;
-    }
-  }
-}
-
-// Carte de projet
-.prestations-container__id {
-  border: solid 1.5px variables.$color-bg-light;
-  box-shadow: 2px 5px 5px rgb(12, 188, 15);
-  border-radius: 30px;
-  display: block;
-  padding: 2rem;
-  margin-right: auto;
-  margin-left: auto;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(
-    165deg,
-    variables.$color-forest-dark 0%,
-    variables.$color-forest-light 100%
-  );
-  color: variables.$color-beige;
-  color: variables.$white-color;
-  height: 100%;
-  width: 300px;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 2px 4px 8px variables.$color-forest-light;
-  }
-}
-.prestations-container__icon {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  color: variables.$color-fluo;
-  background-color: variables.$white-color;
-  padding: 0.5rem;
-  border: solid 1px variables.$white-color;
-}
-
-.prestations-container__icon {
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
-  border-radius: 10px;
-}
-
-.prestations-container__sujet {
-  color: variables.$color-fluo;
-  text-shadow: 1.5px 1px 2px variables.$color-forest-dark;
-  margin-top: 0.5rem;
-  text-align: center;
-  font-weight: 500;
-  font-size: 22px;
-}
-
-@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
-  .prestations-container__id {
-    margin-right: auto;
-    margin-left: auto;
-    width: 500px;
-    display: block;
-    width: 300px;
-    height: 350px;
-  }
-  .prestations-container__icon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .prestations-h2 {
-    margin-left: 12rem;
-  }
-  .prestations-h3 {
-    margin-right: 32rem;
-  }
-}
-
-@media screen and (min-width: calc(variables.$laptop + 1px)) and (max-width: calc(variables.$desktop - 1px)) {
-  .prestations-container__id {
-    height: 350px;
-  }
-}
-
-@media (min-width: variables.$desktop) {
-  .prestations-h2 {
-    font-size: 35px;
-    margin-left: 3rem;
-    padding-top: 5rem;
-  }
-  .prestations-h3 {
-    margin-right: 95rem;
-    font-size: 32px;
-    margin-top: -2.8rem;
-    margin-bottom: 5rem;
-  }
-  .prestations-container__id {
-    width: 400px;
-    height: 400px;
-    margin: 0 auto 5rem;
+  &__cta {
+    @include m.pill-button;
+    font-size: 15px;
+    background: var(--cta-bg);
+    color: var(--cta-fg);
   }
 }

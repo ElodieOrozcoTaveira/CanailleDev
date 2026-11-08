@@ -9,7 +9,7 @@
 
 html {
   scroll-behavior: smooth;
-  animation-timeline: scroll();
+  scroll-padding-top: 80px; // la barre de navigation est fixe
 }
 
 html,
@@ -19,9 +19,62 @@ body {
 }
 
 body {
-  font-family: 'Manrope';
-  background-color: variables.$color-forest-dark;
+  font-family: var(--font-body), system-ui, sans-serif;
+  background-color: variables.$cream;
+  color: variables.$ink;
   min-height: 100vh;
   overflow-x: hidden;
-  
+  -webkit-font-smoothing: antialiased;
+}
+
+// Page d'accueil (nouveau design)
+.home {
+  background-color: variables.$cream;
+  color: variables.$ink;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid variables.$accent;
+  outline-offset: 3px;
+}
+
+// Animation lettre par lettre des titres h2 (hook useAnimatedH2)
+h2 .word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.25em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+h2 .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  h2 .letter {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

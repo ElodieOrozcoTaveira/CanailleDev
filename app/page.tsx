@@ -11,35 +11,19 @@ const NewPrestations = dynamic(
 const Contact = dynamic(() => import("./components/contact/Contact"));
 const Processus = dynamic(() => import("./components/Services/Processus"));
 
+// Chaque composant porte sa propre balise <section id="..."> (ancres du menu)
 export default function Home() {
   return (
-    <>
-      <section className="hero">
-        <Hero />
-      </section>
-      <section id="propos" className="propos">
-        <Apropos />
-      </section>
-      <section id="skills" className="skills">
-        <NewSkills />
-      </section>
-      <section id="projets" className="projects">
-        <NewProject />
-      </section>
-      <section id="process" className="process">
-        <Processus />
-      </section>
-
-      <section id="services">
-        <NewPrestations />
-      </section>
-      <section id="contact" className="contact">
-        <Contact />
-      </section>
-      <section className="footer">
-        <Footer />
-      </section>
+    <div className="home">
+      <Hero />
+      <Apropos />
+      <NewProject />
+      <NewSkills />
+      <Processus />
+      <NewPrestations />
+      <Contact />
+      <Footer />
       <Fleche />
-    </>
+    </div>
   );
 }

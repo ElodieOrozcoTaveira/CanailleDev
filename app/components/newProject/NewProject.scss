@@ -1,389 +1,184 @@
-@use "../../styles/variables/variables.scss";
-@use "../../styles/mixins/mixins.scss";
+@use "../../styles/variables/variables.scss" as v;
+@use "../../styles/mixins/mixins.scss" as m;
 
-.container-project {
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 100vw;
-    height: 10px;
-    background: linear-gradient(to bottom, transparent, variables.$white-color);
-    pointer-events: none;
-  }
-  &__h2 {
-    @include mixins.h2;
-  }
-  &__underline {
-    @include mixins.underline;
-  }
-  &__p {
-    text-align: center;
-    color: variables.$color-beige;
-    font-weight: 300;
-    margin-left: 4rem;
-    margin-right: 3rem;
-    margin-bottom: 3rem;
-  }
-}
+.home-work {
+  background: v.$paper;
+  border-top: 1px solid v.$line;
+  border-bottom: 1px solid v.$line;
 
-// Wrapper pour le Swiper
-.swiper-wrapper-custom {
-  width: 100%;
-  padding: 2rem 3rem;
-  margin: 3rem auto;
-}
-
-// Personnalisation du Swiper
-.projets-swiper {
-  padding-bottom: 3rem;
-
-  // Boutons de navigation
-  .swiper-button-next,
-  .swiper-button-prev {
-    background-color: variables.$color-fluo;
-    color: variables.$white-color;
-    width: 25px;
-    height: 25px;
-    border-radius: 20%;
-
-    &::after {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    &:hover {
-      background-color: variables.$color-forest-light;
-    }
-  }
-
-  // Pagination
-  .swiper-pagination-bullet {
-    background-color: variables.$color-forest-extralight;
-    opacity: 0.5;
-    width: 12px;
-    height: 12px;
-    margin-bottom: 5rem;
-    z-index: 1;
-
-    &-active {
-      background-color: variables.$color-beige;
-      opacity: 1;
-    }
-  }
-}
-
-// Carte de projet
-.projets-container__id {
-  border: solid 1px variables.$color-beige;
-  border-radius: 24px;
-  box-shadow: 0 10px 24px rgba(12, 188, 15, 0.22);
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  overflow: hidden;
-  gap: 0.65rem;
-  padding-bottom: 1.1rem;
-  margin-right: auto;
-  margin-left: auto;
-  justify-content: flex-start;
-  background: linear-gradient(
-    165deg,
-    variables.$color-forest-dark 0%,
-    variables.$color-forest-light 100%
-  );
-  color: variables.$color-beige;
-  font-size: 17px;
-  max-height: 320px;
-  width: min(100%, 340px);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 26px rgba(12, 188, 15, 0.3);
-  }
-}
-
-.projets-container__link {
-  text-decoration: none;
-  list-style-type: none;
-}
-
-.projets-container__id[data-id="1"] .projets-container__link {
-  display: block;
-  margin-top: 1rem;
-}
-
-.projets-container {
-  &__fonction {
-    color: variables.$color-forest-light;
-    font-size: 14px;
-  }
-}
-.projets-container__img {
-  display: block;
-  margin-bottom: 0;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.projets-container__type {
-  color: variables.$color-fluo;
-  font-size: 10px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  padding: 0.35rem 0.55rem;
-  border: solid 1px variables.$color-fluo;
-  display: inline-block;
-  margin-left: 1rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.1rem;
-  text-transform: uppercase;
-  border-radius: 999px;
-  width: fit-content;
-  align-self: flex-start;
-}
-.projets-container__id[data-id="1"] .projets-container__img {
-  width: 62%;
-  height: auto;
-  max-height: 140px;
-  object-fit: contain;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.75rem;
-}
-.projets-container__id[data-id="2"] .projets-container__img {
-  margin-top: 1.5rem;
-}
-
-.projets-container__id[data-id="3"] .projets-container__img,
-.projets-container__id[data-id="4"] .projets-container__img {
-  object-position: center 0%;
-}
-
-/* Logo spécifique pour l'ID 4 : s'assurer qu'il rentre bien dans le container */
-.projets-container__id[data-id="4"] .projets-container__img {
-  width: 100%;
-  height: 150px; /* même taille que les autres images */
-  max-width: 100%;
-  object-fit: contain; /* affiche tout le logo sans le rogner */
-  object-position: center;
-  margin: 0;
-  padding-top: 0.25rem;
-}
-
-.projets-container__titre {
-  text-align: left;
-  margin-top: 0;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  font-weight: 500;
-  color: white;
-  font-size: 16px;
-  line-height: 1.35;
-}
-
-.projets-container__id[data-id="1"] .projets-container__titre {
-  margin-top: 0.2rem;
-}
-
-.projets-container__id[data-id="2"] .projets-container__titre {
-  margin-top: 0.2rem;
-}
-
-.projets-container__privacy {
-  position: relative;
-  z-index: 50;
-  align-self: flex-start;
-  padding: 0.5rem;
-  background-color: variables.$color-fluo;
-  color: white;
-  border-radius: 20px;
-  box-shadow: 1px 1px 2px variables.$color-forest-extralight;
-  font-size: 12px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.projets-container__id[data-id="1"] .projets-container__privacy,
-.projets-container__id[data-id="2"] .projets-container__privacy {
-  margin-top: auto;
-}
-
-.projets-container__id[data-id="3"] .projets-container__privacy,
-.projets-container__id[data-id="4"] .projets-container__privacy {
-  margin-top: auto;
-  margin-bottom: 3rem;
-}
-
-@media (min-width: variables.$laptop) {
-  .projets-container__id {
-    min-height: 320px;
-  }
-}
-
-@media screen and (min-width: variables.$tablet) and (max-width: variables.$laptop) {
-  .projets-h2 {
-    margin-left: 12rem;
-  }
-  .projets-h3 {
-    margin-right: 18rem;
-  }
-  .swiper-wrapper-custom {
-    margin-left: 5rem;
-    margin-right: 5rem;
-  }
-  .projets-container__id {
-    width: 280px;
-    height: 420px;
-    max-height: none;
+  &__inner {
+    @include m.container;
+    @include m.section-padding;
     display: flex;
     flex-direction: column;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 2rem;
-    padding-bottom: 1.5rem;
+    gap: 48px;
   }
-  .projets-container__img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
+
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
   }
-  .projets-container__id[data-id="1"] .projets-container__img {
-    width: 70%;
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 640px;
   }
-  .projets-container__img[data-img="3"] .projets-container__img[data-img="4"] {
-    width: 100%;
+
+  &__eyebrow {
+    @include m.eyebrow;
+    margin: 0;
   }
-  .projets-container__titre {
-    margin-top: 2rem;
+
+  &__title {
+    @include m.display;
   }
-  .projets-container__id[data-id="1"] .projets-container__titre,
-  .projets-container__id[data-id="2"] .projets-container__titre {
-    margin-top: 3rem;
+
+  &__intro {
+    margin: 0;
+    max-width: 380px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: v.$muted;
   }
-  .projets-container__privacy {
-    width: 150px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.5rem;
-    text-align: center;
+
+  &__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+    gap: 24px;
+  }
+
+  &__card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: v.$cream;
+    border: 1px solid v.$line;
+    border-radius: 24px;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px -24px rgba(15, 31, 23, 0.45);
+    }
+
+    &:hover .home-work__img {
+      transform: scale(1.04);
+    }
+
+    &:hover .home-work__arrow {
+      transform: translate(3px, -3px);
+    }
+  }
+
+  // Projet mis en avant : toute la largeur, image à gauche sur grand écran
+  &__featured {
+    grid-column: 1 / -1;
+  }
+
+  &__card--featured {
+    @media (min-width: 900px) {
+      flex-direction: row;
+
+      .home-work__media {
+        flex: 1 1 55%;
+        aspect-ratio: auto;
+        min-height: 360px;
+      }
+
+      .home-work__body {
+        flex: 1 1 45%;
+        justify-content: center;
+        padding: 40px;
+      }
+
+      .home-work__name {
+        font-size: 36px;
+      }
+
+      .home-work__desc {
+        font-size: 17px;
+      }
+    }
+  }
+
+  &__media {
     position: relative;
-    z-index: 2;
-  }
-  .projets-container__id[data-id="1"] .projets-container__privacy,
-  .projets-container__id[data-id="2"] .projets-container__privacy {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  .projets-container__id[data-id="3"] .projets-container__privacy,
-  .projets-container__id[data-id="4"] .projets-container__privacy {
-    margin-top: auto;
-    margin-bottom: 1.8rem;
+    aspect-ratio: 16 / 10;
+    background: #e8e3d6;
+    overflow: hidden;
   }
 
-  .swiper-wrapper-custom {
-    padding-bottom: 4rem;
+  &__img {
+    object-fit: cover;
+    transition: transform 0.5s ease;
   }
 
-  @media (min-width: variables.$desktop) {
-    .projets-h2 {
-      font-size: 35px;
-      margin-left: 3rem;
-      padding-top: 5rem;
+  &__body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__tag {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: v.$sage;
+    color: v.$sage-ink;
+
+    &--outline {
+      font-weight: 500;
+      background: transparent;
+      border: 1px solid v.$line-strong;
+      color: v.$muted;
     }
-    .projets-h3 {
-      margin-right: 75rem;
-      font-size: 32px;
-      margin-top: -2.8rem;
-      margin-bottom: 10rem;
-    }
+  }
 
-    .swiper-wrapper-custom {
-      width: 450px; // Largeur fixe du carré
-      height: 450px; // Hauteur fixe du carré
-      padding: 0;
-      margin: 3rem auto;
-      overflow: hidden; // Important pour ne pas déborder
-    }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
 
-    .projets-swiper {
-      width: 100%;
-      height: 100%;
+  &__name {
+    margin: 0;
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+  }
 
-      // Boutons de navigation adaptés au petit format
-      .swiper-button-next,
-      .swiper-button-prev {
-        width: 30px; // Boutons plus petits
-        height: 30px;
-        display: block;
+  &__arrow {
+    flex: none;
+    transition: transform 0.2s ease;
+  }
 
-        &::after {
-          font-size: 1rem; // Icônes plus petites
-        }
-      }
-
-      .swiper-button-next {
-        right: 5px;
-      }
-
-      .swiper-button-prev {
-        left: 5px;
-      }
-    }
-
-    .projets-container__id {
-      height: 380px; // Ajusté pour laisser de la place à la pagination
-      width: 350px;
-      max-width: 320px; // Un peu moins que 350px pour le padding
-      margin: 0 auto;
-      padding: 1rem; // Padding réduit
-      gap: 0.5rem; // Gap réduit
-    }
-    .projets-container__img {
-      max-width: 100%;
-      height: auto;
-      max-height: 120px; // Limite la hauteur de l'image
-      object-fit: cover;
-    }
-
-    /* Desktop override pour s'assurer que le logo 4 est toujours visible */
-    .projets-container__id[data-id="4"] .projets-container__img {
-      width: 100%;
-      max-width: 100%;
-      max-height: 150px;
-      object-fit: cover;
-      object-position:center;
-      margin: 0;
-    }
-
-    .projets-container__titre {
-      font-size: 16px; // Texte plus petit
-      margin-top: 0.25rem;
-    }
-
-    .projets-container__privacy {
-      margin-top: 0.5rem;
-      padding: 0.5rem;
-      font-size: 12px; // Texte plus petit
-    }
-
-    .projets-container__id[data-id="3"] .projets-container__privacy,
-    .projets-container__id[data-id="4"] .projets-container__privacy {
-      margin-bottom: 1.8rem;
-    }
+  &__desc {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: v.$muted;
   }
 }

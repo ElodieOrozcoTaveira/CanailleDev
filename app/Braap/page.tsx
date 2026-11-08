@@ -1,62 +1,52 @@
-import "../Braap/Braap.scss";
-import Image from "next/image";
-import Footer from "../components/layout/Footer/Footer";
-import Fleche from "../components/Fleche/Fleche";
-import { SparklesIcon } from "lucide-react";
+import type { Metadata } from "next";
+import ProjectPage from "../components/ProjectPage/ProjectPage";
+
+export const metadata: Metadata = {
+  title: "Braap! - Elodie Orozco Taveira",
+  description:
+    "Braap!, application mobile collaborative pour les motards de piste amateurs (React Native, TypeScript, Supabase).",
+};
 
 export default function Braap() {
   return (
-    <>
-      <main className="container-braap">
-        <section className="container-braap__section">
-          <Image
-            className="container-braap__img"
-            src="/Projets/braap.png"
-            alt="logo de braap"
-            width={420}
-            height={320}
-            quality={88}
-          />
-          <p className="container-braap__tag">
-            Application mobile collaborative
-          </p>
-          <h1 className="container-braap__h1">Braap!</h1>
-          <div className="container-braap__underline"></div>
-
-          <div className="container-braap__stack" aria-label="Technologies">
-            <span>React Native</span>
-            <span>TypeScript</span>
-            <span>Supabase</span>
-          </div>
-
-          <article className="container-braap__card">
-            <p className="container-braap__paragraph">
-              Braap est une application mobile dédiée aux motards de piste
-              amateurs, leur permettant d&apos;organiser leurs journées de
-              roulage, de consulter les informations des circuits et la météo,
-              de gérer un planning et une checklist, ainsi que de partager leur
-              expérience avec un groupe de riders.
-            </p>
-            <p className="container-braap__paragraph">
-              Chaque utilisateur peut créer ou rejoindre une journée, suivre ses
-              sessions, noter ses performances et conserver un historique
-              personnel. L&apos;application est développée en
-              <strong> React Native</strong> avec <strong>TypeScript</strong>{" "}
-              pour le front-end, et s&apos;appuie sur <strong>Supabase</strong>{" "}
-              comme backend (authentification, base de données PostgreSQL et
-              API), offrant une architecture moderne, simple et scalable adaptée
-              à une application mobile collaborative.
-            </p>
-          </article>
-
-          <h4 className="container-braap__h4">
-            <SparklesIcon size={16} /> Application en cours de construction
-            <SparklesIcon size={16} />
-          </h4>
-        </section>
-      </main>
-      <Fleche />
-      <Footer />
-    </>
+    <ProjectPage
+      tag="Application mobile collaborative"
+      title="Braap!"
+      subtitle="L'application des motards de piste amateurs."
+      stack={["React Native", "TypeScript", "Supabase"]}
+      media={{
+        kind: "image",
+        src: "/Projets/braap.png",
+        alt: "Logo de l'application Braap!",
+        width: 1536,
+        height: 1024,
+      }}
+      facts={[
+        { label: "Type", value: "Application mobile" },
+        { label: "Public", value: "Motards de piste amateurs" },
+        { label: "Back-end", value: "Supabase (PostgreSQL, authentification, API)" },
+        { label: "Statut", value: "En cours de développement" },
+      ]}
+      notice="Application en cours de construction"
+    >
+      <p>
+        <strong>Braap</strong> est une application mobile dédiée aux motards de
+        piste amateurs. Elle leur permet d&apos;organiser leurs journées de
+        roulage, de consulter les informations des circuits et la météo, de
+        gérer un planning et une checklist, ainsi que de partager leur
+        expérience avec un groupe de riders.
+      </p>
+      <p>
+        Chaque utilisateur peut créer ou rejoindre une journée, suivre ses
+        sessions, noter ses performances et conserver un historique personnel.
+      </p>
+      <p>
+        L&apos;application est développée en <strong>React Native</strong> avec{" "}
+        <strong>TypeScript</strong> pour le front-end, et s&apos;appuie sur{" "}
+        <strong>Supabase</strong> comme back-end (authentification, base de
+        données PostgreSQL et API). Une architecture moderne, simple et
+        évolutive, adaptée à une application mobile collaborative.
+      </p>
+    </ProjectPage>
   );
 }

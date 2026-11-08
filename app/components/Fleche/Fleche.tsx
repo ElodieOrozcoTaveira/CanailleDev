@@ -26,7 +26,7 @@ export default function Fleche() {
       onClick={scrollToTop}
       onKeyDown={onKeyDown}
     >
-      <ChevronUp className="icone" size={30} color=" rgb(12, 188, 15)" />
+      <ChevronUp className="icone" size={30} color="#D6B36A" />
     </div>
   );
 }

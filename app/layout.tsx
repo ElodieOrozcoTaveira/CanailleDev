@@ -1,23 +1,33 @@
 // app/layout.tsx
-import { Metadata } from 'next'; // Importez le type Metadata
-import { Manrope } from 'next/font/google';
+import { Metadata } from "next";
+import { Bricolage_Grotesque, Inter } from "next/font/google";
 import BodyContent from "./components/BodyContent/Body";
 import "./styles/globals/globals.scss";
-import GoogleAnalytics from './components/Analytics/analytics';
-import CookieBanner from './components/cookie/cookieBanner';
-import Hamburger from './components/layout/Hamburger/Hamburger';
-import WhatsAppButton from './components/WhatsappButton/WhatsappBtn';
+import GoogleAnalytics from "./components/Analytics/analytics";
+import CookieBanner from "./components/cookie/cookieBanner";
+import Hamburger from "./components/layout/Hamburger/Hamburger";
+import WhatsAppButton from "./components/WhatsappButton/WhatsappBtn";
 
 export const metadata: Metadata = {
-  title: "CanailleDev by Elodie Orozco Taveira - Conceptrice Développeur d'Applications Web",
-  description: "CanailleDev par Elodie Orozco Taveira : création de sites web sur mesure, performants et intuitifs. Boostez votre visibilité avec une experte passionnée.",
+  title:
+    "Elodie Orozco Taveira - Conceptrice Développeuse d'Applications Web",
+  description:
+    "Elodie Orozco Taveira, développeuse web freelance dans les Pyrénées-Orientales : création de sites web et d'applications sur mesure, performants et intuitifs.",
 };
 
-const manrope = Manrope({
-  subsets: ['latin'],
-  weight: ['200','300', '400', '500','600', '700','800'],
-  display: 'swap',
-})
+// Police des titres
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+});
+
+// Police du texte courant
+const body = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+});
 
 export default function RootLayout({
   children,
@@ -25,18 +35,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={manrope.className}>
+    <html lang="fr" className={`${display.variable} ${body.variable}`}>
       <body suppressHydrationWarning>
-        <GoogleAnalytics/>
-        <CookieBanner/>
+        <GoogleAnalytics />
+        <CookieBanner />
         <Hamburger />
-        
-        {/* 2. AJOUT DE LA BALISE <main> (C'est ici que vous réglez l'accessibilité) */}
+
         <main>
           <BodyContent>{children}</BodyContent>
         </main>
 
-        <WhatsAppButton/>
+        <WhatsAppButton />
       </body>
     </html>
   );

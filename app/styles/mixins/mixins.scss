@@ -51,3 +51,56 @@
   filter: blur(calc($size / 4));
   pointer-events: none; // Pour que le halo ne bloque pas les clics
 }
+
+// --------------------------------------
+// Refonte 2026
+// --------------------------------------
+@mixin container {
+  max-width: variables.$content-width;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@mixin section-padding {
+  padding-top: clamp(72px, 10vw, 112px);
+  padding-bottom: clamp(72px, 10vw, 112px);
+}
+
+@mixin eyebrow($color: variables.$forest-new) {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@mixin display($size: clamp(32px, 4.4vw, 56px)) {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: $size;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+@mixin pill-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.92;
+  }
+}

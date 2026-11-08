@@ -1,200 +1,65 @@
-'use client';
+import "./newSkills.scss";
 
-import "../newSkills/newSkills.scss";
-import Image from "next/image";
-import { useEffect } from "react";
+type Skill = { nom: string; description: string };
+
+const front: Skill[] = [
+  { nom: "React", description: "Interfaces modulaires en composants" },
+  { nom: "Next.js", description: "SEO et rendu côté serveur" },
+  { nom: "TypeScript", description: "Typage statique, moins d'erreurs" },
+  { nom: "JavaScript", description: "Interfaces interactives" },
+  { nom: "Angular", description: "Applications web complexes" },
+  { nom: "HTML / SCSS", description: "Sémantique et styles maintenables" },
+];
+
+const back: Skill[] = [
+  { nom: "Node.js", description: "JavaScript côté serveur" },
+  { nom: "Express", description: "API REST rapides" },
+  { nom: "PostgreSQL", description: "Base de données relationnelle" },
+  { nom: "Drizzle", description: "ORM TypeScript" },
+  { nom: "Sequelize", description: "ORM JavaScript" },
+  { nom: "PHP", description: "Développement côté serveur" },
+];
+
+function SkillList({ skills }: { skills: Skill[] }) {
+  return (
+    <ul className="home-skills__list">
+      {skills.map((skill) => (
+        <li key={skill.nom} className="home-skills__item">
+          <span className="home-skills__name">{skill.nom}</span>
+          <span className="home-skills__desc">{skill.description}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function Skills() {
-  const front = [
-    {
-      id: 1,
-      icon: "https://skillicons.dev/icons?i=html",
-      titre: "HTML",
-      fonction: " Structure fondamentale et sémantique des pages web",
-    },
-
-    {
-      id: 3,
-      icon: "https://skillicons.dev/icons?i=sass",
-      titre: "SCSS",
-      fonction:
-        "Stylisation avancée avec variables et imbrications réutilisables.",
-    },
-
-    {
-      id: 4,
-      icon: "https://skillicons.dev/icons?i=js",
-      titre: "JavaScript",
-      fonction: "Programmation logique pour des interfaces web interactives.",
-    },
-
-    {
-      id: 5,
-      icon: "https://skillicons.dev/icons?i=ts",
-      titre: "TypeScript",
-      fonction:
-        "JavaScript sécurisé par un typage statique pour limiter les erreurs.",
-    },
-
-    {
-      id: 6,
-      icon: "https://skillicons.dev/icons?i=react",
-      titre: "React",
-      fonction: "Création d'interfaces modulaires basées sur des composants.",
-    },
-
-    {
-      id: 7,
-      icon: "https://skillicons.dev/icons?i=nextjs",
-      titre: "NextJS",
-      fonction:
-        "Framework React optimisé pour le SEO et le rendu côté serveur.",
-    },
-    {
-      id: 8,
-      icon: "https://skillicons.dev/icons?i=angular",
-      titre: "Angular",
-      fonction: "Framework pour applications web complexes",
-    },
-  ];
-
-  const back = [
-    {
-      id: 9,
-      icon: "https://skillicons.dev/icons?i=nodejs",
-      titre: "NodeJs",
-      fonction: "Environnement d'exécution pour le JavaScript côté serveur.",
-    },
-
-    {
-      id: 10,
-      icon: "https://skillicons.dev/icons?i=express",
-      titre: "ExpressJS",
-      fonction: "Framework minimaliste pour la création d'API REST rapides.",
-    },
-
-    {
-      id: 11,
-      icon: "https://skillicons.dev/icons?i=sequelize",
-      titre: "Sequelize",
-      fonction:
-        "ORM pour interagir avec la base de données via des objets JavaScript.",
-    },
-
-    {
-      id: 12,
-      icon: "https://skillicons.dev/icons?i=postgres",
-      titre: "PostgreSQL",
-      fonction:
-        "Système de gestion de base de données relationnelle puissant et fiable.",
-    },
-    {
-      id: 13,
-      icon: "https://skillicons.dev/icons?i=php",
-      titre: "PHP",
-      fonction: "Développement web côté serveur.",
-    },
-  ];
-
-  useEffect(() => {
-    const frontSection = document.querySelector(".container-skills__Front");
-    const backSection = document.querySelector(".container-skills__back");
-
-    if (!frontSection || !backSection) return;
-
-    if (!("IntersectionObserver" in window)) {
-      frontSection.classList.add("is-in-view");
-      backSection.classList.add("is-in-view");
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-in-view");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      },
-    );
-
-    observer.observe(frontSection);
-    observer.observe(backSection);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
-    <>
-      <section className="container-skills">
-        <h2 className="container-skills__h2">Compétences Techniques</h2>
-        <div className="container-skills__underline"></div>
-        <p className="container-skills__p">
-          Technologies que je maîtrise ou en cours d&apos;acquisition pour créer
-          des applications web modernes
-        </p>
+    <section id="skills" className="home-skills" aria-labelledby="skills-title">
+      <div className="home-skills__head">
+        <p className="home-skills__eyebrow">Compétences</p>
+        <h2 id="skills-title" className="home-skills__title">
+          Une stack moderne, du front au back.
+        </h2>
+      </div>
 
-          <p className="container-skills__sectionTitle">Front-End</p>
-        <section className="container-skills__secfront">
-          <div className="container-skills__Front">
-            {front.map((skillfront) => (
-              <div key={skillfront.id} className="container-skills__skillfront">
-                <Image
-                  className="container-skills__img"
-                  alt={skillfront.icon}
-                  src={skillfront.icon}
-                  width={35}
-                  height={35}
-                />
-                <p className="container-skills__title">{skillfront.titre}</p>
-                <p className="container-skills__fonction">
-                  {skillfront.fonction}
-                </p>
-              </div>
-            ))}
+      <div className="home-skills__grid">
+        <div className="home-skills__card home-skills__card--dark">
+          <div className="home-skills__card-head">
+            <h3 className="home-skills__card-title">Front-end</h3>
+            <span className="home-skills__label">Spécialité</span>
           </div>
-        </section>
-
-          <p className="container-skills__sectionTitle">Back-End</p>
-        <section className="container-skills__secback">
-          <div className="container-skills__back">
-            {back.map((skillback) => (
-              <div key={skillback.id} className="container-skills__skillback">
-                <Image
-                  className="container-skills__img"
-                  alt={skillback.icon}
-                  src={skillback.icon}
-                  width={35}
-                  height={35}
-                />
-                <p className="container-skills__title">{skillback.titre}</p>
-                <p className="container-skills__fonction">
-                  {skillback.fonction}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-        <div className="competence-card">
-          <div className="chips">
-            <span className="chip">React</span>
-            <span className="chip">Next.js</span>
-            <span className="chip">Node.js</span>
-            <span className="chip">Postgresql</span>
-            <span className="chip">PHP</span>
-            <span className="chip">TypeScript</span>
-            <span className="chip">HTML/SCSS</span>
-          </div>
+          <SkillList skills={front} />
         </div>
-      </section>
-    </>
+
+        <div className="home-skills__card">
+          <div className="home-skills__card-head">
+            <h3 className="home-skills__card-title">Back-end</h3>
+            <span className="home-skills__label">En progression</span>
+          </div>
+          <SkillList skills={back} />
+        </div>
+      </div>
+    </section>
   );
 }

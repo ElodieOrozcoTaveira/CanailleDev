@@ -14,9 +14,9 @@
   right: 1rem;
   bottom: calc(15px + 45px + 12px + env(safe-area-inset-bottom));
   cursor: pointer;
-  width: 25px;
-  height: 25px;
-  padding: 0.2px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
   border-radius: 50%;
   transition:
     background-color 0.2s ease,
@@ -26,7 +26,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: variables.$pine;
+  box-shadow: 0 6px 18px -8px rgba(15, 31, 23, 0.6);
   z-index: 2000;
   pointer-events: auto;
   opacity: 1;
@@ -40,8 +41,8 @@
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .icone {
-    width: 30px;
-    height: 30px;
+    width: 44px;
+    height: 44px;
     right: 15px;
     bottom: calc(15px + 45px + 12px + env(safe-area-inset-bottom));
     opacity: 1;
@@ -53,8 +54,8 @@
 
 @media screen and (min-width: variables.$laptop) and (max-width: 1439px) {
   .icone {
-    width: 30px;
-    height: 30px;
+    width: 44px;
+    height: 44px;
     right: 60px;
     bottom: calc(15px + 45px + 12px + env(safe-area-inset-bottom));
   }
@@ -68,8 +69,8 @@
 
 @media (min-width: variables.$desktop) {
   .icone {
-    width: 28px;
-    height: 28px;
+    width: 44px;
+    height: 44px;
     bottom: calc(15px + 45px + 12px + env(safe-area-inset-bottom));
   }
 }
