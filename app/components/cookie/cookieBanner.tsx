@@ -1,60 +1,55 @@
-// app/components/CookieConsent.tsx
-'use client';
+"use client";
 
+import Link from "next/link";
 import CookieConsent from "react-cookie-consent";
+import "./cookieBanner.scss";
 
 export default function CookieBanner() {
   const handleAccept = () => {
-    // Activez Google Analytics seulement après acceptation
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('consent', 'update', {
-        'analytics_storage': 'granted'
+    // Active Google Analytics seulement après acceptation
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("consent", "update", {
+        analytics_storage: "granted",
       });
     }
   };
 
   const handleDecline = () => {
-    // Désactivez Google Analytics
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('consent', 'update', {
-        'analytics_storage': 'denied'
+    // Désactive Google Analytics
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("consent", "update", {
+        analytics_storage: "denied",
       });
     }
   };
 
   return (
     <CookieConsent
-      location="bottom"
+      location="none"
+      disableStyles
       buttonText="Accepter"
       declineButtonText="Refuser"
       enableDeclineButton
       onAccept={handleAccept}
       onDecline={handleDecline}
       cookieName="canaille-dev-cookie-consent"
-      style={{ 
-        background: "#5f8f6d",
-        padding: "20px",
-        alignItems: "center"
-      }}
-      buttonStyle={{ 
-        background: "#fff",
-        color: "#000",
-        fontSize: "14px",
-        padding: "10px 30px",
-        borderRadius: "5px",
-        fontWeight: "600"
-      }}
-      declineButtonStyle={{
-        background: "transparent",
-        color: "#fff",
-        border: "1px solid #fff",
-        fontSize: "14px",
-        padding: "10px 30px",
-        borderRadius: "5px"
-      }}
       expires={365}
+      containerClasses="cookie-banner"
+      contentClasses="cookie-banner__content"
+      buttonWrapperClasses="cookie-banner__actions"
+      buttonClasses="cookie-banner__btn cookie-banner__btn--accept"
+      declineButtonClasses="cookie-banner__btn cookie-banner__btn--decline"
+      ariaAcceptLabel="Accepter les cookies"
+      ariaDeclineLabel="Refuser les cookies"
     >
-      🍪 Ce site utilise des cookies pour améliorer votre expérience et analyser le trafic 🍪{" "}
+      <p className="cookie-banner__title">Un petit cookie&nbsp;?</p>
+      <p className="cookie-banner__text">
+        Ce site utilise des cookies pour mesurer son audience et améliorer
+        votre expérience.{" "}
+        <Link href="/Confidentialite" className="cookie-banner__link">
+          En savoir plus
+        </Link>
+      </p>
     </CookieConsent>
   );
 }
