@@ -58,6 +58,13 @@
     animation: home-hero-pulse 2.4s ease-out infinite;
   }
 
+  &__role {
+    @include m.eyebrow(v.$accent);
+    margin: 0 0 -12px;
+    max-width: 820px;
+    line-height: 1.5;
+  }
+
   &__title {
     margin: 0;
     max-width: 1000px;

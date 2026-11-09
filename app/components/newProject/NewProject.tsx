@@ -13,6 +13,8 @@ type Projet = {
   externe?: boolean;
   // Carte mise en avant, sur toute la largeur
   vedette?: boolean;
+  // Cadrage de l'image dans la carte (CSS object-position)
+  cadrage?: string;
 };
 
 const projets: Projet[] = [
@@ -25,6 +27,7 @@ const projets: Projet[] = [
     url: "https://66partners.fr",
     externe: true,
     vedette: true,
+    cadrage: "50% 45.5%", // centre le logo dans le cadre
   },
   {
     titre: "Les Chips de Nos Montagnes",
@@ -98,6 +101,11 @@ export default function NewProject() {
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     className="home-work__img"
+                    style={
+                      projet.cadrage
+                        ? { objectPosition: projet.cadrage }
+                        : undefined
+                    }
                   />
                 </div>
                 <div className="home-work__body">

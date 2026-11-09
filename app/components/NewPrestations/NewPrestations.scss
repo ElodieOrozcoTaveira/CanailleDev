@@ -42,7 +42,7 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
     gap: 20px;
   }
 
@@ -57,6 +57,8 @@
     border: 1px solid v.$line;
 
     --card-line: #{v.$line};
+    --type-color: #{v.$forest-new};
+    --for-color: #{v.$muted};
     --cta-bg: #{v.$pine};
     --cta-fg: #{v.$on-dark};
 
@@ -66,16 +68,44 @@
       border-color: v.$pine;
 
       --card-line: rgba(245, 242, 234, 0.18);
+      --type-color: #{v.$accent};
+      --for-color: #{v.$on-dark-muted};
       --cta-bg: #{v.$accent};
       --cta-fg: #{v.$pine};
     }
   }
 
-  &__name {
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  &__type {
     margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--type-color);
+  }
+
+  &__badge {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: v.$accent;
+    color: v.$pine;
+  }
+
+  &__name {
+    margin: -8px 0 0;
     font-family: var(--font-display), sans-serif;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 1.15;
   }
 
@@ -95,6 +125,13 @@
     font-size: 13px;
     letter-spacing: 0;
     opacity: 0.75;
+  }
+
+  &__for {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--for-color);
   }
 
   &__list {
@@ -125,5 +162,91 @@
     font-size: 15px;
     background: var(--cta-bg);
     color: var(--cta-fg);
+  }
+
+  // ── Grille tarifaire ──
+  &__table-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 56px;
+    padding: clamp(24px, 4vw, 40px);
+    border-radius: 24px;
+    background: v.$sage;
+  }
+
+  &__table-head {
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__table-title {
+    margin: 0;
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  &__table-note {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #2f4a3a;
+  }
+
+  &__table {
+    flex: 999 1 420px;
+    min-width: 0;
+    border-collapse: collapse;
+    font-size: 16px;
+
+    th,
+    td {
+      padding: 14px 0;
+      text-align: left;
+      border-bottom: 1px solid rgba(31, 61, 43, 0.15);
+    }
+
+    thead th {
+      padding-top: 0;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: v.$sage-ink;
+    }
+
+    tbody th {
+      font-weight: 500;
+      color: v.$ink;
+      padding-right: 16px;
+    }
+
+    td {
+      text-align: right;
+      font-weight: 700;
+      white-space: nowrap;
+      color: v.$ink;
+    }
+
+    thead th:last-child {
+      text-align: right;
+    }
+
+    tbody tr:last-child th,
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+  }
+
+  &__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 }

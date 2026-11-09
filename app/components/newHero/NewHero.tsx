@@ -22,14 +22,18 @@ export default function Hero() {
           Disponible pour de nouveaux projets
         </p>
 
+        <p className="home-hero__role">
+          Conceptrice Développeuse d&apos;Applications (CDA) dans les{" "}
+          {"Pyrénées‑Orientales"}
+        </p>
+
         <h1 id="hero-title" className="home-hero__title">
           Des sites web qui ont du <span>relief</span>.
         </h1>
 
         <p className="home-hero__lead">
-          Je suis Elodie Orozco Taveira, conceptrice développeuse
-          d&apos;applications web. Je crée des sites et applications sur
-          mesure, performants et pensés pour vos utilisateurs.
+          Je suis Elodie Orozco Taveira. Je crée des sites et applications web
+          sur mesure, performants et pensés pour vos utilisateurs.
         </p>
 
         <div className="home-hero__actions">
