@@ -71,8 +71,12 @@ const offres: Offre[] = [
 const grille = [
   { prestation: "Site vitrine one\u2011page", tarif: "450 – 650 €" },
   { prestation: "Site vitrine 4 à 5 pages", tarif: "800 – 1 200 €" },
-  { prestation: "Site vitrine personnalisé", tarif: "1 200 – 1 600 €" },
-  { prestation: "Site e-commerce", tarif: "À partir de 1 500 €" },
+  { prestation: "Site vitrine personnalisé", tarif: "1 300 – 1 800 €" },
+  {
+    prestation: "Site vitrine avancé / multi-activités",
+    tarif: "1 800 – 2 500 €",
+  },
+  { prestation: "Site e-commerce", tarif: "À partir de 1 800 €" },
   { prestation: "Application web sur mesure", tarif: "Sur devis" },
   { prestation: "Refonte & maintenance", tarif: "50 €/h" },
 ];
@@ -92,8 +96,9 @@ export default function NewPrestations() {
           </h2>
         </div>
         <p className="home-offers__intro">
-          Des formules pour démarrer, adaptées ensuite à vos fonctionnalités,
-          votre contenu et vos délais.
+          Les tarifs sont indicatifs : chaque projet fait l&apos;objet
+          d&apos;un devis personnalisé, adapté à vos fonctionnalités, votre
+          contenu et vos délais.
         </p>
       </div>
 
@@ -136,8 +141,9 @@ export default function NewPrestations() {
         <div className="home-offers__table-head">
           <h3 className="home-offers__table-title">Grille tarifaire indicative</h3>
           <p className="home-offers__table-note">
-            Tarifs de lancement. Chaque devis précise les fonctionnalités et le
-            nombre de retours inclus.
+            Ces tarifs sont donnés à titre indicatif. Chaque projet fait
+            l&apos;objet d&apos;un devis personnalisé, qui précise les
+            fonctionnalités et le nombre de retours inclus.
           </p>
         </div>
         <table className="home-offers__table">
@@ -147,7 +153,7 @@ export default function NewPrestations() {
           <thead>
             <tr>
               <th scope="col">Prestation</th>
-              <th scope="col">Tarif indicatif</th>
+              <th scope="col">Tarif conseillé</th>
             </tr>
           </thead>
           <tbody>
