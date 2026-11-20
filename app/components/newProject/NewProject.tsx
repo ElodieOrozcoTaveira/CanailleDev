@@ -15,6 +15,8 @@ type Projet = {
   vedette?: boolean;
   // Cadrage de l'image dans la carte (CSS object-position)
   cadrage?: string;
+  // Affiche l'image en entier dans la case (logos)
+  imageEntiere?: boolean;
 };
 
 const projets: Projet[] = [
@@ -36,6 +38,7 @@ const projets: Projet[] = [
     description:
       "Site vitrine pour une marque artisanale de chips des Pyrénées.",
     image: "/Projets/lcdnm.webp",
+    imageEntiere: true,
     url: "https://www.leschipsdenosmontagnes.com/",
     externe: true,
   },
@@ -99,8 +102,8 @@ export default function NewProject() {
                     src={projet.image}
                     alt=""
                     fill
-                    sizes="(max-width: 768px) 100vw, 600px"
-                    className="home-work__img"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 400px"
+                    className={`home-work__img${projet.imageEntiere ? " home-work__img--contain" : ""}`}
                     style={
                       projet.cadrage
                         ? { objectPosition: projet.cadrage }
